@@ -1,0 +1,30 @@
+# Render Blueprint — crossub_web_marketing
+# Docs: https://render.com/docs/blueprint-spec
+#
+# Deploy: Render Dashboard → New → Blueprint → connect this repo.
+# Requires crossub_web API already deployed; set API_INTERNAL_URL after first deploy.
+
+services:
+  - type: web
+    name: crossub-marketing-department
+    runtime: node
+    region: singapore
+    plan: starter
+    buildCommand: corepack pnpm install --frozen-lockfile && corepack pnpm build:marketing
+    startCommand: corepack pnpm --filter @crossub/marketing start
+    healthCheckPath: /login
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NEXT_PUBLIC_API_URL
+        value: /api
+      - key: API_INTERNAL_URL
+        sync: false
+      - key: NEXT_PUBLIC_WEB_URL
+        sync: false
+      - key: NEXT_PUBLIC_AGENT_PORTAL_URL
+        sync: false
+      - key: NEXT_PUBLIC_HR_URL
+        sync: false
+      - key: NEXT_PUBLIC_SALES_URL
+        sync: false

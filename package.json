@@ -1,0 +1,25 @@
+{
+  "name": "crossub-marketing",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CROSSUB AI Marketing Department — market research, content creation, campaign management, and ROI optimization.",
+  "scripts": {
+    "preinstall": "npx -y only-allow pnpm",
+    "dev": "bash scripts/dev-clean.sh",
+    "dev:raw": "pnpm -r --parallel run dev",
+    "dev:clean": "bash scripts/dev-clean.sh",
+    "dev:marketing": "pnpm --filter @crossub/marketing dev",
+    "build": "pnpm -r run build",
+    "build:marketing": "pnpm --filter @crossub/marketing build",
+    "start": "pnpm -r --parallel run start",
+    "start:marketing": "pnpm --filter @crossub/marketing start",
+    "lint": "pnpm -r run lint"
+  },
+  "packageManager": "pnpm@9.12.0",
+  "engines": {
+    "node": ">=20",
+    "pnpm": ">=9",
+    "npm": "please-use-pnpm",
+    "yarn": "please-use-pnpm"
+  }
+}
