@@ -1,6 +1,7 @@
 'use client';
 
 import { Menu, X } from 'lucide-react';
+import { usePathname } from 'next/navigation';
 import { useEffect, useId, useRef, useState } from 'react';
 
 import { PrimaryLink } from '@/components/site/buttons';
@@ -31,6 +32,7 @@ export function SiteHeader() {
   const buttonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const menuId = useId();
+  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -84,7 +86,11 @@ export function SiteHeader() {
               key={item.label}
               href={item.href}
               onClick={(event) => onNavigate(event, item.href)}
-              className="text-[15px] font-medium text-[#3E4660] hover:text-[#171E4B]"
+              aria-current={pathname === item.href ? 'page' : undefined}
+              className={cn(
+                'text-[15px] font-medium hover:text-[#171E4B]',
+                pathname === item.href ? 'text-[#007455]' : 'text-[#3E4660]',
+              )}
               {...(isExternalHref(item.href) ? { rel: 'noopener noreferrer' } : {})}
             >
               {item.label}

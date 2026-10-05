@@ -1,41 +1,37 @@
 /**
- * Destinations for the public homepage. Change these in one place
- * (or with NEXT_PUBLIC_* env vars) when a real page moves.
- * Hash links are used only where no live page exists yet.
+ * Public site destinations. Marketing pages live on this site.
+ * Log in and Start for free open the agent product, not the old marketing site.
  */
 const env = (name: string, fallback: string): string =>
   process.env[name]?.trim() || fallback;
 
 export const siteLinks = {
+  home: '/',
+  software: '/software',
+  ai: '/software#ai',
+  inspections: '/inspections',
+  fullService: '/full-service',
+  about: '/about',
+  help: '/help',
+  contact: '/help#contact',
+  privacy: '/privacy',
+  bookDemo: '/book-a-demo',
   login: env('NEXT_PUBLIC_LOGIN_URL', 'https://agent.crossub.com.au/'),
   startFree: env(
     'NEXT_PUBLIC_REGISTER_URL',
     'https://crossub-mobile-agent-prod.onrender.com/register',
   ),
-  bookDemo: env(
-    'NEXT_PUBLIC_DEMO_URL',
-    'https://crossub-web-prod.onrender.com/book-with-expert',
-  ),
-  inspections: env(
-    'NEXT_PUBLIC_INSPECTIONS_URL',
-    'https://www.crossub.com.au/rental_inspection/',
-  ),
-  fullService: env(
-    'NEXT_PUBLIC_FULL_SERVICE_URL',
-    'https://www.crossub.com.au/property_management_support/',
-  ),
-  about: env('NEXT_PUBLIC_ABOUT_URL', 'https://www.crossub.com.au/about-us/'),
-  help: env('NEXT_PUBLIC_HELP_URL', 'https://www.crossub.com.au/help_center/'),
-  privacy: env(
-    'NEXT_PUBLIC_PRIVACY_URL',
-    'https://www.crossub.com.au/privacy_policy/',
-  ),
-  contact: 'mailto:info@crossub.com.au',
-  software: '/#solutions',
-  ai: '/#ai-steps',
-  support: '/#support',
-  inspectionsSection: '/#inspections',
-  experience: '/#experience',
+} as const;
+
+export const company = {
+  email: 'info@crossub.com.au',
+  salesEmail: 'sales@crossub.com.au',
+  phoneDisplay: '+61 2 5023 5015',
+  phoneTel: '+61250235015',
+  emergencyDisplay: '1300 399 836',
+  emergencyTel: '1300399836',
+  street: '104/66 Berry Street',
+  locality: 'North Sydney NSW 2060',
 } as const;
 
 export function isExternalHref(href: string): boolean {

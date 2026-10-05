@@ -14,7 +14,7 @@ const COLUMNS = [
     links: [
       { label: 'Inspection Only', href: siteLinks.inspections },
       { label: 'Full Service', href: siteLinks.fullService },
-      { label: 'How it works', href: siteLinks.ai },
+      { label: 'Book a demo', href: siteLinks.bookDemo },
     ],
   },
   {

@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from 'next';
 import type { ReactNode } from 'react';
 import { Manrope } from 'next/font/google';
 
+import { AmbientBackground } from '@/components/site/ambient-background';
 import { SiteFooter } from '@/components/site/site-footer';
 import { SiteHeader } from '@/components/site/site-header';
 
@@ -42,10 +43,13 @@ export const viewport: Viewport = {
 
 export default function SiteLayout({ children }: { children: ReactNode }) {
   return (
-    <div className={`${manrope.className} marketing-site min-h-screen text-[#171E4B]`}>
-      <SiteHeader />
-      {children}
-      <SiteFooter />
+    <div className={`${manrope.className} marketing-site relative min-h-screen text-[#171E4B]`}>
+      <AmbientBackground />
+      <div className="relative z-10">
+        <SiteHeader />
+        {children}
+        <SiteFooter />
+      </div>
     </div>
   );
 }
