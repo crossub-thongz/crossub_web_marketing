@@ -1,7 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter } from 'next/font/google';
 
-import { AuthProvider } from '@/components/providers/auth-provider';
 import { Toaster } from '@/components/ui/sonner';
 import './globals.css';
 
@@ -17,10 +16,8 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: '#0b0f10',
+  themeColor: '#ffffff',
 };
-
-export const dynamic = 'force-dynamic';
 
 export default function RootLayout({
   children,
@@ -28,11 +25,9 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark bg-background">
+    <html lang="en">
       <body className={`${inter.variable} font-sans antialiased`}>
-        <AuthProvider>
-          {children}
-        </AuthProvider>
+        {children}
         <Toaster position="bottom-right" />
       </body>
     </html>

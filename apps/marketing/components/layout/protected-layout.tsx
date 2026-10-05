@@ -4,10 +4,18 @@ import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
 
 import { MarketingShell } from '@/components/layout/marketing-shell';
-import { useAuth } from '@/components/providers/auth-provider';
+import { AuthProvider, useAuth } from '@/components/providers/auth-provider';
 import { ROUTES } from '@/constants/routes';
 
 export function ProtectedLayout({ children }: { children: React.ReactNode }) {
+  return (
+    <AuthProvider>
+      <ProtectedGate>{children}</ProtectedGate>
+    </AuthProvider>
+  );
+}
+
+function ProtectedGate({ children }: { children: React.ReactNode }) {
   const { status } = useAuth();
   const router = useRouter();
 
@@ -19,7 +27,7 @@ export function ProtectedLayout({ children }: { children: React.ReactNode }) {
 
   if (status === 'loading') {
     return (
-      <div className="flex min-h-screen items-center justify-center bg-background">
+      <div className="dark flex min-h-screen items-center justify-center bg-background text-foreground">
         <div className="size-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
       </div>
     );
@@ -29,5 +37,9 @@ export function ProtectedLayout({ children }: { children: React.ReactNode }) {
     return null;
   }
 
-  return <MarketingShell>{children}</MarketingShell>;
+  return (
+    <div className="dark bg-background text-foreground">
+      <MarketingShell>{children}</MarketingShell>
+    </div>
+  );
 }

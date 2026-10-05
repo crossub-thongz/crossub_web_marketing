@@ -14,7 +14,7 @@ export const ROUTES = {
   AI_ASSISTANT: '/ai-assistant',
 } as const;
 
-const PUBLIC = new Set<string>([ROUTES.LOGIN]);
+const PUBLIC = new Set<string>(['/', ROUTES.LOGIN]);
 
 export function isPublicRoute(pathname: string): boolean {
   return PUBLIC.has(pathname);
