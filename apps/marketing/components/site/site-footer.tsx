@@ -12,6 +12,8 @@ const COLUMNS = [
   {
     title: 'Services',
     links: [
+      { label: 'Property Services', href: siteLinks.propertyServices },
+      { label: 'Service Pricing', href: siteLinks.pricing },
       { label: 'Inspection Only', href: siteLinks.inspections },
       { label: 'Full Service', href: siteLinks.fullService },
       { label: 'Book a demo', href: siteLinks.bookDemo },

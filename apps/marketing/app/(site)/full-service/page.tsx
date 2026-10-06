@@ -48,7 +48,11 @@ export default function FullServicePage() {
             <p className="mt-4 text-[16px] leading-[1.7] text-[#3E4660]">
               We partner with agencies whose own management fee to landlords is at least 4% + GST.
               That keeps the split workable for both sides. Inspection Only is a separate paid
-              visit, not this percentage.
+              visit, not this percentage. The same figures are on{' '}
+              <a className="font-semibold text-[#007455]" href={siteLinks.pricing}>
+                Service Pricing
+              </a>
+              .
             </p>
           </article>
         </div>

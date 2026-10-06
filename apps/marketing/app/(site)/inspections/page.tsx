@@ -27,7 +27,15 @@ export default function InspectionsPage() {
         <p>
           Inspection Only is a paid visit. Crossub inspectors attend ingoing, routine, outgoing and
           open inspections, then the photos, notes and report stay on the property. Your agency can
-          also run the same tools without booking a Crossub inspector.
+          also run the same tools without booking a Crossub inspector. It sits under{' '}
+          <a className="font-semibold text-[#007455]" href={siteLinks.propertyServices}>
+            Property Services
+          </a>
+          , and the fee is on{' '}
+          <a className="font-semibold text-[#007455]" href={siteLinks.pricing}>
+            Service Pricing
+          </a>
+          .
         </p>
       </PageHero>
 

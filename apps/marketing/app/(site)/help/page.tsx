@@ -27,7 +27,12 @@ export default function HelpPage() {
               answer: (
                 <p>
                   The property management software is free. Inspection Only and Full Service are
-                  paid services you add when you want people from Crossub involved.
+                  paid services you add when you want people from Crossub involved. The figures are
+                  on the{' '}
+                  <a className="font-semibold text-[#007455]" href={siteLinks.pricing}>
+                    Service Pricing
+                  </a>{' '}
+                  page.
                 </p>
               ),
             },

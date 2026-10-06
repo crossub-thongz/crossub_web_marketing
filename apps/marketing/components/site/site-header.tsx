@@ -11,8 +11,10 @@ import { cn } from '@/lib/utils';
 
 const NAV = [
   { href: siteLinks.software, label: 'Software' },
+  { href: siteLinks.propertyServices, label: 'Property Services' },
   { href: siteLinks.inspections, label: 'Inspections' },
   { href: siteLinks.fullService, label: 'Full Service' },
+  { href: siteLinks.pricing, label: 'Service Pricing' },
   { href: siteLinks.about, label: 'About' },
 ] as const;
 
@@ -78,7 +80,7 @@ export function SiteHeader() {
           <Wordmark id="header" />
         </a>
 
-        <nav className="hidden items-center gap-8 md:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-5 xl:flex" aria-label="Primary">
           {NAV.map((item) => (
             <a
               key={item.label}
@@ -86,7 +88,7 @@ export function SiteHeader() {
               onClick={(event) => onNavigate(event, item.href)}
               aria-current={pathname === item.href ? 'page' : undefined}
               className={cn(
-                'text-[15px] font-medium hover:text-[#171E4B]',
+                'text-[15px] font-medium whitespace-nowrap hover:text-[#171E4B]',
                 pathname === item.href ? 'text-[#007455]' : 'text-[#3E4660]',
               )}
               {...(isExternalHref(item.href) ? { rel: 'noopener noreferrer' } : {})}
@@ -96,7 +98,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 md:flex">
+        <div className="hidden items-center gap-3 xl:flex">
           <a
             href={siteLinks.login}
             rel="noopener noreferrer"
@@ -110,7 +112,7 @@ export function SiteHeader() {
         <button
           ref={buttonRef}
           type="button"
-          className="inline-flex size-11 items-center justify-center rounded-full text-[#171E4B] md:hidden"
+          className="inline-flex size-11 items-center justify-center rounded-full text-[#171E4B] xl:hidden"
           aria-expanded={open}
           aria-controls={menuId}
           onClick={() => setOpen((value) => !value)}
@@ -124,7 +126,7 @@ export function SiteHeader() {
         <div
           id={menuId}
           ref={panelRef}
-          className="border-t border-[#171E4B]/8 bg-white px-5 py-4 md:hidden"
+          className="border-t border-[#171E4B]/8 bg-white px-5 py-4 xl:hidden"
         >
           <nav className="flex flex-col" aria-label="Mobile">
             {NAV.map((item) => (

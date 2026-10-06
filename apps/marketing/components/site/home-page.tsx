@@ -250,10 +250,20 @@ export function HomePage() {
                 ),
               )}
             </ul>
-            <TextLink href={siteLinks.fullService} className="mt-6">
-              Explore Full Service
-              <ArrowUpRight className="size-4" aria-hidden />
-            </TextLink>
+            <div className="mt-6 flex flex-col items-start gap-1">
+              <TextLink href={siteLinks.propertyServices}>
+                Property Services
+                <ArrowUpRight className="size-4" aria-hidden />
+              </TextLink>
+              <TextLink href={siteLinks.fullService}>
+                Explore Full Service
+                <ArrowUpRight className="size-4" aria-hidden />
+              </TextLink>
+              <TextLink href={siteLinks.pricing}>
+                Service Pricing
+                <ArrowUpRight className="size-4" aria-hidden />
+              </TextLink>
+            </div>
           </div>
         </div>
       </section>
