@@ -110,41 +110,66 @@ export function FaqList({
 }
 
 export function ContactStrip() {
+  const items = [
+    {
+      label: 'Head office',
+      body: (
+        <>
+          {company.street}
+          <br />
+          {company.locality}
+        </>
+      ),
+    },
+    {
+      label: 'General email',
+      body: (
+        <a className="font-semibold text-[#007455]" href={`mailto:${company.email}`}>
+          {company.email}
+        </a>
+      ),
+    },
+    {
+      label: 'Sales and demos',
+      body: (
+        <>
+          <a className="font-semibold text-[#007455]" href={`mailto:${company.salesEmail}`}>
+            {company.salesEmail}
+          </a>
+          <br />
+          <a className="font-semibold text-[#007455]" href={`tel:${company.phoneTel}`}>
+            {company.phoneDisplay}
+          </a>
+        </>
+      ),
+    },
+    {
+      label: 'Urgent repairs',
+      body: (
+        <a className="font-semibold text-[#007455]" href={`tel:${company.emergencyTel}`}>
+          {company.emergencyDisplay}
+        </a>
+      ),
+    },
+  ];
+
   return (
     <section id="contact" className="scroll-mt-28 px-5 pt-4 pb-20 md:px-6">
-      <div className="mx-auto grid max-w-[1100px] gap-6 rounded-[36px] bg-white/80 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-10 md:grid-cols-3">
-        <div>
-          <h2 className="text-[22px] font-semibold">Talk to CROSSUB</h2>
-          <p className="mt-2 text-[15px] leading-relaxed text-[#3E4660]">
-            Head office in North Sydney. We reply from the addresses below.
-          </p>
-        </div>
-        <div className="text-[15px] leading-relaxed text-[#171E4B]">
-          <p className="font-semibold">Office</p>
-          <p className="mt-1 text-[#3E4660]">
-            {company.street}
-            <br />
-            {company.locality}
-          </p>
-        </div>
-        <div className="text-[15px] leading-relaxed">
-          <p>
-            <a className="font-semibold text-[#007455]" href={`mailto:${company.email}`}>
-              {company.email}
-            </a>
-          </p>
-          <p className="mt-2">
-            <a className="font-semibold text-[#007455]" href={`tel:${company.phoneTel}`}>
-              {company.phoneDisplay}
-            </a>
-          </p>
-          <p className="mt-2 text-[#3E4660]">
-            Urgent repairs:{' '}
-            <a className="font-semibold text-[#007455]" href={`tel:${company.emergencyTel}`}>
-              {company.emergencyDisplay}
-            </a>
-          </p>
-        </div>
+      <div className="mx-auto max-w-[1100px] rounded-[36px] bg-white/80 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-10">
+        <h2 className="text-[22px] font-semibold">Talk to Crossub</h2>
+        <p className="mt-2 max-w-xl text-[15px] leading-relaxed text-[#3E4660]">
+          Head office is in North Sydney. Pick the line that matches what you need.
+        </p>
+        <dl className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {items.map((item) => (
+            <div key={item.label}>
+              <dt className="text-[12px] font-semibold tracking-[0.12em] text-[#007455] uppercase">
+                {item.label}
+              </dt>
+              <dd className="mt-2 text-[15px] leading-relaxed text-[#171E4B]">{item.body}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </section>
   );
