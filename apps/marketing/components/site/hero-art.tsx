@@ -30,32 +30,44 @@ export function HeroArt() {
 
       <svg viewBox="0 0 520 520" className="absolute inset-0 h-full w-full">
         <defs>
-          <linearGradient id="ai-glass" x1="0" y1="0" x2="1" y2="1">
-            <stop offset="0" stopColor="#E9FFF7" />
-            <stop offset="0.35" stopColor="#7EE8C8" />
-            <stop offset="0.72" stopColor="#3EBEA0" stopOpacity="0.92" />
-            <stop offset="1" stopColor="#9EB6FF" stopOpacity="0.8" />
+          <linearGradient id="hero-ai-face" gradientUnits="userSpaceOnUse" x1="40" y1="20" x2="340" y2="270">
+            <stop offset="0" stopColor="#F4FFFB" />
+            <stop offset="0.22" stopColor="#7EE8C8" />
+            <stop offset="0.55" stopColor="#2EBE9A" />
+            <stop offset="0.82" stopColor="#6AA4F0" />
+            <stop offset="1" stopColor="#C9B8FF" />
           </linearGradient>
-          <linearGradient id="ai-shine" x1="0" y1="0" x2="0" y2="1">
-            <stop offset="0" stopColor="#ffffff" stopOpacity="0.85" />
-            <stop offset="0.45" stopColor="#ffffff" stopOpacity="0" />
+          <linearGradient id="hero-ai-depth" gradientUnits="userSpaceOnUse" x1="40" y1="20" x2="40" y2="270">
+            <stop offset="0" stopColor="#5ED4B0" />
+            <stop offset="1" stopColor="#147A62" />
           </linearGradient>
         </defs>
-        <text
-          x="268"
-          y="318"
-          textAnchor="middle"
-          fontSize="228"
-          fontWeight="700"
-          fill="url(#ai-glass)"
-          stroke="white"
-          strokeOpacity="0.72"
-          strokeWidth="3"
-          style={{ fontFamily: 'inherit' }}
-        >
-          AI
-        </text>
-        <ellipse cx="250" cy="210" rx="90" ry="28" fill="url(#ai-shine)" />
+        <g transform="translate(86 128)" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <g stroke="#14936C" strokeWidth="58" opacity="0.14" transform="translate(10 16)">
+            <path d="M46 248 L138 28 L230 248" />
+            <path d="M74 198 H202" />
+            <path d="M292 28 V248" />
+          </g>
+          <g stroke="url(#hero-ai-depth)" strokeWidth="54" opacity="0.55" transform="translate(0 8)">
+            <path d="M46 248 L138 28 L230 248" />
+            <path d="M74 198 H202" />
+            <path d="M292 28 V248" />
+          </g>
+          <g stroke="white" strokeWidth="52" opacity="0.95">
+            <path d="M46 248 L138 28 L230 248" />
+            <path d="M74 198 H202" />
+            <path d="M292 28 V248" />
+          </g>
+          <g stroke="url(#hero-ai-face)" strokeWidth="44">
+            <path d="M46 248 L138 28 L230 248" />
+            <path d="M74 198 H202" />
+            <path d="M292 28 V248" />
+          </g>
+          <g stroke="white" strokeWidth="10" opacity="0.75">
+            <path d="M72 150 L132 42" />
+            <path d="M292 42 V130" />
+          </g>
+        </g>
       </svg>
 
       <div className="float-slow absolute top-[8%] left-[2%] w-[150px] -rotate-6">
