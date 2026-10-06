@@ -32,7 +32,7 @@ export function SupportCluster() {
     <div className="relative mx-auto w-full max-w-[480px]">
       <div
         aria-hidden
-        className="pointer-events-none absolute -top-8 -left-6 hidden size-40 rounded-full bg-[#F1E8FF] blur-2xl lg:block"
+        className="pointer-events-none absolute -top-8 -left-6 hidden size-40 rounded-full bg-[radial-gradient(circle,rgba(241,232,255,0.95),transparent_70%)] lg:block"
       />
       <div aria-hidden className="float-delayed pointer-events-none absolute top-0 right-2 hidden lg:block">
         <span className="text-5xl font-bold tracking-tight text-[#7EE8C8]/70">AI</span>

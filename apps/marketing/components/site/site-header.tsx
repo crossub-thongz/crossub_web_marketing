@@ -63,10 +63,8 @@ export function SiteHeader() {
     <header
       id="top"
       className={cn(
-        'sticky top-0 z-50 border-b transition-colors',
-        scrolled || open
-          ? 'border-[#171E4B]/8 bg-white/90 backdrop-blur-xl'
-          : 'border-transparent bg-white/70 backdrop-blur-md',
+        'sticky top-0 z-50 border-b bg-white',
+        scrolled || open ? 'border-[#171E4B]/8' : 'border-transparent',
       )}
     >
       <a
