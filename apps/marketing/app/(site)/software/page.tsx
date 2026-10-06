@@ -6,7 +6,7 @@ import { siteLinks } from '@/lib/site-links';
 export const metadata: Metadata = {
   title: 'Free property management software | Crossub',
   description:
-    'Free property management software for agencies: portfolio, leasing, maintenance, inspections, keys and reports, with AI that prepares the work while your team stays in control.',
+    'Free property management software, plus the Agent Portal, tenant app and inspector app, all on the same property record.',
 };
 
 export default function SoftwarePage() {
@@ -125,26 +125,67 @@ export default function SoftwarePage() {
         </p>
       </PageSection>
 
-      <PageSection eyebrow="WHO SEES WHAT" title="The agent keeps the view. Support is added later.">
-        <FeatureGrid
-          items={[
-            {
-              title: 'Agent login',
-              body: 'Property managers sign in to the Agent Portal to see tasks, reports and messages, and to approve what needs a decision.',
-              tone: 'mint',
-            },
-            {
-              title: 'Agent app',
-              body: 'The same picture is available on the phone, for people who are not at a desk when a report or a quote comes in.',
-              tone: 'lilac',
-            },
-            {
-              title: 'Add people when you want',
-              body: 'Inspection Only and Full Service use this same data. You do not move the portfolio to a second system to get help.',
-              tone: 'cream',
-            },
-          ]}
-        />
+      <PageSection eyebrow="FOUR APPS, ONE RECORD" title="Each person opens the same property from their own side.">
+        <div className="grid gap-4 lg:grid-cols-2">
+          <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
+            <p className="text-[13px] font-bold tracking-[0.14em] text-[#007455]">PROPERTY PLATFORM</p>
+            <h3 className="mt-3 text-[24px] font-semibold tracking-[-0.02em]">The rent roll, on the web.</h3>
+            <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
+              This is the free software. The command center, properties, leasing, inspections,
+              maintenance, keys and the communication record live here. Applications, agreements,
+              rent reviews, arrears, open homes and vacating sit on the property, with the photos
+              and messages beside them.
+            </p>
+            <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
+              AI prepares drafts and sorts the next step. Spending, trust money and the message
+              that goes to a landlord stay with a person.
+            </p>
+          </article>
+          <article className="rounded-[28px] bg-[#E7FBF4] p-7 ring-1 ring-[#008F65]/10 sm:p-8">
+            <p className="text-[13px] font-bold tracking-[0.14em] text-[#007455]">AGENT PORTAL</p>
+            <h3 className="mt-3 text-[24px] font-semibold tracking-[-0.02em]">Where the agency signs in.</h3>
+            <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
+              Property managers use the Agent Portal on the web or the phone. The dashboard,
+              property list, leasing, maintenance, inspections and tasks are the daily view.
+              Reports, quotes and anything that needs a decision come back here.
+            </p>
+            <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
+              History stays on the file after the job is done. Landlord conversations stay with
+              the agency. Log in opens this portal.
+            </p>
+          </article>
+          <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
+            <p className="text-[13px] font-bold tracking-[0.14em] text-[#5C4B8A]">TENANT APP</p>
+            <h3 className="mt-3 text-[24px] font-semibold tracking-[-0.02em]">The tenancy, from the tenant’s side.</h3>
+            <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
+              A tenant can browse listings and apply before they have a login. After they are
+              accepted, onboarding, the lease, documents, repairs, messages and inspections for
+              their own home are in the app.
+            </p>
+            <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
+              Rent review, renewal and the move-out, including the outgoing report, stay on that
+              tenancy. The tenant does not see the rest of the agency’s rent roll, and the bond
+              is still lodged by the agent or the tenant through Rental Bonds Online.
+            </p>
+          </article>
+          <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
+            <p className="text-[13px] font-bold tracking-[0.14em] text-[#8A6414]">INSPECTOR APP</p>
+            <h3 className="mt-3 text-[24px] font-semibold tracking-[-0.02em]">The visit, completed on site.</h3>
+            <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
+              Inspectors take a job from the pool or from an assignment, open directions to the
+              property, and run an open home, ingoing, outgoing or routine inspection in the app.
+              Photos, notes and the report file back against that property.
+            </p>
+            <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
+              The same report is what the agent reads in the portal. Agency staff can run the
+              visit themselves, or book a Crossub inspector and use this same path.
+            </p>
+          </article>
+        </div>
+        <p className="mt-6 max-w-3xl text-[15px] leading-[1.65] text-[#3E4660]">
+          Inspection Only and Full Service write into this same record. The agency does not move
+          the portfolio to a second system to add people.
+        </p>
         <div className="mt-10">
           <FaqList
             items={[
@@ -154,6 +195,16 @@ export default function SoftwarePage() {
                   <p>
                     Yes. The software is free. Inspection Only and Full Service are paid, and they
                     are only added when the agency asks for them.
+                  </p>
+                ),
+              },
+              {
+                question: 'Which app does each person use?',
+                answer: (
+                  <p>
+                    The agency’s rent roll is the web platform. Property managers sign in to the
+                    Agent Portal. Tenants use the tenant app for their own home. Inspectors use
+                    the inspector app on site. All four write to the same property.
                   </p>
                 ),
               },

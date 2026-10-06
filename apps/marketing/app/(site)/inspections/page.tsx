@@ -98,9 +98,10 @@ export default function InspectionsPage() {
           </article>
         </div>
         <p className="mt-6 max-w-3xl text-[15px] leading-[1.65] text-[#3E4660]">
-          Published service standard: routine and vacate reports are returned within 48 hours.
-          AI can draft a summary from the photos and notes. Someone at the agency still reviews
-          what is sent.
+          The visit itself runs in the inspector app: the job, directions, and an open, ingoing,
+          outgoing or routine inspection. The agent reads the result in the Agent Portal. Published
+          service standard: routine and vacate reports are returned within 48 hours. AI can draft a
+          summary from the photos and notes. Someone at the agency still reviews what is sent.
         </p>
       </PageSection>
 
