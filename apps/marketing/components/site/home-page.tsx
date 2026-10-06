@@ -32,21 +32,18 @@ const STEPS = [
     title: 'Understand',
     body: 'Make sense of requests, photos and reports.',
     chip: 'bg-[#E0F7EE] text-[#007455]',
-    offset: 'lg:mr-16',
   },
   {
     n: '02',
     title: 'Prepare',
     body: 'Draft responses and organise next steps.',
     chip: 'bg-[#FFF4D8] text-[#7A5B12]',
-    offset: 'lg:ml-16',
   },
   {
     n: '03',
     title: 'Review',
     body: 'Flag what needs your team’s attention.',
     chip: 'bg-[#F1E8FF] text-[#5C4B8A]',
-    offset: 'lg:ml-6 lg:mr-8',
   },
 ] as const;
 
@@ -56,14 +53,13 @@ export function HomePage() {
       <section className="mx-auto grid max-w-[1200px] items-center gap-10 px-5 pt-10 pb-20 md:px-6 md:pt-16 md:pb-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-6 lg:pt-14">
         <div>
           <Eyebrow>FREE SOFTWARE. REAL EXPERTISE.</Eyebrow>
-          <h1 className="mt-4 max-w-[640px] text-[40px] leading-[1.12] font-semibold tracking-[-0.035em] text-[#171E4B] sm:text-[52px] lg:text-[60px]">
-            <span className="relative inline-block">
-              Free
-              <Scribble />
-            </span>{' '}
-            property
-            <span className="block">management software.</span>
+          <h1 className="mt-4 max-w-[640px] text-[40px] leading-[1.08] font-semibold tracking-[-0.035em] text-[#171E4B] sm:text-[52px] lg:text-[60px]">
+            Property management.
             <span className="block">Powered by AI.</span>
+            <span className="relative mt-1 inline-block">
+              Free to use.
+              <Scribble />
+            </span>
           </h1>
           <p className="mt-5 max-w-[520px] text-[17px] leading-[1.6] text-[#62697C] sm:text-[18px]">
             Free property management software for your agency. Add inspection or Full Service
@@ -138,12 +134,10 @@ export function HomePage() {
                 <a
                   href={siteLinks.startFree}
                   rel="noopener noreferrer"
-                  className="mt-auto inline-flex min-h-11 items-center gap-3 pt-8 text-[15px] font-semibold text-[#007455]"
+                  aria-label="Start for free"
+                  className="mt-auto grid size-12 place-items-center self-center rounded-full bg-[#007455] text-white"
                 >
-                  Start for free
-                  <span className="grid size-11 place-items-center rounded-full bg-[#007455] text-white">
-                    <ArrowUpRight className="size-5" aria-hidden />
-                  </span>
+                  <ArrowUpRight className="size-5" aria-hidden />
                 </a>
               </article>
 
@@ -184,44 +178,51 @@ export function HomePage() {
               <ArrowUpRight className="size-4" aria-hidden />
             </TextLink>
           </div>
-          <ol id="ai-steps" className="relative flex list-none flex-col gap-5">
-            {STEPS.map((step, index) => (
-              <li key={step.n} className={step.offset}>
-                {index > 0 ? (
-                  <svg
-                    aria-hidden
-                    viewBox="0 0 120 36"
-                    className="mb-1 ml-8 hidden h-8 w-24 text-[#008F65] lg:block"
-                  >
-                    <path
-                      d="M4 28C28 28 30 8 112 8"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                    />
-                    <path
-                      d="M100 2l14 6-10 8"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                ) : null}
-                <article className="relative rounded-[26px] bg-white p-6 shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5 sm:p-7">
-                  <span
-                    className={`grid size-12 place-items-center rounded-full text-[14px] font-bold ${step.chip}`}
-                  >
+          <div id="ai-steps" className="relative mx-auto w-full max-w-[540px]">
+            <svg
+              aria-hidden
+              viewBox="0 0 540 280"
+              className="pointer-events-none absolute inset-0 hidden h-full w-full text-[#7EE8C8] sm:block"
+            >
+              <path
+                d="M150 118C210 70 300 48 390 78"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+              <path d="M378 66l16 14-18 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+              <path
+                d="M400 150C360 190 300 210 270 230"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              />
+              <path d="M262 214l6 18 14-12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
+            </svg>
+            <div className="relative grid gap-4 sm:grid-cols-2 sm:gap-5">
+              {STEPS.slice(0, 2).map((step, index) => (
+                <article
+                  key={step.n}
+                  className={`rounded-[26px] bg-white p-6 shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5 ${index === 0 ? 'sm:mt-10' : ''}`}
+                >
+                  <span className={`grid size-12 place-items-center rounded-full text-[14px] font-bold ${step.chip}`}>
                     {step.n}
                   </span>
                   <h3 className="mt-4 text-[20px] font-semibold">{step.title}</h3>
                   <p className="mt-2 text-[16px] leading-[1.6] text-[#62697C]">{step.body}</p>
                 </article>
-              </li>
-            ))}
-          </ol>
+              ))}
+            </div>
+            <article className="relative mx-auto mt-4 w-full rounded-[26px] bg-white p-6 shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5 sm:mt-6 sm:w-[78%]">
+              <span className={`grid size-12 place-items-center rounded-full text-[14px] font-bold ${STEPS[2].chip}`}>
+                {STEPS[2].n}
+              </span>
+              <h3 className="mt-4 text-[20px] font-semibold">{STEPS[2].title}</h3>
+              <p className="mt-2 text-[16px] leading-[1.6] text-[#62697C]">{STEPS[2].body}</p>
+            </article>
+          </div>
         </div>
       </section>
 
@@ -250,20 +251,10 @@ export function HomePage() {
                 ),
               )}
             </ul>
-            <div className="mt-6 flex flex-col items-start gap-1">
-              <TextLink href={siteLinks.propertyServices}>
-                Property Services
-                <ArrowUpRight className="size-4" aria-hidden />
-              </TextLink>
-              <TextLink href={siteLinks.fullService}>
-                Explore Full Service
-                <ArrowUpRight className="size-4" aria-hidden />
-              </TextLink>
-              <TextLink href={siteLinks.pricing}>
-                Service Pricing
-                <ArrowUpRight className="size-4" aria-hidden />
-              </TextLink>
-            </div>
+            <TextLink href={siteLinks.fullService} className="mt-6">
+              Explore Full Service
+              <ArrowUpRight className="size-4" aria-hidden />
+            </TextLink>
           </div>
         </div>
       </section>

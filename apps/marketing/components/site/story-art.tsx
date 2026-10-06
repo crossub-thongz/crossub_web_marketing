@@ -44,7 +44,7 @@ export function SupportCluster() {
       </ul>
       <p className="relative z-10 mx-auto my-4 flex w-fit items-center gap-3 rounded-full bg-white px-4 py-2.5 shadow-[0_16px_40px_rgba(23,30,75,0.1)] ring-1 ring-[#171E4B]/5">
         <span>
-          <Wordmark id="connected" className="text-[1.05rem]" />
+          <Wordmark compact className="h-6" />
           <span className="mt-1 block text-[12px] font-medium text-[#3E4660]">
             Your agency. Connected.
           </span>

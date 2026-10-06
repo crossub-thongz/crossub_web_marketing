@@ -11,10 +11,8 @@ import { cn } from '@/lib/utils';
 
 const NAV = [
   { href: siteLinks.software, label: 'Software' },
-  { href: siteLinks.propertyServices, label: 'Property Services' },
   { href: siteLinks.inspections, label: 'Inspections' },
   { href: siteLinks.fullService, label: 'Full Service' },
-  { href: siteLinks.pricing, label: 'Service Pricing' },
   { href: siteLinks.about, label: 'About' },
 ] as const;
 
@@ -75,12 +73,12 @@ export function SiteHeader() {
       >
         Skip to content
       </a>
-      <div className="mx-auto flex h-[72px] max-w-[1200px] items-center justify-between gap-4 px-5 md:px-6">
-        <a href="/#top" aria-label="Crossub home" className="rounded-md">
-          <Wordmark id="header" />
+      <div className="mx-auto flex h-[72px] max-w-[1200px] items-center justify-between gap-6 px-5 md:px-6">
+        <a href="/#top" aria-label="Crossub home" className="shrink-0 rounded-md">
+          <Wordmark priority />
         </a>
 
-        <nav className="hidden items-center gap-5 xl:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
           {NAV.map((item) => (
             <a
               key={item.label}
@@ -98,7 +96,7 @@ export function SiteHeader() {
           ))}
         </nav>
 
-        <div className="hidden items-center gap-3 xl:flex">
+        <div className="hidden items-center gap-3 lg:flex">
           <a
             href={siteLinks.login}
             rel="noopener noreferrer"
@@ -112,7 +110,7 @@ export function SiteHeader() {
         <button
           ref={buttonRef}
           type="button"
-          className="inline-flex size-11 items-center justify-center rounded-full text-[#171E4B] xl:hidden"
+          className="inline-flex size-11 items-center justify-center rounded-full text-[#171E4B] lg:hidden"
           aria-expanded={open}
           aria-controls={menuId}
           onClick={() => setOpen((value) => !value)}
@@ -126,7 +124,7 @@ export function SiteHeader() {
         <div
           id={menuId}
           ref={panelRef}
-          className="border-t border-[#171E4B]/8 bg-white px-5 py-4 xl:hidden"
+          className="border-t border-[#171E4B]/8 bg-white px-5 py-4 lg:hidden"
         >
           <nav className="flex flex-col" aria-label="Mobile">
             {NAV.map((item) => (

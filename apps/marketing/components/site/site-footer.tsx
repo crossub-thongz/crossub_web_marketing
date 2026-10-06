@@ -12,11 +12,10 @@ const COLUMNS = [
   {
     title: 'Services',
     links: [
-      { label: 'Property Services', href: siteLinks.propertyServices },
-      { label: 'Service Pricing', href: siteLinks.pricing },
       { label: 'Inspection Only', href: siteLinks.inspections },
       { label: 'Full Service', href: siteLinks.fullService },
-      { label: 'Book a demo', href: siteLinks.bookDemo },
+      { label: 'Service Pricing', href: siteLinks.pricing },
+      { label: 'Property Services', href: siteLinks.propertyServices },
     ],
   },
   {
@@ -43,7 +42,7 @@ export function SiteFooter() {
       <div className="mx-auto grid max-w-[1200px] gap-10 px-5 py-14 md:px-6 md:py-16 lg:grid-cols-[1.3fr_2fr]">
         <div>
           <a href="/#top" aria-label="Crossub home" className="rounded-md">
-            <Wordmark id="footer" />
+            <Wordmark className="h-11" />
           </a>
           <p className="mt-4 max-w-xs text-[15px] leading-relaxed text-[#3E4660]">
             Property management software with real people behind it.
