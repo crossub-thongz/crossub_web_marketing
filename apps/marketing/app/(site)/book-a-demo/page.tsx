@@ -5,9 +5,9 @@ import { PageHero } from '@/components/site/page-frame';
 import { company } from '@/lib/site-links';
 
 export const metadata: Metadata = {
-  title: 'Book a demo | Crossub',
+  title: 'Book a demo | CROSSUB',
   description:
-    'Book a call with Crossub to see the free property management software and the paid Inspection Only and Full Service options.',
+    'Book a call with CROSSUB to see the free property management software and the paid Inspection Only and Full Service options.',
 };
 
 export default function BookDemoPage() {

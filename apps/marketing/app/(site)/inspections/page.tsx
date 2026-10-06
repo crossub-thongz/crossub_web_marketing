@@ -4,9 +4,9 @@ import { ContactStrip, DualActions, FaqList, FeatureGrid, PageHero, PageSection 
 import { company, siteLinks } from '@/lib/site-links';
 
 export const metadata: Metadata = {
-  title: 'Inspection Only | Crossub',
+  title: 'Inspection Only | CROSSUB',
   description:
-    'Paid on-site ingoing, routine, outgoing and open inspections for agencies, with photos, branded reports and follow-up in the Crossub platform.',
+    'Paid on-site ingoing, routine, outgoing and open inspections for agencies, with photos, branded reports and follow-up in the CROSSUB platform.',
 };
 
 export default function InspectionsPage() {
@@ -25,9 +25,9 @@ export default function InspectionsPage() {
         }
       >
         <p>
-          Inspection Only is a paid visit. Crossub inspectors attend ingoing, routine, outgoing and
+          Inspection Only is a paid visit. CROSSUB inspectors attend ingoing, routine, outgoing and
           open inspections, then the photos, notes and report stay on the property. Your agency can
-          also run the same tools without booking a Crossub inspector. It sits under{' '}
+          also run the same tools without booking a CROSSUB inspector. It sits under{' '}
           <a className="font-semibold text-[#007455]" href={siteLinks.propertyServices}>
             Property Services
           </a>
@@ -136,7 +136,7 @@ export default function InspectionsPage() {
               answer: (
                 <p>
                   No. The software and the inspection tools are free to use yourselves. Sending a
-                  Crossub inspector is Inspection Only, and that visit is paid. It is not the Full
+                  CROSSUB inspector is Inspection Only, and that visit is paid. It is not the Full
                   Service fee.
                 </p>
               ),
@@ -146,7 +146,7 @@ export default function InspectionsPage() {
               answer: (
                 <p>
                   No. The outgoing report supports the bond conversation. The agent or the tenant
-                  lodges and releases the bond through Rental Bonds Online. Crossub does not
+                  lodges and releases the bond through Rental Bonds Online. CROSSUB does not
                   collect it.
                 </p>
               ),

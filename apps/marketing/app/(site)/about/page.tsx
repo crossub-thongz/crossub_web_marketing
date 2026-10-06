@@ -4,9 +4,9 @@ import { ContactStrip, DualActions, FeatureGrid, PageHero, PageSection } from '@
 import { company, siteLinks } from '@/lib/site-links';
 
 export const metadata: Metadata = {
-  title: 'About Crossub',
+  title: 'About CROSSUB',
   description:
-    'Crossub is an Australian property company founded in 2018. Free software for agencies, with six years of Full Service experience and a team in North Sydney.',
+    'CROSSUB is an Australian property company founded in 2018. Free software for agencies, with six years of Full Service experience and a team in North Sydney.',
 };
 
 export default function AboutPage() {
@@ -25,7 +25,7 @@ export default function AboutPage() {
         }
       >
         <p>
-          Crossub was founded in Australia in 2018 to help real estate agencies carry a rent roll
+          CROSSUB was founded in Australia in 2018 to help real estate agencies carry a rent roll
           without giving the client relationship away. The software is free. The six years people
           ask about are six years of Full Service work.
         </p>
@@ -45,7 +45,7 @@ export default function AboutPage() {
               suburb by suburb. The platform itself is what an agency in another city logs in to.
             </p>
             <p className="mt-4 text-[16px] leading-[1.7] text-[#3E4660]">
-              Agents keep the landlord. Crossub takes the operational load the agency chooses:
+              Agents keep the landlord. CROSSUB takes the operational load the agency chooses:
               leasing administration, inspections, maintenance coordination, tenant messages and
               the admin around them. Notices and procedure follow the Residential Tenancy Act for
               the state the property is in.

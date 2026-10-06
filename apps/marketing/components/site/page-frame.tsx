@@ -114,7 +114,7 @@ export function ContactStrip() {
     <section id="contact" className="scroll-mt-28 px-5 pt-4 pb-20 md:px-6">
       <div className="mx-auto grid max-w-[1100px] gap-6 rounded-[36px] bg-white/80 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-10 md:grid-cols-3">
         <div>
-          <h2 className="text-[22px] font-semibold">Talk to Crossub</h2>
+          <h2 className="text-[22px] font-semibold">Talk to CROSSUB</h2>
           <p className="mt-2 text-[15px] leading-relaxed text-[#3E4660]">
             Head office in North Sydney. We reply from the addresses below.
           </p>

@@ -4,9 +4,9 @@ import { ContactStrip, FaqList, PageHero, PageSection } from '@/components/site/
 import { company, siteLinks } from '@/lib/site-links';
 
 export const metadata: Metadata = {
-  title: 'Help Centre | Crossub',
+  title: 'Help Centre | CROSSUB',
   description:
-    'Answers for agencies about Crossub software, Inspection Only, Full Service, compliance and how to get in touch.',
+    'Answers for agencies about CROSSUB software, Inspection Only, Full Service, compliance and how to get in touch.',
 };
 
 export default function HelpPage() {
@@ -27,7 +27,7 @@ export default function HelpPage() {
               answer: (
                 <p>
                   The property management software is free. Inspection Only and Full Service are
-                  paid services you add when you want people from Crossub involved. The figures are
+                  paid services you add when you want people from CROSSUB involved. The figures are
                   on the{' '}
                   <a className="font-semibold text-[#007455]" href={siteLinks.pricing}>
                     Service Pricing
@@ -37,10 +37,10 @@ export default function HelpPage() {
               ),
             },
             {
-              question: 'Where does Crossub work?',
+              question: 'Where does CROSSUB work?',
               answer: (
                 <p>
-                  Crossub was founded in Australia. We support agencies in New South Wales, Victoria
+                  CROSSUB was founded in Australia. We support agencies in New South Wales, Victoria
                   and Queensland, work in Europe, and are building a presence in New Zealand. The
                   head office is {company.street}, {company.locality}.
                 </p>
@@ -78,7 +78,7 @@ export default function HelpPage() {
               ),
             },
             {
-              question: 'Is agency data shared outside Crossub?',
+              question: 'Is agency data shared outside CROSSUB?',
               answer: (
                 <p>
                   Access is limited by role. We share personal information when the law requires it,
@@ -88,7 +88,7 @@ export default function HelpPage() {
               ),
             },
             {
-              question: 'Will landlords know Crossub is involved?',
+              question: 'Will landlords know CROSSUB is involved?',
               answer: (
                 <p>
                   Landlord conversations stay with your agency. Tenant-facing work can go out under
@@ -102,7 +102,7 @@ export default function HelpPage() {
                 <p>
                   The managing agreement, the tenancy agreement and any extension, the ledger,
                   tenant details, an ingoing inspection report, your document templates, email
-                  signature and logo. A Crossub account manager books the handover.
+                  signature and logo. A CROSSUB account manager books the handover.
                 </p>
               ),
             },

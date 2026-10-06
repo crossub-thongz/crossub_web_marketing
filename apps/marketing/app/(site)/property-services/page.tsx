@@ -4,7 +4,7 @@ import { ContactStrip, DualActions, FaqList, FeatureGrid, PageHero, PageSection 
 import { company, siteLinks } from '@/lib/site-links';
 
 export const metadata: Metadata = {
-  title: 'Property Services | Crossub',
+  title: 'Property Services | CROSSUB',
   description:
     'On-site rental inspections and day-to-day property management support for agencies, with admin, inspection and maintenance teams on the same records.',
 };
@@ -25,7 +25,7 @@ export default function PropertyServicesPage() {
         }
       >
         <p>
-          Property Services is the field side of Crossub: rental inspections, and property
+          Property Services is the field side of CROSSUB: rental inspections, and property
           management support for the daily rent roll. The agency keeps the landlord relationship.
           There is no lock-in contract.
         </p>
@@ -107,7 +107,7 @@ export default function PropertyServicesPage() {
               <li>Agency logo, layout and any extra checks the agency asks for.</li>
               <li>Photos, cleanliness, repair and maintenance issues, and safety hazards.</li>
               <li>The published standard is a returned report within 48 hours.</li>
-              <li>The file stays in Crossub, and the report can be shared or exported as a PDF.</li>
+              <li>The file stays in CROSSUB, and the report can be shared or exported as a PDF.</li>
             </ul>
           </article>
           <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
@@ -189,7 +189,7 @@ export default function PropertyServicesPage() {
               ),
             },
             {
-              question: 'Can Crossub collect the bond?',
+              question: 'Can CROSSUB collect the bond?',
               answer: (
                 <p>
                   No. The agent or the tenant lodges the bond through Rental Bonds Online. An

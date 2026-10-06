@@ -4,15 +4,15 @@ import { PageHero, PageSection } from '@/components/site/page-frame';
 import { company } from '@/lib/site-links';
 
 export const metadata: Metadata = {
-  title: 'Privacy Policy | Crossub',
+  title: 'Privacy Policy | CROSSUB',
   description:
-    'How Crossub collects, uses and protects personal information on this website and in the Crossub platform.',
+    'How CROSSUB collects, uses and protects personal information on this website and in the CROSSUB platform.',
 };
 
 const SECTIONS = [
   {
     title: 'Introduction',
-    body: 'Crossub is committed to protecting your privacy. This policy explains what personal information we collect, how we use it, and the choices you have.',
+    body: 'CROSSUB is committed to protecting your privacy. This policy explains what personal information we collect, how we use it, and the choices you have.',
   },
   {
     title: 'What we collect',
@@ -24,7 +24,7 @@ const SECTIONS = [
   },
   {
     title: 'Who we share it with',
-    body: 'We do not sell personal information. We share it when the law requires it, or when someone has to help us deliver a service you requested, such as a payment processor. Open-inspection forms collected in the Crossub inspection flow, including details submitted after a QR code is scanned, are sent to the Crossub agent platform and stored there. That information is used inside Crossub. It is not published or given to unrelated third parties.',
+    body: 'We do not sell personal information. We share it when the law requires it, or when someone has to help us deliver a service you requested, such as a payment processor. Open-inspection forms collected in the CROSSUB inspection flow, including details submitted after a QR code is scanned, are sent to the CROSSUB agent platform and stored there. That information is used inside CROSSUB. It is not published or given to unrelated third parties.',
   },
   {
     title: 'Security',
@@ -49,7 +49,7 @@ export default function PrivacyPage() {
     <main>
       <PageHero eyebrow="PRIVACY" title="Privacy policy">
         <p>
-          This is the Crossub privacy policy for the website and the platform. Questions go to{' '}
+          This is the CROSSUB privacy policy for the website and the platform. Questions go to{' '}
           <a className="font-semibold text-[#007455]" href={`mailto:${company.salesEmail}`}>
             {company.salesEmail}
           </a>

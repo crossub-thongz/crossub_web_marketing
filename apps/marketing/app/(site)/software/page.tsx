@@ -4,7 +4,7 @@ import { ContactStrip, DualActions, FaqList, FeatureGrid, PageHero, PageSection 
 import { siteLinks } from '@/lib/site-links';
 
 export const metadata: Metadata = {
-  title: 'Free property management software | Crossub',
+  title: 'Free property management software | CROSSUB',
   description:
     'Free property management software, plus the Agent Portal, tenant app and inspector app, all on the same property record.',
 };
@@ -72,7 +72,7 @@ export default function SoftwarePage() {
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
           <div className="space-y-4 text-[16px] leading-[1.7] text-[#3E4660]">
             <p>
-              Cross Inspect is Crossub’s inspection app. Inspectors and agency staff capture the
+              Cross Inspect is CROSSUB’s inspection app. Inspectors and agency staff capture the
               visit on site, then the report is edited, signed and shared from the same system.
             </p>
             <p>
@@ -178,7 +178,7 @@ export default function SoftwarePage() {
             </p>
             <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
               The same report is what the agent reads in the portal. Agency staff can run the
-              visit themselves, or book a Crossub inspector and use this same path.
+              visit themselves, or book a CROSSUB inspector and use this same path.
             </p>
           </article>
         </div>
@@ -212,7 +212,7 @@ export default function SoftwarePage() {
                 question: 'Can we run inspections ourselves?',
                 answer: (
                   <p>
-                    Yes. Your own staff can complete the visit in the app. Or you can book Crossub
+                    Yes. Your own staff can complete the visit in the app. Or you can book CROSSUB
                     inspectors and have the same report land on the property.
                   </p>
                 ),

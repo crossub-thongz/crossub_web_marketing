@@ -4,9 +4,9 @@ import { ContactStrip, DualActions, FaqList, FeatureGrid, PageHero, PageSection 
 import { company, siteLinks } from '@/lib/site-links';
 
 export const metadata: Metadata = {
-  title: 'Full Service | Crossub',
+  title: 'Full Service | CROSSUB',
   description:
-    'Paid day-to-day property management support for agencies: leasing, inspections, maintenance and admin, on the same Crossub records. Fee is 30% of the agency’s PM fee.',
+    'Paid day-to-day property management support for agencies: leasing, inspections, maintenance and admin, on the same CROSSUB records. Fee is 30% of the agency’s PM fee.',
 };
 
 export default function FullServicePage() {
@@ -42,7 +42,7 @@ export default function FullServicePage() {
           </article>
           <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
             <p className="text-[16px] leading-[1.7] text-[#3E4660]">
-              If your agency charges a landlord 5% + GST, Crossub’s fee is 1.5% + GST. That is 30%
+              If your agency charges a landlord 5% + GST, CROSSUB’s fee is 1.5% + GST. That is 30%
               of 5%, not a second full management fee.
             </p>
             <p className="mt-4 text-[16px] leading-[1.7] text-[#3E4660]">
@@ -120,10 +120,10 @@ export default function FullServicePage() {
         <FaqList
           items={[
             {
-              question: 'Can Crossub collect the bond?',
+              question: 'Can CROSSUB collect the bond?',
               answer: (
                 <p>
-                  No. Crossub does not collect or hold the rental bond. The agent or the tenant
+                  No. CROSSUB does not collect or hold the rental bond. The agent or the tenant
                   lodges it through Rental Bonds Online. An outgoing inspection can support the
                   claim. It does not move the money.
                 </p>
@@ -135,7 +135,7 @@ export default function FullServicePage() {
                 <p>
                   The maintenance team asks trusted tradies for quotes — typically three — and
                   sends them to the agent. The agent takes the quote to the landlord. After
-                  approval, Crossub books the work and watches it through. Urgent repairs are
+                  approval, CROSSUB books the work and watches it through. Urgent repairs are
                   called through on{' '}
                   <a className="font-semibold text-[#007455]" href={`tel:${company.emergencyTel}`}>
                     {company.emergencyDisplay}
@@ -148,7 +148,7 @@ export default function FullServicePage() {
               question: 'Do you speak to landlords?',
               answer: (
                 <p>
-                  No. Landlord contact stays with your agency. Crossub works behind the brand, as
+                  No. Landlord contact stays with your agency. CROSSUB works behind the brand, as
                   part of the operating team, and the team is local rather than offshore.
                 </p>
               ),

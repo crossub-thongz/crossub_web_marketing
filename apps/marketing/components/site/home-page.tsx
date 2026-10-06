@@ -297,7 +297,7 @@ export function HomePage() {
               Practical software, backed by experienced people.
             </p>
             <TextLink href={siteLinks.about} className="mt-6">
-              Meet Crossub
+              Meet CROSSUB
               <ArrowUpRight className="size-4" aria-hidden />
             </TextLink>
           </div>

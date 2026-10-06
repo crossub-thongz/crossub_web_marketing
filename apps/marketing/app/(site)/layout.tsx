@@ -13,7 +13,7 @@ const manrope = Manrope({
   display: 'swap',
 });
 
-const title = 'Crossub | Free property management software';
+const title = 'CROSSUB | Free property management software';
 const description =
   'Free property management software for your agency, powered by AI. Add Inspection Only or Full Service support whenever you need it.';
 
@@ -24,7 +24,7 @@ export const metadata: Metadata = {
   openGraph: {
     title,
     description,
-    siteName: 'Crossub',
+    siteName: 'CROSSUB',
     locale: 'en_AU',
     type: 'website',
   },

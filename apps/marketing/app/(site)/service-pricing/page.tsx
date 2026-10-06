@@ -4,7 +4,7 @@ import { ContactStrip, DualActions, FaqList, FeatureGrid, PageHero, PageSection 
 import { company, siteLinks } from '@/lib/site-links';
 
 export const metadata: Metadata = {
-  title: 'Service Pricing | Crossub',
+  title: 'Service Pricing | CROSSUB',
   description:
     'Full Service is 30% of the agency’s property management fee. Inspection Only is a separate paid visit. The software stays free.',
 };
@@ -40,7 +40,7 @@ export default function ServicePricingPage() {
             </p>
             <p className="mt-3 text-[18px] font-semibold">of your property management fee</p>
             <p className="mt-4 text-[16px] leading-[1.7] text-[#3E4660]">
-              If your agency charges a landlord 5% + GST, Crossub’s fee is 1.5% + GST. That is 30%
+              If your agency charges a landlord 5% + GST, CROSSUB’s fee is 1.5% + GST. That is 30%
               of 5%.
             </p>
             <p className="mt-4 text-[16px] leading-[1.7] text-[#3E4660]">
@@ -134,8 +134,8 @@ export default function ServicePricingPage() {
       <PageSection eyebrow="HOW THE FEE IS READ" title="One management fee, split.">
         <ol className="grid gap-4 md:grid-cols-3">
           {[
-            ['1', 'You set the landlord fee', 'The percentage on the management agreement is yours. Crossub’s Full Service fee is calculated from that number.'],
-            ['2', 'We take 30% of it', 'A 5% + GST management fee becomes 1.5% + GST to Crossub. A fee under 4% + GST is outside the partnership.'],
+            ['1', 'You set the landlord fee', 'The percentage on the management agreement is yours. CROSSUB’s Full Service fee is calculated from that number.'],
+            ['2', 'We take 30% of it', 'A 5% + GST management fee becomes 1.5% + GST to CROSSUB. A fee under 4% + GST is outside the partnership.'],
             ['3', 'Inspection Only stands apart', 'A single inspection is not billed as 30% of the management fee. Ask sales for that visit.'],
           ].map(([step, title, body]) => (
             <li
@@ -179,7 +179,7 @@ export default function ServicePricingPage() {
               answer: (
                 <p>
                   The maintenance team asks trusted tradies for quotes — typically three — and
-                  sends them to the agent. After the landlord approves, Crossub books the work.
+                  sends them to the agent. After the landlord approves, CROSSUB books the work.
                   Urgent repairs are called through on{' '}
                   <a className="font-semibold text-[#007455]" href={`tel:${company.emergencyTel}`}>
                     {company.emergencyDisplay}

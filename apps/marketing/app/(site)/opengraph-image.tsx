@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og';
 
-export const alt = 'Crossub — free property management software, powered by AI';
+export const alt = 'CROSSUB — free property management software, powered by AI';
 export const size = { width: 1200, height: 630 };
 export const contentType = 'image/png';
 
