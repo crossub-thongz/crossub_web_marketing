@@ -6,7 +6,7 @@ import { company, siteLinks } from '@/lib/site-links';
 export const metadata: Metadata = {
   title: 'Full Service | Crossub',
   description:
-    'Paid day-to-day property management support for agencies. Same platform and same records, with Crossub people handling the operational work.',
+    'Paid day-to-day property management support for agencies: leasing, inspections, maintenance and admin, on the same Crossub records. Fee is 30% of the agency’s PM fee.',
 };
 
 export default function FullServicePage() {
@@ -14,7 +14,7 @@ export default function FullServicePage() {
     <main>
       <PageHero
         eyebrow="PAID SERVICE"
-        title="Day-to-day support, on the same records."
+        title="The daily rent roll, with your agency still in charge."
         actions={
           <DualActions
             primaryHref={siteLinks.bookDemo}
@@ -25,55 +25,78 @@ export default function FullServicePage() {
         }
       >
         <p>
-          Full Service is paid support for your agency’s daily property management. Start with the
-          free software, then add our team when the portfolio needs more hands. You keep control of
-          the agency and the landlord relationship.
+          Full Service is paid support for day-to-day property management. Leasing, inspections,
+          maintenance and admin are handled by a local team, on the same records as the free
+          software. Landlord conversations stay with your agency. There is no lock-in contract.
         </p>
       </PageHero>
 
-      <PageSection eyebrow="WHAT THE TEAM HANDLES" title="An extension of the agency, not a replacement.">
+      <PageSection eyebrow="THE FEE" title="30% of the management fee you already charge.">
+        <div className="grid gap-4 lg:grid-cols-[0.8fr_1.2fr]">
+          <article className="rounded-[28px] bg-[#E7FBF4] p-7 ring-1 ring-[#008F65]/10 sm:p-8">
+            <p className="text-[13px] font-bold tracking-[0.14em] text-[#007455]">FULL SERVICE</p>
+            <p className="mt-3 text-[64px] leading-none font-semibold tracking-[-0.04em] text-[#008F65]">
+              30%
+            </p>
+            <p className="mt-3 text-[16px] font-semibold">of your property management fee</p>
+          </article>
+          <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
+            <p className="text-[16px] leading-[1.7] text-[#3E4660]">
+              If your agency charges a landlord 5% + GST, Crossub’s fee is 1.5% + GST. That is 30%
+              of 5%, not a second full management fee.
+            </p>
+            <p className="mt-4 text-[16px] leading-[1.7] text-[#3E4660]">
+              We partner with agencies whose own management fee to landlords is at least 4% + GST.
+              That keeps the split workable for both sides. Inspection Only is a separate paid
+              visit, not this percentage.
+            </p>
+          </article>
+        </div>
+      </PageSection>
+
+      <PageSection eyebrow="WHAT THE TEAM DOES" title="Departments, not a general inbox.">
         <FeatureGrid
           items={[
             {
-              title: 'Administration',
-              body: 'Repetitive admin, data entry and follow-up, done by people who work in property management every day.',
+              title: 'Leasing',
+              body: 'Applications, reference checks, agreement checks and renewals, prepared so the agent can issue and decide.',
               tone: 'mint',
             },
             {
-              title: 'Leasing',
-              body: 'Applications, agreements and renewals, coordinated with the property record.',
+              title: 'Inspections',
+              body: 'Ingoing, routine, outgoing and open inspections organised, attended and reported, including long-distance properties.',
               tone: 'lilac',
             },
             {
               title: 'Maintenance',
-              body: 'Tenants report a job, quotes are gathered for the agent, and the approved work is arranged and watched.',
+              body: 'The tenant reports the job. The team gathers quotes for the agent to take to the landlord, then arranges the approved work.',
               tone: 'cream',
             },
             {
-              title: 'Inspections',
-              body: 'Ingoing, routine and outgoing visits can sit inside the same service, with the report filed on the property.',
+              title: 'Administration',
+              body: 'The repetitive entry, chasing and filing, done by people who work in residential property management.',
               tone: 'mint',
             },
             {
-              title: 'Tenant communication',
-              body: 'Messages go out under the agency’s brand. SMS and email history stays on the record for the agent to see.',
+              title: 'Tenant contact',
+              body: 'Messages can go out under the agency brand. The SMS and email history stays on the property for the agent to read.',
               tone: 'lilac',
             },
             {
-              title: 'You stay the decision maker',
-              body: 'Approvals, landlord conversations and the client relationship remain with your agency.',
+              title: 'Keys',
+              body: 'Key bookings and returns are recorded, so the office can see who has a set.',
               tone: 'cream',
             },
           ]}
         />
       </PageSection>
 
-      <PageSection eyebrow="HOW IT WORKS" title="Same platform. Same data. More support.">
+      <PageSection eyebrow="HOW A JOB MOVES" title="You approve. The team carries it out.">
         <ol className="grid gap-4 md:grid-cols-3">
           {[
-            ['1', 'Start with the software', 'Your properties and history live in Crossub before any paid service is added.'],
-            ['2', 'Hand over what we need', 'Agreements, ledgers, tenant details and your templates, so the team works in your way.'],
-            ['3', 'Watch the work', 'Use the agent login to see tasks, reports and messages, and to approve what needs you.'],
+            ['1', 'Hand the property over', 'Agreement, lease and extensions, ledger, tenant details, an ingoing report, your templates, email signature and logo.'],
+            ['2', 'Work lands in the right team', 'Admin, leasing, inspections and maintenance each have people for that work. Urgent repairs use a separate line.'],
+            ['3', 'You stay the decision maker', 'Quotes, lease decisions and anything for the landlord come back to the agency. The Agent Portal shows the live task.'],
           ].map(([step, title, body]) => (
             <li
               key={step}
@@ -89,55 +112,49 @@ export default function FullServicePage() {
         </ol>
       </PageSection>
 
-      <PageSection eyebrow="QUESTIONS" title="Clear limits, so nothing is assumed.">
+      <PageSection eyebrow="LIMITS" title="What we will not take over.">
         <FaqList
           items={[
             {
               question: 'Can Crossub collect the bond?',
               answer: (
                 <p>
-                  No. Crossub does not collect the rental bond. The agent or the tenant lodges it
-                  through Rental Bonds Online.
+                  No. Crossub does not collect or hold the rental bond. The agent or the tenant
+                  lodges it through Rental Bonds Online. An outgoing inspection can support the
+                  claim. It does not move the money.
                 </p>
               ),
             },
             {
-              question: 'How does maintenance get approved?',
+              question: 'How are repairs quoted?',
               answer: (
                 <p>
-                  When a repair request comes in, the maintenance team gathers quotes from tradies
-                  for the agent to take to the landlord. Once it is approved, Crossub arranges the
-                  job and follows it through.
-                </p>
-              ),
-            },
-            {
-              question: 'What if a repair is urgent?',
-              answer: (
-                <p>
-                  Call the urgent repairs line on{' '}
+                  The maintenance team asks trusted tradies for quotes — typically three — and
+                  sends them to the agent. The agent takes the quote to the landlord. After
+                  approval, Crossub books the work and watches it through. Urgent repairs are
+                  called through on{' '}
                   <a className="font-semibold text-[#007455]" href={`tel:${company.emergencyTel}`}>
                     {company.emergencyDisplay}
                   </a>
-                  . The team helps tenants with those enquiries and keeps the agency in the loop.
+                  .
                 </p>
               ),
             },
             {
-              question: 'Will landlords be contacted by Crossub?',
+              question: 'Do you speak to landlords?',
               answer: (
                 <p>
-                  Landlord conversations stay with your agency. Crossub works behind the agency, as
-                  part of the operating team.
+                  No. Landlord contact stays with your agency. Crossub works behind the brand, as
+                  part of the operating team, and the team is local rather than offshore.
                 </p>
               ),
             },
             {
-              question: 'Is Full Service included with the free software?',
+              question: 'Is there a lock-in?',
               answer: (
                 <p>
-                  No. The software is free. Full Service is a paid team that supports the
-                  day-to-day work when you choose to add it.
+                  No lock-in contract. You can use the free software on its own, add Inspection
+                  Only for visits, or use Full Service for the daily rent roll.
                 </p>
               ),
             },

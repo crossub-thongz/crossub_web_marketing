@@ -16,7 +16,10 @@ export const siteLinks = {
   contact: '/help#contact',
   privacy: '/privacy',
   bookDemo: '/book-a-demo',
-  login: env('NEXT_PUBLIC_LOGIN_URL', 'https://agent.crossub.com.au/'),
+  login: env(
+    'NEXT_PUBLIC_LOGIN_URL',
+    'https://crossub-mobile-agent-prod.onrender.com/login',
+  ),
   startFree: env(
     'NEXT_PUBLIC_REGISTER_URL',
     'https://crossub-mobile-agent-prod.onrender.com/register',

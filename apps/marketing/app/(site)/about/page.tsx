@@ -1,12 +1,12 @@
 import type { Metadata } from 'next';
 
-import { ContactStrip, DualActions, PageHero, PageSection } from '@/components/site/page-frame';
-import { siteLinks } from '@/lib/site-links';
+import { ContactStrip, DualActions, FeatureGrid, PageHero, PageSection } from '@/components/site/page-frame';
+import { company, siteLinks } from '@/lib/site-links';
 
 export const metadata: Metadata = {
   title: 'About Crossub',
   description:
-    'Crossub is an Australian property company founded in 2018. Free property management software, with six years of Full Service experience behind it.',
+    'Crossub is an Australian property company founded in 2018. Free software for agencies, with six years of Full Service experience and a team in North Sydney.',
 };
 
 export default function AboutPage() {
@@ -14,7 +14,7 @@ export default function AboutPage() {
     <main>
       <PageHero
         eyebrow="ABOUT CROSSUB"
-        title="Practical software, backed by experienced people."
+        title="An Australian team behind the software."
         actions={
           <DualActions
             primaryHref={siteLinks.startFree}
@@ -25,56 +25,120 @@ export default function AboutPage() {
         }
       >
         <p>
-          Crossub was founded in Australia in 2018. The software is free for agencies. The six
-          years behind it are six years of Full Service work, not six years of a software product.
+          Crossub was founded in Australia in 2018 to help real estate agencies carry a rent roll
+          without giving the client relationship away. The software is free. The six years people
+          ask about are six years of Full Service work.
         </p>
       </PageHero>
 
-      <PageSection eyebrow="THE COMPANY" title="Built beside agencies, not instead of them.">
-        <div className="grid gap-4 lg:grid-cols-[1.2fr_0.8fr]">
+      <PageSection eyebrow="WHERE WE WORK" title="Started in Sydney. Used by agencies beyond it.">
+        <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
           <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
             <p className="text-[16px] leading-[1.7] text-[#3E4660]">
-              What started as a local property team in New South Wales now supports agencies in
-              NSW, Victoria and Queensland, with work in Europe and a growing presence in New
-              Zealand. The point has stayed the same: agents keep the client relationship, and
-              Crossub takes on the operational load they choose to hand over.
+              The company began as a local property team and now supports agencies in New South
+              Wales, Victoria and Queensland. There is also work in Europe, and a presence being
+              built in New Zealand. Inspectors and the day-to-day team operate from Australia. The
+              work is not sent offshore.
             </p>
             <p className="mt-4 text-[16px] leading-[1.7] text-[#3E4660]">
-              The platform holds the portfolio, leasing, maintenance and inspection records. AI
-              helps prepare the admin. People who have done the day-to-day work sit behind the
-              paid services.
+              Head office is {company.street}, {company.locality}. On-site inspections are confirmed
+              suburb by suburb. The platform itself is what an agency in another city logs in to.
+            </p>
+            <p className="mt-4 text-[16px] leading-[1.7] text-[#3E4660]">
+              Agents keep the landlord. Crossub takes the operational load the agency chooses:
+              leasing administration, inspections, maintenance coordination, tenant messages and
+              the admin around them. Notices and procedure follow the Residential Tenancy Act for
+              the state the property is in.
             </p>
           </article>
-          <article className="rounded-[28px] bg-[#E7FBF4] p-7 ring-1 ring-[#008F65]/10 sm:p-8">
-            <p className="text-[13px] font-bold tracking-[0.14em] text-[#007455]">FULL SERVICE</p>
-            <p className="mt-3 text-[72px] leading-none font-semibold tracking-[-0.05em] text-[#008F65]">
-              6
-            </p>
-            <p className="mt-2 text-[16px] font-semibold">years of Full Service experience</p>
-            <p className="mt-3 text-[15px] leading-relaxed text-[#3E4660]">
-              That figure is the team’s Full Service work. It is not a claim that the software has
-              been on the market for six years.
-            </p>
-          </article>
+          <div className="grid gap-4">
+            <article className="rounded-[28px] bg-[#E7FBF4] p-7 ring-1 ring-[#008F65]/10">
+              <p className="text-[13px] font-bold tracking-[0.14em] text-[#007455]">FOUNDED</p>
+              <p className="mt-2 text-[56px] leading-none font-semibold tracking-[-0.04em] text-[#171E4B]">
+                2018
+              </p>
+              <p className="mt-2 text-[15px] leading-relaxed text-[#3E4660]">
+                Australian company. The founding year is not the same claim as the Full Service
+                experience below.
+              </p>
+            </article>
+            <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white">
+              <p className="text-[13px] font-bold tracking-[0.14em] text-[#007455]">FULL SERVICE</p>
+              <p className="mt-2 text-[56px] leading-none font-semibold tracking-[-0.04em] text-[#008F65]">
+                6
+              </p>
+              <p className="mt-2 text-[15px] leading-relaxed text-[#3E4660]">
+                Years the team has done Full Service property management for agencies.
+              </p>
+            </article>
+          </div>
         </div>
       </PageSection>
 
-      <PageSection eyebrow="HOW WE WORK" title="Four things we hold to.">
-        <div className="grid gap-4 md:grid-cols-2">
-          {[
-            ['Partnership', 'We support the agency as an extension of the team. We do not take the landlord relationship.'],
-            ['Transparency', 'Agents can see the tasks, reports and message history, and they approve what needs a decision.'],
-            ['Care with the work', 'Notices, repairs and inspections follow the tenancy rules of the state the property is in.'],
-            ['A clear offer', 'Software is free. Inspection Only and Full Service are paid, and they are labelled that way.'],
-          ].map(([title, body]) => (
-            <article
-              key={title}
-              className="rounded-[24px] bg-white/85 p-6 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white"
-            >
-              <h3 className="text-[18px] font-semibold">{title}</h3>
-              <p className="mt-2 text-[15px] leading-[1.6] text-[#3E4660]">{body}</p>
-            </article>
-          ))}
+      <PageSection eyebrow="HOW WE WORK WITH AN AGENCY" title="Support, with the agent still named on the file.">
+        <FeatureGrid
+          items={[
+            {
+              title: 'Partnership',
+              body: 'We sit beside the agency. We do not take the landlord, and we do not compete for the management.',
+              tone: 'mint',
+            },
+            {
+              title: 'Transparency',
+              body: 'Tasks, inspection reports and the SMS and email history are visible in the Agent Portal. Decisions that need the agency are sent back.',
+              tone: 'lilac',
+            },
+            {
+              title: 'A clear offer',
+              body: 'Software is free. Inspection Only is a paid visit. Full Service is 30% of the agency’s own management fee, with no lock-in.',
+              tone: 'cream',
+            },
+            {
+              title: 'Local people',
+              body: 'The service team is trained in Australian residential tenancy work. It is not a general virtual-assistant desk.',
+              tone: 'mint',
+            },
+            {
+              title: 'The agency’s brand',
+              body: 'Reports can carry the agency logo. Tenant-facing messages can go out in the agency’s name.',
+              tone: 'lilac',
+            },
+            {
+              title: 'Room to grow the roll',
+              body: 'The same number of property managers can cover more properties when travel, admin and routine repairs are no longer all on their desk.',
+              tone: 'cream',
+            },
+          ]}
+        />
+      </PageSection>
+
+      <PageSection eyebrow="THE OFFICE" title="North Sydney.">
+        <div className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
+          <p className="text-[18px] font-semibold">
+            {company.street}
+            <br />
+            {company.locality}
+          </p>
+          <p className="mt-4 text-[16px] leading-relaxed text-[#3E4660]">
+            <a className="font-semibold text-[#007455]" href={`mailto:${company.email}`}>
+              {company.email}
+            </a>
+            <span className="mx-2 text-[#171E4B]/30">/</span>
+            <a className="font-semibold text-[#007455]" href={`tel:${company.phoneTel}`}>
+              {company.phoneDisplay}
+            </a>
+          </p>
+          <p className="mt-2 text-[15px] text-[#3E4660]">
+            Inspection enquiries:{' '}
+            <a className="font-semibold text-[#007455]" href={`mailto:${company.salesEmail}`}>
+              {company.salesEmail}
+            </a>
+            . Urgent repairs:{' '}
+            <a className="font-semibold text-[#007455]" href={`tel:${company.emergencyTel}`}>
+              {company.emergencyDisplay}
+            </a>
+            .
+          </p>
         </div>
       </PageSection>
 
