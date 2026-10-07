@@ -8,7 +8,7 @@ import { siteLinks } from '@/lib/site-links';
 
 function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <p className="text-[12px] font-semibold tracking-[0.16em] text-[#007455]">{children}</p>
+    <p className="text-[14px] font-bold tracking-[0.16em] text-[#007455]">{children}</p>
   );
 }
 
@@ -28,31 +28,31 @@ const STEPS = [
     title: 'Understand',
     body: 'Make sense of requests, photos and reports.',
     chip: 'bg-[#E0F7EE] text-[#007455]',
-    place: 'lg:absolute lg:top-[108px] lg:left-0 lg:w-[220px] lg:origin-top-left lg:scale-110',
+    place: 'lg:absolute lg:top-4 lg:left-0 lg:w-[270px]',
   },
   {
     n: '02',
     title: 'Prepare',
     body: 'Draft responses and organise next steps.',
     chip: 'bg-[#FFF4D8] text-[#7A5B12]',
-    place: 'lg:absolute lg:top-0 lg:right-6 lg:w-[210px] lg:origin-top-right lg:scale-110',
+    place: 'lg:absolute lg:top-0 lg:right-0 lg:w-[260px]',
   },
   {
     n: '03',
     title: 'Review',
     body: 'Flag what needs your team’s attention.',
     chip: 'bg-[#F1E8FF] text-[#5C4B8A]',
-    place: 'lg:absolute lg:top-[322px] lg:left-[128px] lg:w-[320px] lg:origin-top-left lg:scale-110',
+    place: 'lg:absolute lg:top-[220px] lg:left-1/2 lg:w-[300px] lg:-translate-x-1/2',
   },
 ] as const;
 
 export function HomePage() {
   return (
     <main id="main">
-      <section className="mx-auto grid max-w-[1200px] items-center gap-10 px-5 pt-10 pb-20 md:px-6 md:pt-16 md:pb-28 lg:grid-cols-[1.05fr_0.95fr] lg:gap-6 lg:pt-14">
+      <section className="mx-auto grid max-w-[1600px] items-center gap-10 px-5 pt-4 pb-20 md:px-6 md:pb-28 lg:grid-cols-[minmax(0,40rem)_minmax(0,1fr)] lg:items-center lg:gap-4 lg:pb-32">
         <div>
           <Eyebrow>FREE SOFTWARE. REAL EXPERTISE.</Eyebrow>
-          <h1 className="mt-4 max-w-[640px] text-[40px] leading-[1.08] font-semibold tracking-[-0.035em] text-[#171E4B] sm:text-[52px] lg:text-[60px]">
+          <h1 className="mt-6 max-w-[640px] text-[40px] leading-[1.08] font-semibold tracking-[-0.035em] text-[#171E4B] sm:text-[52px] lg:text-[60px]">
             Property management.
             <span className="block">Powered by AI.</span>
             <span className="relative mt-1 inline-block">
@@ -60,11 +60,11 @@ export function HomePage() {
               <Scribble />
             </span>
           </h1>
-          <p className="mt-5 max-w-[520px] text-[17px] leading-[1.6] text-[#62697C] sm:text-[18px]">
+          <p className="mt-6 max-w-[520px] text-[17px] leading-[1.6] text-[#62697C] sm:text-[18px]">
             Free property management software for your agency. Add inspection or Full Service
             support whenever you need it.
           </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <PrimaryLink href={siteLinks.startFree} className="w-full sm:w-auto">
               Start for free
             </PrimaryLink>
@@ -76,19 +76,19 @@ export function HomePage() {
         <HeroArt />
       </section>
 
-      <section id="solutions" tabIndex={-1} className="rise scroll-mt-28 px-5 py-16 outline-none md:px-6 md:py-24 lg:py-28">
-        <div className="mx-auto max-w-[1200px]">
+      <section id="solutions" tabIndex={-1} className="rise scroll-mt-28 px-5 py-16 outline-none md:px-6 md:py-28 lg:py-32">
+        <div className="mx-auto max-w-[1600px]">
           <div className="mx-auto max-w-2xl text-center">
             <Eyebrow>THREE WAYS TO GROW WITH CROSSUB</Eyebrow>
-            <h2 className="mt-3 text-[32px] leading-[1.15] font-semibold tracking-[-0.03em] sm:text-[40px]">
+            <h2 className="mt-5 text-[34px] leading-[1.15] font-bold tracking-[-0.03em] sm:text-[42px]">
               Start Free. Scale Your Way.
             </h2>
-            <p className="mt-4 text-[17px] leading-[1.6] text-[#62697C]">
+            <p className="mt-5 text-[17px] leading-[1.6] text-[#62697C]">
               Your software. Your agency. Your choice of support.
             </p>
           </div>
 
-          <div className="relative mt-12 lg:mt-16">
+          <div className="relative mt-14 lg:mt-20">
             <img
               src="/site/png/dots-mint.png"
               alt=""
@@ -99,8 +99,8 @@ export function HomePage() {
               alt=""
               className="pointer-events-none absolute -top-8 -right-4 hidden w-16 lg:block"
             />
-            <div className="relative grid items-stretch gap-5 lg:grid-cols-3 lg:gap-6">
-              <article className="order-2 flex h-full flex-col rounded-[26px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5 lg:order-1">
+            <div className="relative grid items-stretch gap-6 lg:grid-cols-3 lg:gap-8">
+              <article className="order-2 flex h-full flex-col items-center rounded-[26px] bg-white p-7 text-center shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5 lg:order-1">
                 <img src="/site/png/service-inspection.png" alt="" className="size-16" />
                 <p className="mt-5 w-fit rounded-full bg-[#F4F0FF] px-2.5 py-1 text-[11px] font-semibold tracking-[0.08em] text-[#5C4B8A]">
                   ON-DEMAND SERVICE
@@ -115,7 +115,7 @@ export function HomePage() {
                 </TextLink>
               </article>
 
-              <article className="order-1 flex h-full flex-col rounded-[26px] bg-[#E7FBF4] p-7 shadow-[0_18px_44px_rgba(0,143,101,0.12)] ring-1 ring-[#008F65]/10 lg:order-2 lg:-translate-y-8">
+              <article className="order-1 flex h-full flex-col items-center rounded-[26px] bg-[#E7FBF4] p-7 text-center shadow-[0_18px_44px_rgba(0,143,101,0.12)] ring-1 ring-[#008F65]/10 lg:order-2 lg:-translate-y-8">
                 <img src="/site/png/service-home.png" alt="" className="size-16" />
                 <p className="mt-5 w-fit rounded-full bg-white px-2.5 py-1 text-[11px] font-semibold tracking-[0.08em] text-[#007455]">
                   FREE
@@ -123,7 +123,7 @@ export function HomePage() {
                 <h3 className="mt-3 text-[22px] font-semibold tracking-[-0.02em]">
                   Property Management Software
                 </h3>
-                <p className="mt-2 text-[16px] leading-[1.6] text-[#3E4660]">
+                <p className="mt-2 text-[16px] leading-[1.6] text-[#62697C]">
                   Manage your portfolio, leasing and maintenance with AI-powered tools.
                 </p>
                 <a
@@ -136,7 +136,7 @@ export function HomePage() {
                 </a>
               </article>
 
-              <article className="order-3 flex h-full flex-col rounded-[26px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5">
+              <article className="order-3 flex h-full flex-col items-center rounded-[26px] bg-white p-7 text-center shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5">
                 <img src="/site/png/service-people.png" alt="" className="size-16" />
                 <p className="mt-5 w-fit rounded-full bg-[#FFF8E8] px-2.5 py-1 text-[11px] font-semibold tracking-[0.08em] text-[#8A6414]">
                   EXPERT SUPPORT
@@ -155,11 +155,11 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="ai" tabIndex={-1} className="rise scroll-mt-28 px-5 py-16 outline-none md:px-6 md:py-24 lg:py-28">
-        <div className="mx-auto grid max-w-[1200px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <section id="ai" tabIndex={-1} className="rise scroll-mt-28 px-5 py-16 outline-none md:px-6 md:py-28 lg:py-32">
+        <div className="mx-auto grid max-w-[1600px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div>
             <Eyebrow>BUILT-IN INTELLIGENCE</Eyebrow>
-            <h2 className="mt-3 text-[32px] leading-[1.15] font-semibold tracking-[-0.03em] sm:text-[40px]">
+            <h2 className="mt-3 text-[34px] leading-[1.15] font-bold tracking-[-0.03em] sm:text-[42px]">
               AI Moves The Work Forward.
             </h2>
             <p className="mt-4 max-w-xl text-[17px] leading-[1.6] text-[#62697C]">
@@ -170,22 +170,22 @@ export function HomePage() {
               See how it works
             </SecondaryLink>
           </div>
-          <div id="ai-steps" className="relative mx-auto w-full max-w-[600px] overflow-visible lg:h-[600px]">
+          <div id="ai-steps" className="relative mx-auto w-full max-w-[640px] overflow-visible lg:h-[480px]">
             <img
               src="/site/png/glass-square.png"
               alt=""
-              className="pointer-events-none absolute -top-3 right-6 z-0 hidden w-14 lg:block"
+              className="pointer-events-none absolute -top-2 right-0 z-0 hidden w-14 lg:block"
             />
             <img
               src="/site/png/dots-mint.png"
               alt=""
-              className="pointer-events-none absolute bottom-28 left-2 z-0 hidden w-20 lg:block"
+              className="pointer-events-none absolute bottom-6 left-0 z-0 hidden w-20 lg:block"
             />
             <div className="relative flex flex-col gap-4 lg:block lg:h-full">
               {STEPS.map((step) => (
                 <article
                   key={step.n}
-                  className={`relative z-10 rounded-[26px] bg-white p-6 shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5 ${step.place}`}
+                  className={`relative z-10 flex flex-col items-center rounded-[26px] bg-white p-6 text-center shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5 ${step.place}`}
                 >
                   <span className={`grid size-14 place-items-center rounded-full text-[15px] font-bold ${step.chip}`}>
                     {step.n}
@@ -199,14 +199,14 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="support" tabIndex={-1} className="rise scroll-mt-28 px-5 py-16 outline-none md:px-6 md:py-24 lg:py-28">
-        <div className="mx-auto grid max-w-[1200px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <section id="support" tabIndex={-1} className="rise scroll-mt-28 px-5 py-16 outline-none md:px-6 md:py-28 lg:py-32">
+        <div className="mx-auto grid max-w-[1600px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="order-2 lg:order-1">
             <SupportCluster />
           </div>
           <div className="order-1 lg:order-2">
             <Eyebrow>FLEXIBLE SUPPORT</Eyebrow>
-            <h2 className="mt-3 text-[32px] leading-[1.15] font-semibold tracking-[-0.03em] sm:text-[40px]">
+            <h2 className="mt-3 text-[34px] leading-[1.15] font-bold tracking-[-0.03em] sm:text-[42px]">
               Same Platform. Same Data. More Support.
             </h2>
             <p className="mt-4 max-w-xl text-[17px] leading-[1.6] text-[#62697C]">
@@ -231,11 +231,11 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="inspections" tabIndex={-1} className="rise scroll-mt-28 px-5 py-16 outline-none md:px-6 md:py-24 lg:py-28">
-        <div className="mx-auto grid max-w-[1200px] items-center gap-12 lg:grid-cols-2 lg:gap-10">
+      <section id="inspections" tabIndex={-1} className="rise scroll-mt-28 px-5 py-16 outline-none md:px-6 md:py-28 lg:py-32">
+        <div className="mx-auto grid max-w-[1600px] items-center gap-12 lg:grid-cols-2 lg:gap-10">
           <div>
             <Eyebrow>SOFTWARE + ON-SITE SUPPORT</Eyebrow>
-            <h2 className="mt-3 text-[32px] leading-[1.15] font-semibold tracking-[-0.03em] sm:text-[40px]">
+            <h2 className="mt-3 text-[34px] leading-[1.15] font-bold tracking-[-0.03em] sm:text-[42px]">
               Every Inspection, Connected.
             </h2>
             <p className="mt-4 max-w-xl text-[17px] leading-[1.6] text-[#62697C]">
@@ -250,14 +250,14 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="experience" tabIndex={-1} className="rise scroll-mt-28 px-5 py-16 outline-none md:px-6 md:py-24 lg:py-28">
-        <div className="mx-auto grid max-w-[1200px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <section id="experience" tabIndex={-1} className="rise scroll-mt-28 px-5 py-16 outline-none md:px-6 md:py-28 lg:py-32">
+        <div className="mx-auto grid max-w-[1600px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <div className="order-2 lg:order-1">
             <ExperienceCard />
           </div>
           <div className="order-1 lg:order-2">
             <Eyebrow>EXPERIENCE BEHIND THE PLATFORM</Eyebrow>
-            <h2 className="mt-3 text-[32px] leading-[1.15] font-semibold tracking-[-0.03em] sm:text-[40px]">
+            <h2 className="mt-3 text-[34px] leading-[1.15] font-bold tracking-[-0.03em] sm:text-[42px]">
               Real Experience. Real Support.
             </h2>
             <p className="mt-4 max-w-xl text-[17px] leading-[1.6] text-[#62697C]">
@@ -276,7 +276,7 @@ export function HomePage() {
 
       <section className="rise px-5 pt-6 pb-20 md:px-6 md:pb-28">
         <div
-          className="relative mx-auto max-w-[1200px] overflow-hidden rounded-[48px] bg-cover bg-center px-6 py-16 text-center sm:px-12 sm:py-20"
+          className="relative mx-auto max-w-[1600px] overflow-hidden rounded-[48px] bg-cover bg-center px-6 py-16 text-center sm:px-12 sm:py-20"
           style={{ backgroundImage: 'url(/site/png/cta-panel.png)' }}
         >
           <img
@@ -286,11 +286,11 @@ export function HomePage() {
           />
           <div className="relative mx-auto max-w-2xl">
             <Eyebrow>YOUR NEXT CHAPTER</Eyebrow>
-            <h2 className="mt-3 text-[32px] leading-[1.15] font-semibold tracking-[-0.03em] sm:text-[44px]">
+            <h2 className="mt-3 text-[34px] leading-[1.15] font-bold tracking-[-0.03em] sm:text-[46px]">
               Start free today.
               <span className="block">Grow with us, your way.</span>
             </h2>
-            <p className="mt-4 text-[17px] leading-[1.6] text-[#3E4660]">
+            <p className="mt-4 text-[17px] leading-[1.6] text-[#62697C]">
               Free software, with expert support when you need it.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

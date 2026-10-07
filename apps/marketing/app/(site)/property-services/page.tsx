@@ -36,7 +36,7 @@ export default function PropertyServicesPage() {
           <article className="flex flex-col rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
             <p className="text-[13px] font-bold tracking-[0.14em] text-[#007455]">RENTAL INSPECTION</p>
             <h3 className="mt-3 text-[24px] font-semibold tracking-[-0.02em]">Inspection Only</h3>
-            <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="mt-3 text-[16px] leading-[1.7] text-[#62697C]">
               Ingoing, routine, outgoing and open homes, attended on site. Reports come back with
               the agency’s branding, photos, and notes on repairs and safety. The visit is a paid
               service on its own.
@@ -50,7 +50,7 @@ export default function PropertyServicesPage() {
               PROPERTY MANAGEMENT SUPPORT
             </p>
             <h3 className="mt-3 text-[24px] font-semibold tracking-[-0.02em]">Full Service</h3>
-            <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="mt-3 text-[16px] leading-[1.7] text-[#62697C]">
               Leasing administration, inspections, maintenance coordination and the admin around
               them, done by a local team. You still approve quotes, leases and anything that goes
               to the landlord.
@@ -103,7 +103,7 @@ export default function PropertyServicesPage() {
         <div className="grid gap-4 lg:grid-cols-2">
           <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
             <h3 className="text-[20px] font-semibold">What the report covers</h3>
-            <ul className="mt-4 space-y-3 text-[16px] leading-[1.6] text-[#3E4660]">
+            <ul className="mt-4 space-y-3 text-[16px] leading-[1.6] text-[#62697C]">
               <li>Agency logo, layout and any extra checks the agency asks for.</li>
               <li>Photos, cleanliness, repair and maintenance issues, and safety hazards.</li>
               <li>The published standard is a returned report within 48 hours.</li>
@@ -112,7 +112,7 @@ export default function PropertyServicesPage() {
           </article>
           <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
             <h3 className="text-[20px] font-semibold">Who attends</h3>
-            <ul className="mt-4 space-y-3 text-[16px] leading-[1.6] text-[#3E4660]">
+            <ul className="mt-4 space-y-3 text-[16px] leading-[1.6] text-[#62697C]">
               <li>Inspectors are trained, know the relevant legislation, and hold a property management certificate.</li>
               <li>They are insured, and they are booked to arrive early.</li>
               <li>Cross Inspect is the in-house app: photo capture, phrase library, online editing and digital signing.</li>
@@ -129,7 +129,7 @@ export default function PropertyServicesPage() {
             <p className="mt-3 text-[40px] leading-none font-semibold tracking-[-0.03em] text-[#171E4B]">
               24–48 hours
             </p>
-            <p className="mt-3 text-[16px] leading-[1.65] text-[#3E4660]">
+            <p className="mt-3 text-[16px] leading-[1.65] text-[#62697C]">
               The published aim for urgent repair requests. Call{' '}
               <a className="font-semibold text-[#007455]" href={`tel:${company.emergencyTel}`}>
                 {company.emergencyDisplay}
@@ -142,7 +142,7 @@ export default function PropertyServicesPage() {
             <p className="mt-3 text-[40px] leading-none font-semibold tracking-[-0.03em] text-[#171E4B]">
               7 business days
             </p>
-            <p className="mt-3 text-[16px] leading-[1.65] text-[#3E4660]">
+            <p className="mt-3 text-[16px] leading-[1.65] text-[#62697C]">
               The published aim for non-urgent maintenance once the request is in. Quotes still go
               to the agent before the work is booked.
             </p>

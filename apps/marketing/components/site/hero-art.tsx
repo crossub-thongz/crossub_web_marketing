@@ -1,6 +1,6 @@
 export function HeroArt() {
   return (
-    <div className="relative mx-auto w-full max-w-[560px] pt-2">
+    <div className="relative mx-auto w-full max-w-[560px] lg:mx-0 lg:max-w-[760px]">
       <img
         src="/site/png/glow-mint.png"
         alt=""

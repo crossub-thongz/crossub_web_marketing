@@ -47,7 +47,7 @@ export default function OpenGraphImage() {
             display: 'flex',
             marginTop: 28,
             fontSize: 28,
-            color: '#3E4660',
+            color: '#62697C',
           }}
         >
           crossub

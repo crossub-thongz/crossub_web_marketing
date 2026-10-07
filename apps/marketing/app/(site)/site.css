@@ -9,6 +9,14 @@ html:has(.marketing-site) body {
   color: #171e4b;
 }
 
+.marketing-site :is(h1, h2, h3) {
+  text-wrap: balance;
+}
+
+.marketing-site :is(p, li, dd) {
+  text-wrap: pretty;
+}
+
 .ambient {
   position: fixed;
   inset: 0;

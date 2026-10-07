@@ -34,17 +34,17 @@ export default function AboutPage() {
       <PageSection eyebrow="WHERE WE WORK" title="Started in Sydney. Used by agencies beyond it.">
         <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
           <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
-            <p className="text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="text-[16px] leading-[1.7] text-[#62697C]">
               The company began as a local property team and now supports agencies in New South
               Wales, Victoria and Queensland. There is also work in Europe, and a presence being
               built in New Zealand. Inspectors and the day-to-day team operate from Australia. The
               work is not sent offshore.
             </p>
-            <p className="mt-4 text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="mt-4 text-[16px] leading-[1.7] text-[#62697C]">
               Head office is {company.street}, {company.locality}. On-site inspections are confirmed
               suburb by suburb. The platform itself is what an agency in another city logs in to.
             </p>
-            <p className="mt-4 text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="mt-4 text-[16px] leading-[1.7] text-[#62697C]">
               Agents keep the landlord. CROSSUB takes the operational load the agency chooses:
               leasing administration, inspections, maintenance coordination, tenant messages and
               the admin around them. Notices and procedure follow the Residential Tenancy Act for
@@ -57,7 +57,7 @@ export default function AboutPage() {
               <p className="mt-2 text-[56px] leading-none font-semibold tracking-[-0.04em] text-[#171E4B]">
                 2018
               </p>
-              <p className="mt-2 text-[15px] leading-relaxed text-[#3E4660]">
+              <p className="mt-2 text-[16px] leading-[1.65] text-[#62697C]">
                 Australian company. The founding year is not the same claim as the Full Service
                 experience below.
               </p>
@@ -67,7 +67,7 @@ export default function AboutPage() {
               <p className="mt-2 text-[56px] leading-none font-semibold tracking-[-0.04em] text-[#008F65]">
                 6
               </p>
-              <p className="mt-2 text-[15px] leading-relaxed text-[#3E4660]">
+              <p className="mt-2 text-[16px] leading-[1.65] text-[#62697C]">
                 Years the team has done Full Service property management for agencies.
               </p>
             </article>
@@ -125,7 +125,7 @@ export default function AboutPage() {
             <br />
             {company.locality}
           </p>
-          <p className="mt-4 text-[16px] leading-relaxed text-[#3E4660]">
+          <p className="mt-4 text-[16px] leading-relaxed text-[#62697C]">
             <a className="font-semibold text-[#007455]" href={`mailto:${company.email}`}>
               {company.email}
             </a>
@@ -134,7 +134,7 @@ export default function AboutPage() {
               {company.phoneDisplay}
             </a>
           </p>
-          <p className="mt-2 text-[15px] text-[#3E4660]">
+          <p className="mt-2 text-[16px] leading-[1.65] text-[#62697C]">
             Inspection enquiries:{' '}
             <a className="font-semibold text-[#007455]" href={`mailto:${company.salesEmail}`}>
               {company.salesEmail}

@@ -39,11 +39,11 @@ export default function ServicePricingPage() {
               30%
             </p>
             <p className="mt-3 text-[18px] font-semibold">of your property management fee</p>
-            <p className="mt-4 text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="mt-4 text-[16px] leading-[1.7] text-[#62697C]">
               If your agency charges a landlord 5% + GST, CROSSUB’s fee is 1.5% + GST. That is 30%
               of 5%.
             </p>
-            <p className="mt-4 text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="mt-4 text-[16px] leading-[1.7] text-[#62697C]">
               We partner with agencies whose own management fee to landlords is at least 4% + GST,
               so the split stays workable for both sides.
             </p>
@@ -56,12 +56,12 @@ export default function ServicePricingPage() {
             <p className="mt-4 text-[40px] leading-[1.05] font-semibold tracking-[-0.03em] text-[#171E4B]">
               Priced per visit
             </p>
-            <p className="mt-4 text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="mt-4 text-[16px] leading-[1.7] text-[#62697C]">
               Ingoing, routine, outgoing and open inspections, completed for the agency without the
               Full Service percentage. This is the path when you want the inspector and the report,
               and you keep the rest of the management.
             </p>
-            <p className="mt-4 text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="mt-4 text-[16px] leading-[1.7] text-[#62697C]">
               Send the property and the inspection type to{' '}
               <a className="font-semibold text-[#007455]" href={`mailto:${company.salesEmail}`}>
                 {company.salesEmail}
@@ -125,7 +125,7 @@ export default function ServicePricingPage() {
             },
           ]}
         />
-        <p className="mt-6 text-[15px] leading-[1.65] text-[#3E4660]">
+        <p className="mt-6 text-[16px] leading-[1.65] text-[#62697C]">
           Leasing, maintenance, keys and the day-to-day admin sit inside Full Service. Inspection
           Only covers the visit and the report. Both use the same property record.
         </p>
@@ -145,8 +145,8 @@ export default function ServicePricingPage() {
               <span className="grid size-10 place-items-center rounded-full bg-[#E0F7EE] text-[14px] font-bold text-[#007455]">
                 {step}
               </span>
-              <h3 className="mt-4 text-[18px] font-semibold">{title}</h3>
-              <p className="mt-2 text-[15px] leading-[1.6] text-[#3E4660]">{body}</p>
+              <h3 className="mt-4 text-[20px] font-semibold tracking-[-0.02em]">{title}</h3>
+              <p className="mt-2 text-[16px] leading-[1.65] text-[#62697C]">{body}</p>
             </li>
           ))}
         </ol>

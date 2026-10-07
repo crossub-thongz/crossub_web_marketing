@@ -37,10 +37,12 @@ export function SupportCluster() {
   );
 }
 
-function IconBubble({ src }: { src: string }) {
+function IconBubble({ src, className }: { src: string; className: string }) {
   return (
-    <span className="relative z-10 grid size-12 shrink-0 place-items-center rounded-full bg-white shadow-[0_0_0_7px_rgba(0,167,120,0.12),0_10px_20px_rgba(23,30,75,0.08)] ring-1 ring-[#171E4B]/5">
-      <img src={src} alt="" className="size-[22px]" />
+    <span
+      className={`absolute z-30 grid size-14 place-items-center rounded-full bg-white shadow-[0_0_0_8px_rgba(0,167,120,0.14),0_10px_22px_rgba(23,30,75,0.1)] ring-1 ring-[#171E4B]/5 ${className}`}
+    >
+      <img src={src} alt="" className="size-6" />
     </span>
   );
 }
@@ -53,46 +55,39 @@ const MOBILE_BADGES = [
 
 export function InspectionVisual() {
   return (
-    <div className="relative mx-auto w-full max-w-[616px]">
-      <div className="hidden flex-col gap-6 lg:flex">
-        <div className="flex items-center justify-end gap-5 pr-1">
-          <img
-            src="/site/png/badge-ai-summary.png"
-            alt="AI-assisted summaries"
-            className="w-[224px] max-w-[46%] drop-shadow-[0_10px_22px_rgba(23,30,75,0.1)]"
-          />
-          <IconBubble src="/site/png/icon-home.png" />
-        </div>
-        <div className="flex items-center justify-center gap-5">
-          <IconBubble src="/site/png/icon-camera.png" />
-          <img
-            src="/site/png/inspection-tablet.png"
-            alt=""
-            className="w-[min(455px,calc(100%-4.5rem))]"
-          />
-        </div>
-        <div className="flex items-center justify-between gap-5">
-          <img
-            src="/site/png/badge-photo-notes.png"
-            alt="Photos and notes"
-            className="w-[207px] max-w-[40%] drop-shadow-[0_10px_22px_rgba(23,30,75,0.1)]"
-          />
-          <div className="flex min-w-0 items-center gap-5">
-            <img
-              src="/site/png/badge-property-records.png"
-              alt="Connected property records"
-              className="w-[235px] max-w-[calc(100%-4.25rem)] drop-shadow-[0_10px_22px_rgba(23,30,75,0.1)]"
-            />
-            <IconBubble src="/site/png/icon-document.png" />
-          </div>
-        </div>
+    <div className="relative mx-auto w-full max-w-[680px]">
+      <div className="relative hidden h-[480px] lg:block">
+        <img
+          src="/site/png/inspection-tablet.png"
+          alt=""
+          className="absolute top-[78px] left-1/2 z-10 w-[72%] -translate-x-1/2"
+        />
+        <img
+          src="/site/png/badge-ai-summary.png"
+          alt="AI-assisted summaries"
+          className="absolute top-1 right-3 z-20 w-[280px] drop-shadow-[0_12px_24px_rgba(23,30,75,0.12)]"
+        />
+        <img
+          src="/site/png/badge-photo-notes.png"
+          alt="Photos and notes"
+          className="absolute top-[332px] left-1 z-20 w-[268px] drop-shadow-[0_12px_24px_rgba(23,30,75,0.12)]"
+        />
+        <img
+          src="/site/png/badge-property-records.png"
+          alt="Connected property records"
+          className="absolute top-[358px] right-0 z-20 w-[308px] drop-shadow-[0_12px_24px_rgba(23,30,75,0.12)]"
+        />
+        <IconBubble src="/site/png/icon-camera.png" className="top-[6px] left-[88px]" />
+        <IconBubble src="/site/png/icon-camera.png" className="top-[156px] left-0" />
+        <IconBubble src="/site/png/icon-home.png" className="top-[102px] right-[148px]" />
+        <IconBubble src="/site/png/icon-photo.png" className="top-[198px] right-[18px]" />
       </div>
       <div className="lg:hidden">
         <img src="/site/png/inspection-tablet.png" alt="" className="mx-auto w-full" />
         <ul className="mt-5 flex flex-col gap-4">
           {MOBILE_BADGES.map((badge) => (
             <li key={badge.alt}>
-              <img src={badge.src} alt={badge.alt} className="h-[62px] w-auto" />
+              <img src={badge.src} alt={badge.alt} className="h-[68px] w-auto" />
             </li>
           ))}
         </ul>

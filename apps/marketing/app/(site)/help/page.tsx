@@ -108,7 +108,7 @@ export default function HelpPage() {
             },
           ]}
         />
-        <p className="mt-6 text-[15px] text-[#3E4660]">
+        <p className="mt-6 text-[16px] leading-[1.65] text-[#62697C]">
           Still stuck?{' '}
           <a className="font-semibold text-[#007455]" href={siteLinks.bookDemo}>
             Book a demo

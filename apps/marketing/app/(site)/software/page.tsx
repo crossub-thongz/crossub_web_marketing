@@ -76,7 +76,7 @@ export default function SoftwarePage() {
 
       <PageSection eyebrow="IN THE FIELD" title="Reports the agency can actually send.">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-start">
-          <div className="space-y-4 text-[16px] leading-[1.7] text-[#3E4660]">
+          <div className="space-y-4 text-[16px] leading-[1.7] text-[#62697C]">
             <p>
               Cross Inspect is CROSSUB’s inspection app. Inspectors and agency staff capture the
               visit on site, then the report is edited, signed and shared from the same system.
@@ -120,12 +120,12 @@ export default function SoftwarePage() {
               key={title}
               className="rounded-[24px] bg-white/85 p-6 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white"
             >
-              <h3 className="text-[18px] font-semibold">{title}</h3>
-              <p className="mt-2 text-[15px] leading-[1.6] text-[#3E4660]">{body}</p>
+              <h3 className="text-[20px] font-semibold tracking-[-0.02em]">{title}</h3>
+              <p className="mt-2 text-[16px] leading-[1.65] text-[#62697C]">{body}</p>
             </article>
           ))}
         </div>
-        <p className="mt-6 max-w-3xl text-[15px] leading-[1.65] text-[#3E4660]">
+        <p className="mt-6 max-w-3xl text-[16px] leading-[1.65] text-[#62697C]">
           AI reduces the admin between a photo, a maintenance request and the next email. It does
           not approve spending, handle trust money, or send every message on its own.
         </p>
@@ -136,13 +136,13 @@ export default function SoftwarePage() {
           <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
             <p className="text-[13px] font-bold tracking-[0.14em] text-[#007455]">PROPERTY PLATFORM</p>
             <h3 className="mt-3 text-[24px] font-semibold tracking-[-0.02em]">The rent roll, on the web.</h3>
-            <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="mt-3 text-[16px] leading-[1.7] text-[#62697C]">
               This is the free software. The command center, properties, leasing, inspections,
               maintenance, keys and the communication record live here. Applications, agreements,
               rent reviews, arrears, open homes and vacating sit on the property, with the photos
               and messages beside them.
             </p>
-            <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="mt-3 text-[16px] leading-[1.7] text-[#62697C]">
               AI prepares drafts and sorts the next step. Spending, trust money and the message
               that goes to a landlord stay with a person.
             </p>
@@ -150,12 +150,12 @@ export default function SoftwarePage() {
           <article className="rounded-[28px] bg-[#E7FBF4] p-7 ring-1 ring-[#008F65]/10 sm:p-8">
             <p className="text-[13px] font-bold tracking-[0.14em] text-[#007455]">AGENT PORTAL</p>
             <h3 className="mt-3 text-[24px] font-semibold tracking-[-0.02em]">Where the agency signs in.</h3>
-            <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="mt-3 text-[16px] leading-[1.7] text-[#62697C]">
               Property managers use the Agent Portal on the web or the phone. The dashboard,
               property list, leasing, maintenance, inspections and tasks are the daily view.
               Reports, quotes and anything that needs a decision come back here.
             </p>
-            <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="mt-3 text-[16px] leading-[1.7] text-[#62697C]">
               History stays on the file after the job is done. Landlord conversations stay with
               the agency. Log in opens this portal.
             </p>
@@ -163,12 +163,12 @@ export default function SoftwarePage() {
           <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
             <p className="text-[13px] font-bold tracking-[0.14em] text-[#5C4B8A]">TENANT APP</p>
             <h3 className="mt-3 text-[24px] font-semibold tracking-[-0.02em]">The tenancy, from the tenant’s side.</h3>
-            <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="mt-3 text-[16px] leading-[1.7] text-[#62697C]">
               A tenant can browse listings and apply before they have a login. After they are
               accepted, onboarding, the lease, documents, repairs, messages and inspections for
               their own home are in the app.
             </p>
-            <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="mt-3 text-[16px] leading-[1.7] text-[#62697C]">
               Rent review, renewal and the move-out, including the outgoing report, stay on that
               tenancy. The tenant does not see the rest of the agency’s rent roll, and the bond
               is still lodged by the agent or the tenant through Rental Bonds Online.
@@ -177,18 +177,18 @@ export default function SoftwarePage() {
           <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
             <p className="text-[13px] font-bold tracking-[0.14em] text-[#8A6414]">INSPECTOR APP</p>
             <h3 className="mt-3 text-[24px] font-semibold tracking-[-0.02em]">The visit, completed on site.</h3>
-            <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="mt-3 text-[16px] leading-[1.7] text-[#62697C]">
               Inspectors take a job from the pool or from an assignment, open directions to the
               property, and run an open home, ingoing, outgoing or routine inspection in the app.
               Photos, notes and the report file back against that property.
             </p>
-            <p className="mt-3 text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="mt-3 text-[16px] leading-[1.7] text-[#62697C]">
               The same report is what the agent reads in the portal. Agency staff can run the
               visit themselves, or book a CROSSUB inspector and use this same path.
             </p>
           </article>
         </div>
-        <p className="mt-6 max-w-3xl text-[15px] leading-[1.65] text-[#3E4660]">
+        <p className="mt-6 max-w-3xl text-[16px] leading-[1.65] text-[#62697C]">
           Inspection Only and Full Service write into this same record. The agency does not move
           the portfolio to a second system to add people.
         </p>

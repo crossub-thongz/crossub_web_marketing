@@ -47,7 +47,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
       <AmbientBackground />
       <div className="relative z-10">
         <SiteHeader />
-        {children}
+        <div className="py-[8vh]">{children}</div>
         <SiteFooter />
       </div>
     </div>

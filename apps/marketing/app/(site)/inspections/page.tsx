@@ -86,7 +86,7 @@ export default function InspectionsPage() {
         <div className="grid gap-4 lg:grid-cols-2">
           <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
             <h3 className="text-[22px] font-semibold">The inspector</h3>
-            <ul className="mt-4 space-y-3 text-[16px] leading-[1.65] text-[#3E4660]">
+            <ul className="mt-4 space-y-3 text-[16px] leading-[1.65] text-[#62697C]">
               <li>Trained on the relevant tenancy rules, and holding a property management certificate.</li>
               <li>Insured for the work, and expected to treat the tenant’s home with care.</li>
               <li>Asked to arrive early, so the visit starts on time.</li>
@@ -95,7 +95,7 @@ export default function InspectionsPage() {
           </article>
           <article className="rounded-[28px] bg-[#E7FBF4] p-7 ring-1 ring-[#008F65]/10 sm:p-8">
             <h3 className="text-[22px] font-semibold">The report</h3>
-            <ul className="mt-4 space-y-3 text-[16px] leading-[1.65] text-[#3E4660]">
+            <ul className="mt-4 space-y-3 text-[16px] leading-[1.65] text-[#62697C]">
               <li>Photos and notes captured in Cross Inspect, then edited online.</li>
               <li>Layouts and phrases set for the agency, exported as a PDF.</li>
               <li>Digital signing, then sharing back to the agent.</li>
@@ -103,7 +103,7 @@ export default function InspectionsPage() {
             </ul>
           </article>
         </div>
-        <p className="mt-6 max-w-3xl text-[15px] leading-[1.65] text-[#3E4660]">
+        <p className="mt-6 max-w-3xl text-[16px] leading-[1.65] text-[#62697C]">
           The visit itself runs in the inspector app: the job, directions, and an open, ingoing,
           outgoing or routine inspection. The agent reads the result in the Agent Portal. Published
           service standard: routine and vacate reports are returned within 48 hours. AI can draft a

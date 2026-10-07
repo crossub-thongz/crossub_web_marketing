@@ -122,7 +122,7 @@ export function BookDemoForm() {
     return (
       <div className="rounded-[28px] bg-white/90 p-8 text-center shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white">
         <h2 className="text-[24px] font-semibold">Request received</h2>
-        <p className="mt-3 text-[16px] leading-relaxed text-[#3E4660]">{success}</p>
+        <p className="mt-3 text-[16px] leading-relaxed text-[#62697C]">{success}</p>
         <button
           type="button"
           className="mt-6 inline-flex h-12 items-center justify-center rounded-full bg-[#007455] px-7 text-[15px] font-semibold text-white"

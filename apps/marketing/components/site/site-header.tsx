@@ -73,7 +73,7 @@ export function SiteHeader() {
       >
         Skip to content
       </a>
-      <div className="mx-auto flex h-[72px] max-w-[1200px] items-center justify-between gap-6 px-5 md:px-6">
+      <div className="mx-auto flex h-[72px] max-w-[1600px] items-center justify-between gap-6 px-5 md:px-6">
         <a href="/#top" aria-label="CROSSUB home" className="shrink-0 rounded-md">
           <Wordmark priority />
         </a>
@@ -87,7 +87,7 @@ export function SiteHeader() {
               aria-current={pathname === item.href ? 'page' : undefined}
               className={cn(
                 'text-[15px] font-medium whitespace-nowrap hover:text-[#171E4B]',
-                pathname === item.href ? 'text-[#007455]' : 'text-[#3E4660]',
+                pathname === item.href ? 'text-[#007455]' : 'text-[#62697C]',
               )}
               {...(isExternalHref(item.href) ? { rel: 'noopener noreferrer' } : {})}
             >

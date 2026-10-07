@@ -41,11 +41,11 @@ export default function FullServicePage() {
             <p className="mt-3 text-[16px] font-semibold">of your property management fee</p>
           </article>
           <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
-            <p className="text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="text-[16px] leading-[1.7] text-[#62697C]">
               If your agency charges a landlord 5% + GST, CROSSUB’s fee is 1.5% + GST. That is 30%
               of 5%, not a second full management fee.
             </p>
-            <p className="mt-4 text-[16px] leading-[1.7] text-[#3E4660]">
+            <p className="mt-4 text-[16px] leading-[1.7] text-[#62697C]">
               We partner with agencies whose own management fee to landlords is at least 4% + GST.
               That keeps the split workable for both sides. Inspection Only is a separate paid
               visit, not this percentage. The same figures are on{' '}
@@ -115,8 +115,8 @@ export default function FullServicePage() {
               <span className="grid size-10 place-items-center rounded-full bg-[#E0F7EE] text-[14px] font-bold text-[#007455]">
                 {step}
               </span>
-              <h3 className="mt-4 text-[18px] font-semibold">{title}</h3>
-              <p className="mt-2 text-[15px] leading-[1.6] text-[#3E4660]">{body}</p>
+              <h3 className="mt-4 text-[20px] font-semibold tracking-[-0.02em]">{title}</h3>
+              <p className="mt-2 text-[16px] leading-[1.65] text-[#62697C]">{body}</p>
             </li>
           ))}
         </ol>

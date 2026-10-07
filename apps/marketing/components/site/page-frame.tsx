@@ -15,12 +15,12 @@ export function PageHero({
   actions?: ReactNode;
 }) {
   return (
-    <section className="mx-auto max-w-[860px] px-5 pt-14 pb-8 text-center md:px-6 md:pt-20">
-      <p className="text-[12px] font-semibold tracking-[0.16em] text-[#007455]">{eyebrow}</p>
-      <h1 className="mt-4 text-[36px] leading-[1.12] font-semibold tracking-[-0.035em] text-[#171E4B] sm:text-[48px]">
+    <section className="mx-auto max-w-[860px] px-6 pt-16 pb-16 text-center md:px-10 md:pt-24 md:pb-20 lg:pb-[5.5rem]">
+      <p className="text-[16px] font-bold tracking-[0.16em] text-[#007455]">{eyebrow}</p>
+      <h1 className="mt-4 text-[40px] leading-[1.08] font-semibold tracking-[-0.035em] text-[#171E4B] sm:text-[52px]">
         {title}
       </h1>
-      <div className="mx-auto mt-5 max-w-[640px] text-[17px] leading-[1.65] text-[#3E4660] sm:text-[18px]">
+      <div className="mx-auto mt-5 max-w-[640px] text-[17px] leading-[1.65] text-[#62697C] sm:text-[18px]">
         {children}
       </div>
       {actions ? (
@@ -44,13 +44,13 @@ export function PageSection({
   className?: string;
 }) {
   return (
-    <section id={id} className={`scroll-mt-28 px-5 py-12 md:px-6 md:py-16 ${className}`}>
-      <div className="mx-auto max-w-[1100px]">
+    <section id={id} className={`scroll-mt-28 px-6 py-16 md:px-10 md:py-20 lg:px-16 lg:py-[5.5rem] ${className}`}>
+      <div className="mx-auto max-w-[1400px]">
         {eyebrow ? (
-          <p className="text-[12px] font-semibold tracking-[0.16em] text-[#007455]">{eyebrow}</p>
+          <p className="text-[14px] font-bold tracking-[0.16em] text-[#007455]">{eyebrow}</p>
         ) : null}
         {title ? (
-          <h2 className="mt-3 max-w-2xl text-[30px] leading-[1.15] font-semibold tracking-[-0.03em] sm:text-[36px]">
+          <h2 className="mt-3 max-w-3xl text-[34px] leading-[1.15] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[42px]">
             {title}
           </h2>
         ) : null}
@@ -81,8 +81,8 @@ export function FeatureGrid({
           <span className={`mb-5 grid size-12 place-items-center rounded-2xl ${tones[item.tone]}`}>
             {item.icon ? <img src={item.icon} alt="" className="size-6" /> : null}
           </span>
-          <h3 className="text-[18px] font-semibold">{item.title}</h3>
-          <p className="mt-2 text-[15px] leading-[1.6] text-[#3E4660]">{item.body}</p>
+          <h3 className="text-[20px] font-semibold tracking-[-0.02em] text-[#171E4B]">{item.title}</h3>
+          <p className="mt-2 text-[16px] leading-[1.65] text-[#62697C]">{item.body}</p>
         </article>
       ))}
     </div>
@@ -104,7 +104,7 @@ export function FaqList({
               +
             </span>
           </summary>
-          <div className="px-5 pb-5 text-[15px] leading-[1.65] text-[#3E4660] sm:px-6">{item.answer}</div>
+          <div className="px-5 pb-5 text-[16px] leading-[1.65] text-[#62697C] sm:px-6">{item.answer}</div>
         </details>
       ))}
     </div>
@@ -156,10 +156,10 @@ export function ContactStrip() {
   ];
 
   return (
-    <section id="contact" className="scroll-mt-28 px-5 pt-4 pb-20 md:px-6">
-      <div className="mx-auto max-w-[1100px] rounded-[36px] bg-white/80 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-10">
+    <section id="contact" className="scroll-mt-28 px-6 pt-16 pb-20 md:px-10 md:pt-20 lg:px-16 lg:pt-[5.5rem] lg:pb-28">
+      <div className="mx-auto max-w-[1400px] rounded-[36px] bg-white/80 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-10">
         <h2 className="text-[22px] font-semibold">Talk to Crossub</h2>
-        <p className="mt-2 max-w-xl text-[15px] leading-relaxed text-[#3E4660]">
+        <p className="mt-2 max-w-xl text-[16px] leading-[1.65] text-[#62697C]">
           Head office is in North Sydney. Pick the line that matches what you need.
         </p>
         <dl className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
@@ -168,7 +168,7 @@ export function ContactStrip() {
               <dt className="text-[12px] font-semibold tracking-[0.12em] text-[#007455] uppercase">
                 {item.label}
               </dt>
-              <dd className="mt-2 text-[15px] leading-relaxed text-[#171E4B]">{item.body}</dd>
+              <dd className="mt-2 text-[16px] leading-[1.65] text-[#171E4B]">{item.body}</dd>
             </div>
           ))}
         </dl>
