@@ -1,4 +1,4 @@
-import { ArrowUpRight, Check, ClipboardCheck, Sparkles, Users } from 'lucide-react';
+import { ArrowUpRight, Check } from 'lucide-react';
 import type { ReactNode } from 'react';
 
 import { PrimaryLink, SecondaryLink, TextLink } from '@/components/site/buttons';
@@ -14,15 +14,11 @@ function Eyebrow({ children }: { children: ReactNode }) {
 
 function Scribble() {
   return (
-    <svg viewBox="0 0 140 14" className="absolute -bottom-1 left-0 h-3 w-full" aria-hidden>
-      <path
-        d="M2 9c22-7 38-7 58-2s34 5 52-2 22-1 26 2"
-        fill="none"
-        stroke="#7DDEBE"
-        strokeWidth="4"
-        strokeLinecap="round"
-      />
-    </svg>
+    <img
+      src="/site/png/underline-mint.png"
+      alt=""
+      className="pointer-events-none absolute -bottom-1 left-0 h-3 w-full object-fill"
+    />
   );
 }
 
@@ -98,13 +94,14 @@ export function HomePage() {
           </div>
 
           <div className="relative mt-12 lg:mt-16">
-            <div aria-hidden className="absolute top-16 -left-3 hidden size-16 rounded-2xl bg-[#F1E8FF] lg:block" />
-            <div aria-hidden className="absolute right-6 -bottom-4 hidden size-14 rounded-2xl bg-[#FFF4D8] lg:block" />
+            <img
+              src="/site/png/pastel-squares.png"
+              alt=""
+              className="pointer-events-none absolute -top-8 -left-8 hidden w-40 lg:block"
+            />
             <div className="relative grid items-stretch gap-5 lg:grid-cols-3 lg:gap-6">
               <article className="order-2 flex h-full flex-col rounded-[26px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5 lg:order-1">
-                <span className="grid size-12 place-items-center rounded-2xl bg-[#F1E8FF] text-[#5C4B8A]">
-                  <ClipboardCheck strokeWidth={1.75} aria-hidden />
-                </span>
+                <img src="/site/png/service-inspection.png" alt="" className="size-12" />
                 <p className="mt-5 w-fit rounded-full bg-[#F4F0FF] px-2.5 py-1 text-[11px] font-semibold tracking-[0.08em] text-[#5C4B8A]">
                   PAID SERVICE
                 </p>
@@ -119,9 +116,7 @@ export function HomePage() {
               </article>
 
               <article className="order-1 flex h-full flex-col rounded-[26px] bg-[#E7FBF4] p-7 shadow-[0_18px_44px_rgba(0,143,101,0.12)] ring-1 ring-[#008F65]/10 lg:order-2 lg:-translate-y-6">
-                <span className="grid size-12 place-items-center rounded-2xl bg-white text-[#007455]">
-                  <Sparkles strokeWidth={1.75} aria-hidden />
-                </span>
+                <img src="/site/png/service-home.png" alt="" className="size-12" />
                 <p className="mt-5 w-fit rounded-full bg-white px-2.5 py-1 text-[11px] font-semibold tracking-[0.08em] text-[#007455]">
                   FREE
                 </p>
@@ -135,16 +130,14 @@ export function HomePage() {
                   href={siteLinks.startFree}
                   rel="noopener noreferrer"
                   aria-label="Start for free"
-                  className="mt-auto grid size-12 place-items-center self-center rounded-full bg-[#007455] text-white"
+                  className="mt-auto grid size-12 place-items-center self-center"
                 >
-                  <ArrowUpRight className="size-5" aria-hidden />
+                  <img src="/site/png/round-arrow.png" alt="" className="size-12" />
                 </a>
               </article>
 
               <article className="order-3 flex h-full flex-col rounded-[26px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5">
-                <span className="grid size-12 place-items-center rounded-2xl bg-[#FFF4D8] text-[#8A6414]">
-                  <Users strokeWidth={1.75} aria-hidden />
-                </span>
+                <img src="/site/png/service-people.png" alt="" className="size-12" />
                 <p className="mt-5 w-fit rounded-full bg-[#FFF8E8] px-2.5 py-1 text-[11px] font-semibold tracking-[0.08em] text-[#8A6414]">
                   PAID SERVICE
                 </p>
@@ -179,28 +172,21 @@ export function HomePage() {
             </TextLink>
           </div>
           <div id="ai-steps" className="relative mx-auto w-full max-w-[540px]">
-            <svg
-              aria-hidden
-              viewBox="0 0 540 280"
-              className="pointer-events-none absolute inset-0 hidden h-full w-full text-[#7EE8C8] sm:block"
-            >
-              <path
-                d="M150 118C210 70 300 48 390 78"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              <path d="M378 66l16 14-18 6" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-              <path
-                d="M400 150C360 190 300 210 270 230"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-              />
-              <path d="M262 214l6 18 14-12" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" />
-            </svg>
+            <img
+              src="/site/png/glow-warm.png"
+              alt=""
+              className="pointer-events-none absolute -top-16 -right-16 hidden w-72 sm:block"
+            />
+            <img
+              src="/site/png/arrow-curve-up.png"
+              alt=""
+              className="pointer-events-none absolute top-0 left-1/2 z-0 hidden w-28 -translate-x-1/2 sm:block"
+            />
+            <img
+              src="/site/png/arrow-curve-down.png"
+              alt=""
+              className="pointer-events-none absolute top-1/2 right-0 z-0 hidden w-24 sm:block"
+            />
             <div className="relative grid gap-4 sm:grid-cols-2 sm:gap-5">
               {STEPS.slice(0, 2).map((step, index) => (
                 <article
@@ -305,13 +291,16 @@ export function HomePage() {
       </section>
 
       <section className="rise px-5 pt-6 pb-20 md:px-6 md:pb-28">
-        <div className="relative mx-auto max-w-[1200px] overflow-hidden rounded-[48px] bg-gradient-to-br from-[#E5FBF3] via-[#F7FFFB] to-[#F3EEFF] px-6 py-16 text-center sm:px-12 sm:py-20">
-          <svg aria-hidden viewBox="0 0 640 120" className="pointer-events-none absolute bottom-0 left-0 w-[46%] text-[#B7F0DC]">
-            <path d="M0 90C120 90 160 20 320 28c140 8 180 70 320 40" fill="none" stroke="currentColor" strokeWidth="10" />
-          </svg>
-          <div aria-hidden className="absolute top-8 right-8 grid size-12 place-items-center rounded-full bg-[#E4D9FF] text-[#6D5CA8]">
-            <ArrowUpRight className="size-5" />
-          </div>
+        <div
+          className="relative mx-auto max-w-[1200px] overflow-hidden rounded-[48px] bg-cover bg-center px-6 py-16 text-center sm:px-12 sm:py-20"
+          style={{ backgroundImage: 'url(/site/png/cta-panel.png)' }}
+        >
+          <img
+            src="/site/png/contour-rings.png"
+            alt=""
+            className="pointer-events-none absolute bottom-0 left-0 w-[42%]"
+          />
+          <img src="/site/png/send-orb.png" alt="" className="absolute top-8 right-8 size-14" />
           <div className="relative mx-auto max-w-2xl">
             <Eyebrow>YOUR NEXT CHAPTER</Eyebrow>
             <h2 className="mt-3 text-[32px] leading-[1.15] font-semibold tracking-[-0.03em] sm:text-[44px]">

@@ -1,0 +1,569 @@
+[
+  {
+    "name": "inspection-tablet",
+    "category": "illustrations",
+    "use": "Inspection 区域平板主体",
+    "width": 1536,
+    "height": 1024,
+    "png": "png/inspection-tablet.png",
+    "note": "根据第二版效果图重建的透明 PNG；并非原设计师的分层源文件。"
+  },
+  {
+    "name": "platform-ai-ribbons",
+    "category": "illustrations",
+    "use": "Same Platform 软件卡片内插画",
+    "width": 1536,
+    "height": 1024,
+    "png": "png/platform-ai-ribbons.png",
+    "note": "根据第二版效果图重建的透明 PNG；并非原设计师的分层源文件。"
+  },
+  {
+    "name": "hero-ai-glass",
+    "category": "illustrations",
+    "use": "首屏 AI 主插画",
+    "width": 1536,
+    "height": 1024,
+    "png": "png/hero-ai-glass.png",
+    "note": "根据第二版效果图重建的透明 PNG；并非原设计师的分层源文件。"
+  },
+  {
+    "name": "icon-home",
+    "category": "icons",
+    "use": "统一线性图标；颜色可在 SVG 内更改",
+    "width": 24,
+    "height": 24,
+    "svg": "svg/icon-home.svg",
+    "png": "png/icon-home.png",
+    "note": ""
+  },
+  {
+    "name": "icon-inspection",
+    "category": "icons",
+    "use": "统一线性图标；颜色可在 SVG 内更改",
+    "width": 24,
+    "height": 24,
+    "svg": "svg/icon-inspection.svg",
+    "png": "png/icon-inspection.png",
+    "note": ""
+  },
+  {
+    "name": "icon-people",
+    "category": "icons",
+    "use": "统一线性图标；颜色可在 SVG 内更改",
+    "width": 24,
+    "height": 24,
+    "svg": "svg/icon-people.svg",
+    "png": "png/icon-people.png",
+    "note": ""
+  },
+  {
+    "name": "icon-document",
+    "category": "icons",
+    "use": "统一线性图标；颜色可在 SVG 内更改",
+    "width": 24,
+    "height": 24,
+    "svg": "svg/icon-document.svg",
+    "png": "png/icon-document.png",
+    "note": ""
+  },
+  {
+    "name": "icon-list",
+    "category": "icons",
+    "use": "统一线性图标；颜色可在 SVG 内更改",
+    "width": 24,
+    "height": 24,
+    "svg": "svg/icon-list.svg",
+    "png": "png/icon-list.png",
+    "note": ""
+  },
+  {
+    "name": "icon-check-circle",
+    "category": "icons",
+    "use": "统一线性图标；颜色可在 SVG 内更改",
+    "width": 24,
+    "height": 24,
+    "svg": "svg/icon-check-circle.svg",
+    "png": "png/icon-check-circle.png",
+    "note": ""
+  },
+  {
+    "name": "icon-sparkle",
+    "category": "icons",
+    "use": "统一线性图标；颜色可在 SVG 内更改",
+    "width": 24,
+    "height": 24,
+    "svg": "svg/icon-sparkle.svg",
+    "png": "png/icon-sparkle.png",
+    "note": ""
+  },
+  {
+    "name": "icon-maintenance",
+    "category": "icons",
+    "use": "统一线性图标；颜色可在 SVG 内更改",
+    "width": 24,
+    "height": 24,
+    "svg": "svg/icon-maintenance.svg",
+    "png": "png/icon-maintenance.png",
+    "note": ""
+  },
+  {
+    "name": "icon-camera",
+    "category": "icons",
+    "use": "统一线性图标；颜色可在 SVG 内更改",
+    "width": 24,
+    "height": 24,
+    "svg": "svg/icon-camera.svg",
+    "png": "png/icon-camera.png",
+    "note": ""
+  },
+  {
+    "name": "icon-photo",
+    "category": "icons",
+    "use": "统一线性图标；颜色可在 SVG 内更改",
+    "width": 24,
+    "height": 24,
+    "svg": "svg/icon-photo.svg",
+    "png": "png/icon-photo.png",
+    "note": ""
+  },
+  {
+    "name": "icon-arrow-right",
+    "category": "icons",
+    "use": "统一线性图标；颜色可在 SVG 内更改",
+    "width": 24,
+    "height": 24,
+    "svg": "svg/icon-arrow-right.svg",
+    "png": "png/icon-arrow-right.png",
+    "note": ""
+  },
+  {
+    "name": "icon-shield",
+    "category": "icons",
+    "use": "统一线性图标；颜色可在 SVG 内更改",
+    "width": 24,
+    "height": 24,
+    "svg": "svg/icon-shield.svg",
+    "png": "png/icon-shield.png",
+    "note": ""
+  },
+  {
+    "name": "icon-building",
+    "category": "icons",
+    "use": "统一线性图标；颜色可在 SVG 内更改",
+    "width": 24,
+    "height": 24,
+    "svg": "svg/icon-building.svg",
+    "png": "png/icon-building.png",
+    "note": ""
+  },
+  {
+    "name": "icon-calendar",
+    "category": "icons",
+    "use": "统一线性图标；颜色可在 SVG 内更改",
+    "width": 24,
+    "height": 24,
+    "svg": "svg/icon-calendar.svg",
+    "png": "png/icon-calendar.png",
+    "note": ""
+  },
+  {
+    "name": "icon-key",
+    "category": "icons",
+    "use": "统一线性图标；颜色可在 SVG 内更改",
+    "width": 24,
+    "height": 24,
+    "svg": "svg/icon-key.svg",
+    "png": "png/icon-key.png",
+    "note": ""
+  },
+  {
+    "name": "icon-plane",
+    "category": "icons",
+    "use": "统一线性图标；颜色可在 SVG 内更改",
+    "width": 24,
+    "height": 24,
+    "svg": "svg/icon-plane.svg",
+    "png": "png/icon-plane.png",
+    "note": ""
+  },
+  {
+    "name": "icon-close",
+    "category": "icons",
+    "use": "统一线性图标；颜色可在 SVG 内更改",
+    "width": 24,
+    "height": 24,
+    "svg": "svg/icon-close.svg",
+    "png": "png/icon-close.png",
+    "note": ""
+  },
+  {
+    "name": "icon-menu",
+    "category": "icons",
+    "use": "统一线性图标；颜色可在 SVG 内更改",
+    "width": 24,
+    "height": 24,
+    "svg": "svg/icon-menu.svg",
+    "png": "png/icon-menu.png",
+    "note": ""
+  },
+  {
+    "name": "service-home",
+    "category": "services",
+    "use": "三种服务卡片的彩色图标",
+    "width": 96,
+    "height": 96,
+    "svg": "svg/service-home.svg",
+    "png": "png/service-home.png",
+    "note": ""
+  },
+  {
+    "name": "service-inspection",
+    "category": "services",
+    "use": "三种服务卡片的彩色图标",
+    "width": 96,
+    "height": 96,
+    "svg": "svg/service-inspection.svg",
+    "png": "png/service-inspection.png",
+    "note": ""
+  },
+  {
+    "name": "service-people",
+    "category": "services",
+    "use": "三种服务卡片的彩色图标",
+    "width": 96,
+    "height": 96,
+    "svg": "svg/service-people.svg",
+    "png": "png/service-people.png",
+    "note": ""
+  },
+  {
+    "name": "dots-mint",
+    "category": "decorations",
+    "use": "Hero 及插画后方点阵",
+    "width": 240,
+    "height": 200,
+    "svg": "svg/dots-mint.svg",
+    "png": "png/dots-mint.png",
+    "note": ""
+  },
+  {
+    "name": "cross-grid",
+    "category": "decorations",
+    "use": "侧边稀疏十字网格",
+    "width": 180,
+    "height": 180,
+    "svg": "svg/cross-grid.svg",
+    "png": "png/cross-grid.png",
+    "note": ""
+  },
+  {
+    "name": "mint-disc",
+    "category": "decorations",
+    "use": "Hero AI 后方柔和圆形",
+    "width": 500,
+    "height": 500,
+    "svg": "svg/mint-disc.svg",
+    "png": "png/mint-disc.png",
+    "note": ""
+  },
+  {
+    "name": "pastel-squares",
+    "category": "decorations",
+    "use": "卡片背后错落浅色方块",
+    "width": 500,
+    "height": 400,
+    "svg": "svg/pastel-squares.svg",
+    "png": "png/pastel-squares.png",
+    "note": ""
+  },
+  {
+    "name": "underline-mint",
+    "category": "decorations",
+    "use": "首屏重点文字下方笔刷",
+    "width": 500,
+    "height": 40,
+    "svg": "svg/underline-mint.svg",
+    "png": "png/underline-mint.png",
+    "note": ""
+  },
+  {
+    "name": "hero-curves",
+    "category": "decorations",
+    "use": "首屏插画外侧弧线",
+    "width": 540,
+    "height": 280,
+    "svg": "svg/hero-curves.svg",
+    "png": "png/hero-curves.png",
+    "note": ""
+  },
+  {
+    "name": "arrow-curve-down",
+    "category": "decorations",
+    "use": "AI 步骤卡片之间的连接箭头",
+    "width": 270,
+    "height": 220,
+    "svg": "svg/arrow-curve-down.svg",
+    "png": "png/arrow-curve-down.png",
+    "note": ""
+  },
+  {
+    "name": "arrow-curve-up",
+    "category": "decorations",
+    "use": "AI 步骤卡片之间的连接箭头",
+    "width": 270,
+    "height": 220,
+    "svg": "svg/arrow-curve-up.svg",
+    "png": "png/arrow-curve-up.png",
+    "note": ""
+  },
+  {
+    "name": "arrow-curve-left",
+    "category": "decorations",
+    "use": "AI 步骤卡片之间的连接箭头",
+    "width": 270,
+    "height": 220,
+    "svg": "svg/arrow-curve-left.svg",
+    "png": "png/arrow-curve-left.png",
+    "note": ""
+  },
+  {
+    "name": "contour-rings",
+    "category": "decorations",
+    "use": "底部 CTA 等高线装饰",
+    "width": 550,
+    "height": 420,
+    "svg": "svg/contour-rings.svg",
+    "png": "png/contour-rings.png",
+    "note": ""
+  },
+  {
+    "name": "glow-mint",
+    "category": "backgrounds",
+    "use": "透明边缘柔和光晕；可叠加在白色背景",
+    "width": 1000,
+    "height": 800,
+    "svg": "svg/glow-mint.svg",
+    "png": "png/glow-mint.png",
+    "note": ""
+  },
+  {
+    "name": "glow-lilac",
+    "category": "backgrounds",
+    "use": "透明边缘柔和光晕；可叠加在白色背景",
+    "width": 1000,
+    "height": 800,
+    "svg": "svg/glow-lilac.svg",
+    "png": "png/glow-lilac.png",
+    "note": ""
+  },
+  {
+    "name": "glow-warm",
+    "category": "backgrounds",
+    "use": "透明边缘柔和光晕；可叠加在白色背景",
+    "width": 1000,
+    "height": 800,
+    "svg": "svg/glow-warm.svg",
+    "png": "png/glow-warm.png",
+    "note": ""
+  },
+  {
+    "name": "cta-panel",
+    "category": "backgrounds",
+    "use": "CTA 浅色底板，不含文字及按钮",
+    "width": 1200,
+    "height": 360,
+    "svg": "svg/cta-panel.svg",
+    "png": "png/cta-panel.png",
+    "note": ""
+  },
+  {
+    "name": "send-orb",
+    "category": "decorations",
+    "use": "CTA 右上角紫色发送图标",
+    "width": 120,
+    "height": 120,
+    "svg": "svg/send-orb.svg",
+    "png": "png/send-orb.png",
+    "note": ""
+  },
+  {
+    "name": "round-arrow",
+    "category": "controls",
+    "use": "服务卡片圆形箭头；交互仍用 HTML button 或 a",
+    "width": 72,
+    "height": 72,
+    "svg": "svg/round-arrow.svg",
+    "png": "png/round-arrow.png",
+    "note": ""
+  },
+  {
+    "name": "property-line-art",
+    "category": "illustrations",
+    "use": "六年经验板块底部房屋线稿",
+    "width": 520,
+    "height": 380,
+    "svg": "svg/property-line-art.svg",
+    "png": "png/property-line-art.png",
+    "note": ""
+  },
+  {
+    "name": "six-years-card",
+    "category": "illustrations",
+    "use": "六年经验整体卡片；标签可另行叠加",
+    "width": 720,
+    "height": 600,
+    "svg": "svg/six-years-card.svg",
+    "png": "png/six-years-card.png",
+    "note": ""
+  },
+  {
+    "name": "badge-inspection",
+    "category": "badges",
+    "use": "浮动文字标签；正式网站也可用 HTML 与 icon 组合",
+    "width": 320,
+    "height": 86,
+    "svg": "svg/badge-inspection.svg",
+    "png": "png/badge-inspection.png",
+    "note": "文字为可编辑 SVG text；依赖 Arial 或 sans-serif 字体"
+  },
+  {
+    "name": "badge-maintenance",
+    "category": "badges",
+    "use": "浮动文字标签；正式网站也可用 HTML 与 icon 组合",
+    "width": 320,
+    "height": 86,
+    "svg": "svg/badge-maintenance.svg",
+    "png": "png/badge-maintenance.png",
+    "note": "文字为可编辑 SVG text；依赖 Arial 或 sans-serif 字体"
+  },
+  {
+    "name": "badge-leasing",
+    "category": "badges",
+    "use": "浮动文字标签；正式网站也可用 HTML 与 icon 组合",
+    "width": 320,
+    "height": 86,
+    "svg": "svg/badge-leasing.svg",
+    "png": "png/badge-leasing.png",
+    "note": "文字为可编辑 SVG text；依赖 Arial 或 sans-serif 字体"
+  },
+  {
+    "name": "badge-ai-summary",
+    "category": "badges",
+    "use": "浮动文字标签；正式网站也可用 HTML 与 icon 组合",
+    "width": 320,
+    "height": 86,
+    "svg": "svg/badge-ai-summary.svg",
+    "png": "png/badge-ai-summary.png",
+    "note": "文字为可编辑 SVG text；依赖 Arial 或 sans-serif 字体"
+  },
+  {
+    "name": "badge-photo-notes",
+    "category": "badges",
+    "use": "浮动文字标签；正式网站也可用 HTML 与 icon 组合",
+    "width": 320,
+    "height": 86,
+    "svg": "svg/badge-photo-notes.svg",
+    "png": "png/badge-photo-notes.png",
+    "note": "文字为可编辑 SVG text；依赖 Arial 或 sans-serif 字体"
+  },
+  {
+    "name": "badge-property-records",
+    "category": "badges",
+    "use": "浮动文字标签；正式网站也可用 HTML 与 icon 组合",
+    "width": 365,
+    "height": 86,
+    "svg": "svg/badge-property-records.svg",
+    "png": "png/badge-property-records.png",
+    "note": "文字为可编辑 SVG text；依赖 Arial 或 sans-serif 字体"
+  },
+  {
+    "name": "ai-step-01",
+    "category": "cards",
+    "use": "AI 三步示意卡片；网页建议用 HTML 保留可访问性",
+    "width": 270,
+    "height": 290,
+    "svg": "svg/ai-step-01.svg",
+    "png": "png/ai-step-01.png",
+    "note": ""
+  },
+  {
+    "name": "ai-step-02",
+    "category": "cards",
+    "use": "AI 三步示意卡片；网页建议用 HTML 保留可访问性",
+    "width": 270,
+    "height": 290,
+    "svg": "svg/ai-step-02.svg",
+    "png": "png/ai-step-02.png",
+    "note": ""
+  },
+  {
+    "name": "ai-step-03",
+    "category": "cards",
+    "use": "AI 三步示意卡片；网页建议用 HTML 保留可访问性",
+    "width": 270,
+    "height": 290,
+    "svg": "svg/ai-step-03.svg",
+    "png": "png/ai-step-03.png",
+    "note": ""
+  },
+  {
+    "name": "crossub-wordmark-reference",
+    "category": "brand",
+    "use": "重建示意 Logo，需替换为品牌官方 SVG",
+    "width": 320,
+    "height": 90,
+    "svg": "svg/crossub-wordmark-reference.svg",
+    "png": "png/crossub-wordmark-reference.png",
+    "note": "非原始品牌源文件；字形和字距仅作参考，不作为商标标准"
+  },
+  {
+    "name": "crossub-ring-reference",
+    "category": "brand",
+    "use": "软件卡片小标识的示意重建",
+    "width": 96,
+    "height": 96,
+    "svg": "svg/crossub-ring-reference.svg",
+    "png": "png/crossub-ring-reference.png",
+    "note": "非官方图标，正式交付请替换品牌源文件"
+  },
+  {
+    "name": "glass-code-tile",
+    "category": "decorations",
+    "use": "可独立浮动的代码或井号图形；矢量风格重建",
+    "width": 240,
+    "height": 240,
+    "svg": "svg/glass-code-tile.svg",
+    "png": "png/glass-code-tile.png",
+    "note": ""
+  },
+  {
+    "name": "glass-hash-tile",
+    "category": "decorations",
+    "use": "可独立浮动的代码或井号图形；矢量风格重建",
+    "width": 240,
+    "height": 240,
+    "svg": "svg/glass-hash-tile.svg",
+    "png": "png/glass-hash-tile.png",
+    "note": ""
+  },
+  {
+    "name": "glass-square",
+    "category": "decorations",
+    "use": "小型半透明玻璃方块",
+    "width": 130,
+    "height": 130,
+    "svg": "svg/glass-square.svg",
+    "png": "png/glass-square.png",
+    "note": ""
+  },
+  {
+    "name": "floating-document",
+    "category": "decorations",
+    "use": "独立文件面板，用于插画的小型浮动元素",
+    "width": 360,
+    "height": 230,
+    "svg": "svg/floating-document.svg",
+    "png": "png/floating-document.png",
+    "note": ""
+  }
+]
