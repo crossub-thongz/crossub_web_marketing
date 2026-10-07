@@ -4,7 +4,7 @@ import { cn } from '@/lib/utils';
 const arrowStroke = {
   fill: 'none',
   stroke: '#00A778',
-  strokeWidth: 2.5,
+  strokeWidth: 2.6,
   strokeLinecap: 'round' as const,
   strokeLinejoin: 'round' as const,
 };
@@ -13,29 +13,53 @@ export function FlowArrow({
   variant,
   className,
 }: {
-  variant: 'up' | 'down' | 'left';
+  variant: 'to-prepare' | 'to-review' | 'to-understand' | 'to-tablet' | 'to-document' | 'to-photos';
   className?: string;
 }) {
-  if (variant === 'up') {
+  if (variant === 'to-prepare') {
     return (
-      <svg viewBox="28 12 120 186" aria-hidden className={cn('pointer-events-none', className)}>
-        <path d="M140 190C40 180 9 92 63 26" {...arrowStroke} />
-        <path d="M42 35l24-14 2 29" {...arrowStroke} />
+      <svg viewBox="0 0 100 150" aria-hidden className={cn('pointer-events-none', className)}>
+        <path d="M22 136C8 90 36 48 62 30" {...arrowStroke} />
+        <path d="M44 28L64 8L82 30" {...arrowStroke} />
       </svg>
     );
   }
-  if (variant === 'down') {
+  if (variant === 'to-review') {
     return (
-      <svg viewBox="12 8 240 112" aria-hidden className={cn('pointer-events-none', className)}>
-        <path d="M20 55C110 -12 210 10 237 109" {...arrowStroke} />
-        <path d="M218 97l21 15 5-25" {...arrowStroke} />
+      <svg viewBox="0 0 170 170" aria-hidden className={cn('pointer-events-none', className)}>
+        <path d="M148 18C156 64 92 108 42 132" {...arrowStroke} />
+        <path d="M22 116L40 154L64 118" {...arrowStroke} />
+      </svg>
+    );
+  }
+  if (variant === 'to-understand') {
+    return (
+      <svg viewBox="0 0 80 130" aria-hidden className={cn('pointer-events-none', className)}>
+        <path d="M58 118C22 102 14 62 32 32" {...arrowStroke} />
+        <path d="M14 40L34 10L52 38" {...arrowStroke} />
+      </svg>
+    );
+  }
+  if (variant === 'to-tablet') {
+    return (
+      <svg viewBox="0 0 90 100" aria-hidden className={cn('pointer-events-none', className)}>
+        <path d="M14 80C16 48 42 28 64 22" {...arrowStroke} />
+        <path d="M48 8L74 20L50 36" {...arrowStroke} />
+      </svg>
+    );
+  }
+  if (variant === 'to-document') {
+    return (
+      <svg viewBox="0 0 70 160" aria-hidden className={cn('pointer-events-none', className)}>
+        <path d="M24 12C56 40 54 90 36 126" {...arrowStroke} />
+        <path d="M16 112L36 148L56 114" {...arrowStroke} />
       </svg>
     );
   }
   return (
-    <svg viewBox="26 10 213 170" aria-hidden className={cn('pointer-events-none', className)}>
-      <path d="M230 18C242 140 140 192 40 166" {...arrowStroke} />
-      <path d="M64 154l-30 12 24 17" {...arrowStroke} />
+    <svg viewBox="0 0 150 80" aria-hidden className={cn('pointer-events-none', className)}>
+      <path d="M138 16C92 14 54 32 36 52" {...arrowStroke} />
+      <path d="M52 36L12 54L48 70" {...arrowStroke} />
     </svg>
   );
 }
@@ -97,9 +121,9 @@ export function InspectionVisual() {
   return (
     <div className="relative mx-auto w-full max-w-[640px]">
       <div className="relative hidden min-h-[500px] lg:block">
-        <FlowArrow variant="up" className="absolute top-12 left-[64px] z-30 h-[96px] w-[62px]" />
-        <FlowArrow variant="down" className="absolute top-[124px] -right-2 z-30 h-[58px] w-[124px]" />
-        <FlowArrow variant="left" className="absolute bottom-2 left-[20%] z-[15] h-[88px] w-[118px]" />
+        <FlowArrow variant="to-tablet" className="absolute top-8 left-[72px] z-30 h-[88px] w-[78px]" />
+        <FlowArrow variant="to-document" className="absolute top-[168px] -right-1 z-30 h-[150px] w-[56px]" />
+        <FlowArrow variant="to-photos" className="absolute top-[332px] left-[18%] z-30 h-[68px] w-[140px]" />
         <img
           src="/site/png/inspection-tablet.png"
           alt=""
@@ -118,11 +142,11 @@ export function InspectionVisual() {
         <img
           src="/site/png/badge-property-records.png"
           alt="Connected property records"
-          className="absolute top-[38%] right-0 z-20 w-[250px] drop-shadow-[0_10px_24px_rgba(23,30,75,0.08)]"
+          className="absolute top-[40%] right-10 z-20 w-[230px] drop-shadow-[0_10px_24px_rgba(23,30,75,0.08)]"
         />
         <IconBubble src="/site/png/icon-camera.png" className="top-20 left-6" />
         <IconBubble src="/site/png/icon-home.png" className="top-2 right-0" />
-        <IconBubble src="/site/png/icon-document.png" className="top-[58%] right-1" />
+        <IconBubble src="/site/png/icon-document.png" className="top-[64%] right-0" />
       </div>
       <div className="lg:hidden">
         <img src="/site/png/inspection-tablet.png" alt="" className="mx-auto w-[92%]" />

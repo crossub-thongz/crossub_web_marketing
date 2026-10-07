@@ -28,21 +28,21 @@ const STEPS = [
     title: 'Understand',
     body: 'Make sense of requests, photos and reports.',
     chip: 'bg-[#E0F7EE] text-[#007455]',
-    place: 'lg:absolute lg:top-[112px] lg:left-0 lg:w-[36%]',
+    place: 'lg:absolute lg:top-[108px] lg:left-0 lg:w-[220px]',
   },
   {
     n: '02',
     title: 'Prepare',
     body: 'Draft responses and organise next steps.',
     chip: 'bg-[#FFF4D8] text-[#7A5B12]',
-    place: 'lg:absolute lg:top-0 lg:right-16 lg:w-[36%]',
+    place: 'lg:absolute lg:top-0 lg:right-6 lg:w-[210px]',
   },
   {
     n: '03',
     title: 'Review',
     body: 'Flag what needs your team’s attention.',
     chip: 'bg-[#F1E8FF] text-[#5C4B8A]',
-    place: 'lg:absolute lg:bottom-10 lg:left-[16%] lg:w-[48%]',
+    place: 'lg:absolute lg:top-[322px] lg:left-[128px] lg:w-[320px]',
   },
 ] as const;
 
@@ -190,16 +190,16 @@ export function HomePage() {
               className="pointer-events-none absolute bottom-28 left-2 z-0 hidden w-20 lg:block"
             />
             <FlowArrow
-              variant="up"
-              className="absolute top-1 left-[34%] z-20 hidden h-[146px] w-[88px] lg:block"
+              variant="to-prepare"
+              className="absolute top-2 left-[196px] z-20 hidden h-[140px] w-[96px] lg:block"
             />
             <FlowArrow
-              variant="down"
-              className="absolute top-[128px] -right-16 z-0 hidden h-[70px] w-[150px] lg:block"
+              variant="to-review"
+              className="absolute top-[158px] right-[8px] z-20 hidden h-[164px] w-[156px] lg:block"
             />
             <FlowArrow
-              variant="left"
-              className="absolute -bottom-1 left-[2%] z-0 hidden h-[108px] w-[136px] lg:block"
+              variant="to-understand"
+              className="absolute top-[316px] left-0 z-20 hidden h-[108px] w-[64px] lg:block"
             />
             <div className="relative flex flex-col gap-4 lg:block lg:h-full">
               {STEPS.map((step) => (
