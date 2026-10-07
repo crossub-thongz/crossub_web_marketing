@@ -190,16 +190,16 @@ export function HomePage() {
               className="pointer-events-none absolute bottom-28 left-2 z-0 hidden w-20 lg:block"
             />
             <FlowArrow
-              variant="to-prepare"
-              className="absolute top-2 left-[196px] z-20 hidden h-[140px] w-[96px] lg:block"
+              variant="up"
+              className="absolute top-0 left-[188px] z-20 hidden h-[150px] w-[96px] lg:block"
             />
             <FlowArrow
-              variant="to-review"
-              className="absolute top-[158px] right-[8px] z-20 hidden h-[164px] w-[156px] lg:block"
+              variant="down"
+              className="absolute top-[196px] right-0 z-0 hidden h-[72px] w-[156px] lg:block"
             />
             <FlowArrow
-              variant="to-understand"
-              className="absolute top-[316px] left-0 z-20 hidden h-[108px] w-[64px] lg:block"
+              variant="left"
+              className="absolute -bottom-2 left-[8px] z-0 hidden h-[88px] w-[112px] lg:block"
             />
             <div className="relative flex flex-col gap-4 lg:block lg:h-full">
               {STEPS.map((step) => (

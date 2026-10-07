@@ -1,67 +1,20 @@
 import { Wordmark } from '@/components/site/logo';
 import { cn } from '@/lib/utils';
 
-const arrowStroke = {
-  fill: 'none',
-  stroke: '#00A778',
-  strokeWidth: 2.6,
-  strokeLinecap: 'round' as const,
-  strokeLinejoin: 'round' as const,
-};
+const FLOW_ARROWS = {
+  up: '/site/svg/arrow-flow-up.svg',
+  down: '/site/svg/arrow-flow-down.svg',
+  left: '/site/svg/arrow-flow-left.svg',
+} as const;
 
 export function FlowArrow({
   variant,
   className,
 }: {
-  variant: 'to-prepare' | 'to-review' | 'to-understand' | 'to-tablet' | 'to-document' | 'to-photos';
+  variant: keyof typeof FLOW_ARROWS;
   className?: string;
 }) {
-  if (variant === 'to-prepare') {
-    return (
-      <svg viewBox="0 0 100 150" aria-hidden className={cn('pointer-events-none', className)}>
-        <path d="M22 136C8 90 36 48 62 30" {...arrowStroke} />
-        <path d="M44 28L64 8L82 30" {...arrowStroke} />
-      </svg>
-    );
-  }
-  if (variant === 'to-review') {
-    return (
-      <svg viewBox="0 0 170 170" aria-hidden className={cn('pointer-events-none', className)}>
-        <path d="M148 18C156 64 92 108 42 132" {...arrowStroke} />
-        <path d="M22 116L40 154L64 118" {...arrowStroke} />
-      </svg>
-    );
-  }
-  if (variant === 'to-understand') {
-    return (
-      <svg viewBox="0 0 80 130" aria-hidden className={cn('pointer-events-none', className)}>
-        <path d="M58 118C22 102 14 62 32 32" {...arrowStroke} />
-        <path d="M14 40L34 10L52 38" {...arrowStroke} />
-      </svg>
-    );
-  }
-  if (variant === 'to-tablet') {
-    return (
-      <svg viewBox="0 0 90 100" aria-hidden className={cn('pointer-events-none', className)}>
-        <path d="M14 80C16 48 42 28 64 22" {...arrowStroke} />
-        <path d="M48 8L74 20L50 36" {...arrowStroke} />
-      </svg>
-    );
-  }
-  if (variant === 'to-document') {
-    return (
-      <svg viewBox="0 0 70 160" aria-hidden className={cn('pointer-events-none', className)}>
-        <path d="M24 12C56 40 54 90 36 126" {...arrowStroke} />
-        <path d="M16 112L36 148L56 114" {...arrowStroke} />
-      </svg>
-    );
-  }
-  return (
-    <svg viewBox="0 0 150 80" aria-hidden className={cn('pointer-events-none', className)}>
-      <path d="M138 16C92 14 54 32 36 52" {...arrowStroke} />
-      <path d="M52 36L12 54L48 70" {...arrowStroke} />
-    </svg>
-  );
+  return <img src={FLOW_ARROWS[variant]} alt="" className={cn('pointer-events-none', className)} />;
 }
 
 const AREAS = [
@@ -121,9 +74,9 @@ export function InspectionVisual() {
   return (
     <div className="relative mx-auto w-full max-w-[640px]">
       <div className="relative hidden min-h-[500px] lg:block">
-        <FlowArrow variant="to-tablet" className="absolute top-8 left-[72px] z-30 h-[88px] w-[78px]" />
-        <FlowArrow variant="to-document" className="absolute top-[168px] -right-1 z-30 h-[150px] w-[56px]" />
-        <FlowArrow variant="to-photos" className="absolute top-[332px] left-[18%] z-30 h-[68px] w-[140px]" />
+        <FlowArrow variant="up" className="absolute top-10 left-[70px] z-30 h-[100px] w-[64px]" />
+        <FlowArrow variant="down" className="absolute top-[150px] right-0 z-30 h-[64px] w-[138px]" />
+        <FlowArrow variant="left" className="absolute top-[340px] left-[14%] z-30 h-[84px] w-[106px]" />
         <img
           src="/site/png/inspection-tablet.png"
           alt=""
