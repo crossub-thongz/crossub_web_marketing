@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 import { PrimaryLink, SecondaryLink, TextLink } from '@/components/site/buttons';
 import { HeroArt } from '@/components/site/hero-art';
-import { ExperienceCard, InspectionVisual, SupportCluster } from '@/components/site/story-art';
+import { ExperienceCard, FlowArrow, InspectionVisual, SupportCluster } from '@/components/site/story-art';
 import { siteLinks } from '@/lib/site-links';
 
 function Eyebrow({ children }: { children: ReactNode }) {
@@ -28,21 +28,21 @@ const STEPS = [
     title: 'Understand',
     body: 'Make sense of requests, photos and reports.',
     chip: 'bg-[#E0F7EE] text-[#007455]',
-    place: 'lg:absolute lg:top-24 lg:left-0 lg:w-[42%]',
+    place: 'lg:absolute lg:top-[112px] lg:left-0 lg:w-[36%]',
   },
   {
     n: '02',
     title: 'Prepare',
     body: 'Draft responses and organise next steps.',
     chip: 'bg-[#FFF4D8] text-[#7A5B12]',
-    place: 'lg:absolute lg:top-0 lg:right-6 lg:w-[36%]',
+    place: 'lg:absolute lg:top-0 lg:right-16 lg:w-[36%]',
   },
   {
     n: '03',
     title: 'Review',
     body: 'Flag what needs your team’s attention.',
     chip: 'bg-[#F1E8FF] text-[#5C4B8A]',
-    place: 'lg:absolute lg:top-[300px] lg:left-[22%] lg:w-[48%]',
+    place: 'lg:absolute lg:bottom-10 lg:left-[16%] lg:w-[48%]',
   },
 ] as const;
 
@@ -178,81 +178,30 @@ export function HomePage() {
               See how it works
             </SecondaryLink>
           </div>
-          <div id="ai-steps" className="relative mx-auto w-full max-w-[620px] lg:min-h-[560px]">
+          <div id="ai-steps" className="relative mx-auto w-full max-w-[600px] overflow-visible lg:h-[560px]">
             <img
               src="/site/png/glass-square.png"
               alt=""
-              className="pointer-events-none absolute -top-4 -right-2 z-0 hidden w-16 lg:block"
+              className="pointer-events-none absolute -top-3 right-6 z-0 hidden w-14 lg:block"
             />
             <img
               src="/site/png/dots-mint.png"
               alt=""
-              className="pointer-events-none absolute bottom-16 left-0 z-0 hidden w-24 lg:block"
+              className="pointer-events-none absolute bottom-28 left-2 z-0 hidden w-20 lg:block"
             />
-            <svg
-              viewBox="0 0 100 130"
-              aria-hidden
-              className="pointer-events-none absolute top-1 left-[34%] z-0 hidden h-[130px] w-[100px] lg:block"
-            >
-              <path
-                d="M30 118C16 72 36 36 68 18"
-                fill="none"
-                stroke="#1FCB8C"
-                strokeWidth="2.6"
-                strokeLinecap="round"
-              />
-              <path
-                d="M52 8L72 16L54 32"
-                fill="none"
-                stroke="#1FCB8C"
-                strokeWidth="2.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <svg
-              viewBox="0 0 150 140"
-              aria-hidden
-              className="pointer-events-none absolute top-[188px] right-0 z-0 hidden h-[140px] w-[150px] lg:block"
-            >
-              <path
-                d="M8 18C70 8 128 48 108 108"
-                fill="none"
-                stroke="#1FCB8C"
-                strokeWidth="2.6"
-                strokeLinecap="round"
-              />
-              <path
-                d="M90 92L106 116L128 94"
-                fill="none"
-                stroke="#1FCB8C"
-                strokeWidth="2.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <svg
-              viewBox="0 0 170 80"
-              aria-hidden
-              className="pointer-events-none absolute bottom-1 left-[6%] z-0 hidden h-[72px] w-[170px] lg:block"
-            >
-              <path
-                d="M158 18C110 18 70 28 28 58"
-                fill="none"
-                stroke="#1FCB8C"
-                strokeWidth="2.6"
-                strokeLinecap="round"
-              />
-              <path
-                d="M46 40L16 62L48 70"
-                fill="none"
-                stroke="#1FCB8C"
-                strokeWidth="2.6"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              />
-            </svg>
-            <div className="relative flex flex-col gap-4 lg:block lg:h-[560px]">
+            <FlowArrow
+              variant="up"
+              className="absolute top-1 left-[34%] z-20 hidden h-[146px] w-[88px] lg:block"
+            />
+            <FlowArrow
+              variant="down"
+              className="absolute top-[128px] -right-16 z-0 hidden h-[70px] w-[150px] lg:block"
+            />
+            <FlowArrow
+              variant="left"
+              className="absolute -bottom-1 left-[2%] z-0 hidden h-[108px] w-[136px] lg:block"
+            />
+            <div className="relative flex flex-col gap-4 lg:block lg:h-full">
               {STEPS.map((step) => (
                 <article
                   key={step.n}

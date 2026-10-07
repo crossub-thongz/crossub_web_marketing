@@ -1,4 +1,44 @@
 import { Wordmark } from '@/components/site/logo';
+import { cn } from '@/lib/utils';
+
+const arrowStroke = {
+  fill: 'none',
+  stroke: '#00A778',
+  strokeWidth: 2.5,
+  strokeLinecap: 'round' as const,
+  strokeLinejoin: 'round' as const,
+};
+
+export function FlowArrow({
+  variant,
+  className,
+}: {
+  variant: 'up' | 'down' | 'left';
+  className?: string;
+}) {
+  if (variant === 'up') {
+    return (
+      <svg viewBox="28 12 120 186" aria-hidden className={cn('pointer-events-none', className)}>
+        <path d="M140 190C40 180 9 92 63 26" {...arrowStroke} />
+        <path d="M42 35l24-14 2 29" {...arrowStroke} />
+      </svg>
+    );
+  }
+  if (variant === 'down') {
+    return (
+      <svg viewBox="12 8 240 112" aria-hidden className={cn('pointer-events-none', className)}>
+        <path d="M20 55C110 -12 210 10 237 109" {...arrowStroke} />
+        <path d="M218 97l21 15 5-25" {...arrowStroke} />
+      </svg>
+    );
+  }
+  return (
+    <svg viewBox="26 10 213 170" aria-hidden className={cn('pointer-events-none', className)}>
+      <path d="M230 18C242 140 140 192 40 166" {...arrowStroke} />
+      <path d="M64 154l-30 12 24 17" {...arrowStroke} />
+    </svg>
+  );
+}
 
 const AREAS = [
   { label: 'Inspections', icon: '/site/png/icon-inspection.png' },
@@ -56,70 +96,10 @@ function IconBubble({
 export function InspectionVisual() {
   return (
     <div className="relative mx-auto w-full max-w-[640px]">
-      <div className="relative hidden min-h-[480px] lg:block">
-        <svg
-          viewBox="0 0 80 90"
-          aria-hidden
-          className="pointer-events-none absolute top-[68px] left-[72px] z-30 h-[84px] w-[76px]"
-        >
-          <path
-            d="M18 74C14 40 32 22 58 14"
-            fill="none"
-            stroke="#1FCB8C"
-            strokeWidth="2.4"
-            strokeLinecap="round"
-          />
-          <path
-            d="M42 6L62 12L46 26"
-            fill="none"
-            stroke="#1FCB8C"
-            strokeWidth="2.4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-        <svg
-          viewBox="0 0 90 70"
-          aria-hidden
-          className="pointer-events-none absolute top-[78px] right-[8px] z-30 h-[64px] w-[84px]"
-        >
-          <path
-            d="M12 12C40 8 70 22 74 58"
-            fill="none"
-            stroke="#1FCB8C"
-            strokeWidth="2.4"
-            strokeLinecap="round"
-          />
-          <path
-            d="M58 46L72 64L84 44"
-            fill="none"
-            stroke="#1FCB8C"
-            strokeWidth="2.4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
-        <svg
-          viewBox="0 0 110 80"
-          aria-hidden
-          className="pointer-events-none absolute top-[66%] right-[18px] z-30 h-[78px] w-[108px]"
-        >
-          <path
-            d="M96 16C70 20 40 36 22 62"
-            fill="none"
-            stroke="#1FCB8C"
-            strokeWidth="2.4"
-            strokeLinecap="round"
-          />
-          <path
-            d="M40 46L12 64L42 72"
-            fill="none"
-            stroke="#1FCB8C"
-            strokeWidth="2.4"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-        </svg>
+      <div className="relative hidden min-h-[500px] lg:block">
+        <FlowArrow variant="up" className="absolute top-12 left-[64px] z-30 h-[96px] w-[62px]" />
+        <FlowArrow variant="down" className="absolute top-[124px] -right-2 z-30 h-[58px] w-[124px]" />
+        <FlowArrow variant="left" className="absolute bottom-2 left-[20%] z-[15] h-[88px] w-[118px]" />
         <img
           src="/site/png/inspection-tablet.png"
           alt=""
