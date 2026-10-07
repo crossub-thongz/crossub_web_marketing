@@ -74,9 +74,12 @@ export function InspectionVisual() {
   return (
     <div className="relative mx-auto w-full max-w-[640px]">
       <div className="relative hidden min-h-[500px] lg:block">
-        <FlowArrow variant="up" className="absolute top-10 left-[70px] z-30 h-[100px] w-[64px]" />
-        <FlowArrow variant="down" className="absolute top-[150px] right-0 z-30 h-[64px] w-[138px]" />
-        <FlowArrow variant="left" className="absolute top-[340px] left-[14%] z-30 h-[84px] w-[106px]" />
+        <FlowArrow
+          variant="up"
+          className="absolute top-11 left-[62px] z-30 h-[92px] w-[72px] scale-x-[-1]"
+        />
+        <FlowArrow variant="down" className="absolute top-[236px] right-1 z-30 h-[72px] w-[132px]" />
+        <FlowArrow variant="left" className="absolute top-[292px] left-[6%] z-30 h-[76px] w-[128px]" />
         <img
           src="/site/png/inspection-tablet.png"
           alt=""

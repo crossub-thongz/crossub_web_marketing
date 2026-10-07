@@ -191,15 +191,15 @@ export function HomePage() {
             />
             <FlowArrow
               variant="up"
-              className="absolute top-0 left-[188px] z-20 hidden h-[150px] w-[96px] lg:block"
+              className="absolute top-[22px] left-[172px] z-20 hidden h-[112px] w-[74px] origin-center rotate-90 lg:block"
             />
             <FlowArrow
               variant="down"
-              className="absolute top-[196px] right-0 z-0 hidden h-[72px] w-[156px] lg:block"
+              className="absolute top-[250px] right-[188px] z-20 hidden h-[78px] w-[168px] lg:block"
             />
             <FlowArrow
-              variant="left"
-              className="absolute -bottom-2 left-[8px] z-0 hidden h-[88px] w-[112px] lg:block"
+              variant="up"
+              className="absolute top-[338px] left-0 z-20 hidden h-[100px] w-[66px] lg:block"
             />
             <div className="relative flex flex-col gap-4 lg:block lg:h-full">
               {STEPS.map((step) => (
