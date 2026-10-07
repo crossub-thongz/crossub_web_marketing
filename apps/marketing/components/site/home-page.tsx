@@ -1,4 +1,4 @@
-import { ArrowUpRight, Check } from 'lucide-react';
+import { ArrowRight, Check } from 'lucide-react';
 import type { ReactNode } from 'react';
 
 import { PrimaryLink, SecondaryLink, TextLink } from '@/components/site/buttons';
@@ -28,18 +28,21 @@ const STEPS = [
     title: 'Understand',
     body: 'Make sense of requests, photos and reports.',
     chip: 'bg-[#E0F7EE] text-[#007455]',
+    place: 'lg:absolute lg:top-24 lg:left-0 lg:w-[42%]',
   },
   {
     n: '02',
     title: 'Prepare',
     body: 'Draft responses and organise next steps.',
     chip: 'bg-[#FFF4D8] text-[#7A5B12]',
+    place: 'lg:absolute lg:top-0 lg:right-6 lg:w-[36%]',
   },
   {
     n: '03',
     title: 'Review',
     body: 'Flag what needs your team’s attention.',
     chip: 'bg-[#F1E8FF] text-[#5C4B8A]',
+    place: 'lg:absolute lg:top-[300px] lg:left-[22%] lg:w-[48%]',
   },
 ] as const;
 
@@ -95,15 +98,20 @@ export function HomePage() {
 
           <div className="relative mt-12 lg:mt-16">
             <img
-              src="/site/png/pastel-squares.png"
+              src="/site/png/dots-mint.png"
               alt=""
-              className="pointer-events-none absolute -top-8 -left-8 hidden w-40 lg:block"
+              className="pointer-events-none absolute -bottom-8 -left-6 hidden w-28 lg:block"
+            />
+            <img
+              src="/site/png/glass-square.png"
+              alt=""
+              className="pointer-events-none absolute -top-8 -right-4 hidden w-16 lg:block"
             />
             <div className="relative grid items-stretch gap-5 lg:grid-cols-3 lg:gap-6">
               <article className="order-2 flex h-full flex-col rounded-[26px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5 lg:order-1">
                 <img src="/site/png/service-inspection.png" alt="" className="size-12" />
                 <p className="mt-5 w-fit rounded-full bg-[#F4F0FF] px-2.5 py-1 text-[11px] font-semibold tracking-[0.08em] text-[#5C4B8A]">
-                  PAID SERVICE
+                  ON-DEMAND SERVICE
                 </p>
                 <h3 className="mt-3 text-[22px] font-semibold tracking-[-0.02em]">Inspection Only</h3>
                 <p className="mt-2 text-[16px] leading-[1.6] text-[#62697C]">
@@ -111,11 +119,11 @@ export function HomePage() {
                 </p>
                 <TextLink href={siteLinks.inspections} className="mt-auto pt-8">
                   Explore inspections
-                  <ArrowUpRight className="size-4" aria-hidden />
+                  <ArrowRight className="size-4" aria-hidden />
                 </TextLink>
               </article>
 
-              <article className="order-1 flex h-full flex-col rounded-[26px] bg-[#E7FBF4] p-7 shadow-[0_18px_44px_rgba(0,143,101,0.12)] ring-1 ring-[#008F65]/10 lg:order-2 lg:-translate-y-6">
+              <article className="order-1 flex h-full flex-col rounded-[26px] bg-[#E7FBF4] p-7 shadow-[0_18px_44px_rgba(0,143,101,0.12)] ring-1 ring-[#008F65]/10 lg:order-2 lg:-translate-y-8">
                 <img src="/site/png/service-home.png" alt="" className="size-12" />
                 <p className="mt-5 w-fit rounded-full bg-white px-2.5 py-1 text-[11px] font-semibold tracking-[0.08em] text-[#007455]">
                   FREE
@@ -139,7 +147,7 @@ export function HomePage() {
               <article className="order-3 flex h-full flex-col rounded-[26px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5">
                 <img src="/site/png/service-people.png" alt="" className="size-12" />
                 <p className="mt-5 w-fit rounded-full bg-[#FFF8E8] px-2.5 py-1 text-[11px] font-semibold tracking-[0.08em] text-[#8A6414]">
-                  PAID SERVICE
+                  EXPERT SUPPORT
                 </p>
                 <h3 className="mt-3 text-[22px] font-semibold tracking-[-0.02em]">Full Service</h3>
                 <p className="mt-2 text-[16px] leading-[1.6] text-[#62697C]">
@@ -147,7 +155,7 @@ export function HomePage() {
                 </p>
                 <TextLink href={siteLinks.fullService} className="mt-auto pt-8">
                   Explore Full Service
-                  <ArrowUpRight className="size-4" aria-hidden />
+                  <ArrowRight className="size-4" aria-hidden />
                 </TextLink>
               </article>
             </div>
@@ -166,32 +174,41 @@ export function HomePage() {
               From inspection reports to maintenance requests, AI helps reduce admin and keeps
               your team in control.
             </p>
-            <TextLink href={siteLinks.ai} className="mt-6">
+            <SecondaryLink href={siteLinks.ai} className="mt-8">
               See how it works
-              <ArrowUpRight className="size-4" aria-hidden />
-            </TextLink>
+            </SecondaryLink>
           </div>
-          <div id="ai-steps" className="relative mx-auto w-full max-w-[540px]">
+          <div id="ai-steps" className="relative mx-auto w-full max-w-[620px] lg:min-h-[560px]">
             <img
-              src="/site/png/glow-warm.png"
+              src="/site/png/glass-square.png"
               alt=""
-              className="pointer-events-none absolute -top-16 -right-16 hidden w-72 sm:block"
+              className="pointer-events-none absolute -top-4 -right-2 z-0 hidden w-16 lg:block"
+            />
+            <img
+              src="/site/png/dots-mint.png"
+              alt=""
+              className="pointer-events-none absolute bottom-16 left-0 z-0 hidden w-24 lg:block"
             />
             <img
               src="/site/png/arrow-curve-up.png"
               alt=""
-              className="pointer-events-none absolute top-0 left-1/2 z-0 hidden w-28 -translate-x-1/2 sm:block"
+              className="pointer-events-none absolute top-0 left-[26%] z-0 hidden w-40 lg:block"
             />
             <img
               src="/site/png/arrow-curve-down.png"
               alt=""
-              className="pointer-events-none absolute top-1/2 right-0 z-0 hidden w-24 sm:block"
+              className="pointer-events-none absolute top-[168px] right-0 z-20 hidden w-40 lg:block"
             />
-            <div className="relative grid gap-4 sm:grid-cols-2 sm:gap-5">
-              {STEPS.slice(0, 2).map((step, index) => (
+            <img
+              src="/site/png/arrow-curve-left.png"
+              alt=""
+              className="pointer-events-none absolute bottom-0 left-[4%] z-0 hidden w-44 lg:block"
+            />
+            <div className="relative flex flex-col gap-4 lg:block lg:h-[560px]">
+              {STEPS.map((step) => (
                 <article
                   key={step.n}
-                  className={`rounded-[26px] bg-white p-6 shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5 ${index === 0 ? 'sm:mt-10' : ''}`}
+                  className={`relative z-10 rounded-[26px] bg-white p-6 shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5 ${step.place}`}
                 >
                   <span className={`grid size-12 place-items-center rounded-full text-[14px] font-bold ${step.chip}`}>
                     {step.n}
@@ -201,13 +218,6 @@ export function HomePage() {
                 </article>
               ))}
             </div>
-            <article className="relative mx-auto mt-4 w-full rounded-[26px] bg-white p-6 shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5 sm:mt-6 sm:w-[78%]">
-              <span className={`grid size-12 place-items-center rounded-full text-[14px] font-bold ${STEPS[2].chip}`}>
-                {STEPS[2].n}
-              </span>
-              <h3 className="mt-4 text-[20px] font-semibold">{STEPS[2].title}</h3>
-              <p className="mt-2 text-[16px] leading-[1.6] text-[#62697C]">{STEPS[2].body}</p>
-            </article>
           </div>
         </div>
       </section>
@@ -237,10 +247,9 @@ export function HomePage() {
                 ),
               )}
             </ul>
-            <TextLink href={siteLinks.fullService} className="mt-6">
+            <SecondaryLink href={siteLinks.fullService} className="mt-8">
               Explore Full Service
-              <ArrowUpRight className="size-4" aria-hidden />
-            </TextLink>
+            </SecondaryLink>
           </div>
         </div>
       </section>
@@ -256,10 +265,9 @@ export function HomePage() {
               Use our inspection tools yourself, or book our team to attend. Keep photos, reports
               and follow-up in one place.
             </p>
-            <TextLink href={siteLinks.inspections} className="mt-6">
+            <SecondaryLink href={siteLinks.inspections} className="mt-8">
               Explore inspections
-              <ArrowUpRight className="size-4" aria-hidden />
-            </TextLink>
+            </SecondaryLink>
           </div>
           <InspectionVisual />
         </div>
@@ -282,10 +290,9 @@ export function HomePage() {
             <p className="mt-3 text-[17px] font-medium text-[#171E4B]">
               Practical software, backed by experienced people.
             </p>
-            <TextLink href={siteLinks.about} className="mt-6">
-              Meet CROSSUB
-              <ArrowUpRight className="size-4" aria-hidden />
-            </TextLink>
+            <SecondaryLink href={siteLinks.about} className="mt-8">
+              Meet Crossub
+            </SecondaryLink>
           </div>
         </div>
       </section>
