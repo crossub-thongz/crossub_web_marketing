@@ -49,7 +49,7 @@ const STEPS = [
 export function HomePage() {
   return (
     <main id="main">
-      <section className="mx-auto grid max-w-[1600px] items-center gap-10 px-5 pt-4 pb-20 md:px-6 md:pb-28 lg:grid-cols-[minmax(0,40rem)_minmax(0,1fr)] lg:items-center lg:gap-4 lg:pb-32">
+      <section className="mx-auto grid w-full max-w-[1480px] items-center gap-10 px-6 pt-4 pb-20 md:px-8 md:pb-28 lg:grid-cols-2 lg:items-center lg:gap-x-16 lg:pb-28">
         <div>
           <Eyebrow>FREE SOFTWARE. REAL EXPERTISE.</Eyebrow>
           <h1 className="mt-6 max-w-[640px] text-[40px] leading-[1.08] font-semibold tracking-[-0.035em] text-[#171E4B] sm:text-[52px] lg:text-[60px]">
@@ -76,14 +76,14 @@ export function HomePage() {
         <HeroArt />
       </section>
 
-      <section id="solutions" tabIndex={-1} className="rise scroll-mt-28 px-5 py-16 outline-none md:px-6 md:py-28 lg:py-32">
-        <div className="mx-auto max-w-[1600px]">
+      <section id="solutions" tabIndex={-1} className="rise scroll-mt-28 py-16 outline-none md:py-28 lg:py-32">
+        <div className="mx-auto w-full max-w-[1480px] px-6 md:px-8">
           <div className="mx-auto max-w-2xl text-center">
             <Eyebrow>THREE WAYS TO GROW WITH CROSSUB</Eyebrow>
-            <h2 className="mt-5 text-[34px] leading-[1.15] font-bold tracking-[-0.03em] sm:text-[42px]">
+            <h2 className="mt-5 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] sm:text-[48px]">
               Start Free. Scale Your Way.
             </h2>
-            <p className="mt-5 text-[17px] leading-[1.6] text-[#62697C]">
+            <p className="mt-5 text-[16px] leading-[1.5] text-[#62697C]">
               Your software. Your agency. Your choice of support.
             </p>
           </div>
@@ -155,18 +155,18 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="ai" tabIndex={-1} className="rise scroll-mt-28 px-5 py-16 outline-none md:px-6 md:py-28 lg:py-32">
-        <div className="mx-auto grid max-w-[1600px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <section id="ai" tabIndex={-1} className="rise scroll-mt-28 py-16 outline-none md:py-28 lg:py-32">
+        <div className="mx-auto grid w-full max-w-[1480px] items-center gap-12 px-6 md:px-8 lg:grid-cols-2 lg:gap-x-16">
           <div>
             <Eyebrow>BUILT-IN INTELLIGENCE</Eyebrow>
-            <h2 className="mt-3 text-[34px] leading-[1.15] font-bold tracking-[-0.03em] sm:text-[42px]">
+            <h2 className="mt-10 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] sm:text-[48px]">
               AI Moves The Work Forward.
             </h2>
-            <p className="mt-4 max-w-xl text-[17px] leading-[1.6] text-[#62697C]">
-              From inspection reports to maintenance requests, AI helps reduce admin and keeps
-              your team in control.
+            <p className="mt-8 max-w-[34rem] text-[16px] leading-[1.5] text-[#62697C]">
+              From inspection reports to maintenance requests, AI helps reduce admin and keeps your
+              team in control.
             </p>
-            <SecondaryLink href={siteLinks.ai} className="mt-8">
+            <SecondaryLink href={siteLinks.ai} className="mt-20">
               See how it works
             </SecondaryLink>
           </div>
@@ -190,8 +190,8 @@ export function HomePage() {
                   <span className={`grid size-14 place-items-center rounded-full text-[15px] font-bold ${step.chip}`}>
                     {step.n}
                   </span>
-                  <h3 className="mt-4 text-[20px] font-semibold">{step.title}</h3>
-                  <p className="mt-2 text-[16px] leading-[1.6] text-[#62697C]">{step.body}</p>
+                  <h3 className="mt-4 text-[18px] font-semibold">{step.title}</h3>
+                  <p className="mt-2 text-[16px] leading-[1.5] text-[#62697C]">{step.body}</p>
                 </article>
               ))}
             </div>
@@ -199,50 +199,53 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="support" tabIndex={-1} className="rise scroll-mt-28 px-5 py-16 outline-none md:px-6 md:py-28 lg:py-32">
-        <div className="mx-auto grid max-w-[1600px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <section id="support" tabIndex={-1} className="rise scroll-mt-28 py-16 outline-none md:py-28 lg:py-32">
+        <div className="mx-auto grid w-full max-w-[1480px] items-center gap-12 px-6 md:px-8 lg:grid-cols-2 lg:gap-x-16">
           <div className="order-2 lg:order-1">
             <SupportCluster />
           </div>
           <div className="order-1 lg:order-2">
             <Eyebrow>FLEXIBLE SUPPORT</Eyebrow>
-            <h2 className="mt-3 text-[34px] leading-[1.15] font-bold tracking-[-0.03em] sm:text-[42px]">
+            <h2 className="mt-10 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] sm:text-[48px]">
               Same Platform. Same Data. More Support.
             </h2>
-            <p className="mt-4 max-w-xl text-[17px] leading-[1.6] text-[#62697C]">
+            <p className="mt-8 max-w-[34rem] text-[16px] leading-[1.5] text-[#62697C]">
               Start with free software. Add Inspection Only or Full Service as your agency grows.
             </p>
-            <ul className="mt-6 space-y-3">
+            <ul className="mt-8 space-y-3">
               {['Keep your property records', 'Choose the support you need', 'Stay in control'].map(
                 (point) => (
                   <li key={point} className="flex items-center gap-3 text-[16px] font-medium">
-                    <span className="grid size-8 shrink-0 place-items-center rounded-full bg-[#E0F7EE] text-[#007455]">
-                      <Check className="size-4" strokeWidth={2.25} aria-hidden />
+                    <span className="grid size-6 shrink-0 place-items-center rounded-full bg-[#171E4B] text-white">
+                      <Check className="size-3.5" strokeWidth={3} aria-hidden />
                     </span>
                     {point}
                   </li>
                 ),
               )}
             </ul>
-            <SecondaryLink href={siteLinks.fullService} className="mt-8">
+            <SecondaryLink href={siteLinks.fullService} className="mt-20">
               Explore Full Service
             </SecondaryLink>
           </div>
         </div>
       </section>
 
-      <section id="inspections" tabIndex={-1} className="rise scroll-mt-28 px-5 py-16 outline-none md:px-6 md:py-28 lg:py-32">
-        <div className="mx-auto grid max-w-[1600px] items-center gap-12 lg:grid-cols-2 lg:gap-10">
+      <section id="inspections" tabIndex={-1} className="rise scroll-mt-28 py-16 outline-none md:py-28 lg:py-32">
+        <div className="mx-auto grid w-full max-w-[1480px] items-center gap-12 px-6 md:px-8 lg:grid-cols-2 lg:gap-x-16">
           <div>
             <Eyebrow>SOFTWARE + ON-SITE SUPPORT</Eyebrow>
-            <h2 className="mt-3 text-[34px] leading-[1.15] font-bold tracking-[-0.03em] sm:text-[42px]">
+            <h2 className="mt-10 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] sm:text-[48px]">
               Every Inspection, Connected.
             </h2>
-            <p className="mt-4 max-w-xl text-[17px] leading-[1.6] text-[#62697C]">
-              Use our inspection tools yourself, or book our team to attend. Keep photos, reports
-              and follow-up in one place.
+            <p className="mt-8 max-w-[34rem] text-[16px] leading-[1.5] text-[#62697C]">
+              Use our inspection tools yourself, or
+              <br />
+              book our team to attend. Keep photos,
+              <br />
+              reports and follow-up in one place.
             </p>
-            <SecondaryLink href={siteLinks.inspections} className="mt-8">
+            <SecondaryLink href={siteLinks.inspections} className="mt-20">
               Explore inspections
             </SecondaryLink>
           </div>
@@ -250,33 +253,34 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="experience" tabIndex={-1} className="rise scroll-mt-28 px-5 py-16 outline-none md:px-6 md:py-28 lg:py-32">
-        <div className="mx-auto grid max-w-[1600px] items-center gap-12 lg:grid-cols-2 lg:gap-16">
+      <section id="experience" tabIndex={-1} className="rise scroll-mt-28 py-16 outline-none md:py-28 lg:py-32">
+        <div className="mx-auto grid w-full max-w-[1480px] items-center gap-12 px-6 md:px-8 lg:grid-cols-2 lg:gap-x-16">
           <div className="order-2 lg:order-1">
             <ExperienceCard />
           </div>
           <div className="order-1 lg:order-2">
             <Eyebrow>EXPERIENCE BEHIND THE PLATFORM</Eyebrow>
-            <h2 className="mt-3 text-[34px] leading-[1.15] font-bold tracking-[-0.03em] sm:text-[42px]">
+            <h2 className="mt-10 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] sm:text-[48px]">
               Real Experience. Real Support.
             </h2>
-            <p className="mt-4 max-w-xl text-[17px] leading-[1.6] text-[#62697C]">
+            <p className="mt-8 max-w-[34rem] text-[16px] leading-[1.5] text-[#62697C]">
               With six years of Full Service experience, our team understands the day-to-day
               demands of property management.
             </p>
-            <p className="mt-3 text-[17px] font-medium text-[#171E4B]">
+            <p className="mt-4 text-[16px] font-medium text-[#171E4B]">
               Practical software, backed by experienced people.
             </p>
-            <SecondaryLink href={siteLinks.about} className="mt-8">
+            <SecondaryLink href={siteLinks.about} className="mt-20">
               Meet Crossub
             </SecondaryLink>
           </div>
         </div>
       </section>
 
-      <section className="rise px-5 pt-6 pb-20 md:px-6 md:pb-28">
+      <section className="rise pt-6 pb-20 md:pb-28">
+        <div className="mx-auto w-full max-w-[1480px] px-6 md:px-8">
         <div
-          className="relative mx-auto max-w-[1600px] overflow-hidden rounded-[48px] bg-cover bg-center px-6 py-16 text-center sm:px-12 sm:py-20"
+          className="relative overflow-hidden rounded-[48px] bg-cover bg-center px-6 py-16 text-center sm:px-12 sm:py-20"
           style={{ backgroundImage: 'url(/site/png/cta-panel.png)' }}
         >
           <img
@@ -290,7 +294,7 @@ export function HomePage() {
               Start free today.
               <span className="block">Grow with us, your way.</span>
             </h2>
-            <p className="mt-4 text-[17px] leading-[1.6] text-[#62697C]">
+            <p className="mt-4 text-[16px] leading-[1.5] text-[#62697C]">
               Free software, with expert support when you need it.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
@@ -302,6 +306,7 @@ export function HomePage() {
               </SecondaryLink>
             </div>
           </div>
+        </div>
         </div>
       </section>
     </main>

@@ -17,7 +17,7 @@ export function PageHero({
   return (
     <section className="mx-auto max-w-[860px] px-6 pt-16 pb-16 text-center md:px-10 md:pt-24 md:pb-20 lg:pb-[5.5rem]">
       <p className="text-[16px] font-bold tracking-[0.16em] text-[#007455]">{eyebrow}</p>
-      <h1 className="mt-4 text-[40px] leading-[1.08] font-semibold tracking-[-0.035em] text-[#171E4B] sm:text-[52px]">
+      <h1 className="mt-8 text-[40px] leading-[1.08] font-bold tracking-[-0.035em] text-[#171E4B] sm:text-[52px]">
         {title}
       </h1>
       <div className="mx-auto mt-5 max-w-[640px] text-[17px] leading-[1.65] text-[#62697C] sm:text-[18px]">
@@ -44,13 +44,13 @@ export function PageSection({
   className?: string;
 }) {
   return (
-    <section id={id} className={`scroll-mt-28 px-6 py-16 md:px-10 md:py-20 lg:px-16 lg:py-[5.5rem] ${className}`}>
-      <div className="mx-auto max-w-[1400px]">
+    <section id={id} className={`scroll-mt-28 py-16 md:py-20 lg:py-[5.5rem] ${className}`}>
+      <div className="mx-auto w-full max-w-[1480px] px-6 md:px-8">
         {eyebrow ? (
           <p className="text-[14px] font-bold tracking-[0.16em] text-[#007455]">{eyebrow}</p>
         ) : null}
         {title ? (
-          <h2 className="mt-3 max-w-3xl text-[34px] leading-[1.15] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[42px]">
+          <h2 className="mt-10 max-w-3xl text-[34px] leading-[1.12] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[42px]">
             {title}
           </h2>
         ) : null}
@@ -156,8 +156,9 @@ export function ContactStrip() {
   ];
 
   return (
-    <section id="contact" className="scroll-mt-28 px-6 pt-16 pb-20 md:px-10 md:pt-20 lg:px-16 lg:pt-[5.5rem] lg:pb-28">
-      <div className="mx-auto max-w-[1400px] rounded-[36px] bg-white/80 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-10">
+    <section id="contact" className="scroll-mt-28 pt-16 pb-20 md:pt-20 lg:pt-[5.5rem] lg:pb-28">
+      <div className="mx-auto w-full max-w-[1480px] px-6 md:px-8">
+      <div className="rounded-[36px] bg-white/80 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-10">
         <h2 className="text-[22px] font-semibold">Talk to Crossub</h2>
         <p className="mt-2 max-w-xl text-[16px] leading-[1.65] text-[#62697C]">
           Head office is in North Sydney. Pick the line that matches what you need.
@@ -172,6 +173,7 @@ export function ContactStrip() {
             </div>
           ))}
         </dl>
+      </div>
       </div>
     </section>
   );

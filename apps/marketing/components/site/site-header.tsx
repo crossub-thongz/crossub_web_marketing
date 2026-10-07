@@ -73,7 +73,7 @@ export function SiteHeader() {
       >
         Skip to content
       </a>
-      <div className="mx-auto flex h-[72px] max-w-[1600px] items-center justify-between gap-6 px-5 md:px-6">
+      <div className="mx-auto flex h-[72px] w-full max-w-[1480px] items-center justify-between gap-6 px-6 md:px-8">
         <a href="/#top" aria-label="CROSSUB home" className="shrink-0 rounded-md">
           <Wordmark priority />
         </a>

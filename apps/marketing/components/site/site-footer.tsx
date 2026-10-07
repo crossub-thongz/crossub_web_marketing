@@ -39,7 +39,7 @@ export function SiteFooter() {
 
   return (
     <footer className="bg-[#F4EEFF]">
-      <div className="mx-auto grid max-w-[1600px] gap-10 px-5 py-14 md:px-6 md:py-16 lg:grid-cols-[1.3fr_2fr]">
+      <div className="mx-auto grid w-full max-w-[1480px] gap-10 px-6 py-14 md:px-8 md:py-16 lg:grid-cols-[1.3fr_2fr]">
         <div>
           <a href="/#top" aria-label="CROSSUB home" className="rounded-md">
             <Wordmark className="h-11" />
@@ -71,7 +71,7 @@ export function SiteFooter() {
           ))}
         </div>
       </div>
-      <div className="mx-auto max-w-[1600px] px-5 pb-8 md:px-6">
+      <div className="mx-auto w-full max-w-[1480px] px-6 pb-8 md:px-8">
         <p className="text-[13px] text-[#62697C]">© {year} CROSSUB.</p>
       </div>
     </footer>
