@@ -38,31 +38,37 @@ export default function SoftwarePage() {
               title: 'Portfolio',
               body: 'Properties, people, agreements and documents stay together, so the agency is not rebuilding the file from inboxes.',
               tone: 'mint',
+              icon: '/site/png/icon-home.png',
             },
             {
               title: 'Leasing',
               body: 'Applications, reference checks, agreements and renewals sit on the same property as the inspection and the ledger.',
               tone: 'lilac',
+              icon: '/site/png/icon-document.png',
             },
             {
               title: 'Maintenance',
               body: 'A request is logged, quotes are gathered, the agent approves, and the job is followed through to completion.',
               tone: 'cream',
+              icon: '/site/png/icon-maintenance.png',
             },
             {
               title: 'Inspections',
               body: 'Ingoing, routine, outgoing and open homes are scheduled here, with photos, notes and the report filed against the property.',
               tone: 'mint',
+              icon: '/site/png/icon-inspection.png',
             },
             {
               title: 'Keys',
               body: 'Key movements are recorded digitally, so the office can see who holds a set and when it came back.',
               tone: 'lilac',
+              icon: '/site/png/icon-key.png',
             },
             {
               title: 'Messages',
               body: 'SMS and email on a job are kept on the record. The agent can read the history without asking someone to forward a thread.',
               tone: 'cream',
+              icon: '/site/png/icon-list.png',
             },
           ]}
         />

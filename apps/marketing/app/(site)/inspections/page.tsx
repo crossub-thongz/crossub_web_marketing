@@ -46,31 +46,37 @@ export default function InspectionsPage() {
               title: 'Ingoing',
               body: 'A condition report before the tenant moves in, with photos and the checks the file needs at the start of the lease.',
               tone: 'mint',
+              icon: '/site/png/icon-home.png',
             },
             {
               title: 'Routine',
               body: 'Scheduled checks through the tenancy, written up as a clear report the property manager can send on.',
               tone: 'lilac',
+              icon: '/site/png/icon-calendar.png',
             },
             {
               title: 'Outgoing',
               body: 'The vacate inspection, with the condition recorded for the bond conversation. Lodging the bond itself stays with the agent or the tenant.',
               tone: 'cream',
+              icon: '/site/png/icon-inspection.png',
             },
             {
               title: 'Open homes',
               body: 'On-the-ground staffing for an open inspection, with the notes brought back into the same system.',
               tone: 'mint',
+              icon: '/site/png/icon-people.png',
             },
             {
               title: 'Your branding',
               body: 'Logo, layout and any extra checks you ask for can be set to the agency, so the report still looks like yours.',
               tone: 'lilac',
+              icon: '/site/png/icon-document.png',
             },
             {
               title: 'More than tidy',
               body: 'Inspectors look for repair, maintenance and safety issues, not only whether the property has been cleaned.',
               tone: 'cream',
+              icon: '/site/png/icon-shield.png',
             },
           ]}
         />

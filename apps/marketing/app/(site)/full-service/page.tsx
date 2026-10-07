@@ -65,31 +65,37 @@ export default function FullServicePage() {
               title: 'Leasing',
               body: 'Applications, reference checks, agreement checks and renewals, prepared so the agent can issue and decide.',
               tone: 'mint',
+              icon: '/site/png/icon-document.png',
             },
             {
               title: 'Inspections',
               body: 'Ingoing, routine, outgoing and open inspections organised, attended and reported, including long-distance properties.',
               tone: 'lilac',
+              icon: '/site/png/icon-inspection.png',
             },
             {
               title: 'Maintenance',
               body: 'The tenant reports the job. The team gathers quotes for the agent to take to the landlord, then arranges the approved work.',
               tone: 'cream',
+              icon: '/site/png/icon-maintenance.png',
             },
             {
               title: 'Administration',
               body: 'The repetitive entry, chasing and filing, done by people who work in residential property management.',
               tone: 'mint',
+              icon: '/site/png/icon-list.png',
             },
             {
               title: 'Tenant contact',
               body: 'Messages can go out under the agency brand. The SMS and email history stays on the property for the agent to read.',
               tone: 'lilac',
+              icon: '/site/png/icon-people.png',
             },
             {
               title: 'Keys',
               body: 'Key bookings and returns are recorded, so the office can see who has a set.',
               tone: 'cream',
+              icon: '/site/png/icon-key.png',
             },
           ]}
         />

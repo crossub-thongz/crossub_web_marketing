@@ -63,12 +63,12 @@ export function PageSection({
 export function FeatureGrid({
   items,
 }: {
-  items: { title: string; body: string; tone: 'mint' | 'lilac' | 'cream' }[];
+  items: { title: string; body: string; tone: 'mint' | 'lilac' | 'cream'; icon?: string }[];
 }) {
   const tones = {
-    mint: 'bg-[#E7FBF4]',
-    lilac: 'bg-[#F4EEFF]',
-    cream: 'bg-[#FFF8E8]',
+    mint: 'bg-[#E7FBF4] shadow-[0_0_0_6px_rgba(0,167,120,0.12)]',
+    lilac: 'bg-[#F4EEFF] shadow-[0_0_0_6px_rgba(124,92,196,0.12)]',
+    cream: 'bg-[#FFF8E8] shadow-[0_0_0_6px_rgba(232,184,74,0.2)]',
   };
 
   return (
@@ -78,7 +78,9 @@ export function FeatureGrid({
           key={item.title}
           className="rounded-[24px] bg-white/85 p-6 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white"
         >
-          <span className={`mb-4 block size-10 rounded-2xl ${tones[item.tone]}`} />
+          <span className={`mb-5 grid size-12 place-items-center rounded-2xl ${tones[item.tone]}`}>
+            {item.icon ? <img src={item.icon} alt="" className="size-6" /> : null}
+          </span>
           <h3 className="text-[18px] font-semibold">{item.title}</h3>
           <p className="mt-2 text-[15px] leading-[1.6] text-[#3E4660]">{item.body}</p>
         </article>

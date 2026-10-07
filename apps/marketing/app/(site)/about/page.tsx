@@ -82,31 +82,37 @@ export default function AboutPage() {
               title: 'Partnership',
               body: 'We sit beside the agency. We do not take the landlord, and we do not compete for the management.',
               tone: 'mint',
+              icon: '/site/png/icon-people.png',
             },
             {
               title: 'Transparency',
               body: 'Tasks, inspection reports and the SMS and email history are visible in the Agent Portal. Decisions that need the agency are sent back.',
               tone: 'lilac',
+              icon: '/site/png/icon-list.png',
             },
             {
               title: 'A clear offer',
               body: 'Software is free. Inspection Only is a paid visit. Full Service is 30% of the agency’s own management fee, with no lock-in.',
               tone: 'cream',
+              icon: '/site/png/icon-check-circle.png',
             },
             {
               title: 'Local people',
               body: 'The service team is trained in Australian residential tenancy work. It is not a general virtual-assistant desk.',
               tone: 'mint',
+              icon: '/site/png/icon-building.png',
             },
             {
               title: 'The agency’s brand',
               body: 'Reports can carry the agency logo. Tenant-facing messages can go out in the agency’s name.',
               tone: 'lilac',
+              icon: '/site/png/icon-document.png',
             },
             {
               title: 'Room to grow the roll',
               body: 'The same number of property managers can cover more properties when travel, admin and routine repairs are no longer all on their desk.',
               tone: 'cream',
+              icon: '/site/png/icon-sparkle.png',
             },
           ]}
         />

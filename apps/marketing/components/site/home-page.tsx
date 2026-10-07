@@ -3,7 +3,7 @@ import type { ReactNode } from 'react';
 
 import { PrimaryLink, SecondaryLink, TextLink } from '@/components/site/buttons';
 import { HeroArt } from '@/components/site/hero-art';
-import { ExperienceCard, FlowArrow, InspectionVisual, SupportCluster } from '@/components/site/story-art';
+import { ExperienceCard, InspectionVisual, SupportCluster } from '@/components/site/story-art';
 import { siteLinks } from '@/lib/site-links';
 
 function Eyebrow({ children }: { children: ReactNode }) {
@@ -28,21 +28,21 @@ const STEPS = [
     title: 'Understand',
     body: 'Make sense of requests, photos and reports.',
     chip: 'bg-[#E0F7EE] text-[#007455]',
-    place: 'lg:absolute lg:top-[108px] lg:left-0 lg:w-[220px]',
+    place: 'lg:absolute lg:top-[108px] lg:left-0 lg:w-[220px] lg:origin-top-left lg:scale-110',
   },
   {
     n: '02',
     title: 'Prepare',
     body: 'Draft responses and organise next steps.',
     chip: 'bg-[#FFF4D8] text-[#7A5B12]',
-    place: 'lg:absolute lg:top-0 lg:right-6 lg:w-[210px]',
+    place: 'lg:absolute lg:top-0 lg:right-6 lg:w-[210px] lg:origin-top-right lg:scale-110',
   },
   {
     n: '03',
     title: 'Review',
     body: 'Flag what needs your team’s attention.',
     chip: 'bg-[#F1E8FF] text-[#5C4B8A]',
-    place: 'lg:absolute lg:top-[322px] lg:left-[128px] lg:w-[320px]',
+    place: 'lg:absolute lg:top-[322px] lg:left-[128px] lg:w-[320px] lg:origin-top-left lg:scale-110',
   },
 ] as const;
 
@@ -73,15 +73,7 @@ export function HomePage() {
             </SecondaryLink>
           </div>
         </div>
-        <div>
-          <p className="mx-auto mb-3 flex w-fit items-center gap-2 rounded-full bg-white px-3 py-1.5 text-[13px] font-semibold text-[#171E4B] shadow-[0_10px_30px_rgba(23,30,75,0.08)] ring-1 ring-[#171E4B]/5 lg:mr-0 lg:ml-auto">
-            <span className="grid size-6 place-items-center rounded-full bg-[#E0F7EE] text-[12px] font-bold text-[#007455]">
-              6
-            </span>
-            years of Full Service experience
-          </p>
-          <HeroArt />
-        </div>
+        <HeroArt />
       </section>
 
       <section id="solutions" tabIndex={-1} className="rise scroll-mt-28 px-5 py-16 outline-none md:px-6 md:py-24 lg:py-28">
@@ -109,7 +101,7 @@ export function HomePage() {
             />
             <div className="relative grid items-stretch gap-5 lg:grid-cols-3 lg:gap-6">
               <article className="order-2 flex h-full flex-col rounded-[26px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5 lg:order-1">
-                <img src="/site/png/service-inspection.png" alt="" className="size-12" />
+                <img src="/site/png/service-inspection.png" alt="" className="size-16" />
                 <p className="mt-5 w-fit rounded-full bg-[#F4F0FF] px-2.5 py-1 text-[11px] font-semibold tracking-[0.08em] text-[#5C4B8A]">
                   ON-DEMAND SERVICE
                 </p>
@@ -124,7 +116,7 @@ export function HomePage() {
               </article>
 
               <article className="order-1 flex h-full flex-col rounded-[26px] bg-[#E7FBF4] p-7 shadow-[0_18px_44px_rgba(0,143,101,0.12)] ring-1 ring-[#008F65]/10 lg:order-2 lg:-translate-y-8">
-                <img src="/site/png/service-home.png" alt="" className="size-12" />
+                <img src="/site/png/service-home.png" alt="" className="size-16" />
                 <p className="mt-5 w-fit rounded-full bg-white px-2.5 py-1 text-[11px] font-semibold tracking-[0.08em] text-[#007455]">
                   FREE
                 </p>
@@ -138,14 +130,14 @@ export function HomePage() {
                   href={siteLinks.startFree}
                   rel="noopener noreferrer"
                   aria-label="Start for free"
-                  className="mt-auto grid size-12 place-items-center self-center"
+                  className="mt-auto grid size-16 place-items-center self-center"
                 >
-                  <img src="/site/png/round-arrow.png" alt="" className="size-12" />
+                  <img src="/site/png/round-arrow.png" alt="" className="size-16" />
                 </a>
               </article>
 
               <article className="order-3 flex h-full flex-col rounded-[26px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5">
-                <img src="/site/png/service-people.png" alt="" className="size-12" />
+                <img src="/site/png/service-people.png" alt="" className="size-16" />
                 <p className="mt-5 w-fit rounded-full bg-[#FFF8E8] px-2.5 py-1 text-[11px] font-semibold tracking-[0.08em] text-[#8A6414]">
                   EXPERT SUPPORT
                 </p>
@@ -178,7 +170,7 @@ export function HomePage() {
               See how it works
             </SecondaryLink>
           </div>
-          <div id="ai-steps" className="relative mx-auto w-full max-w-[600px] overflow-visible lg:h-[560px]">
+          <div id="ai-steps" className="relative mx-auto w-full max-w-[600px] overflow-visible lg:h-[600px]">
             <img
               src="/site/png/glass-square.png"
               alt=""
@@ -189,25 +181,13 @@ export function HomePage() {
               alt=""
               className="pointer-events-none absolute bottom-28 left-2 z-0 hidden w-20 lg:block"
             />
-            <FlowArrow
-              variant="up"
-              className="absolute top-[22px] left-[172px] z-20 hidden h-[112px] w-[74px] origin-center rotate-90 lg:block"
-            />
-            <FlowArrow
-              variant="down"
-              className="absolute top-[250px] right-[188px] z-20 hidden h-[78px] w-[168px] lg:block"
-            />
-            <FlowArrow
-              variant="up"
-              className="absolute top-[338px] left-0 z-20 hidden h-[100px] w-[66px] lg:block"
-            />
             <div className="relative flex flex-col gap-4 lg:block lg:h-full">
               {STEPS.map((step) => (
                 <article
                   key={step.n}
                   className={`relative z-10 rounded-[26px] bg-white p-6 shadow-[0_16px_40px_rgba(23,30,75,0.07)] ring-1 ring-[#171E4B]/5 ${step.place}`}
                 >
-                  <span className={`grid size-12 place-items-center rounded-full text-[14px] font-bold ${step.chip}`}>
+                  <span className={`grid size-14 place-items-center rounded-full text-[15px] font-bold ${step.chip}`}>
                     {step.n}
                   </span>
                   <h3 className="mt-4 text-[20px] font-semibold">{step.title}</h3>
@@ -304,7 +284,6 @@ export function HomePage() {
             alt=""
             className="pointer-events-none absolute bottom-0 left-0 w-[42%]"
           />
-          <img src="/site/png/send-orb.png" alt="" className="absolute top-8 right-8 size-14" />
           <div className="relative mx-auto max-w-2xl">
             <Eyebrow>YOUR NEXT CHAPTER</Eyebrow>
             <h2 className="mt-3 text-[32px] leading-[1.15] font-semibold tracking-[-0.03em] sm:text-[44px]">
