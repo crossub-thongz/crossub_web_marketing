@@ -8,7 +8,7 @@ import { siteLinks } from '@/lib/site-links';
 
 function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <p className="text-[14px] font-bold tracking-[0.16em] text-[#007455]">{children}</p>
+    <p className="text-[16px] font-bold tracking-[0.16em] text-[#007455]">{children}</p>
   );
 }
 
@@ -52,7 +52,7 @@ export function HomePage() {
       <section className="mx-auto grid w-full max-w-[1480px] items-center gap-10 px-6 pt-4 pb-20 md:px-8 md:pb-28 lg:grid-cols-2 lg:items-center lg:gap-x-16 lg:pb-28">
         <div>
           <Eyebrow>FREE SOFTWARE. REAL EXPERTISE.</Eyebrow>
-          <h1 className="mt-6 max-w-[640px] text-[40px] leading-[1.08] font-semibold tracking-[-0.035em] text-[#171E4B] sm:text-[52px] lg:text-[60px]">
+          <h1 className="mt-6 max-w-[720px] text-[44px] leading-[1.05] font-semibold tracking-[-0.035em] text-[#171E4B] sm:text-[60px] lg:text-[72px]">
             Property management.
             <span className="block">Powered by AI.</span>
             <span className="relative mt-1 inline-block">
@@ -60,7 +60,7 @@ export function HomePage() {
               <Scribble />
             </span>
           </h1>
-          <p className="mt-6 max-w-[520px] text-[17px] leading-[1.6] text-[#62697C] sm:text-[18px]">
+          <p className="mt-6 max-w-[560px] text-[18px] leading-[1.55] text-[#62697C] sm:text-[20px]">
             Free property management software for your agency. Add inspection or Full Service
             support whenever you need it.
           </p>
@@ -78,12 +78,14 @@ export function HomePage() {
 
       <section id="solutions" tabIndex={-1} className="rise scroll-mt-28 py-16 outline-none md:py-28 lg:py-32">
         <div className="mx-auto w-full max-w-[1480px] px-6 md:px-8">
-          <div className="mx-auto max-w-2xl text-center">
+          <div className="mx-auto max-w-4xl text-center">
             <Eyebrow>THREE WAYS TO GROW WITH CROSSUB</Eyebrow>
-            <h2 className="mt-5 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] sm:text-[48px]">
-              Start Free. Scale Your Way.
+            <h2 className="mt-5 text-[44px] leading-[1.02] font-bold tracking-[-0.03em] sm:text-[72px]">
+              Start Free.
+              <br />
+              Scale Your Way.
             </h2>
-            <p className="mt-5 text-[16px] leading-[1.5] text-[#62697C]">
+            <p className="mt-5 text-[20px] leading-[1.5] text-[#62697C]">
               Your software. Your agency. Your choice of support.
             </p>
           </div>
@@ -105,8 +107,8 @@ export function HomePage() {
                 <p className="mt-5 w-fit rounded-full bg-[#F4F0FF] px-2.5 py-1 text-[11px] font-semibold tracking-[0.08em] text-[#5C4B8A]">
                   ON-DEMAND SERVICE
                 </p>
-                <h3 className="mt-3 text-[22px] font-semibold tracking-[-0.02em]">Inspection Only</h3>
-                <p className="mt-2 text-[16px] leading-[1.6] text-[#62697C]">
+                <h3 className="mt-3 text-[26px] font-semibold tracking-[-0.02em]">Inspection Only</h3>
+                <p className="mt-2 text-[20px] leading-[1.5] text-[#62697C]">
                   Let our inspectors handle the visits while you manage your portfolio.
                 </p>
                 <TextLink href={siteLinks.inspections} className="mt-auto pt-8">
@@ -120,19 +122,19 @@ export function HomePage() {
                 <p className="mt-5 w-fit rounded-full bg-white px-2.5 py-1 text-[11px] font-semibold tracking-[0.08em] text-[#007455]">
                   FREE
                 </p>
-                <h3 className="mt-3 text-[22px] font-semibold tracking-[-0.02em]">
+                <h3 className="mt-3 text-[26px] font-semibold tracking-[-0.02em]">
                   Property Management Software
                 </h3>
-                <p className="mt-2 text-[16px] leading-[1.6] text-[#62697C]">
+                <p className="mt-2 text-[20px] leading-[1.5] text-[#62697C]">
                   Manage your portfolio, leasing and maintenance with AI-powered tools.
                 </p>
                 <a
                   href={siteLinks.startFree}
                   rel="noopener noreferrer"
                   aria-label="Start for free"
-                  className="mt-auto grid size-16 place-items-center self-center"
+                  className="mt-auto grid size-16 place-items-center self-center rounded-full bg-[#24C68D] text-white shadow-[0_10px_24px_rgba(36,198,141,0.28)] transition-colors hover:bg-[#1AAB78]"
                 >
-                  <img src="/site/png/round-arrow.png" alt="" className="size-16" />
+                  <ArrowRight className="size-7" strokeWidth={2.25} aria-hidden />
                 </a>
               </article>
 
@@ -141,8 +143,8 @@ export function HomePage() {
                 <p className="mt-5 w-fit rounded-full bg-[#FFF8E8] px-2.5 py-1 text-[11px] font-semibold tracking-[0.08em] text-[#8A6414]">
                   EXPERT SUPPORT
                 </p>
-                <h3 className="mt-3 text-[22px] font-semibold tracking-[-0.02em]">Full Service</h3>
-                <p className="mt-2 text-[16px] leading-[1.6] text-[#62697C]">
+                <h3 className="mt-3 text-[26px] font-semibold tracking-[-0.02em]">Full Service</h3>
+                <p className="mt-2 text-[20px] leading-[1.5] text-[#62697C]">
                   Let our experienced team support your agency’s day-to-day property management.
                 </p>
                 <TextLink href={siteLinks.fullService} className="mt-auto pt-8">
@@ -159,12 +161,15 @@ export function HomePage() {
         <div className="mx-auto grid w-full max-w-[1480px] items-center gap-12 px-6 md:px-8 lg:grid-cols-2 lg:gap-x-16">
           <div>
             <Eyebrow>BUILT-IN INTELLIGENCE</Eyebrow>
-            <h2 className="mt-10 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] sm:text-[48px]">
-              AI Moves The Work Forward.
+            <h2 className="mt-10 text-[44px] leading-[1.02] font-bold tracking-[-0.03em] sm:text-[72px]">
+              AI Moves The
+              <br />
+              Work Forward.
             </h2>
-            <p className="mt-8 max-w-[34rem] text-[16px] leading-[1.5] text-[#62697C]">
-              From inspection reports to maintenance requests, AI helps reduce admin and keeps your
-              team in control.
+            <p className="mt-6 max-w-[40rem] text-[20px] leading-[1.5] text-[#62697C]">
+              From inspection reports to maintenance requests, AI helps reduce
+              <br />
+              admin and keeps your team in control.
             </p>
             <SecondaryLink href={siteLinks.ai} className="mt-20">
               See how it works
@@ -190,8 +195,8 @@ export function HomePage() {
                   <span className={`grid size-14 place-items-center rounded-full text-[15px] font-bold ${step.chip}`}>
                     {step.n}
                   </span>
-                  <h3 className="mt-4 text-[18px] font-semibold">{step.title}</h3>
-                  <p className="mt-2 text-[16px] leading-[1.5] text-[#62697C]">{step.body}</p>
+                  <h3 className="mt-4 text-[22px] font-semibold">{step.title}</h3>
+                  <p className="mt-2 text-[20px] leading-[1.5] text-[#62697C]">{step.body}</p>
                 </article>
               ))}
             </div>
@@ -206,16 +211,18 @@ export function HomePage() {
           </div>
           <div className="order-1 lg:order-2">
             <Eyebrow>FLEXIBLE SUPPORT</Eyebrow>
-            <h2 className="mt-10 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] sm:text-[48px]">
-              Same Platform. Same Data. More Support.
+            <h2 className="mt-10 text-[44px] leading-[1.02] font-bold tracking-[-0.03em] sm:text-[72px]">
+              Same Platform. Same
+              <br />
+              Data. More Support.
             </h2>
-            <p className="mt-8 max-w-[34rem] text-[16px] leading-[1.5] text-[#62697C]">
+            <p className="mt-6 max-w-[40rem] text-[20px] leading-[1.5] text-[#62697C]">
               Start with free software. Add Inspection Only or Full Service as your agency grows.
             </p>
             <ul className="mt-8 space-y-3">
               {['Keep your property records', 'Choose the support you need', 'Stay in control'].map(
                 (point) => (
-                  <li key={point} className="flex items-center gap-3 text-[16px] font-medium">
+                  <li key={point} className="flex items-center gap-3 text-[20px] font-medium">
                     <span className="grid size-6 shrink-0 place-items-center rounded-full bg-[#171E4B] text-white">
                       <Check className="size-3.5" strokeWidth={3} aria-hidden />
                     </span>
@@ -235,15 +242,14 @@ export function HomePage() {
         <div className="mx-auto grid w-full max-w-[1480px] items-center gap-12 px-6 md:px-8 lg:grid-cols-2 lg:gap-x-16">
           <div>
             <Eyebrow>SOFTWARE + ON-SITE SUPPORT</Eyebrow>
-            <h2 className="mt-10 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] sm:text-[48px]">
-              Every Inspection, Connected.
+            <h2 className="mt-10 text-[44px] leading-[1.02] font-bold tracking-[-0.03em] sm:text-[72px]">
+              Every Inspection,
+              <br />
+              Connected.
             </h2>
-            <p className="mt-8 max-w-[34rem] text-[16px] leading-[1.5] text-[#62697C]">
-              Use our inspection tools yourself, or
-              <br />
-              book our team to attend. Keep photos,
-              <br />
-              reports and follow-up in one place.
+            <p className="mt-6 max-w-[40rem] text-[20px] leading-[1.5] text-[#62697C]">
+              Use our inspection tools yourself, or book our team to attend. Keep photos, reports
+              and follow-up in one place.
             </p>
             <SecondaryLink href={siteLinks.inspections} className="mt-20">
               Explore inspections
@@ -260,14 +266,16 @@ export function HomePage() {
           </div>
           <div className="order-1 lg:order-2">
             <Eyebrow>EXPERIENCE BEHIND THE PLATFORM</Eyebrow>
-            <h2 className="mt-10 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] sm:text-[48px]">
-              Real Experience. Real Support.
+            <h2 className="mt-10 text-[44px] leading-[1.02] font-bold tracking-[-0.03em] sm:text-[72px]">
+              Real Experience.
+              <br />
+              Real Support.
             </h2>
-            <p className="mt-8 max-w-[34rem] text-[16px] leading-[1.5] text-[#62697C]">
+            <p className="mt-6 max-w-[40rem] text-[20px] leading-[1.5] text-[#62697C]">
               With six years of Full Service experience, our team understands the day-to-day
               demands of property management.
             </p>
-            <p className="mt-4 text-[16px] font-medium text-[#171E4B]">
+            <p className="mt-4 text-[20px] font-medium text-[#171E4B]">
               Practical software, backed by experienced people.
             </p>
             <SecondaryLink href={siteLinks.about} className="mt-20">
@@ -290,11 +298,11 @@ export function HomePage() {
           />
           <div className="relative mx-auto max-w-2xl">
             <Eyebrow>YOUR NEXT CHAPTER</Eyebrow>
-            <h2 className="mt-3 text-[34px] leading-[1.15] font-bold tracking-[-0.03em] sm:text-[46px]">
+            <h2 className="mt-3 text-[44px] leading-[1.02] font-bold tracking-[-0.03em] sm:text-[72px]">
               Start free today.
               <span className="block">Grow with us, your way.</span>
             </h2>
-            <p className="mt-4 text-[16px] leading-[1.5] text-[#62697C]">
+            <p className="mt-4 text-[20px] leading-[1.5] text-[#62697C]">
               Free software, with expert support when you need it.
             </p>
             <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">

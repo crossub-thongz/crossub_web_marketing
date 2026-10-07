@@ -125,7 +125,7 @@ export function BookDemoForm() {
         <p className="mt-3 text-[16px] leading-relaxed text-[#62697C]">{success}</p>
         <button
           type="button"
-          className="mt-6 inline-flex h-12 items-center justify-center rounded-full bg-[#007455] px-7 text-[15px] font-semibold text-white"
+          className="mt-6 inline-flex h-12 items-center justify-center rounded-full bg-[#24C68D] px-7 text-[15px] font-semibold text-white"
           onClick={() => setSuccess('')}
         >
           Book another time
@@ -188,7 +188,7 @@ export function BookDemoForm() {
       <button
         type="submit"
         disabled={pending}
-        className="mt-6 inline-flex h-12 items-center justify-center rounded-full bg-[#007455] px-7 text-[15px] font-semibold text-white hover:bg-[#006348] disabled:opacity-60"
+        className="mt-6 inline-flex h-12 items-center justify-center rounded-full bg-[#24C68D] px-7 text-[15px] font-semibold text-white hover:bg-[#1AAB78] disabled:opacity-60"
       >
         {pending ? 'Sending…' : 'Request a call'}
       </button>
