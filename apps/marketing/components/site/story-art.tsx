@@ -9,7 +9,7 @@ const AREAS = [
 
 export function SupportCluster() {
   return (
-    <div className="relative mx-auto w-full max-w-[520px] pr-4 sm:pr-10">
+    <div className="relative mx-auto w-full max-w-[540px] pr-6 sm:pr-16">
       <div className="rounded-[28px] bg-white p-4 shadow-[0_18px_50px_rgba(23,30,75,0.08)] ring-1 ring-[#171E4B]/5 sm:p-5">
         <img
           src="/site/png/platform-ai-ribbons.png"
@@ -27,9 +27,9 @@ export function SupportCluster() {
           ))}
         </ul>
       </div>
-      <div className="absolute top-[68%] right-0 z-10 -translate-y-1/2 rounded-2xl bg-white px-3.5 py-3 shadow-[0_16px_40px_rgba(23,30,75,0.14)] ring-1 ring-[#171E4B]/6">
-        <Wordmark compact className="h-6" />
-        <p className="mt-1 text-[12px] font-semibold leading-tight text-[#008F65]">
+      <div className="absolute top-[66%] right-0 z-10 -translate-y-1/2 rounded-[22px] bg-white px-5 py-4 shadow-[0_18px_44px_rgba(23,30,75,0.14)] ring-1 ring-[#171E4B]/6">
+        <Wordmark className="h-9" />
+        <p className="mt-1.5 text-[15px] font-semibold leading-tight text-[#008F65]">
           Your agency. Connected.
         </p>
       </div>
@@ -57,21 +57,69 @@ export function InspectionVisual() {
   return (
     <div className="relative mx-auto w-full max-w-[640px]">
       <div className="relative hidden min-h-[480px] lg:block">
-        <img
-          src="/site/png/arrow-curve-up.png"
-          alt=""
-          className="pointer-events-none absolute top-6 left-[8%] z-0 w-32"
-        />
-        <img
-          src="/site/png/arrow-curve-down.png"
-          alt=""
-          className="pointer-events-none absolute -top-2 right-0 z-0 w-36"
-        />
-        <img
-          src="/site/png/arrow-curve-left.png"
-          alt=""
-          className="pointer-events-none absolute right-0 bottom-2 z-0 w-36"
-        />
+        <svg
+          viewBox="0 0 80 90"
+          aria-hidden
+          className="pointer-events-none absolute top-[68px] left-[72px] z-30 h-[84px] w-[76px]"
+        >
+          <path
+            d="M18 74C14 40 32 22 58 14"
+            fill="none"
+            stroke="#1FCB8C"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+          />
+          <path
+            d="M42 6L62 12L46 26"
+            fill="none"
+            stroke="#1FCB8C"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        <svg
+          viewBox="0 0 90 70"
+          aria-hidden
+          className="pointer-events-none absolute top-[78px] right-[8px] z-30 h-[64px] w-[84px]"
+        >
+          <path
+            d="M12 12C40 8 70 22 74 58"
+            fill="none"
+            stroke="#1FCB8C"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+          />
+          <path
+            d="M58 46L72 64L84 44"
+            fill="none"
+            stroke="#1FCB8C"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
+        <svg
+          viewBox="0 0 110 80"
+          aria-hidden
+          className="pointer-events-none absolute top-[66%] right-[18px] z-30 h-[78px] w-[108px]"
+        >
+          <path
+            d="M96 16C70 20 40 36 22 62"
+            fill="none"
+            stroke="#1FCB8C"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+          />
+          <path
+            d="M40 46L12 64L42 72"
+            fill="none"
+            stroke="#1FCB8C"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          />
+        </svg>
         <img
           src="/site/png/inspection-tablet.png"
           alt=""
