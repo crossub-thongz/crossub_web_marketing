@@ -41,7 +41,8 @@ export default function OpenGraphImage() {
           }}
         >
           <div style={{ display: 'flex' }}>Free</div>
-          <div style={{ display: 'flex', color: '#24C68D' }}>Property Management Software.</div>
+          <div style={{ display: 'flex', color: '#24C68D' }}>Property Management</div>
+          <div style={{ display: 'flex', color: '#24C68D' }}>Software.</div>
           <div style={{ display: 'flex', marginTop: 8, fontSize: 44, fontWeight: 600 }}>
             Powered by AI.
           </div>

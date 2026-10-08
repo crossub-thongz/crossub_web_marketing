@@ -56,15 +56,18 @@ const PLATFORM = [
 export function HomePage() {
   return (
     <main id="main">
-      <section className="mx-auto grid w-full max-w-[1480px] items-center gap-10 overflow-visible px-6 pt-4 pb-20 md:px-8 md:pb-28 lg:grid-cols-2 lg:gap-x-16">
-        <div className="relative z-10 min-w-0">
+      <section className="mx-auto grid w-full max-w-[1480px] items-center gap-10 overflow-visible px-6 pt-10 pb-20 md:px-10 md:pt-16 md:pb-28 lg:grid-cols-2 lg:gap-x-16">
+        <div className="relative z-10 min-w-0 lg:pt-8">
           <p className="text-[15px] font-semibold text-[#24C68D]">
             Built for real estate agencies.
           </p>
           <h1 className="mt-6 leading-[1.05] font-bold tracking-[-0.03em] text-[#171E4B]">
             <span className="block text-[44px] font-bold tracking-[-0.03em] sm:text-[72px]">Free</span>
-            <span className="relative z-10 mt-2 block whitespace-nowrap text-[40px] font-bold tracking-[-0.03em] text-[#24C68D] sm:text-[52px]">
-              Property Management Software.
+            <span className="relative z-10 mt-2 block whitespace-nowrap text-[44px] font-bold tracking-[-0.03em] text-[#24C68D] sm:text-[72px]">
+              Property Management
+            </span>
+            <span className="block text-[44px] font-bold tracking-[-0.03em] text-[#24C68D] sm:text-[72px]">
+              Software.
             </span>
             <span className="mt-2 block text-[44px] font-bold tracking-[-0.03em] sm:text-[72px]">
               Powered by AI.
@@ -91,7 +94,7 @@ export function HomePage() {
       </section>
 
       <section id="solutions" tabIndex={-1} className="rise scroll-mt-28 py-16 outline-none md:py-28 lg:py-32">
-        <div className="mx-auto w-full max-w-[1480px] px-6 md:px-8">
+        <div className="mx-auto w-full max-w-[1480px] px-6 md:px-10">
           <div className="mx-auto max-w-4xl text-center">
             <Eyebrow>Three ways to grow with CROSSUB</Eyebrow>
             <h2 className="mt-5 text-[44px] leading-[1.02] font-bold tracking-[-0.03em] sm:text-[72px]">
@@ -173,7 +176,7 @@ export function HomePage() {
       </section>
 
       <section id="ai" tabIndex={-1} className="rise scroll-mt-28 py-16 outline-none md:py-28 lg:py-32">
-        <div className="mx-auto w-full max-w-[1480px] px-6 md:px-8">
+        <div className="mx-auto w-full max-w-[1480px] px-6 md:px-10">
           <Eyebrow>Built-in intelligence</Eyebrow>
           <h2 className="mt-6 max-w-[16em] text-[40px] leading-[1.05] font-bold tracking-[-0.03em] sm:text-[56px]">
             AI does the preparation.
@@ -200,7 +203,7 @@ export function HomePage() {
       </section>
 
       <section id="support" tabIndex={-1} className="rise scroll-mt-28 py-16 outline-none md:py-28 lg:py-32">
-        <div className="mx-auto w-full max-w-[1480px] px-6 md:px-8">
+        <div className="mx-auto w-full max-w-[1480px] px-6 md:px-10">
           <Eyebrow>One connected platform</Eyebrow>
           <h2 className="mt-6 max-w-[14em] text-[40px] leading-[1.05] font-bold tracking-[-0.03em] sm:text-[56px]">
             Everything your property team
@@ -229,7 +232,7 @@ export function HomePage() {
       </section>
 
       <section id="inspections" tabIndex={-1} className="rise scroll-mt-28 py-16 outline-none md:py-28 lg:py-32">
-        <div className="mx-auto grid w-full max-w-[1480px] items-center gap-12 px-6 md:px-8 lg:grid-cols-2 lg:gap-x-16">
+        <div className="mx-auto grid w-full max-w-[1480px] items-center gap-12 px-6 md:px-10 lg:grid-cols-2 lg:gap-x-16">
           <div>
             <Eyebrow>Software and on-site support</Eyebrow>
             <h2 className="mt-10 text-[44px] leading-[1.02] font-bold tracking-[-0.03em] sm:text-[72px]">
@@ -250,7 +253,7 @@ export function HomePage() {
       </section>
 
       <section id="experience" tabIndex={-1} className="rise scroll-mt-28 py-16 outline-none md:py-28 lg:py-32">
-        <div className="mx-auto grid w-full max-w-[1480px] items-center gap-12 px-6 md:px-8 lg:grid-cols-2 lg:gap-x-16">
+        <div className="mx-auto grid w-full max-w-[1480px] items-center gap-12 px-6 md:px-10 lg:grid-cols-2 lg:gap-x-16">
           <div className="order-2 lg:order-1">
             <ExperienceCard />
           </div>
@@ -276,7 +279,7 @@ export function HomePage() {
       </section>
 
       <section className="rise pt-6 pb-20 md:pb-28">
-        <div className="mx-auto w-full max-w-[1480px] px-6 md:px-8">
+        <div className="mx-auto w-full max-w-[1480px] px-6 md:px-10">
         <div
           className="relative overflow-hidden rounded-[48px] bg-cover bg-center px-6 py-16 text-center sm:px-12 sm:py-20"
           style={{ backgroundImage: 'url(/site/png/cta-panel.png)' }}

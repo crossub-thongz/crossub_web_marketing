@@ -45,7 +45,7 @@ export function PageSection({
 }) {
   return (
     <section id={id} className={`scroll-mt-28 py-16 md:py-20 lg:py-[5.5rem] ${className}`}>
-      <div className="mx-auto w-full max-w-[1480px] px-6 md:px-8">
+      <div className="mx-auto w-full max-w-[1480px] px-6 md:px-10">
         {eyebrow ? (
           <p className="text-[15px] font-semibold text-[#24C68D]">{eyebrow}</p>
         ) : null}
@@ -157,7 +157,7 @@ export function ContactStrip() {
 
   return (
     <section id="contact" className="scroll-mt-28 pt-16 pb-20 md:pt-20 lg:pt-[5.5rem] lg:pb-28">
-      <div className="mx-auto w-full max-w-[1480px] px-6 md:px-8">
+      <div className="mx-auto w-full max-w-[1480px] px-6 md:px-10">
       <div className="rounded-[36px] bg-white/80 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-10">
         <h2 className="text-[22px] font-semibold">Talk to CROSSUB</h2>
         <p className="mt-2 max-w-xl text-[16px] leading-[1.65] text-[#62697C]">
