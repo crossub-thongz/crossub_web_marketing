@@ -63,9 +63,9 @@ export function HomePage() {
           </p>
           <h1 className="mt-6 max-w-[720px] text-[44px] leading-[1.02] font-bold tracking-[-0.035em] sm:text-[60px] lg:text-[72px]">
             <span className="text-[#24C68D]">
-              Free property management
+              Free
               <br />
-              software.
+              Property management software
             </span>
             <span className="mt-1 block text-[#171E4B]">Built with AI.</span>
           </h1>

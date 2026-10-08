@@ -98,7 +98,9 @@ export default function InspectionsPage() {
             Inspection Only service
           </p>
           <h1 className="mt-8 text-[52px] leading-[1.02] font-bold tracking-[-0.04em] text-[#171E4B] sm:text-[68px] lg:text-[80px]">
-            We do the <span className="text-[#24C68D]">driving.</span>
+            We do the
+            <br />
+            <span className="text-[#24C68D]">driving.</span>
             <br />
             You do the
             <br />
@@ -177,23 +179,6 @@ export default function InspectionsPage() {
           </div>
           <Sparkles className="absolute right-2 bottom-2 size-8 text-[#24C68D]" aria-hidden />
         </div>
-      </section>
-
-      <section className="bg-[#1B3A30] text-white">
-        <ul className="mx-auto flex w-full max-w-[1480px] flex-col gap-4 px-6 py-4 text-[15px] font-semibold sm:flex-row sm:items-center sm:justify-between md:px-8">
-          <li className="flex items-center gap-2">
-            <Sparkles className="size-4 text-[#24C68D]" aria-hidden />
-            Your agency stays in control
-          </li>
-          <li className="flex items-center gap-2">
-            <span className="size-3 rotate-45 border-2 border-[#24C68D]" aria-hidden />
-            Professional on-site attendance
-          </li>
-          <li className="flex items-center gap-2">
-            <span className="size-3 rounded-[3px] bg-[#24C68D]" aria-hidden />
-            Reporting connected to CROS
-          </li>
-        </ul>
       </section>
 
       <section className="mx-auto w-full max-w-[1480px] px-6 py-16 md:px-8 md:py-24">
@@ -277,7 +262,7 @@ export default function InspectionsPage() {
                 <ArrowRight className="size-4" aria-hidden />
               </p>
             </div>
-            <p className="relative mx-auto mt-[-18px] w-fit rounded-full bg-white px-4 py-2 text-[14px] font-semibold shadow-[0_10px_24px_rgba(23,30,75,0.1)]">
+            <p className="relative mx-auto mt-[-18px] w-fit rounded-full bg-white px-4 py-2 text-[14px] font-semibold shadow-[0_14px_32px_rgba(23,30,75,0.28),0_4px_10px_rgba(23,30,75,0.16)]">
               Your branding. Your clients.
             </p>
           </div>

@@ -1,7 +1,10 @@
 import type { Metadata } from 'next';
 import {
   ArrowRight,
+  ArrowUpRight,
+  Briefcase,
   Check,
+  ClipboardCheck,
   ClipboardList,
   Home,
   KeyRound,
@@ -62,36 +65,32 @@ const AI_POINTS = [
 
 const APPS = [
   {
-    kicker: 'Property platform',
-    title: 'The rent roll, on the web.',
-    paragraphs: [
-      'This is the free software. The command center, properties, leasing, inspections, maintenance, keys and the communication record live here. Applications, agreements, rent reviews, arrears, open homes and vacating sit on the property, with the photos and messages beside them.',
-      'AI prepares drafts and sorts the next step. Spending, trust money and the message that goes to a landlord stay with a person.',
-    ],
+    kicker: 'CROS Software',
+    title: 'Manage everything in one place.',
+    body: 'Free property management software with AI-powered workflows, from leasing to the property record. Trust money stays with a person.',
+    tags: 'Properties · Leasing · Trust',
+    icon: LayoutGrid,
   },
   {
-    kicker: 'Agent portal',
-    title: 'Where the agency signs in.',
-    paragraphs: [
-      'Property managers use the Agent Portal on the web or the phone. The dashboard, property list, leasing, maintenance, inspections and tasks are the daily view. Reports, quotes and anything that needs a decision come back here.',
-      'History stays on the file after the job is done. Landlord conversations stay with the agency. Log in opens this portal.',
-    ],
+    kicker: 'Agent Portal',
+    title: 'Your portfolio, at your fingertips.',
+    body: 'Stay on top of properties, tasks and approvals, wherever you work.',
+    tags: 'Portfolio · Tasks · Approvals',
+    icon: Briefcase,
   },
   {
-    kicker: 'Tenant app',
-    title: 'The tenancy, from the tenant’s side.',
-    paragraphs: [
-      'A tenant can browse listings and apply before they have a login. After they are accepted, onboarding, the lease, documents, repairs, messages and inspections for their own home are in the app.',
-      'Rent review, renewal and the move-out, including the outgoing report, stay on that tenancy. The tenant does not see the rest of the agency’s rent roll, and the bond is still lodged by the agent or the tenant through Rental Bonds Online.',
-    ],
+    kicker: 'Tenant App',
+    title: 'Renting made simple.',
+    body: 'Everything tenants need, from applications and documents to repairs and communication.',
+    tags: 'Applications · Repairs · Messages',
+    icon: Home,
   },
   {
-    kicker: 'Inspector app',
-    title: 'The visit, completed on site.',
-    paragraphs: [
-      'Inspectors take a job from the pool or from an assignment, open directions to the property, and run an open home, ingoing, outgoing or routine inspection in the app. Photos, notes and the report file back against that property.',
-      'The same report is what the agent reads in the portal. Agency staff can run the visit themselves, or book a CROSSUB inspector and use this same path.',
-    ],
+    kicker: 'Inspector App',
+    title: 'Inspections, simplified.',
+    body: 'Complete inspections on site, capture photos and sync reports instantly.',
+    tags: 'Scheduling · Photos · Reports',
+    icon: ClipboardCheck,
   },
 ] as const;
 
@@ -118,7 +117,7 @@ function CoralLink({
   return (
     <a
       href={href}
-      className={`inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[#E39284] px-7 text-[16px] font-semibold text-white shadow-[0_10px_24px_rgba(227,146,132,0.35)] transition-colors hover:bg-[#D47B6C] ${className}`}
+      className={`inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[#24C68D] px-7 text-[16px] font-semibold text-white shadow-[0_10px_24px_rgba(36,198,141,0.28)] transition-colors hover:bg-[#1AAB78] ${className}`}
       {...(isExternalHref(href) ? { rel: 'noopener noreferrer' } : {})}
     >
       {children}
@@ -136,7 +135,7 @@ export default function SoftwarePage() {
             Free software
           </p>
           <h1 className="mt-8 text-[52px] leading-[1.02] font-bold tracking-[-0.04em] text-[#171E4B] sm:text-[68px] lg:text-[80px]">
-            Meet <span className="text-[#E39284]">CROS.</span>
+            Meet <span className="text-[#24C68D]">CROS.</span>
           </h1>
           <p className="mt-6 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[44px]">
             One platform for the portfolio, the visits and the follow-up.
@@ -153,7 +152,7 @@ export default function SoftwarePage() {
             </CoralLink>
             <a
               href={siteLinks.bookDemo}
-              className="inline-flex h-14 w-full items-center justify-center rounded-full bg-white px-7 text-[16px] font-semibold text-[#171E4B] shadow-[0_8px_24px_rgba(23,30,75,0.06)] ring-1 ring-[#171E4B]/10 hover:bg-[#FFF8F6] sm:w-auto"
+              className="inline-flex h-14 w-full items-center justify-center rounded-full bg-white px-7 text-[16px] font-semibold text-[#171E4B] shadow-[0_8px_24px_rgba(23,30,75,0.06)] ring-1 ring-[#171E4B]/10 hover:bg-[#F3FBF8] sm:w-auto"
             >
               Book a demo
             </a>
@@ -197,7 +196,7 @@ export default function SoftwarePage() {
                 <div className="mt-4 grid grid-cols-3 gap-2">
                   {[
                     ['Properties', '128', 'Active', 'text-[#24C68D]'],
-                    ['Open tasks', '12', '4 need review', 'text-[#E39284]'],
+                    ['Open tasks', '12', '4 need review', 'text-[#24C68D]'],
                     ['Inspections', '08', 'Scheduled', 'text-[#62697C]'],
                   ].map(([label, value, note, noteClass]) => (
                     <div key={label} className="rounded-2xl bg-[#F7F8FB] px-3 py-3">
@@ -246,11 +245,11 @@ export default function SoftwarePage() {
 
       <section className="mx-auto w-full max-w-[1480px] px-6 py-16 md:px-8 md:py-24">
         <div className="mx-auto max-w-[820px] text-center">
-          <p className="text-[15px] font-semibold text-[#E39284]">
+          <p className="text-[15px] font-semibold text-[#24C68D]">
             What the platform holds
           </p>
           <h2 className="mt-4 text-[40px] leading-[1.05] font-bold tracking-[-0.03em] sm:text-[52px]">
-            The daily work, <span className="text-[#E39284]">on the property record.</span>
+            The daily work, <span className="text-[#24C68D]">on the property record.</span>
           </h2>
         </div>
         <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
@@ -259,7 +258,7 @@ export default function SoftwarePage() {
               key={item.title}
               className="rounded-[28px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.05)] ring-1 ring-[#171E4B]/6"
             >
-              <span className="grid size-12 place-items-center rounded-2xl bg-[#F8EBE6] text-[#E39284]">
+              <span className="grid size-12 place-items-center rounded-2xl bg-[#E7FBF4] text-[#24C68D]">
                 <item.icon className="size-5" strokeWidth={1.75} aria-hidden />
               </span>
               <h3 className="mt-6 text-[22px] font-semibold tracking-[-0.02em]">{item.title}</h3>
@@ -333,7 +332,7 @@ export default function SoftwarePage() {
         <div className="rounded-[32px] bg-[#FBF6F2] p-6 sm:p-10 lg:p-12">
           <div className="grid items-center gap-10 lg:grid-cols-[1.05fr_0.95fr]">
             <div>
-              <p className="text-[15px] font-semibold text-[#E39284]">In the field</p>
+              <p className="text-[15px] font-semibold text-[#24C68D]">In the field</p>
               <h2 className="mt-4 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] sm:text-[44px]">
                 Reports the agency can actually send.
               </h2>
@@ -368,43 +367,54 @@ export default function SoftwarePage() {
 
       <section className="mx-auto w-full max-w-[1480px] px-6 py-8 md:px-8 md:py-12">
         <div className="mx-auto max-w-[760px] text-center">
-          <p className="text-[15px] font-semibold text-[#E39284]">Four apps, one record</p>
-          <h2 className="mt-4 text-[40px] leading-[1.05] font-bold tracking-[-0.03em] sm:text-[52px]">
-            Each person opens the same property from their own side.
+          <h2 className="text-[40px] leading-[1.05] font-bold tracking-[-0.03em] sm:text-[52px]">
+            One platform. Built for everyone.
           </h2>
+          <p className="mx-auto mt-4 max-w-[40rem] text-[18px] leading-[1.55] text-[#62697C] sm:text-[20px]">
+            Every role has its own experience, all connected to the same property.
+          </p>
         </div>
         <div className="mt-12 grid gap-4 lg:grid-cols-2">
           {APPS.map((app) => (
             <article
               key={app.kicker}
-              className="rounded-[28px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.05)] ring-1 ring-[#171E4B]/6 sm:p-8"
+              className="rounded-[28px] bg-[#F7F6F4] p-6 ring-1 ring-[#171E4B]/8 sm:p-7"
             >
-              <p className="text-[14px] font-semibold text-[#E39284]">{app.kicker}</p>
-              <h3 className="mt-3 text-[24px] font-semibold tracking-[-0.02em]">{app.title}</h3>
-              {app.paragraphs.map((paragraph) => (
-                <p key={paragraph} className="mt-3 text-[16px] leading-[1.7] text-[#62697C]">
-                  {paragraph}
-                </p>
-              ))}
+              <div className="flex items-start justify-between">
+                <span className="grid size-12 place-items-center rounded-2xl bg-[#E7FBF4] text-[#24C68D]">
+                  <app.icon className="size-5" strokeWidth={1.75} aria-hidden />
+                </span>
+                <ArrowUpRight className="size-4 text-[#C5CAD3]" aria-hidden />
+              </div>
+              <p className="mt-5 text-[14px] font-semibold text-[#24C68D]">{app.kicker}</p>
+              <h3 className="mt-2 text-[26px] font-semibold tracking-[-0.03em]">{app.title}</h3>
+              <p className="mt-3 text-[16px] leading-[1.6] text-[#62697C]">{app.body}</p>
+              <p className="mt-5 border-t border-[#171E4B]/10 pt-4 text-[14px] text-[#8B93A7]">
+                {app.tags}
+              </p>
             </article>
           ))}
         </div>
-        <p className="mx-auto mt-8 max-w-3xl text-center text-[16px] leading-[1.65] text-[#62697C]">
-          Inspection Only and Full Service write into this same record. The agency does not move
-          the portfolio to a second system to add people.
-        </p>
+        <div className="mx-auto mt-10 max-w-3xl text-center">
+          <p className="text-[20px] font-semibold tracking-[-0.02em] text-[#171E4B]">
+            One property. One shared record. No duplicated work.
+          </p>
+          <p className="mt-2 text-[16px] leading-[1.65] text-[#62697C]">
+            From self-management to full service, everything stays connected.
+          </p>
+        </div>
       </section>
 
       <section className="mx-auto w-full max-w-[1480px] px-6 py-16 md:px-8 md:py-20">
         <div className="mx-auto max-w-[760px] text-center">
-          <p className="text-[15px] font-semibold text-[#E39284]">Your team, your way</p>
+          <p className="text-[15px] font-semibold text-[#24C68D]">Your team, your way</p>
           <h2 className="mt-4 text-[40px] leading-[1.05] font-bold tracking-[-0.03em] sm:text-[52px]">
             The software is free.{' '}
-            <span className="text-[#E39284]">Paid people are optional.</span>
+            <span className="text-[#24C68D]">Paid people are optional.</span>
           </h2>
         </div>
         <div className="mt-12 grid gap-4 lg:grid-cols-3">
-          <article className="flex flex-col rounded-[28px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.05)] ring-1 ring-[#E39284]/40">
+          <article className="flex flex-col rounded-[28px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.05)] ring-1 ring-[#24C68D]/40">
             <p className="w-fit rounded-full bg-[#E7F6EE] px-3 py-1 text-[13px] font-semibold text-[#24C68D]">
               Free software
             </p>
@@ -415,7 +425,7 @@ export default function SoftwarePage() {
             </p>
             <a
               href={siteLinks.startFree}
-              className="mt-6 inline-flex items-center gap-1 text-[15px] font-semibold text-[#E39284] hover:text-[#D47B6C]"
+              className="mt-6 inline-flex items-center gap-1 text-[15px] font-semibold text-[#24C68D] hover:text-[#1AAB78]"
               {...(isExternalHref(siteLinks.startFree) ? { rel: 'noopener noreferrer' } : {})}
             >
               Start for free
@@ -431,7 +441,7 @@ export default function SoftwarePage() {
             </p>
             <a
               href={siteLinks.inspections}
-              className="mt-6 inline-flex items-center gap-1 text-[15px] font-semibold text-[#171E4B] hover:text-[#E39284]"
+              className="mt-6 inline-flex items-center gap-1 text-[15px] font-semibold text-[#171E4B] hover:text-[#24C68D]"
             >
               See inspections
               <ArrowRight className="size-4" aria-hidden />
@@ -446,7 +456,7 @@ export default function SoftwarePage() {
             </p>
             <a
               href={siteLinks.fullService}
-              className="mt-6 inline-flex items-center gap-1 text-[15px] font-semibold text-[#171E4B] hover:text-[#E39284]"
+              className="mt-6 inline-flex items-center gap-1 text-[15px] font-semibold text-[#171E4B] hover:text-[#24C68D]"
             >
               See Full Service
               <ArrowRight className="size-4" aria-hidden />
