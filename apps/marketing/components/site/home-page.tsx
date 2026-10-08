@@ -56,24 +56,26 @@ const PLATFORM = [
 export function HomePage() {
   return (
     <main id="main">
-      <section className="mx-auto grid w-full max-w-[1480px] items-center gap-10 px-6 pt-4 pb-20 md:px-8 md:pb-28 lg:grid-cols-2 lg:items-center lg:gap-x-16 lg:pb-28">
+      <section className="mx-auto grid w-full max-w-[1480px] items-center gap-10 px-6 pt-4 pb-20 md:px-8 md:pb-28 lg:grid-cols-2 lg:gap-x-16">
         <div>
           <p className="text-[15px] font-semibold text-[#24C68D]">
-            Free software. Real expertise.
+            Built for real estate agencies.
           </p>
-          <h1 className="mt-6 max-w-[720px] text-[44px] leading-[1.02] font-bold tracking-[-0.035em] sm:text-[60px] lg:text-[72px]">
-            <span className="text-[#24C68D]">
-              Free
-              <br />
-              Property management software
+          <h1 className="mt-6 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[48px] lg:text-[56px]">
+            <span className="">Free</span>
+            <span className="mt-1 block whitespace-nowrap text-[clamp(22px,4.6vw,48px)] text-[#24C68D] lg:text-[42px]">
+              Property Management Software.
             </span>
-            <span className="mt-1 block text-[#171E4B]">Built with AI.</span>
+            <span className="mt-2 block text-[28px] font-semibold tracking-[-0.02em] sm:text-[36px] lg:text-[40px]">
+              Powered by AI.
+            </span>
           </h1>
-          <p className="mt-6 max-w-[560px] text-[18px] leading-[1.55] text-[#62697C] sm:text-[20px]">
-            Manage your portfolio, leasing, maintenance and inspections in one place — free. Add
-            expert support only when your team needs it.
+          <p className="mt-6 max-w-[520px] text-[18px] leading-[1.55] text-[#62697C]">
+            Manage your portfolio in one place, with AI built in.
+            <br />
+            Add expert support whenever you need it.
           </p>
-          <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <PrimaryLink href={siteLinks.startFree} className="w-full sm:w-auto">
               Start for free
             </PrimaryLink>

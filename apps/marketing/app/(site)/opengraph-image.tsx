@@ -26,11 +26,12 @@ export default function OpenGraphImage() {
             fontWeight: 600,
           }}
         >
-          Free software. Real expertise.
+          Built for real estate agencies.
         </div>
         <div
           style={{
             display: 'flex',
+            flexDirection: 'column',
             marginTop: 24,
             maxWidth: 920,
             fontSize: 64,
@@ -39,7 +40,11 @@ export default function OpenGraphImage() {
             color: '#171E4B',
           }}
         >
-          Free property management software. Powered by AI.
+          <div style={{ display: 'flex', color: '#24C68D' }}>Free</div>
+          <div style={{ display: 'flex', color: '#24C68D' }}>property management software.</div>
+          <div style={{ display: 'flex', marginTop: 8, fontSize: 44, fontWeight: 600 }}>
+            Powered by AI.
+          </div>
         </div>
         <div
           style={{
