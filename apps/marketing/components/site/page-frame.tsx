@@ -16,7 +16,7 @@ export function PageHero({
 }) {
   return (
     <section className="mx-auto max-w-[860px] px-6 pt-16 pb-16 text-center md:px-10 md:pt-24 md:pb-20 lg:pb-[5.5rem]">
-      <p className="text-[16px] font-bold tracking-[0.16em] text-[#007455]">{eyebrow}</p>
+      <p className="text-[15px] font-semibold text-[#24C68D]">{eyebrow}</p>
       <h1 className="mt-8 text-[40px] leading-[1.08] font-bold tracking-[-0.035em] text-[#171E4B] sm:text-[52px]">
         {title}
       </h1>
@@ -47,7 +47,7 @@ export function PageSection({
     <section id={id} className={`scroll-mt-28 py-16 md:py-20 lg:py-[5.5rem] ${className}`}>
       <div className="mx-auto w-full max-w-[1480px] px-6 md:px-8">
         {eyebrow ? (
-          <p className="text-[14px] font-bold tracking-[0.16em] text-[#007455]">{eyebrow}</p>
+          <p className="text-[15px] font-semibold text-[#24C68D]">{eyebrow}</p>
         ) : null}
         {title ? (
           <h2 className="mt-10 max-w-3xl text-[34px] leading-[1.12] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[42px]">
@@ -100,7 +100,7 @@ export function FaqList({
         <details key={item.question} className="group border-b border-[#171E4B]/8 last:border-b-0">
           <summary className="flex min-h-14 cursor-pointer list-none items-center justify-between gap-4 px-5 py-4 text-[16px] font-semibold sm:px-6 [&::-webkit-details-marker]:hidden">
             {item.question}
-            <span aria-hidden className="text-[#007455] transition group-open:rotate-45">
+            <span aria-hidden className="text-[#24C68D] transition group-open:rotate-45">
               +
             </span>
           </summary>
@@ -126,7 +126,7 @@ export function ContactStrip() {
     {
       label: 'General email',
       body: (
-        <a className="font-semibold text-[#007455]" href={`mailto:${company.email}`}>
+        <a className="font-semibold text-[#24C68D]" href={`mailto:${company.email}`}>
           {company.email}
         </a>
       ),
@@ -135,11 +135,11 @@ export function ContactStrip() {
       label: 'Sales and demos',
       body: (
         <>
-          <a className="font-semibold text-[#007455]" href={`mailto:${company.salesEmail}`}>
+          <a className="font-semibold text-[#24C68D]" href={`mailto:${company.salesEmail}`}>
             {company.salesEmail}
           </a>
           <br />
-          <a className="font-semibold text-[#007455]" href={`tel:${company.phoneTel}`}>
+          <a className="font-semibold text-[#24C68D]" href={`tel:${company.phoneTel}`}>
             {company.phoneDisplay}
           </a>
         </>
@@ -148,7 +148,7 @@ export function ContactStrip() {
     {
       label: 'Urgent repairs',
       body: (
-        <a className="font-semibold text-[#007455]" href={`tel:${company.emergencyTel}`}>
+        <a className="font-semibold text-[#24C68D]" href={`tel:${company.emergencyTel}`}>
           {company.emergencyDisplay}
         </a>
       ),
@@ -166,7 +166,7 @@ export function ContactStrip() {
         <dl className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item) => (
             <div key={item.label}>
-              <dt className="text-[12px] font-semibold tracking-[0.12em] text-[#007455] uppercase">
+              <dt className="text-[13px] font-semibold text-[#24C68D]">
                 {item.label}
               </dt>
               <dd className="mt-2 text-[16px] leading-[1.65] text-[#171E4B]">{item.body}</dd>

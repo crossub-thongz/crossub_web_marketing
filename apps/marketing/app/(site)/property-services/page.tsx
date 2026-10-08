@@ -13,7 +13,7 @@ export default function PropertyServicesPage() {
   return (
     <main>
       <PageHero
-        eyebrow="PROPERTY SERVICES"
+        eyebrow="Property services"
         title="People on the ground, on the same records as the software."
         actions={
           <DualActions
@@ -31,23 +31,23 @@ export default function PropertyServicesPage() {
         </p>
       </PageHero>
 
-      <PageSection eyebrow="TWO WAYS IN" title="Book the visits, or hand over the daily work.">
+      <PageSection eyebrow="Two ways in" title="Book the visits, or hand over the daily work.">
         <div className="grid gap-4 md:grid-cols-2">
           <article className="flex flex-col rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
-            <p className="text-[13px] font-bold tracking-[0.14em] text-[#007455]">RENTAL INSPECTION</p>
+            <p className="text-[15px] font-semibold text-[#24C68D]">Rental inspection</p>
             <h3 className="mt-3 text-[24px] font-semibold tracking-[-0.02em]">Inspection Only</h3>
             <p className="mt-3 text-[16px] leading-[1.7] text-[#62697C]">
               Ingoing, routine, outgoing and open homes, attended on site. Reports come back with
               the agency’s branding, photos, and notes on repairs and safety. The visit is a paid
               service on its own.
             </p>
-            <a className="mt-6 font-semibold text-[#007455]" href={siteLinks.inspections}>
+            <a className="mt-6 font-semibold text-[#24C68D]" href={siteLinks.inspections}>
               See inspections
             </a>
           </article>
           <article className="flex flex-col rounded-[28px] bg-[#E7FBF4] p-7 ring-1 ring-[#008F65]/10 sm:p-8">
-            <p className="text-[13px] font-bold tracking-[0.14em] text-[#007455]">
-              PROPERTY MANAGEMENT SUPPORT
+            <p className="text-[15px] font-semibold text-[#24C68D]">
+              Property management support
             </p>
             <h3 className="mt-3 text-[24px] font-semibold tracking-[-0.02em]">Full Service</h3>
             <p className="mt-3 text-[16px] leading-[1.7] text-[#62697C]">
@@ -55,14 +55,14 @@ export default function PropertyServicesPage() {
               them, done by a local team. You still approve quotes, leases and anything that goes
               to the landlord.
             </p>
-            <a className="mt-6 font-semibold text-[#007455]" href={siteLinks.fullService}>
+            <a className="mt-6 font-semibold text-[#24C68D]" href={siteLinks.fullService}>
               See Full Service
             </a>
           </article>
         </div>
       </PageSection>
 
-      <PageSection eyebrow="WHO DOES THE WORK" title="Admin, inspections and maintenance each have a team.">
+      <PageSection eyebrow="Who does the work" title="Admin, inspections and maintenance each have a team.">
         <FeatureGrid
           items={[
             {
@@ -99,7 +99,7 @@ export default function PropertyServicesPage() {
         />
       </PageSection>
 
-      <PageSection eyebrow="INSPECTION STANDARD" title="A branded report, back on the file.">
+      <PageSection eyebrow="Inspection standard" title="A branded report, back on the file.">
         <div className="grid gap-4 lg:grid-cols-2">
           <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
             <h3 className="text-[20px] font-semibold">What the report covers</h3>
@@ -122,23 +122,23 @@ export default function PropertyServicesPage() {
         </div>
       </PageSection>
 
-      <PageSection eyebrow="RESPONSE" title="Urgent jobs and ordinary jobs have different clocks.">
+      <PageSection eyebrow="Response" title="Urgent jobs and ordinary jobs have different clocks.">
         <div className="grid gap-4 md:grid-cols-2">
           <article className="rounded-[28px] bg-[#FFF8E8] p-7 ring-1 ring-[#E6C56A]/30">
-            <p className="text-[13px] font-bold tracking-[0.14em] text-[#8A6414]">URGENT</p>
+            <p className="text-[15px] font-semibold text-[#8A6414]">Urgent</p>
             <p className="mt-3 text-[40px] leading-none font-semibold tracking-[-0.03em] text-[#171E4B]">
               24–48 hours
             </p>
             <p className="mt-3 text-[16px] leading-[1.65] text-[#62697C]">
               The published aim for urgent repair requests. Call{' '}
-              <a className="font-semibold text-[#007455]" href={`tel:${company.emergencyTel}`}>
+              <a className="font-semibold text-[#24C68D]" href={`tel:${company.emergencyTel}`}>
                 {company.emergencyDisplay}
               </a>
               .
             </p>
           </article>
           <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white">
-            <p className="text-[13px] font-bold tracking-[0.14em] text-[#007455]">NON-URGENT</p>
+            <p className="text-[15px] font-semibold text-[#24C68D]">Non-urgent</p>
             <p className="mt-3 text-[40px] leading-none font-semibold tracking-[-0.03em] text-[#171E4B]">
               7 business days
             </p>
@@ -150,7 +150,7 @@ export default function PropertyServicesPage() {
         </div>
       </PageSection>
 
-      <PageSection eyebrow="HANDOVER" title="What we ask for when a property comes across.">
+      <PageSection eyebrow="Handover" title="What we ask for when a property comes across.">
         <FaqList
           items={[
             {
@@ -169,7 +169,7 @@ export default function PropertyServicesPage() {
               answer: (
                 <p>
                   Email{' '}
-                  <a className="font-semibold text-[#007455]" href={`mailto:${company.salesEmail}`}>
+                  <a className="font-semibold text-[#24C68D]" href={`mailto:${company.salesEmail}`}>
                     {company.salesEmail}
                   </a>{' '}
                   with the property and the inspection type, or book a demo and we will set the

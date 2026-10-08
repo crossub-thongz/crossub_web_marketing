@@ -47,10 +47,10 @@ const SECTIONS = [
 export default function PrivacyPage() {
   return (
     <main>
-      <PageHero eyebrow="PRIVACY" title="Privacy policy">
+      <PageHero eyebrow="Privacy" title="Privacy policy">
         <p>
           This is the CROSSUB privacy policy for the website and the platform. Questions go to{' '}
-          <a className="font-semibold text-[#007455]" href={`mailto:${company.salesEmail}`}>
+          <a className="font-semibold text-[#24C68D]" href={`mailto:${company.salesEmail}`}>
             {company.salesEmail}
           </a>
           .

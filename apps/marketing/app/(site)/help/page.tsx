@@ -12,7 +12,7 @@ export const metadata: Metadata = {
 export default function HelpPage() {
   return (
     <main>
-      <PageHero eyebrow="HELP CENTRE" title="Answers for agencies.">
+      <PageHero eyebrow="Help centre" title="Answers for agencies.">
         <p>
           Short answers about the software, the paid services, and how an agency stays in control.
           If your question is not here, email {company.email} or book a demo.
@@ -29,7 +29,7 @@ export default function HelpPage() {
                   The property management software is free. Inspection Only and Full Service are
                   paid services you add when you want people from CROSSUB involved. The figures are
                   on the{' '}
-                  <a className="font-semibold text-[#007455]" href={siteLinks.pricing}>
+                  <a className="font-semibold text-[#24C68D]" href={siteLinks.pricing}>
                     Service Pricing
                   </a>{' '}
                   page.
@@ -110,11 +110,11 @@ export default function HelpPage() {
         />
         <p className="mt-6 text-[16px] leading-[1.65] text-[#62697C]">
           Still stuck?{' '}
-          <a className="font-semibold text-[#007455]" href={siteLinks.bookDemo}>
+          <a className="font-semibold text-[#24C68D]" href={siteLinks.bookDemo}>
             Book a demo
           </a>{' '}
           or read the{' '}
-          <a className="font-semibold text-[#007455]" href={siteLinks.privacy}>
+          <a className="font-semibold text-[#24C68D]" href={siteLinks.privacy}>
             privacy policy
           </a>
           .

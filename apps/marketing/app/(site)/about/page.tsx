@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <main>
       <PageHero
-        eyebrow="ABOUT CROSSUB"
+        eyebrow="About Crossub"
         title="An Australian team behind the software."
         actions={
           <DualActions
@@ -31,7 +31,7 @@ export default function AboutPage() {
         </p>
       </PageHero>
 
-      <PageSection eyebrow="WHERE WE WORK" title="Started in Sydney. Used by agencies beyond it.">
+      <PageSection eyebrow="Where we work" title="Started in Sydney. Used by agencies beyond it.">
         <div className="grid gap-4 lg:grid-cols-[1.15fr_0.85fr]">
           <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
             <p className="text-[16px] leading-[1.7] text-[#62697C]">
@@ -53,7 +53,7 @@ export default function AboutPage() {
           </article>
           <div className="grid gap-4">
             <article className="rounded-[28px] bg-[#E7FBF4] p-7 ring-1 ring-[#008F65]/10">
-              <p className="text-[13px] font-bold tracking-[0.14em] text-[#007455]">FOUNDED</p>
+              <p className="text-[15px] font-semibold text-[#24C68D]">Founded</p>
               <p className="mt-2 text-[56px] leading-none font-semibold tracking-[-0.04em] text-[#171E4B]">
                 2018
               </p>
@@ -63,8 +63,8 @@ export default function AboutPage() {
               </p>
             </article>
             <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white">
-              <p className="text-[13px] font-bold tracking-[0.14em] text-[#007455]">FULL SERVICE</p>
-              <p className="mt-2 text-[56px] leading-none font-semibold tracking-[-0.04em] text-[#008F65]">
+              <p className="text-[15px] font-semibold text-[#24C68D]">Full Service</p>
+              <p className="mt-2 text-[56px] leading-none font-semibold tracking-[-0.04em] text-[#24C68D]">
                 6
               </p>
               <p className="mt-2 text-[16px] leading-[1.65] text-[#62697C]">
@@ -75,7 +75,7 @@ export default function AboutPage() {
         </div>
       </PageSection>
 
-      <PageSection eyebrow="HOW WE WORK WITH AN AGENCY" title="Support, with the agent still named on the file.">
+      <PageSection eyebrow="How we work with an agency" title="Support, with the agent still named on the file.">
         <FeatureGrid
           items={[
             {
@@ -118,7 +118,7 @@ export default function AboutPage() {
         />
       </PageSection>
 
-      <PageSection eyebrow="THE OFFICE" title="North Sydney.">
+      <PageSection eyebrow="The office" title="North Sydney.">
         <div className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
           <p className="text-[18px] font-semibold">
             {company.street}
@@ -126,21 +126,21 @@ export default function AboutPage() {
             {company.locality}
           </p>
           <p className="mt-4 text-[16px] leading-relaxed text-[#62697C]">
-            <a className="font-semibold text-[#007455]" href={`mailto:${company.email}`}>
+            <a className="font-semibold text-[#24C68D]" href={`mailto:${company.email}`}>
               {company.email}
             </a>
             <span className="mx-2 text-[#171E4B]/30">/</span>
-            <a className="font-semibold text-[#007455]" href={`tel:${company.phoneTel}`}>
+            <a className="font-semibold text-[#24C68D]" href={`tel:${company.phoneTel}`}>
               {company.phoneDisplay}
             </a>
           </p>
           <p className="mt-2 text-[16px] leading-[1.65] text-[#62697C]">
             Inspection enquiries:{' '}
-            <a className="font-semibold text-[#007455]" href={`mailto:${company.salesEmail}`}>
+            <a className="font-semibold text-[#24C68D]" href={`mailto:${company.salesEmail}`}>
               {company.salesEmail}
             </a>
             . Urgent repairs:{' '}
-            <a className="font-semibold text-[#007455]" href={`tel:${company.emergencyTel}`}>
+            <a className="font-semibold text-[#24C68D]" href={`tel:${company.emergencyTel}`}>
               {company.emergencyDisplay}
             </a>
             .

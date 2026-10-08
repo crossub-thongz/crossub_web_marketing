@@ -49,7 +49,7 @@ export function SupportCluster() {
       </div>
       <div className="absolute top-[66%] right-0 z-10 -translate-y-1/2 rounded-[22px] bg-white px-5 py-4 shadow-[0_18px_44px_rgba(23,30,75,0.14)] ring-1 ring-[#171E4B]/6">
         <Wordmark className="h-9" />
-        <p className="mt-1.5 text-[15px] font-semibold leading-tight text-[#008F65]">
+        <p className="mt-1.5 text-[15px] font-semibold leading-tight text-[#24C68D]">
           Your agency. Connected.
         </p>
       </div>

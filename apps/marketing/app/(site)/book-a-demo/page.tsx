@@ -13,11 +13,11 @@ export const metadata: Metadata = {
 export default function BookDemoPage() {
   return (
     <main>
-      <PageHero eyebrow="BOOK A DEMO" title="See the software, then decide on support.">
+      <PageHero eyebrow="Book a demo" title="See the software, then decide on support.">
         <p>
           Tell us when suits for a call. We will walk through the free software and, if you want,
           Inspection Only and Full Service. You can also email{' '}
-          <a className="font-semibold text-[#007455]" href={`mailto:${company.email}`}>
+          <a className="font-semibold text-[#24C68D]" href={`mailto:${company.email}`}>
             {company.email}
           </a>{' '}
           or call {company.phoneDisplay}.

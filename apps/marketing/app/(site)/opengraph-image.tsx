@@ -21,13 +21,12 @@ export default function OpenGraphImage() {
         <div
           style={{
             display: 'flex',
-            fontSize: 22,
-            letterSpacing: 3,
-            color: '#007455',
-            fontWeight: 700,
+            fontSize: 24,
+            color: '#24C68D',
+            fontWeight: 600,
           }}
         >
-          FREE SOFTWARE. REAL EXPERTISE.
+          Free software. Real expertise.
         </div>
         <div
           style={{

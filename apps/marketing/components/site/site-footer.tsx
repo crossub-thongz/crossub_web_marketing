@@ -3,7 +3,7 @@ import { Wordmark } from '@/components/site/logo';
 
 const COLUMNS = [
   {
-    title: 'Software',
+    title: 'Meet Cros',
     links: [
       { label: 'Overview', href: siteLinks.software },
       { label: 'AI features', href: siteLinks.ai },
@@ -51,7 +51,7 @@ export function SiteFooter() {
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
           {COLUMNS.map((column) => (
             <div key={column.title}>
-              <h2 className="text-[13px] font-semibold tracking-[0.08em] text-[#171E4B] uppercase">
+              <h2 className="text-[15px] font-semibold text-[#171E4B]">
                 {column.title}
               </h2>
               <ul className="mt-4 space-y-2">

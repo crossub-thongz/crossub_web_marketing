@@ -10,7 +10,7 @@ import { isExternalHref, siteLinks } from '@/lib/site-links';
 import { cn } from '@/lib/utils';
 
 const NAV = [
-  { href: siteLinks.software, label: 'Software' },
+  { href: siteLinks.software, label: 'Meet Cros' },
   { href: siteLinks.inspections, label: 'Inspections' },
   { href: siteLinks.fullService, label: 'Full Service' },
   { href: siteLinks.about, label: 'About' },
@@ -87,7 +87,7 @@ export function SiteHeader() {
               aria-current={pathname === item.href ? 'page' : undefined}
               className={cn(
                 'text-[15px] font-medium whitespace-nowrap hover:text-[#171E4B]',
-                pathname === item.href ? 'text-[#007455]' : 'text-[#62697C]',
+                pathname === item.href ? 'text-[#24C68D]' : 'text-[#62697C]',
               )}
               {...(isExternalHref(item.href) ? { rel: 'noopener noreferrer' } : {})}
             >
