@@ -49,7 +49,7 @@ export default function OpenGraphImage() {
             color: '#62697C',
           }}
         >
-          crossub
+          CROSSUB
         </div>
       </div>
     ),

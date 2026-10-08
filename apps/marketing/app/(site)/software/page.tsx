@@ -16,7 +16,7 @@ import { ContactStrip, FaqList } from '@/components/site/page-frame';
 import { isExternalHref, siteLinks } from '@/lib/site-links';
 
 export const metadata: Metadata = {
-  title: 'Meet Cros | CROSSUB',
+  title: 'Meet CROS | CROSSUB',
   description:
     'Free property management software, plus the Agent Portal, tenant app and inspector app, all on the same property record.',
 };
@@ -129,14 +129,14 @@ function CoralLink({
 export default function SoftwarePage() {
   return (
     <main>
-      <section className="mx-auto w-full max-w-[1480px] px-6 pt-6 pb-16 md:px-8 md:pt-10 md:pb-24">
-        <div className="max-w-[720px]">
+      <section className="mx-auto grid w-full max-w-[1480px] items-center gap-10 px-6 pt-6 pb-16 md:px-8 md:pt-10 md:pb-24 lg:grid-cols-2 lg:gap-16">
+        <div>
           <p className="inline-flex items-center gap-2.5 rounded-full bg-white px-4 py-2 text-[16px] font-semibold text-[#171E4B] shadow-[0_8px_24px_rgba(23,30,75,0.06)] ring-1 ring-[#171E4B]/8">
             <span className="size-2 rounded-full bg-[#24C68D]" aria-hidden />
             Free software
           </p>
           <h1 className="mt-8 text-[52px] leading-[1.02] font-bold tracking-[-0.04em] text-[#171E4B] sm:text-[68px] lg:text-[80px]">
-            Meet <span className="text-[#E39284]">Cros.</span>
+            Meet <span className="text-[#E39284]">CROS.</span>
           </h1>
           <p className="mt-6 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[44px]">
             One platform for the portfolio, the visits and the follow-up.
@@ -166,6 +166,81 @@ export default function SoftwarePage() {
               </li>
             ))}
           </ul>
+        </div>
+        <div className="relative mx-auto w-full max-w-[560px]">
+          <div className="rounded-[28px] bg-white p-3 shadow-[0_30px_70px_rgba(23,30,75,0.12)] ring-1 ring-[#171E4B]/8">
+            <div className="flex items-center justify-between px-3 py-2">
+              <span className="flex gap-1.5" aria-hidden>
+                <span className="size-2.5 rounded-full bg-[#FF5F57]" />
+                <span className="size-2.5 rounded-full bg-[#FEBC2E]" />
+                <span className="size-2.5 rounded-full bg-[#28C840]" />
+              </span>
+              <span className="text-[13px] text-[#8B93A7]">CROS Workspace · Overview</span>
+            </div>
+            <div className="flex gap-2 px-2 pb-3">
+              <div className="flex w-11 shrink-0 flex-col items-center gap-5 pt-6 text-[#C5CAD3]" aria-hidden>
+                <Sparkles className="size-4" />
+                <Home className="size-4" />
+                <LayoutGrid className="size-4" />
+                <ClipboardList className="size-4" />
+                <KeyRound className="size-4" />
+                <Mail className="size-4" />
+              </div>
+              <div className="min-w-0 flex-1">
+                <div className="flex items-start justify-between gap-3">
+                  <div>
+                    <p className="text-[11px] font-semibold text-[#8B93A7]">Thursday, 8 October</p>
+                    <p className="mt-1 text-[22px] font-bold tracking-[-0.03em]">Good morning</p>
+                  </div>
+                  <p className="pt-5 text-[13px] text-[#8B93A7]">Dashboard</p>
+                </div>
+                <div className="mt-4 grid grid-cols-3 gap-2">
+                  {[
+                    ['Properties', '128', 'Active', 'text-[#24C68D]'],
+                    ['Open tasks', '12', '4 need review', 'text-[#E39284]'],
+                    ['Inspections', '08', 'Scheduled', 'text-[#62697C]'],
+                  ].map(([label, value, note, noteClass]) => (
+                    <div key={label} className="rounded-2xl bg-[#F7F8FB] px-3 py-3">
+                      <p className="text-[12px] text-[#8B93A7]">{label}</p>
+                      <p className="mt-1 text-[28px] leading-none font-bold tracking-[-0.04em]">{value}</p>
+                      <p className={`mt-2 text-[12px] font-medium ${noteClass}`}>{note}</p>
+                    </div>
+                  ))}
+                </div>
+                <p className="mt-5 text-[15px] font-semibold">Today’s activity</p>
+                <ul className="mt-2 divide-y divide-[#171E4B]/8 text-[14px]">
+                  {[
+                    ['Routine inspection', 'Scheduled', 'text-[#24C68D]'],
+                    ['Lease renewal', 'Review', 'text-[#62697C]'],
+                    ['Maintenance request', 'New', 'text-[#62697C]'],
+                  ].map(([item, status, statusClass]) => (
+                    <li key={item} className="flex items-center justify-between gap-3 py-2.5">
+                      <span>{item}</span>
+                      <span className={`font-medium ${statusClass}`}>{status}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-3 rounded-2xl bg-[#F4F0FF] p-4">
+                  <p className="flex items-center gap-2 text-[14px] font-semibold">
+                    <img src="/brand/cros.png" alt="" className="size-7 object-contain" />
+                    A little help from CROS
+                  </p>
+                  <p className="mt-2 text-[13px] leading-[1.5] text-[#62697C]">
+                    A draft reply is ready for the new maintenance request. Your team still reviews
+                    it.
+                  </p>
+                  <p className="mt-2 text-[13px] font-semibold text-[#7A6BB5]">Prepared for review</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div className="absolute -right-2 -bottom-5 flex items-center gap-2 rounded-2xl bg-white px-3 py-2 shadow-[0_16px_40px_rgba(23,30,75,0.12)] ring-1 ring-[#171E4B]/8">
+            <img src="/brand/cros.png" alt="" className="size-9 object-contain" />
+            <span>
+              <span className="block text-[13px] font-semibold">Hi, I’m CROS</span>
+              <span className="block text-[12px] text-[#62697C]">Your AI sidekick</span>
+            </span>
+          </div>
         </div>
       </section>
 
@@ -198,9 +273,7 @@ export default function SoftwarePage() {
         <div className="mx-auto grid w-full max-w-[1480px] items-center gap-12 px-6 md:px-8 lg:grid-cols-2 lg:gap-16">
           <div>
             <p className="flex items-center gap-3 text-[15px] font-semibold text-[#7A6BB5]">
-              <span className="grid size-11 place-items-center rounded-2xl bg-gradient-to-br from-[#F3B4D8] to-[#B9A6F2] text-white">
-                <Sparkles className="size-5" aria-hidden />
-              </span>
+              <img src="/brand/cros.png" alt="" className="size-11 object-contain" />
               Built-in intelligence
             </p>
             <h2 className="mt-6 text-[40px] leading-[1.05] font-bold tracking-[-0.03em] sm:text-[52px]">
@@ -229,10 +302,8 @@ export default function SoftwarePage() {
           <div className="rounded-[28px] bg-white p-5 shadow-[0_20px_50px_rgba(23,30,75,0.08)] ring-1 ring-[#171E4B]/6 sm:p-6">
             <div className="flex items-center justify-between gap-3">
               <p className="flex items-center gap-3 text-[16px] font-semibold">
-                <span className="grid size-10 place-items-center rounded-xl bg-gradient-to-br from-[#F3B4D8] to-[#B9A6F2] text-white">
-                  <Sparkles className="size-4" aria-hidden />
-                </span>
-                Cros
+                <img src="/brand/cros.png" alt="" className="size-10 object-contain" />
+                CROS
               </p>
               <span className="rounded-full bg-[#F1E9FF] px-3 py-1 text-[12px] font-semibold text-[#7A6BB5]">
                 AI-powered
@@ -426,11 +497,9 @@ export default function SoftwarePage() {
       <section className="mx-auto w-full max-w-[1480px] px-6 py-16 md:px-8 md:py-20">
         <div className="relative overflow-hidden rounded-[36px] bg-[#2C3A4A] px-6 py-16 text-center text-white sm:px-12">
           <div className="pointer-events-none absolute -top-16 -right-10 size-56 rounded-full bg-[#3D4E63]" aria-hidden />
-          <span className="relative mx-auto grid size-14 place-items-center rounded-2xl bg-gradient-to-br from-[#F3B4D8] to-[#B9A6F2] text-white shadow-[0_8px_24px_rgba(185,166,242,0.45)]">
-            <Sparkles className="size-6" aria-hidden />
-          </span>
+          <img src="/brand/cros.png" alt="" className="relative mx-auto size-28 object-contain" />
           <h2 className="relative mt-6 text-[40px] font-bold tracking-[-0.03em] sm:text-[48px]">
-            Ready to meet Cros?
+            Ready to meet CROS?
           </h2>
           <p className="relative mx-auto mt-4 max-w-[560px] text-[18px] leading-[1.6] text-white/80">
             The property management software is free. Paid people — Inspection Only or Full Service

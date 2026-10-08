@@ -10,7 +10,7 @@ import { isExternalHref, siteLinks } from '@/lib/site-links';
 import { cn } from '@/lib/utils';
 
 const NAV = [
-  { href: siteLinks.software, label: 'Meet Cros' },
+  { href: siteLinks.software, label: 'Meet CROS' },
   { href: siteLinks.inspections, label: 'Inspections' },
   { href: siteLinks.fullService, label: 'Full Service' },
   { href: siteLinks.about, label: 'About' },

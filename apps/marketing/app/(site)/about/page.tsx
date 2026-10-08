@@ -13,7 +13,7 @@ export default function AboutPage() {
   return (
     <main>
       <PageHero
-        eyebrow="About Crossub"
+        eyebrow="About CROSSUB"
         title="An Australian team behind the software."
         actions={
           <DualActions

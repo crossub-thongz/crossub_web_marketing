@@ -191,7 +191,7 @@ export default function InspectionsPage() {
           </li>
           <li className="flex items-center gap-2">
             <span className="size-3 rounded-[3px] bg-[#24C68D]" aria-hidden />
-            Reporting connected to Cros
+            Reporting connected to CROS
           </li>
         </ul>
       </section>
@@ -349,7 +349,10 @@ export default function InspectionsPage() {
       <section className="mx-auto w-full max-w-[1480px] px-6 py-8 md:px-8">
         <div className="grid items-center gap-10 overflow-hidden rounded-[36px] bg-[#16352C] px-6 py-12 text-white sm:px-10 lg:grid-cols-2 lg:gap-16 lg:px-14 lg:py-16">
           <div>
-            <p className="text-[15px] font-semibold text-[#24C68D]">Powered by Cros</p>
+            <p className="flex items-center gap-2 text-[15px] font-semibold text-[#24C68D]">
+              <img src="/brand/cros.png" alt="" className="size-8 object-contain" />
+              Powered by CROS
+            </p>
             <h2 className="mt-4 text-[40px] leading-[1.05] font-bold tracking-[-0.03em] sm:text-[48px]">
               Great inspections.
               <span className="block text-[#24C68D]">Smarter follow-through.</span>
@@ -359,13 +362,13 @@ export default function InspectionsPage() {
               Photos, notes and the report stay with the property, alongside maintenance and leasing.
             </p>
             <p className="mt-4 max-w-[480px] text-[16px] leading-[1.65] text-white/80">
-              Your team can also use Cros and the inspection software without booking our inspectors.
+              Your team can also use CROS and the inspection software without booking our inspectors.
             </p>
             <a
               href={siteLinks.software}
               className="mt-8 inline-flex h-12 items-center gap-2 rounded-2xl bg-[#24C68D] px-5 text-[15px] font-semibold text-white hover:bg-[#1AAB78]"
             >
-              Meet Cros
+              Meet CROS
               <ArrowRight className="size-4" aria-hidden />
             </a>
           </div>
@@ -376,10 +379,8 @@ export default function InspectionsPage() {
             <div className="rounded-[28px] bg-[#F4F8F1] p-5 text-[#171E4B] shadow-[0_20px_50px_rgba(0,0,0,0.18)]">
               <div className="flex items-center justify-between gap-3">
                 <p className="flex items-center gap-2 font-semibold">
-                  <span className="grid size-9 place-items-center rounded-xl bg-[#E3F5DC] text-[#24C68D]">
-                    <Sparkles className="size-4" aria-hidden />
-                  </span>
-                  Cros · Property Workspace
+                  <img src="/brand/cros.png" alt="" className="size-9 object-contain" />
+                  CROS · Property Workspace
                 </p>
                 <span className="text-[13px] font-semibold text-[#24C68D]">Connected</span>
               </div>

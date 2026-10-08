@@ -58,8 +58,7 @@ export function HomePage() {
     <main id="main">
       <section className="mx-auto grid w-full max-w-[1480px] items-center gap-10 px-6 pt-4 pb-20 md:px-8 md:pb-28 lg:grid-cols-2 lg:items-center lg:gap-x-16 lg:pb-28">
         <div>
-          <p className="flex items-center gap-2 text-[15px] font-semibold text-[#24C68D]">
-            <span className="size-2 rounded-full bg-[#24C68D]" aria-hidden />
+          <p className="text-[15px] font-semibold text-[#24C68D]">
             Free software. Real expertise.
           </p>
           <h1 className="mt-6 max-w-[720px] text-[44px] leading-[1.02] font-bold tracking-[-0.035em] sm:text-[60px] lg:text-[72px]">
@@ -92,7 +91,7 @@ export function HomePage() {
       <section id="solutions" tabIndex={-1} className="rise scroll-mt-28 py-16 outline-none md:py-28 lg:py-32">
         <div className="mx-auto w-full max-w-[1480px] px-6 md:px-8">
           <div className="mx-auto max-w-4xl text-center">
-            <Eyebrow>Three ways to grow with Crossub</Eyebrow>
+            <Eyebrow>Three ways to grow with CROSSUB</Eyebrow>
             <h2 className="mt-5 text-[44px] leading-[1.02] font-bold tracking-[-0.03em] sm:text-[72px]">
               Start Free
               <br />
@@ -180,7 +179,7 @@ export function HomePage() {
             Your team stays in control.
           </h2>
           <p className="mt-6 max-w-[40rem] text-[20px] leading-[1.5] text-[#62697C]">
-            Crossub helps reduce the admin around everyday property management while keeping your
+            CROSSUB helps reduce the admin around everyday property management while keeping your
             team in the approval loop.
           </p>
           <div className="mt-12 grid gap-4 md:grid-cols-3">
@@ -207,7 +206,7 @@ export function HomePage() {
             needs. In one place.
           </h2>
           <p className="mt-6 max-w-[40rem] text-[20px] leading-[1.5] text-[#62697C]">
-            Crossub keeps the day-to-day work connected, so your team can move faster without
+            CROSSUB keeps the day-to-day work connected, so your team can move faster without
             juggling multiple tools.
           </p>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -268,7 +267,7 @@ export function HomePage() {
               Practical software, backed by experienced people.
             </p>
             <SecondaryLink href={siteLinks.about} className="mt-20">
-              Meet Crossub
+              Meet CROSSUB
             </SecondaryLink>
           </div>
         </div>

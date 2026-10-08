@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 const BENEFITS = [
   {
     title: 'Scale without hiring',
-    body: 'Increase the capacity of your existing team. Crossub takes care of repetitive back-end work so you can spend more time growing your agency.',
+    body: 'Increase the capacity of your existing team. CROSSUB takes care of repetitive back-end work so you can spend more time growing your agency.',
     icon: ArrowUpRight,
   },
   {
@@ -23,7 +23,7 @@ const BENEFITS = [
     icon: Check,
   },
   {
-    title: 'People + Cros',
+    title: 'People + CROS',
     body: 'A local property management team, supported by smart workflows and a connected platform. Real people where judgement matters.',
     icon: Sparkles,
   },
@@ -72,16 +72,16 @@ const ONBOARDING = [
 
 const FAQS = [
   {
-    q: 'Will Crossub speak directly to my landlords?',
-    a: 'No. Landlord communication stays with your agency. Crossub works behind the scenes, under your agency brand for relevant tenant-facing communication, and the team is local rather than offshore.',
+    q: 'Will CROSSUB speak directly to my landlords?',
+    a: 'No. Landlord communication stays with your agency. CROSSUB works behind the scenes, under your agency brand for relevant tenant-facing communication, and the team is local rather than offshore.',
   },
   {
     q: 'Who approves maintenance and lease decisions?',
-    a: `Your agency remains the decision maker. Crossub coordinates quotes, supporting information and tasks, then arranges approved actions. Urgent repairs are called through on ${company.emergencyDisplay}.`,
+    a: `Your agency remains the decision maker. CROSSUB coordinates quotes, supporting information and tasks, then arranges approved actions. Urgent repairs are called through on ${company.emergencyDisplay}.`,
   },
   {
-    q: 'Does Crossub handle rental bonds or trust funds?',
-    a: 'No. Crossub does not collect or hold the rental bond. The agent or the tenant lodges and releases it through Rental Bonds Online. An outgoing inspection can support the claim. It does not move the money. Your agency retains responsibility for its own trust accounting.',
+    q: 'Does CROSSUB handle rental bonds or trust funds?',
+    a: 'No. CROSSUB does not collect or hold the rental bond. The agent or the tenant lodges and releases it through Rental Bonds Online. An outgoing inspection can support the claim. It does not move the money. Your agency retains responsibility for its own trust accounting.',
   },
   {
     q: 'Is there a lock-in contract?',
@@ -89,7 +89,7 @@ const FAQS = [
   },
   {
     q: 'How much does Full Service cost?',
-    a: 'Crossub’s Full Service fee is 30% of your existing property management fee. On a 5% + GST management fee, the Crossub portion is 1.5% + GST. This offering is for agencies charging at least 4% + GST. Inspection Only is a separate paid visit, not this percentage.',
+    a: 'CROSSUB’s Full Service fee is 30% of your existing property management fee. On a 5% + GST management fee, the CROSSUB portion is 1.5% + GST. This offering is for agencies charging at least 4% + GST. Inspection Only is a separate paid visit, not this percentage.',
   },
 ] as const;
 
@@ -149,9 +149,13 @@ export default function FullServicePage() {
                 key={item.title}
                 className="rounded-[24px] border border-[#E1EBE5] bg-white p-7"
               >
-                <IconTile>
-                  <item.icon className="size-5" strokeWidth={2} aria-hidden />
-                </IconTile>
+                {item.title === 'People + CROS' ? (
+                  <img src="/brand/cros.png" alt="" className="size-11 object-contain" />
+                ) : (
+                  <IconTile>
+                    <item.icon className="size-5" strokeWidth={2} aria-hidden />
+                  </IconTile>
+                )}
                 <h3 className="mt-5 text-[22px] font-semibold tracking-[-0.03em] text-[#173E3B]">
                   {item.title}
                 </h3>
@@ -191,10 +195,11 @@ export default function FullServicePage() {
             ))}
           </div>
           <p className="mt-6 rounded-2xl border border-dashed border-[#AFD7C7] bg-[#E5F4EB] px-5 py-4 text-center text-[15px] text-[#24C68D]">
-            <strong>Connected by Cros</strong> — one platform for tasks, communication and
+            <img src="/brand/cros.png" alt="" className="mr-2 inline-block size-8 align-middle object-contain" />
+            <strong>Connected by CROS</strong> — one platform for tasks, communication and
             visibility.{' '}
             <a className="font-semibold underline" href={siteLinks.software}>
-              Meet Cros
+              Meet CROS
             </a>
           </p>
         </div>
@@ -234,7 +239,7 @@ export default function FullServicePage() {
               </ul>
             </article>
             <article className="rounded-[24px] bg-[#E4F5EB] p-7 sm:p-8">
-              <h3 className="text-[22px] font-semibold text-[#173E3B]">Crossub team</h3>
+              <h3 className="text-[22px] font-semibold text-[#173E3B]">CROSSUB team</h3>
               <ul className="mt-4 divide-y divide-[#C9E4D6]">
                 {[
                   'Coordinate day-to-day operations',
@@ -251,7 +256,10 @@ export default function FullServicePage() {
             </article>
           </div>
           <div className="mt-5 rounded-[20px] bg-[#173E3B] px-6 py-5 text-center text-white">
-            <p className="text-[16px] font-semibold">Powered by Cros — one connected workspace</p>
+            <p className="flex items-center justify-center gap-2 text-[16px] font-semibold">
+              <img src="/brand/cros.png" alt="" className="size-8 object-contain" />
+              Powered by CROS — one connected workspace
+            </p>
             <p className="mt-1 text-[14px] text-[#B6D2CA]">
               Shared records · Live tasks · AI assistance · Full visibility
             </p>
@@ -271,7 +279,7 @@ export default function FullServicePage() {
               More room to grow.
             </h2>
             <p className="mt-4 max-w-[540px] text-[17px] leading-[1.7] text-[#BED0C9]">
-              Pay Crossub from the management fee your agency already charges. It isn’t a second
+              Pay CROSSUB from the management fee your agency already charges. It isn’t a second
               full management fee for your landlord. The same figures are on{' '}
               <a className="font-semibold text-white" href={siteLinks.pricing}>
                 Service Pricing
@@ -296,7 +304,7 @@ export default function FullServicePage() {
             </div>
             <div className="mt-2 flex justify-between text-[13px] text-[#71857D]">
               <span>Your agency 70%</span>
-              <span>Crossub 30%</span>
+              <span>CROSSUB 30%</span>
             </div>
             <div className="mt-4 divide-y divide-[#E6EDE7] text-[15px]">
               <p className="flex items-center justify-between gap-4 py-3">
@@ -304,7 +312,7 @@ export default function FullServicePage() {
                 <strong>3.5% + GST</strong>
               </p>
               <p className="flex items-center justify-between gap-4 py-3">
-                <span>Crossub fee</span>
+                <span>CROSSUB fee</span>
                 <strong>1.5% + GST</strong>
               </p>
             </div>
@@ -379,7 +387,7 @@ export default function FullServicePage() {
             Ready to grow without the extra workload?
           </h2>
           <p className="mx-auto mt-4 max-w-[560px] text-[17px] leading-[1.7] text-[#668178]">
-            See how Crossub can work behind your agency, while you stay in control.
+            See how CROSSUB can work behind your agency, while you stay in control.
           </p>
           <a
             href={siteLinks.bookDemo}

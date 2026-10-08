@@ -3,7 +3,7 @@ import { Wordmark } from '@/components/site/logo';
 
 const COLUMNS = [
   {
-    title: 'Meet Cros',
+    title: 'Meet CROS',
     links: [
       { label: 'Overview', href: siteLinks.software },
       { label: 'AI features', href: siteLinks.ai },
