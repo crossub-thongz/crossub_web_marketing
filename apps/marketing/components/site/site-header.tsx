@@ -1,19 +1,17 @@
 'use client';
 
-import { Menu, X } from 'lucide-react';
+import { ChevronDown, Menu, X } from 'lucide-react';
 import { usePathname } from 'next/navigation';
 import { useEffect, useId, useRef, useState } from 'react';
 
 import { PrimaryLink } from '@/components/site/buttons';
 import { Wordmark } from '@/components/site/logo';
-import { isExternalHref, siteLinks } from '@/lib/site-links';
+import { siteLinks } from '@/lib/site-links';
 import { cn } from '@/lib/utils';
 
-const NAV = [
-  { href: siteLinks.software, label: 'Meet CROS' },
-  { href: siteLinks.inspections, label: 'Inspections' },
+const SERVICES = [
+  { href: siteLinks.inspections, label: 'Inspection Services' },
   { href: siteLinks.fullService, label: 'Full Service' },
-  { href: siteLinks.about, label: 'About' },
 ] as const;
 
 function followLink(event: React.MouseEvent<HTMLAnchorElement>, href: string) {
@@ -28,11 +26,15 @@ function followLink(event: React.MouseEvent<HTMLAnchorElement>, href: string) {
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
+  const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
+  const servicesRef = useRef<HTMLDivElement>(null);
   const menuId = useId();
+  const servicesMenuId = useId();
   const pathname = usePathname();
+  const servicesActive = SERVICES.some((item) => pathname === item.href);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -40,6 +42,22 @@ export function SiteHeader() {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    if (!servicesOpen) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setServicesOpen(false);
+    };
+    const onPointer = (event: MouseEvent) => {
+      if (!servicesRef.current?.contains(event.target as Node)) setServicesOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('mousedown', onPointer);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('mousedown', onPointer);
+    };
+  }, [servicesOpen]);
 
   useEffect(() => {
     if (!open) return;
@@ -56,8 +74,15 @@ export function SiteHeader() {
 
   const onNavigate = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     setOpen(false);
+    setServicesOpen(false);
     followLink(event, href);
   };
+
+  const linkClass = (active: boolean) =>
+    cn(
+      'text-[17px] font-medium whitespace-nowrap hover:text-[#171E4B]',
+      active ? 'text-[#24C68D]' : 'text-[#62697C]',
+    );
 
   return (
     <header
@@ -79,21 +104,68 @@ export function SiteHeader() {
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
-          {NAV.map((item) => (
-            <a
-              key={item.label}
-              href={item.href}
-              onClick={(event) => onNavigate(event, item.href)}
-              aria-current={pathname === item.href ? 'page' : undefined}
-              className={cn(
-                'text-[15px] font-medium whitespace-nowrap hover:text-[#171E4B]',
-                pathname === item.href ? 'text-[#24C68D]' : 'text-[#62697C]',
-              )}
-              {...(isExternalHref(item.href) ? { rel: 'noopener noreferrer' } : {})}
+          <a
+            href={siteLinks.software}
+            onClick={(event) => onNavigate(event, siteLinks.software)}
+            aria-current={pathname === siteLinks.software ? 'page' : undefined}
+            className={linkClass(pathname === siteLinks.software)}
+          >
+            Meet CROS
+          </a>
+
+          <div
+            ref={servicesRef}
+            className="relative"
+            onMouseEnter={() => setServicesOpen(true)}
+            onMouseLeave={() => setServicesOpen(false)}
+          >
+            <button
+              type="button"
+              className={cn(linkClass(servicesActive), 'inline-flex items-center gap-1')}
+              aria-expanded={servicesOpen}
+              aria-controls={servicesMenuId}
+              onClick={() => setServicesOpen((value) => !value)}
             >
-              {item.label}
-            </a>
-          ))}
+              Services
+              <ChevronDown
+                className={cn('size-4 transition-transform', servicesOpen && 'rotate-180')}
+                aria-hidden
+              />
+            </button>
+            {servicesOpen ? (
+              <div
+                id={servicesMenuId}
+                className="absolute top-full left-1/2 z-50 w-56 -translate-x-1/2 pt-3"
+              >
+                <ul className="rounded-2xl bg-white p-2 shadow-[0_16px_40px_rgba(23,30,75,0.12)] ring-1 ring-[#171E4B]/8">
+                  {SERVICES.map((item) => (
+                    <li key={item.href}>
+                      <a
+                        href={item.href}
+                        onClick={(event) => onNavigate(event, item.href)}
+                        aria-current={pathname === item.href ? 'page' : undefined}
+                        className={cn(
+                          'block rounded-xl px-3 py-2.5 text-[16px] font-medium hover:bg-[#F3FBF8]',
+                          pathname === item.href ? 'text-[#24C68D]' : 'text-[#171E4B]',
+                        )}
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
+
+          <a
+            href={siteLinks.about}
+            onClick={(event) => onNavigate(event, siteLinks.about)}
+            aria-current={pathname === siteLinks.about ? 'page' : undefined}
+            className={linkClass(pathname === siteLinks.about)}
+          >
+            About
+          </a>
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
@@ -127,17 +199,31 @@ export function SiteHeader() {
           className="border-t border-[#171E4B]/8 bg-white px-5 py-4 lg:hidden"
         >
           <nav className="flex flex-col" aria-label="Mobile">
-            {NAV.map((item) => (
+            <a
+              href={siteLinks.software}
+              onClick={(event) => onNavigate(event, siteLinks.software)}
+              className="flex min-h-11 items-center text-[17px] font-medium text-[#171E4B]"
+            >
+              Meet CROS
+            </a>
+            <p className="flex min-h-11 items-center text-[17px] font-medium text-[#62697C]">Services</p>
+            {SERVICES.map((item) => (
               <a
-                key={item.label}
+                key={item.href}
                 href={item.href}
                 onClick={(event) => onNavigate(event, item.href)}
-                className="flex min-h-11 items-center text-[16px] font-medium text-[#171E4B]"
-                {...(isExternalHref(item.href) ? { rel: 'noopener noreferrer' } : {})}
+                className="flex min-h-11 items-center pl-4 text-[17px] font-medium text-[#171E4B]"
               >
                 {item.label}
               </a>
             ))}
+            <a
+              href={siteLinks.about}
+              onClick={(event) => onNavigate(event, siteLinks.about)}
+              className="flex min-h-11 items-center text-[17px] font-medium text-[#171E4B]"
+            >
+              About
+            </a>
             <a
               href={siteLinks.login}
               rel="noopener noreferrer"

@@ -413,50 +413,56 @@ export default function SoftwarePage() {
             <span className="text-[#24C68D]">Paid people are optional.</span>
           </h2>
         </div>
-        <div className="mt-12 grid gap-4 lg:grid-cols-3">
-          <article className="flex flex-col rounded-[28px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.05)] ring-1 ring-[#24C68D]/40">
-            <p className="w-fit rounded-full bg-[#E7F6EE] px-3 py-1 text-[13px] font-semibold text-[#24C68D]">
-              Free software
+        <div className="mt-12 grid items-stretch gap-4 lg:grid-cols-3">
+          <article className="flex h-full flex-col rounded-[28px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.05)] ring-1 ring-[#24C68D]/40">
+            <p className="flex h-8 items-center">
+              <span className="w-fit rounded-full bg-[#E7F6EE] px-3 py-1 text-[13px] font-semibold text-[#24C68D]">
+                Free software
+              </span>
             </p>
-            <h3 className="mt-5 text-[24px] font-semibold">The rent roll, on the web.</h3>
+            <h3 className="mt-5 text-[24px] leading-tight font-semibold">The rent roll, on the web.</h3>
             <p className="mt-3 text-[16px] leading-[1.65] text-[#62697C]">
               This is the free software. The command center, properties, leasing, inspections,
               maintenance, keys and the communication record live here.
             </p>
             <a
               href={siteLinks.startFree}
-              className="mt-6 inline-flex items-center gap-1 text-[15px] font-semibold text-[#24C68D] hover:text-[#1AAB78]"
+              className="mt-auto inline-flex items-center gap-1 pt-6 text-[15px] font-semibold text-[#24C68D] hover:text-[#1AAB78]"
               {...(isExternalHref(siteLinks.startFree) ? { rel: 'noopener noreferrer' } : {})}
             >
               Start for free
               <ArrowRight className="size-4" aria-hidden />
             </a>
           </article>
-          <article className="flex flex-col rounded-[28px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.05)] ring-1 ring-[#171E4B]/6">
-            <p className="text-[14px] font-semibold text-[#8B93A7]">Optional service</p>
-            <h3 className="mt-5 text-[24px] font-semibold">Inspection Only</h3>
+          <article className="flex h-full flex-col rounded-[28px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.05)] ring-1 ring-[#171E4B]/6">
+            <p className="flex h-8 items-center text-[14px] font-semibold text-[#8B93A7]">
+              Optional service
+            </p>
+            <h3 className="mt-5 text-[24px] leading-tight font-semibold">Inspection Only</h3>
             <p className="mt-3 text-[16px] leading-[1.65] text-[#62697C]">
               Your own staff can complete the visit in the app. Or you can book CROSSUB inspectors
               and have the same report land on the property.
             </p>
             <a
               href={siteLinks.inspections}
-              className="mt-6 inline-flex items-center gap-1 text-[15px] font-semibold text-[#171E4B] hover:text-[#24C68D]"
+              className="mt-auto inline-flex items-center gap-1 pt-6 text-[15px] font-semibold text-[#171E4B] hover:text-[#24C68D]"
             >
               See inspections
               <ArrowRight className="size-4" aria-hidden />
             </a>
           </article>
-          <article className="flex flex-col rounded-[28px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.05)] ring-1 ring-[#171E4B]/6">
-            <p className="text-[14px] font-semibold text-[#8B93A7]">Optional service</p>
-            <h3 className="mt-5 text-[24px] font-semibold">Full Service</h3>
+          <article className="flex h-full flex-col rounded-[28px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.05)] ring-1 ring-[#171E4B]/6">
+            <p className="flex h-8 items-center text-[14px] font-semibold text-[#8B93A7]">
+              Optional service
+            </p>
+            <h3 className="mt-5 text-[24px] leading-tight font-semibold">Full Service</h3>
             <p className="mt-3 text-[16px] leading-[1.65] text-[#62697C]">
               Inspection Only and Full Service write into this same record. The agency does not
               move the portfolio to a second system to add people.
             </p>
             <a
               href={siteLinks.fullService}
-              className="mt-6 inline-flex items-center gap-1 text-[15px] font-semibold text-[#171E4B] hover:text-[#24C68D]"
+              className="mt-auto inline-flex items-center gap-1 pt-6 text-[15px] font-semibold text-[#171E4B] hover:text-[#24C68D]"
             >
               See Full Service
               <ArrowRight className="size-4" aria-hidden />
