@@ -15,6 +15,7 @@ import {
 } from 'lucide-react';
 import type { ReactNode } from 'react';
 
+import { MeetCrosFree } from '@/components/site/meet-cros-free';
 import { ContactStrip, FaqList } from '@/components/site/page-frame';
 import { isExternalHref, siteLinks } from '@/lib/site-links';
 
@@ -244,6 +245,10 @@ export default function SoftwarePage() {
       </section>
 
       <section className="mx-auto w-full max-w-[1480px] px-6 py-16 md:px-8 md:py-24">
+        <MeetCrosFree />
+      </section>
+
+      <section className="mx-auto w-full max-w-[1480px] px-6 py-16 md:px-8 md:py-24">
         <div className="mx-auto max-w-[820px] text-center">
           <p className="text-[15px] font-semibold text-[#24C68D]">
             What the platform holds
@@ -378,7 +383,7 @@ export default function SoftwarePage() {
           {APPS.map((app) => (
             <article
               key={app.kicker}
-              className="rounded-[28px] bg-[#F7F6F4] p-6 ring-1 ring-[#171E4B]/8 sm:p-7"
+              className="flex h-full flex-col rounded-[28px] bg-[#F7F6F4] p-6 ring-1 ring-[#171E4B]/8 sm:p-7"
             >
               <div className="flex items-start justify-between">
                 <span className="grid size-12 place-items-center rounded-2xl bg-[#E7FBF4] text-[#24C68D]">
@@ -389,9 +394,11 @@ export default function SoftwarePage() {
               <p className="mt-5 text-[14px] font-semibold text-[#24C68D]">{app.kicker}</p>
               <h3 className="mt-2 text-[26px] font-semibold tracking-[-0.03em]">{app.title}</h3>
               <p className="mt-3 text-[16px] leading-[1.6] text-[#62697C]">{app.body}</p>
-              <p className="mt-5 border-t border-[#171E4B]/10 pt-4 text-[14px] text-[#8B93A7]">
-                {app.tags}
-              </p>
+              <div className="mt-auto pt-5">
+                <p className="border-t border-[#171E4B]/10 pt-4 text-[14px] text-[#8B93A7]">
+                  {app.tags}
+                </p>
+              </div>
             </article>
           ))}
         </div>
