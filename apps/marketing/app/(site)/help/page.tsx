@@ -97,6 +97,16 @@ export default function HelpPage() {
               ),
             },
             {
+              question: 'How does an inspector get help in the app?',
+              answer: (
+                <p>
+                  Inspectors sign in with the account the office created. For a sign-in problem, a
+                  job that will not open, or a question about a visit, email {company.email}. The
+                  head office phone is {company.phoneDisplay}.
+                </p>
+              ),
+            },
+            {
               question: 'What do you need to hand a property over?',
               answer: (
                 <p>

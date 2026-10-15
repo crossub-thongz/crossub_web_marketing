@@ -19,6 +19,10 @@ const SECTIONS = [
     body: 'We collect information you give us, such as your name, email address, phone number, agency details and payment information, when you create an account, book a demo, or use a paid service. We also collect information about how you use this website through cookies and similar tools.',
   },
   {
+    title: 'Inspector app',
+    body: 'The CROSSUB inspector app is for inspectors engaged by CROSSUB. When an inspector signs in, we collect their name, email address and phone number. The app uses precise location to show nearby jobs and travel time. Inspection photos, notes and key-handover records are stored so the inspection can be completed and reviewed. Bank account details entered on an inspector registration form are kept so we can pay that inspector. The app sends a device token so we can deliver job notifications. This information is linked to the inspector’s account and is used to run the inspection service. We do not use it to track inspectors across other companies’ apps, and we do not use it for advertising.',
+  },
+  {
     title: 'How we use it',
     body: 'We use personal information to provide the software and services you ask for, and to reply to you. We only send promotional email if you have agreed to it.',
   },
@@ -49,7 +53,7 @@ export default function PrivacyPage() {
     <main>
       <PageHero eyebrow="Privacy" title="Privacy policy">
         <p>
-          This is the CROSSUB privacy policy for the website and the platform. Questions go to{' '}
+          This is the CROSSUB privacy policy for the website, the platform, and the inspector app. Questions go to{' '}
           <a className="font-semibold text-[#24C68D]" href={`mailto:${company.salesEmail}`}>
             {company.salesEmail}
           </a>
