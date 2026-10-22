@@ -15,7 +15,7 @@ import {
 } from 'lucide-react';
 import type { ReactNode } from 'react';
 
-import { MeetCrosFree } from '@/components/site/meet-cros-free';
+import { MeetCrosHero } from '@/components/site/meet-cros-hero';
 import { ContactStrip, FaqList } from '@/components/site/page-frame';
 import { isExternalHref, siteLinks } from '@/lib/site-links';
 
@@ -129,147 +129,47 @@ function CoralLink({
 export default function SoftwarePage() {
   return (
     <main>
-      <section className="mx-auto grid w-full max-w-[1480px] items-center gap-10 px-6 pt-6 pb-16 md:px-8 md:pt-10 md:pb-24 lg:grid-cols-2 lg:gap-16">
-        <div>
-          <p className="inline-flex items-center gap-2.5 rounded-full bg-white px-4 py-2 text-[16px] font-semibold text-[#171E4B] shadow-[0_8px_24px_rgba(23,30,75,0.06)] ring-1 ring-[#171E4B]/8">
-            <span className="size-2 rounded-full bg-[#24C68D]" aria-hidden />
-            Free software
-          </p>
-          <h1 className="mt-8 text-[52px] leading-[1.02] font-bold tracking-[-0.04em] text-[#171E4B] sm:text-[68px] lg:text-[80px]">
-            Meet <span className="text-[#24C68D]">CROS.</span>
-          </h1>
-          <p className="mt-6 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[44px]">
-            One platform for the portfolio, the visits and the follow-up.
-          </p>
-          <p className="mt-6 max-w-[560px] text-[18px] leading-[1.6] text-[#62697C] sm:text-[20px]">
-            The property management software is free. Agencies use it to schedule ingoing, outgoing
-            and routine inspections, open homes, maintenance and leasing, and to keep the record in
-            one place. Paid people — Inspection Only or Full Service — are optional.
-          </p>
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-            <CoralLink href={siteLinks.startFree} className="w-full sm:w-auto">
-              Start for free
-              <ArrowRight className="size-4" aria-hidden />
-            </CoralLink>
-            <a
-              href={siteLinks.bookDemo}
-              className="inline-flex h-14 w-full items-center justify-center rounded-full bg-white px-7 text-[16px] font-semibold text-[#171E4B] shadow-[0_8px_24px_rgba(23,30,75,0.06)] ring-1 ring-[#171E4B]/10 hover:bg-[#F3FBF8] sm:w-auto"
-            >
-              Book a demo
-            </a>
-          </div>
-          <ul className="mt-8 flex max-w-[520px] flex-wrap gap-x-6 gap-y-3">
-            {['Free software', 'Optional paid support', 'Your team decides'].map((item) => (
-              <li key={item} className="flex items-center gap-2 text-[15px] font-medium text-[#5C6578]">
-                <Check className="size-4 text-[#24C68D]" strokeWidth={2.5} aria-hidden />
-                {item}
-              </li>
-            ))}
-          </ul>
-        </div>
-        <div className="relative mx-auto w-full max-w-[560px]">
-          <div className="rounded-[28px] bg-white p-3 shadow-[0_30px_70px_rgba(23,30,75,0.12)] ring-1 ring-[#171E4B]/8">
-            <div className="flex items-center justify-between px-3 py-2">
-              <span className="flex gap-1.5" aria-hidden>
-                <span className="size-2.5 rounded-full bg-[#FF5F57]" />
-                <span className="size-2.5 rounded-full bg-[#FEBC2E]" />
-                <span className="size-2.5 rounded-full bg-[#28C840]" />
-              </span>
-              <span className="text-[13px] text-[#8B93A7]">CROS Workspace · Overview</span>
-            </div>
-            <div className="flex gap-2 px-2 pb-3">
-              <div className="flex w-11 shrink-0 flex-col items-center gap-5 pt-6 text-[#C5CAD3]" aria-hidden>
-                <Sparkles className="size-4" />
-                <Home className="size-4" />
-                <LayoutGrid className="size-4" />
-                <ClipboardList className="size-4" />
-                <KeyRound className="size-4" />
-                <Mail className="size-4" />
-              </div>
-              <div className="min-w-0 flex-1">
-                <div className="flex items-start justify-between gap-3">
-                  <div>
-                    <p className="text-[11px] font-semibold text-[#8B93A7]">Thursday, 8 October</p>
-                    <p className="mt-1 text-[22px] font-bold tracking-[-0.03em]">Good morning</p>
-                  </div>
-                  <p className="pt-5 text-[13px] text-[#8B93A7]">Dashboard</p>
-                </div>
-                <div className="mt-4 grid grid-cols-3 gap-2">
-                  {[
-                    ['Properties', '128', 'Active', 'text-[#24C68D]'],
-                    ['Open tasks', '12', '4 need review', 'text-[#24C68D]'],
-                    ['Inspections', '08', 'Scheduled', 'text-[#62697C]'],
-                  ].map(([label, value, note, noteClass]) => (
-                    <div key={label} className="rounded-2xl bg-[#F7F8FB] px-3 py-3">
-                      <p className="text-[12px] text-[#8B93A7]">{label}</p>
-                      <p className="mt-1 text-[28px] leading-none font-bold tracking-[-0.04em]">{value}</p>
-                      <p className={`mt-2 text-[12px] font-medium ${noteClass}`}>{note}</p>
-                    </div>
-                  ))}
-                </div>
-                <p className="mt-5 text-[15px] font-semibold">Today’s activity</p>
-                <ul className="mt-2 divide-y divide-[#171E4B]/8 text-[14px]">
-                  {[
-                    ['Routine inspection', 'Scheduled', 'text-[#24C68D]'],
-                    ['Lease renewal', 'Review', 'text-[#62697C]'],
-                    ['Maintenance request', 'New', 'text-[#62697C]'],
-                  ].map(([item, status, statusClass]) => (
-                    <li key={item} className="flex items-center justify-between gap-3 py-2.5">
-                      <span>{item}</span>
-                      <span className={`font-medium ${statusClass}`}>{status}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-3 rounded-2xl bg-[#F4F0FF] p-4">
-                  <p className="flex items-center gap-2 text-[14px] font-semibold">
-                    <img src="/brand/cros.png" alt="" className="size-7 object-contain" />
-                    A little help from CROS
-                  </p>
-                  <p className="mt-2 text-[13px] leading-[1.5] text-[#62697C]">
-                    A draft reply is ready for the new maintenance request. Your team still reviews
-                    it.
-                  </p>
-                  <p className="mt-2 text-[13px] font-semibold text-[#7A6BB5]">Prepared for review</p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="absolute -right-2 -bottom-5 flex items-center gap-2 rounded-2xl bg-white px-3 py-2 shadow-[0_16px_40px_rgba(23,30,75,0.12)] ring-1 ring-[#171E4B]/8">
-            <img src="/brand/cros.png" alt="" className="size-9 object-contain" />
-            <span>
-              <span className="block text-[13px] font-semibold">Hi, I’m CROS</span>
-              <span className="block text-[12px] text-[#62697C]">Your AI sidekick</span>
-            </span>
-          </div>
-        </div>
-      </section>
+      <MeetCrosHero />
 
-      <section className="mx-auto w-full max-w-[1480px] px-6 py-16 md:px-8 md:py-24">
-        <MeetCrosFree />
-      </section>
-
-      <section className="mx-auto w-full max-w-[1480px] px-6 py-16 md:px-8 md:py-24">
-        <div className="mx-auto max-w-[820px] text-center">
-          <p className="text-[15px] font-semibold text-[#24C68D]">
-            What the platform holds
+      <section className="mx-auto w-full max-w-[1480px] px-6 py-16 md:px-10 md:py-24">
+        <div className="mx-auto max-w-3xl text-center">
+          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5">
+            <img src="/home/ai-clear.png" alt="" className="h-16 w-auto sm:h-20" />
+            <img src="/brand/cros.png" alt="" className="size-16 object-contain sm:size-20" />
+            <h2 className="text-[48px] leading-none font-bold tracking-[-0.04em] text-[#24C68D] sm:text-[72px]">
+              MEET CROS
+            </h2>
+          </div>
+          <p className="mt-4 text-[20px] text-[#62697C]">
+            Your entire property portfolio. One connected workspace.
           </p>
-          <h2 className="mt-4 text-[40px] leading-[1.05] font-bold tracking-[-0.03em] sm:text-[52px]">
-            The daily work, <span className="text-[#24C68D]">on the property record.</span>
-          </h2>
+          <a href="#ai" className="mt-3 inline-flex items-center gap-1 text-[16px] font-semibold text-[#171E4B]">
+            See how CROS AI simplifies your daily work
+            <ArrowRight className="size-4" aria-hidden />
+          </a>
         </div>
         <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          {FEATURES.map((item) => (
+          {FEATURES.map((item) => {
+            const Icon = item.icon;
+            return (
             <article
               key={item.title}
-              className="rounded-[28px] bg-white p-7 shadow-[0_16px_40px_rgba(23,30,75,0.05)] ring-1 ring-[#171E4B]/6"
+              className={`rounded-[28px] p-7 ${
+                item.title === 'Keys'
+                  ? 'bg-[#16324A] text-white'
+                  : 'bg-white text-[#171E4B] ring-1 ring-[#24C68D]/40'
+              }`}
             >
-              <span className="grid size-12 place-items-center rounded-2xl bg-[#E7FBF4] text-[#24C68D]">
-                <item.icon className="size-5" strokeWidth={1.75} aria-hidden />
-              </span>
-              <h3 className="mt-6 text-[22px] font-semibold tracking-[-0.02em]">{item.title}</h3>
-              <p className="mt-2 text-[16px] leading-[1.6] text-[#62697C]">{item.body}</p>
+              <div className="flex items-start justify-between gap-3">
+                <h3 className="text-[22px] font-semibold tracking-[-0.02em]">{item.title}</h3>
+                <Icon className="size-5 shrink-0" strokeWidth={1.75} aria-hidden />
+              </div>
+              <p className={`mt-3 text-[16px] leading-[1.6] ${item.title === 'Keys' ? 'text-white/80' : 'text-[#62697C]'}`}>
+                {item.body}
+              </p>
             </article>
-          ))}
+            );
+          })}
         </div>
       </section>
 
@@ -281,8 +181,8 @@ export default function SoftwarePage() {
               Built-in intelligence
             </p>
             <h2 className="mt-6 text-[40px] leading-[1.05] font-bold tracking-[-0.03em] sm:text-[52px]">
-              AI prepares the admin.
-              <span className="mt-1 block text-[#7A6BB5]">Your team decides.</span>
+              <span className="text-[#24C68D]">CROS AI</span> helps you prepare the admin.
+              <span className="mt-1 block">Your team decides.</span>
             </h2>
             <p className="mt-5 max-w-[520px] text-[18px] leading-[1.6] text-[#62697C]">
               AI reduces the admin between a photo, a maintenance request and the next email. It
@@ -517,22 +417,18 @@ export default function SoftwarePage() {
         />
       </section>
 
-      <section className="mx-auto w-full max-w-[1480px] px-6 py-16 md:px-8 md:py-20">
-        <div className="relative overflow-hidden rounded-[36px] bg-[#2C3A4A] px-6 py-16 text-center text-white sm:px-12">
-          <div className="pointer-events-none absolute -top-16 -right-10 size-56 rounded-full bg-[#3D4E63]" aria-hidden />
-          <img src="/brand/cros.png" alt="" className="relative mx-auto size-28 object-contain" />
-          <h2 className="relative mt-6 text-[40px] font-bold tracking-[-0.03em] sm:text-[48px]">
-            Ready to meet CROS?
-          </h2>
-          <p className="relative mx-auto mt-4 max-w-[560px] text-[18px] leading-[1.6] text-white/80">
-            The property management software is free. Paid people — Inspection Only or Full Service
-            — are optional.
-          </p>
-          <CoralLink href={siteLinks.startFree} className="relative mt-8">
-            Start for free
-            <ArrowRight className="size-4" aria-hidden />
-          </CoralLink>
-        </div>
+      <section className="px-6 py-16 text-center md:px-10 md:py-24">
+        <img src="/brand/cros.png" alt="" className="mx-auto w-28" />
+        <h2 className="mt-2 text-[40px] leading-[1.08] font-bold tracking-[-0.03em] text-[#24C68D] sm:text-[52px]">
+          Discover how CROS AI helps your business
+        </h2>
+        <p className="mx-auto mt-4 max-w-[560px] text-[18px] leading-[1.6] text-[#62697C]">
+          Meet CROS, your free AI assistant. Manage your way with optional support.
+        </p>
+        <CoralLink href={siteLinks.startFree} className="mt-8">
+          Start for free
+          <ArrowRight className="size-4" aria-hidden />
+        </CoralLink>
       </section>
 
       <ContactStrip />

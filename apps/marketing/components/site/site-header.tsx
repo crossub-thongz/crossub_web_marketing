@@ -9,9 +9,38 @@ import { Wordmark } from '@/components/site/logo';
 import { siteLinks } from '@/lib/site-links';
 import { cn } from '@/lib/utils';
 
-const SERVICES = [
-  { href: siteLinks.inspections, label: 'Inspection Services' },
-  { href: siteLinks.fullService, label: 'Full Service' },
+const MENUS = [
+  {
+    label: 'CROS AI',
+    links: [
+      { href: siteLinks.software, label: 'Software' },
+      { href: siteLinks.ai, label: 'AI Features' },
+    ],
+  },
+  {
+    label: 'Services',
+    links: [
+      { href: siteLinks.inspections, label: 'Inspection Service' },
+      { href: siteLinks.fullService, label: 'Full Service' },
+      { href: siteLinks.pricing, label: 'Pricing' },
+    ],
+  },
+  {
+    label: 'Company',
+    links: [
+      { href: siteLinks.about, label: 'About Us' },
+      { href: '/#why', label: 'Why Us' },
+      { href: siteLinks.contact, label: 'Contact' },
+    ],
+  },
+  {
+    label: 'Support',
+    links: [
+      { href: siteLinks.help, label: 'Help Centre' },
+      { href: siteLinks.help, label: 'FAQs' },
+      { href: siteLinks.privacy, label: 'Privacy Policy' },
+    ],
+  },
 ] as const;
 
 function followLink(event: React.MouseEvent<HTMLAnchorElement>, href: string) {
@@ -26,15 +55,13 @@ function followLink(event: React.MouseEvent<HTMLAnchorElement>, href: string) {
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
+  const [menu, setMenu] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
-  const servicesRef = useRef<HTMLDivElement>(null);
+  const navRef = useRef<HTMLElement>(null);
   const menuId = useId();
-  const servicesMenuId = useId();
   const pathname = usePathname();
-  const servicesActive = SERVICES.some((item) => pathname === item.href);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -44,12 +71,12 @@ export function SiteHeader() {
   }, []);
 
   useEffect(() => {
-    if (!servicesOpen) return;
+    if (!menu) return;
     const onKey = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setServicesOpen(false);
+      if (event.key === 'Escape') setMenu(null);
     };
     const onPointer = (event: MouseEvent) => {
-      if (!servicesRef.current?.contains(event.target as Node)) setServicesOpen(false);
+      if (!navRef.current?.contains(event.target as Node)) setMenu(null);
     };
     document.addEventListener('keydown', onKey);
     document.addEventListener('mousedown', onPointer);
@@ -57,7 +84,7 @@ export function SiteHeader() {
       document.removeEventListener('keydown', onKey);
       document.removeEventListener('mousedown', onPointer);
     };
-  }, [servicesOpen]);
+  }, [menu]);
 
   useEffect(() => {
     if (!open) return;
@@ -74,22 +101,27 @@ export function SiteHeader() {
 
   const onNavigate = (event: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     setOpen(false);
-    setServicesOpen(false);
+    setMenu(null);
     followLink(event, href);
   };
 
-  const linkClass = (active: boolean) =>
-    cn(
-      'text-[17px] font-medium whitespace-nowrap hover:text-[#171E4B]',
-      active ? 'text-[#24C68D]' : 'text-[#62697C]',
-    );
+  const groupActive = (label: string) => {
+    if (label === 'CROS AI') return pathname === siteLinks.software;
+    if (label === 'Services') {
+      return ([siteLinks.inspections, siteLinks.fullService, siteLinks.pricing] as readonly string[]).includes(
+        pathname,
+      );
+    }
+    if (label === 'Company') return pathname === siteLinks.about;
+    return pathname === siteLinks.help || pathname === siteLinks.privacy;
+  };
 
   return (
     <header
       id="top"
       className={cn(
         'sticky top-0 z-50 border-b bg-white',
-        scrolled || open ? 'border-[#171E4B]/8' : 'border-transparent',
+        scrolled || open || menu ? 'border-[#171E4B]/8' : 'border-transparent',
       )}
     >
       <a
@@ -103,69 +135,52 @@ export function SiteHeader() {
           <Wordmark priority />
         </a>
 
-        <nav className="hidden items-center gap-8 lg:flex" aria-label="Primary">
-          <a
-            href={siteLinks.software}
-            onClick={(event) => onNavigate(event, siteLinks.software)}
-            aria-current={pathname === siteLinks.software ? 'page' : undefined}
-            className={linkClass(pathname === siteLinks.software)}
-          >
-            Meet CROS
-          </a>
-
-          <div
-            ref={servicesRef}
-            className="relative"
-            onMouseEnter={() => setServicesOpen(true)}
-            onMouseLeave={() => setServicesOpen(false)}
-          >
-            <button
-              type="button"
-              className={cn(linkClass(servicesActive), 'inline-flex items-center gap-1')}
-              aria-expanded={servicesOpen}
-              aria-controls={servicesMenuId}
-              onClick={() => setServicesOpen((value) => !value)}
-            >
-              Services
-              <ChevronDown
-                className={cn('size-4 transition-transform', servicesOpen && 'rotate-180')}
-                aria-hidden
-              />
-            </button>
-            {servicesOpen ? (
+        <nav ref={navRef} className="hidden items-center gap-8 lg:flex" aria-label="Primary">
+          {MENUS.map((group) => {
+            const active = groupActive(group.label);
+            const expanded = menu === group.label;
+            return (
               <div
-                id={servicesMenuId}
-                className="absolute top-full left-1/2 z-50 w-56 -translate-x-1/2 pt-3"
+                key={group.label}
+                className="relative"
+                onMouseEnter={() => setMenu(group.label)}
+                onMouseLeave={() => setMenu(null)}
               >
-                <ul className="rounded-2xl bg-white p-2 shadow-[0_16px_40px_rgba(23,30,75,0.12)] ring-1 ring-[#171E4B]/8">
-                  {SERVICES.map((item) => (
-                    <li key={item.href}>
-                      <a
-                        href={item.href}
-                        onClick={(event) => onNavigate(event, item.href)}
-                        aria-current={pathname === item.href ? 'page' : undefined}
-                        className={cn(
-                          'block rounded-xl px-3 py-2.5 text-[16px] font-medium hover:bg-[#F3FBF8]',
-                          pathname === item.href ? 'text-[#24C68D]' : 'text-[#171E4B]',
-                        )}
-                      >
-                        {item.label}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
+                <button
+                  type="button"
+                  className={cn(
+                    'inline-flex items-center gap-1 text-[17px] font-medium whitespace-nowrap hover:text-[#171E4B]',
+                    active || expanded ? 'text-[#24C68D]' : 'text-[#62697C]',
+                  )}
+                  aria-expanded={expanded}
+                  onClick={() => setMenu(expanded ? null : group.label)}
+                >
+                  {group.label}
+                  <ChevronDown
+                    className={cn('size-4 transition-transform', expanded && 'rotate-180')}
+                    aria-hidden
+                  />
+                </button>
+                {expanded ? (
+                  <div className="absolute top-full left-1/2 z-50 w-56 -translate-x-1/2 pt-3">
+                    <ul className="rounded-2xl bg-white p-2 shadow-[0_16px_40px_rgba(23,30,75,0.12)] ring-1 ring-[#171E4B]/8">
+                      {group.links.map((item) => (
+                        <li key={item.label}>
+                          <a
+                            href={item.href}
+                            onClick={(event) => onNavigate(event, item.href)}
+                            className="block rounded-xl px-3 py-2.5 text-[16px] font-medium text-[#171E4B] hover:bg-[#F3FBF8] hover:text-[#24C68D]"
+                          >
+                            {item.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                ) : null}
               </div>
-            ) : null}
-          </div>
-
-          <a
-            href={siteLinks.about}
-            onClick={(event) => onNavigate(event, siteLinks.about)}
-            aria-current={pathname === siteLinks.about ? 'page' : undefined}
-            className={linkClass(pathname === siteLinks.about)}
-          >
-            About
-          </a>
+            );
+          })}
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
@@ -199,31 +214,23 @@ export function SiteHeader() {
           className="border-t border-[#171E4B]/8 bg-white px-5 py-4 lg:hidden"
         >
           <nav className="flex flex-col" aria-label="Mobile">
-            <a
-              href={siteLinks.software}
-              onClick={(event) => onNavigate(event, siteLinks.software)}
-              className="flex min-h-11 items-center text-[17px] font-medium text-[#171E4B]"
-            >
-              Meet CROS
-            </a>
-            <p className="flex min-h-11 items-center text-[17px] font-medium text-[#62697C]">Services</p>
-            {SERVICES.map((item) => (
-              <a
-                key={item.href}
-                href={item.href}
-                onClick={(event) => onNavigate(event, item.href)}
-                className="flex min-h-11 items-center pl-4 text-[17px] font-medium text-[#171E4B]"
-              >
-                {item.label}
-              </a>
+            {MENUS.map((group) => (
+              <div key={group.label} className="border-b border-[#171E4B]/6 py-2">
+                <p className="flex min-h-11 items-center text-[17px] font-semibold text-[#171E4B]">
+                  {group.label}
+                </p>
+                {group.links.map((item) => (
+                  <a
+                    key={item.label}
+                    href={item.href}
+                    onClick={(event) => onNavigate(event, item.href)}
+                    className="flex min-h-11 items-center pl-4 text-[16px] font-medium text-[#62697C]"
+                  >
+                    {item.label}
+                  </a>
+                ))}
+              </div>
             ))}
-            <a
-              href={siteLinks.about}
-              onClick={(event) => onNavigate(event, siteLinks.about)}
-              className="flex min-h-11 items-center text-[17px] font-medium text-[#171E4B]"
-            >
-              About
-            </a>
             <a
               href={siteLinks.login}
               rel="noopener noreferrer"
