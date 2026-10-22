@@ -9,27 +9,15 @@ export function MeetCrosHero() {
   const surfaceRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="relative overflow-hidden bg-[#07141C] text-white">
-      <div className="pointer-events-none absolute inset-0 z-0">
-      <LaserFlow
-        color="#7CFFE8"
-        beamPosition={0.5}
-        surfaceRef={surfaceRef}
-        intensity={1.45}
-        beamWidth={0.85}
-        flare={1.15}
-        spread={0.85}
-        fog={0.12}
-        intro={false}
-      />
-      </div>
-      <div className="relative z-10 px-6 pt-16 pb-16 md:px-10 md:pt-20 md:pb-20">
-        <div className="mx-auto grid w-full max-w-[1480px] items-start gap-10 lg:grid-cols-[1.05fr_0.95fr]">
+    <section className="relative -mt-[8vh] bg-white pt-4 text-white md:pt-6">
+      <div className="relative z-10 px-6 md:px-10">
+        <div className="relative z-10 mx-auto grid w-full max-w-[1480px] items-start gap-10 lg:grid-cols-[1.05fr_0.95fr]">
           <div>
-            <h1 className="text-[52px] leading-[0.95] font-bold tracking-[-0.045em] sm:text-[76px]">
-              Simplify
-              <span className="mt-2 block font-medium italic">Property</span>
-              management
+            <h1 className="text-[clamp(32px,4.6vw,72px)] leading-[0.95] font-bold tracking-[-0.045em]">
+              <span className="whitespace-nowrap">
+                Simplify <span className="font-medium italic">Property</span>
+              </span>
+              <span className="mt-2 block">management</span>
             </h1>
             <a
               href={siteLinks.startFree}
@@ -50,6 +38,22 @@ export function MeetCrosHero() {
           </div>
         </div>
         <div className="relative mx-auto mt-12 w-full max-w-[1100px]">
+          <div
+            id="meet-cros-laser"
+            className="pointer-events-none absolute inset-x-[calc(50%-50vw)] top-[calc(-100vh)] bottom-1/2 z-0 overflow-hidden bg-[#07141C]"
+          >
+            <LaserFlow
+              color="#7CFFE8"
+              beamPosition={0.5}
+              surfaceRef={surfaceRef}
+              intensity={1.55}
+              beamWidth={0.9}
+              flare={1.2}
+              spread={0.9}
+              fog={0.16}
+              intro={false}
+            />
+          </div>
           <img
             src="/brand/cros.png"
             alt=""
@@ -61,8 +65,9 @@ export function MeetCrosHero() {
             className="absolute -bottom-8 -left-4 z-20 hidden w-16 sm:block"
           />
           <div
+            id="meet-cros-dashboard"
             ref={surfaceRef}
-            className="overflow-hidden rounded-[28px] shadow-[0_30px_80px_rgba(0,0,0,0.35)]"
+            className="relative z-10 overflow-hidden rounded-[28px] shadow-[0_30px_80px_rgba(23,30,75,0.16)]"
           >
             <img
               src="/home/dashboard.jpg?v=2"

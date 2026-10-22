@@ -13,8 +13,7 @@ import {
   Sparkles,
   Wrench,
 } from 'lucide-react';
-import type { ReactNode } from 'react';
-
+import { PrimaryLink } from '@/components/site/buttons';
 import { MeetCrosHero } from '@/components/site/meet-cros-hero';
 import { ContactStrip, FaqList } from '@/components/site/page-frame';
 import { isExternalHref, siteLinks } from '@/lib/site-links';
@@ -106,23 +105,11 @@ const REPORTS = [
   'Secure cloud storage',
 ] as const;
 
-function CoralLink({
-  href,
-  children,
-  className = '',
-}: {
-  href: string;
-  children: ReactNode;
-  className?: string;
-}) {
+function Spark({ className }: { className?: string }) {
   return (
-    <a
-      href={href}
-      className={`inline-flex h-14 items-center justify-center gap-2 rounded-full bg-[#24C68D] px-7 text-[16px] font-semibold text-white shadow-[0_10px_24px_rgba(36,198,141,0.28)] transition-colors hover:bg-[#1AAB78] ${className}`}
-      {...(isExternalHref(href) ? { rel: 'noopener noreferrer' } : {})}
-    >
-      {children}
-    </a>
+    <svg viewBox="0 0 48 48" className={className} aria-hidden>
+      <path fill="currentColor" d="M24 0 28.5 19.5 48 24 28.5 28.5 24 48 19.5 28.5 0 24 19.5 19.5Z" />
+    </svg>
   );
 }
 
@@ -132,21 +119,33 @@ export default function SoftwarePage() {
       <MeetCrosHero />
 
       <section className="mx-auto w-full max-w-[1480px] px-6 py-16 md:px-10 md:py-24">
-        <div className="mx-auto max-w-3xl text-center">
-          <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-5">
-            <img src="/home/ai-clear.png" alt="" className="h-16 w-auto sm:h-20" />
-            <img src="/brand/cros.png" alt="" className="size-16 object-contain sm:size-20" />
-            <h2 className="text-[48px] leading-none font-bold tracking-[-0.04em] text-[#24C68D] sm:text-[72px]">
+        <div className="mx-auto flex max-w-[820px] flex-col items-center gap-4 sm:flex-row sm:items-center sm:justify-center sm:gap-6">
+          <div className="relative h-36 w-40 shrink-0">
+            <span className="absolute top-3 left-0 text-[#B7F3D8]" aria-hidden>
+              <svg viewBox="0 0 48 48" className="size-12">
+                <path fill="currentColor" d="M24 0 28.5 19.5 48 24 28.5 28.5 24 48 19.5 28.5 0 24 19.5 19.5Z" />
+              </svg>
+            </span>
+            <span className="absolute right-1 bottom-2 text-[#D8FBEA]" aria-hidden>
+              <svg viewBox="0 0 48 48" className="size-8">
+                <path fill="currentColor" d="M24 0 28.5 19.5 48 24 28.5 28.5 24 48 19.5 28.5 0 24 19.5 19.5Z" />
+              </svg>
+            </span>
+            <img src="/home/ai-clear.png" alt="" className="absolute top-0 right-0 h-12 w-auto" />
+            <img src="/brand/cros.png" alt="" className="absolute bottom-0 left-3 h-28 w-auto object-contain" />
+          </div>
+          <div className="text-center sm:text-left">
+            <h2 className="text-[48px] leading-none font-bold tracking-[-0.04em] text-[#5DCE96] sm:text-[72px]">
               MEET CROS
             </h2>
+            <p className="mt-2 text-[18px] text-[#62697C] sm:text-[20px]">
+              Your entire property portfolio. One connected workspace.
+            </p>
+            <a href="#ai" className="mt-1 inline-flex items-center gap-1 text-[16px] font-semibold text-[#171E4B]">
+              See how CROS AI simplifies your daily work
+              <ArrowRight className="size-4" aria-hidden />
+            </a>
           </div>
-          <p className="mt-4 text-[20px] text-[#62697C]">
-            Your entire property portfolio. One connected workspace.
-          </p>
-          <a href="#ai" className="mt-3 inline-flex items-center gap-1 text-[16px] font-semibold text-[#171E4B]">
-            See how CROS AI simplifies your daily work
-            <ArrowRight className="size-4" aria-hidden />
-          </a>
         </div>
         <div className="mt-12 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((item) => {
@@ -173,63 +172,95 @@ export default function SoftwarePage() {
         </div>
       </section>
 
-      <section id="ai" className="scroll-mt-28 bg-[#F4F1FB] py-16 md:py-24">
-        <div className="mx-auto grid w-full max-w-[1480px] items-center gap-12 px-6 md:px-8 lg:grid-cols-2 lg:gap-16">
-          <div>
-            <p className="flex items-center gap-3 text-[15px] font-semibold text-[#7A6BB5]">
-              <img src="/brand/cros.png" alt="" className="size-11 object-contain" />
-              Built-in intelligence
-            </p>
-            <h2 className="mt-6 text-[40px] leading-[1.05] font-bold tracking-[-0.03em] sm:text-[52px]">
-              <span className="text-[#24C68D]">CROS AI</span> helps you prepare the admin.
-              <span className="mt-1 block">Your team decides.</span>
-            </h2>
-            <p className="mt-5 max-w-[520px] text-[18px] leading-[1.6] text-[#62697C]">
-              AI reduces the admin between a photo, a maintenance request and the next email. It
-              does not approve spending, handle trust money, or send every message on its own.
-            </p>
-            <ul className="mt-8 space-y-5">
-              {AI_POINTS.map(([title, body]) => (
-                <li key={title} className="flex gap-3">
-                  <span className="mt-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-[#E5F6EE] text-[#24C68D]">
-                    <Check className="size-3.5" strokeWidth={2.75} aria-hidden />
-                  </span>
-                  <span>
-                    <span className="block text-[18px] font-semibold">{title}</span>
-                    <span className="mt-1 block text-[16px] leading-[1.55] text-[#62697C]">{body}</span>
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </div>
+      <section id="ai" className="scroll-mt-28 px-6 pb-8 md:px-10">
+        <div className="relative mx-auto w-full max-w-[1480px] overflow-hidden rounded-[36px] bg-[#F3F5F7] px-6 py-10 sm:px-10 sm:py-14 lg:px-14">
+          <Spark className="absolute top-8 right-10 size-10 text-[#E4E9EE]" />
+          <Spark className="absolute bottom-16 left-8 size-8 text-[#E7F6EE]" />
+          <div className="grid items-center gap-10 lg:grid-cols-[1.15fr_0.85fr] lg:gap-12">
+            <div>
+              <h2 className="max-w-[640px] text-[34px] leading-[1.12] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[42px]">
+                <span className="text-[#24C68D]">CROS AI</span> helps you prepare the admin.
+                <span className="block">Your team decides.</span>
+              </h2>
+              <p className="mt-4 max-w-[560px] text-[16px] leading-[1.6] text-[#62697C]">
+                AI reduces the admin between a photo, a maintenance request and the next email. It
+                does not approve spending, handle trust money, or send every message on its own.
+              </p>
+              <div className="relative mt-10 max-w-[560px]">
+                <div className="absolute top-[5px] right-[16%] left-[16%] hidden h-px bg-[#C9D0D8] sm:block" />
+                <div className="grid gap-6 sm:grid-cols-3">
+                  {AI_POINTS.map(([title, body], index) => (
+                    <div key={title} className={index === 1 ? 'sm:-mt-7' : ''}>
+                      <p className="flex items-center gap-2 text-[15px] font-semibold text-[#171E4B] sm:justify-center">
+                        <span className="size-2.5 shrink-0 rounded-full bg-[#171E4B]" />
+                        {title}
+                      </p>
+                      <p className="mt-3 text-[14px] leading-[1.45] text-[#62697C] sm:text-center">{body}</p>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
 
-          <div className="rounded-[28px] bg-white p-5 shadow-[0_20px_50px_rgba(23,30,75,0.08)] ring-1 ring-[#171E4B]/6 sm:p-6">
-            <div className="flex items-center justify-between gap-3">
-              <p className="flex items-center gap-3 text-[16px] font-semibold">
-                <img src="/brand/cros.png" alt="" className="size-10 object-contain" />
-                CROS
-              </p>
-              <span className="rounded-full bg-[#F1E9FF] px-3 py-1 text-[12px] font-semibold text-[#7A6BB5]">
-                AI-powered
-              </span>
+            <div className="mx-auto w-full max-w-[380px]">
+              <div className="rounded-[24px] bg-white p-5 shadow-[0_16px_40px_rgba(23,30,75,0.08)]">
+                <div className="flex items-center justify-between gap-3">
+                  <p className="flex items-center gap-2 text-[15px] font-semibold text-[#171E4B]">
+                    <img src="/brand/cros.png" alt="" className="size-8 object-contain" />
+                    CROS
+                  </p>
+                  <span className="rounded-full bg-[#F1E9FF] px-3 py-1 text-[12px] font-semibold text-[#7A6BB5]">
+                    AI-powered
+                  </span>
+                </div>
+                <div className="mt-4 rounded-2xl bg-[#F7F8FA] p-4">
+                  <p className="text-[13px] text-[#8B93A7]">Understand</p>
+                  <p className="mt-1 text-[15px] leading-[1.4] font-semibold text-[#171E4B]">
+                    Make sense of requests, photos and reports.
+                  </p>
+                </div>
+                <div className="mt-3 rounded-2xl bg-[#F7F4FF] p-4">
+                  <p className="flex items-center gap-2 text-[15px] font-semibold text-[#171E4B]">
+                    <Sparkles className="size-4 text-[#B9A6F2]" aria-hidden />
+                    Prepare
+                  </p>
+                  <p className="mt-1 text-[14px] leading-[1.45] text-[#62697C]">
+                    Draft responses and organise next steps. Flag what needs your team’s attention.
+                  </p>
+                </div>
+                <p className="mt-4 text-[13px] text-[#8B93A7]">Prepared for your review</p>
+              </div>
+              <a
+                href="#discover"
+                className="mx-auto mt-5 flex h-11 w-fit items-center gap-2 rounded-full bg-white px-5 text-[14px] font-semibold text-[#171E4B] shadow-[0_8px_24px_rgba(23,30,75,0.08)]"
+              >
+                Discover what our CROS AI can do for you
+                <ArrowRight className="size-4" aria-hidden />
+              </a>
             </div>
-            <div className="mt-5 rounded-2xl bg-[#F7F5FB] p-5">
-              <p className="text-[14px] text-[#62697C]">Understand</p>
-              <p className="mt-2 text-[18px] leading-[1.45] font-semibold">
-                Make sense of requests, photos and reports.
-              </p>
-            </div>
-            <div className="mt-3 rounded-2xl bg-[#F7F4FF] p-5">
-              <p className="flex items-center gap-2 text-[16px] font-semibold">
-                <Sparkles className="size-4 text-[#B9A6F2]" aria-hidden />
-                Prepare
-              </p>
-              <p className="mt-2 text-[15px] leading-[1.55] text-[#62697C]">
-                Draft responses and organise next steps. Flag what needs your team’s attention.
-              </p>
-            </div>
-            <p className="mt-4 px-1 text-[14px] text-[#62697C]">Prepared for your review</p>
           </div>
+        </div>
+      </section>
+
+      <section id="discover" className="scroll-mt-28 px-6 py-16 text-center md:py-24">
+        <div className="relative mx-auto w-fit">
+          <Spark className="absolute -top-2 -left-6 size-7 text-[#B7F3D8]" />
+          <img src="/brand/cros.png" alt="" className="mx-auto w-24" />
+        </div>
+        <h2 className="mt-4 text-[32px] leading-[1.15] font-bold tracking-[-0.03em] text-[#24C68D] sm:text-[40px]">
+          Discover how CROS AI helps your business
+        </h2>
+        <p className="mx-auto mt-3 max-w-[520px] text-[16px] leading-[1.6] text-[#62697C]">
+          Meet CROS, your free AI assistant. Manage your way with optional support.
+        </p>
+        <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
+          <PrimaryLink href={siteLinks.startFree}>Start for free</PrimaryLink>
+          <a
+            href={siteLinks.bookDemo}
+            className="inline-flex h-12 items-center justify-center rounded-full border border-[#171E4B]/25 bg-white px-7 text-[15px] font-semibold text-[#171E4B] transition-colors hover:bg-[#F7F8FA]"
+          >
+            Book a demo
+          </a>
         </div>
       </section>
 
@@ -415,20 +446,6 @@ export default function SoftwarePage() {
             },
           ]}
         />
-      </section>
-
-      <section className="px-6 py-16 text-center md:px-10 md:py-24">
-        <img src="/brand/cros.png" alt="" className="mx-auto w-28" />
-        <h2 className="mt-2 text-[40px] leading-[1.08] font-bold tracking-[-0.03em] text-[#24C68D] sm:text-[52px]">
-          Discover how CROS AI helps your business
-        </h2>
-        <p className="mx-auto mt-4 max-w-[560px] text-[18px] leading-[1.6] text-[#62697C]">
-          Meet CROS, your free AI assistant. Manage your way with optional support.
-        </p>
-        <CoralLink href={siteLinks.startFree} className="mt-8">
-          Start for free
-          <ArrowRight className="size-4" aria-hidden />
-        </CoralLink>
       </section>
 
       <ContactStrip />

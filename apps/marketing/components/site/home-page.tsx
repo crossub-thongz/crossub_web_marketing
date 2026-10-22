@@ -55,7 +55,7 @@ const WHY = [
 export function HomePage() {
   return (
     <main id="main">
-      <section className="overflow-hidden bg-[radial-gradient(circle_at_50%_18%,_#E7FBF4_0%,_#ffffff_46%)] px-6 pt-8 pb-16 md:px-10 md:pt-12 md:pb-20">
+      <section className="-mt-[8vh] overflow-hidden bg-[radial-gradient(circle_at_50%_18%,_#E7FBF4_0%,_#ffffff_46%)] px-6 pt-8 pb-16 md:px-10 md:pt-10 md:pb-20">
         <div className="@container mx-auto w-full max-w-[1480px] text-center">
           <img src="/brand/cros.png" alt="" className="mx-auto h-16 w-auto" />
           <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#24C68D] px-4 py-1.5 text-[14px] font-semibold text-white">

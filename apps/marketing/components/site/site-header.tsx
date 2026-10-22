@@ -54,14 +54,15 @@ function followLink(event: React.MouseEvent<HTMLAnchorElement>, href: string) {
 }
 
 export function SiteHeader() {
+  const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [menu, setMenu] = useState<string | null>(null);
   const [scrolled, setScrolled] = useState(false);
+  const [overLaser, setOverLaser] = useState(pathname === siteLinks.software);
   const buttonRef = useRef<HTMLButtonElement>(null);
   const panelRef = useRef<HTMLDivElement>(null);
   const navRef = useRef<HTMLElement>(null);
   const menuId = useId();
-  const pathname = usePathname();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 8);
@@ -69,6 +70,29 @@ export function SiteHeader() {
     window.addEventListener('scroll', onScroll, { passive: true });
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
+
+  useEffect(() => {
+    if (pathname !== siteLinks.software) {
+      setOverLaser(false);
+      return;
+    }
+    const update = () => {
+      const shot = document.getElementById('meet-cros-dashboard');
+      if (shot) {
+        setOverLaser(shot.getBoundingClientRect().top > 72);
+        return;
+      }
+      const band = document.getElementById('meet-cros-laser');
+      setOverLaser(band ? band.getBoundingClientRect().bottom > 72 : window.scrollY < 48);
+    };
+    update();
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    return () => {
+      window.removeEventListener('scroll', update);
+      window.removeEventListener('resize', update);
+    };
+  }, [pathname]);
 
   useEffect(() => {
     if (!menu) return;
@@ -120,8 +144,10 @@ export function SiteHeader() {
     <header
       id="top"
       className={cn(
-        'sticky top-0 z-50 border-b bg-white',
-        scrolled || open || menu ? 'border-[#171E4B]/8' : 'border-transparent',
+        'sticky top-0 z-50 border-b',
+        overLaser && !open
+          ? 'border-transparent bg-transparent'
+          : cn('bg-white', scrolled || open || menu ? 'border-[#171E4B]/8' : 'border-transparent'),
       )}
     >
       <a
@@ -132,10 +158,19 @@ export function SiteHeader() {
       </a>
       <div className="mx-auto flex h-[72px] w-full max-w-[1480px] items-center justify-between gap-6 px-6 md:px-10">
         <a href="/#top" aria-label="CROSSUB home" className="shrink-0 rounded-md">
-          <Wordmark priority />
+          <Wordmark priority className={overLaser && !open ? 'brightness-0 invert' : undefined} />
         </a>
 
-        <nav ref={navRef} className="hidden items-center gap-8 lg:flex" aria-label="Primary">
+        <nav
+          ref={navRef}
+          className={cn(
+            'hidden items-center gap-8 lg:flex',
+            overLaser &&
+              !open &&
+              'gap-6 rounded-full bg-[#07141C]/75 px-6 py-2.5 shadow-[0_10px_28px_rgba(0,0,0,0.4)] ring-1 ring-white/20 backdrop-blur-md',
+          )}
+          aria-label="Primary"
+        >
           {MENUS.map((group) => {
             const active = groupActive(group.label);
             const expanded = menu === group.label;
@@ -149,8 +184,13 @@ export function SiteHeader() {
                 <button
                   type="button"
                   className={cn(
-                    'inline-flex items-center gap-1 text-[17px] font-medium whitespace-nowrap hover:text-[#171E4B]',
-                    active || expanded ? 'text-[#24C68D]' : 'text-[#62697C]',
+                    'inline-flex items-center gap-1 text-[17px] font-medium whitespace-nowrap',
+                    overLaser && !open ? 'hover:text-white' : 'hover:text-[#171E4B]',
+                    active || expanded
+                      ? 'text-[#24C68D]'
+                      : overLaser && !open
+                        ? 'text-white'
+                        : 'text-[#62697C]',
                   )}
                   aria-expanded={expanded}
                   onClick={() => setMenu(expanded ? null : group.label)}
@@ -187,7 +227,12 @@ export function SiteHeader() {
           <a
             href={siteLinks.login}
             rel="noopener noreferrer"
-            className="inline-flex h-11 items-center px-3 text-[15px] font-semibold text-[#171E4B]"
+            className={cn(
+              'inline-flex h-11 items-center px-4 text-[15px] font-semibold',
+              overLaser && !open
+                ? 'rounded-full bg-[#07141C]/75 text-white shadow-[0_10px_28px_rgba(0,0,0,0.4)] ring-1 ring-white/20 backdrop-blur-md'
+                : 'text-[#171E4B]',
+            )}
           >
             Log in
           </a>
@@ -197,7 +242,10 @@ export function SiteHeader() {
         <button
           ref={buttonRef}
           type="button"
-          className="inline-flex size-11 items-center justify-center rounded-full text-[#171E4B] lg:hidden"
+          className={cn(
+            'inline-flex size-11 items-center justify-center rounded-full lg:hidden',
+            overLaser && !open ? 'text-white' : 'text-[#171E4B]',
+          )}
           aria-expanded={open}
           aria-controls={menuId}
           onClick={() => setOpen((value) => !value)}
