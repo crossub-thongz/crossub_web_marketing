@@ -27,7 +27,7 @@ export function MeetCrosHero() {
               Start for free
             </a>
           </div>
-          <div className="lg:pt-4">
+          <div className="min-w-0 lg:w-fit lg:max-w-full lg:justify-self-end lg:pt-4">
             <p className="text-[22px] leading-[1.35] font-semibold sm:text-[26px]">
               Free Software. Free AI. Your Way to Manage.
             </p>
@@ -40,7 +40,7 @@ export function MeetCrosHero() {
         <div className="relative mx-auto mt-12 w-full max-w-[1100px]">
           <div
             id="meet-cros-laser"
-            className="pointer-events-none absolute inset-x-[calc(50%-50vw)] top-[calc(-100vh)] bottom-1/2 z-0 overflow-hidden bg-[#07141C]"
+            className="meet-cros-laser pointer-events-none absolute inset-x-[calc(50%-50vw)] top-[calc(-100vh)] z-0 h-[calc(100vh+46rem)] overflow-hidden bg-[#07141C]"
           >
             <LaserFlow
               color="#7CFFE8"

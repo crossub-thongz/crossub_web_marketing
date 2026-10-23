@@ -17,6 +17,36 @@ html:has(.marketing-site) body {
   text-wrap: pretty;
 }
 
+/* Dark hero field fades out beside the dashboard instead of ending in a hard line. */
+.meet-cros-laser {
+  -webkit-mask-image: linear-gradient(
+    to bottom,
+    #000 0,
+    #000 calc(100vh + 2rem),
+    rgb(0 0 0 / 0.86) calc(100vh + 8rem),
+    rgb(0 0 0 / 0.68) calc(100vh + 14rem),
+    rgb(0 0 0 / 0.48) calc(100vh + 20rem),
+    rgb(0 0 0 / 0.3) calc(100vh + 26rem),
+    rgb(0 0 0 / 0.16) calc(100vh + 32rem),
+    rgb(0 0 0 / 0.06) calc(100vh + 38rem),
+    transparent calc(100vh + 44rem)
+  );
+  mask-image: linear-gradient(
+    to bottom,
+    #000 0,
+    #000 calc(100vh + 2rem),
+    rgb(0 0 0 / 0.86) calc(100vh + 8rem),
+    rgb(0 0 0 / 0.68) calc(100vh + 14rem),
+    rgb(0 0 0 / 0.48) calc(100vh + 20rem),
+    rgb(0 0 0 / 0.3) calc(100vh + 26rem),
+    rgb(0 0 0 / 0.16) calc(100vh + 32rem),
+    rgb(0 0 0 / 0.06) calc(100vh + 38rem),
+    transparent calc(100vh + 44rem)
+  );
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+}
+
 .ambient {
   position: fixed;
   inset: 0;
