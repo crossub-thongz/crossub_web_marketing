@@ -88,9 +88,9 @@ export function HomePage() {
             className="w-full rounded-[28px] shadow-[0_30px_70px_rgba(23,30,75,0.12)]"
           />
           <img
-            src="/home/mascot-sparkle.png"
+            src="/brand/cros.png"
             alt=""
-            className="absolute -right-2 -bottom-6 hidden w-28 sm:block"
+            className="pointer-events-none absolute -right-7 -bottom-[3.25rem] hidden w-[8.25rem] drop-shadow-[0_18px_28px_rgba(23,30,75,0.16)] sm:block"
           />
         </div>
       </section>

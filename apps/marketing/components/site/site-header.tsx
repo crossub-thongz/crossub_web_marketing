@@ -9,14 +9,9 @@ import { Wordmark } from '@/components/site/logo';
 import { siteLinks } from '@/lib/site-links';
 import { cn } from '@/lib/utils';
 
-const MENUS = [
-  {
-    label: 'CROS AI',
-    links: [
-      { href: siteLinks.software, label: 'Software' },
-      { href: siteLinks.ai, label: 'AI Features' },
-    ],
-  },
+const NAV = [
+  { label: 'Home', href: siteLinks.home },
+  { label: 'Meet Cros', href: siteLinks.software },
   {
     label: 'Services',
     links: [
@@ -42,6 +37,10 @@ const MENUS = [
     ],
   },
 ] as const;
+
+function isMenu(item: (typeof NAV)[number]): item is Extract<(typeof NAV)[number], { links: readonly unknown[] }> {
+  return 'links' in item;
+}
 
 function followLink(event: React.MouseEvent<HTMLAnchorElement>, href: string) {
   if (!href.startsWith('/#')) return;
@@ -130,7 +129,8 @@ export function SiteHeader() {
   };
 
   const groupActive = (label: string) => {
-    if (label === 'CROS AI') return pathname === siteLinks.software;
+    if (label === 'Home') return pathname === siteLinks.home;
+    if (label === 'Meet Cros') return pathname === siteLinks.software;
     if (label === 'Services') {
       return ([siteLinks.inspections, siteLinks.fullService, siteLinks.pricing] as readonly string[]).includes(
         pathname,
@@ -171,31 +171,35 @@ export function SiteHeader() {
           )}
           aria-label="Primary"
         >
-          {MENUS.map((group) => {
-            const active = groupActive(group.label);
-            const expanded = menu === group.label;
+          {NAV.map((item) => {
+            const active = groupActive(item.label);
+            const itemClass = cn(
+              'inline-flex items-center gap-1 text-[17px] font-medium whitespace-nowrap',
+              overLaser && !open ? 'hover:text-white' : 'hover:text-[#171E4B]',
+              active ? 'text-[#24C68D]' : overLaser && !open ? 'text-white' : 'text-[#62697C]',
+            );
+            if (!isMenu(item)) {
+              return (
+                <a key={item.label} href={item.href} className={itemClass} aria-current={active ? 'page' : undefined}>
+                  {item.label}
+                </a>
+              );
+            }
+            const expanded = menu === item.label;
             return (
               <div
-                key={group.label}
+                key={item.label}
                 className="relative"
-                onMouseEnter={() => setMenu(group.label)}
+                onMouseEnter={() => setMenu(item.label)}
                 onMouseLeave={() => setMenu(null)}
               >
                 <button
                   type="button"
-                  className={cn(
-                    'inline-flex items-center gap-1 text-[17px] font-medium whitespace-nowrap',
-                    overLaser && !open ? 'hover:text-white' : 'hover:text-[#171E4B]',
-                    active || expanded
-                      ? 'text-[#24C68D]'
-                      : overLaser && !open
-                        ? 'text-white'
-                        : 'text-[#62697C]',
-                  )}
+                  className={cn(itemClass, expanded && 'text-[#24C68D]')}
                   aria-expanded={expanded}
-                  onClick={() => setMenu(expanded ? null : group.label)}
+                  onClick={() => setMenu(expanded ? null : item.label)}
                 >
-                  {group.label}
+                  {item.label}
                   <ChevronDown
                     className={cn('size-4 transition-transform', expanded && 'rotate-180')}
                     aria-hidden
@@ -204,14 +208,14 @@ export function SiteHeader() {
                 {expanded ? (
                   <div className="absolute top-full left-1/2 z-50 w-56 -translate-x-1/2 pt-3">
                     <ul className="rounded-2xl bg-white p-2 shadow-[0_16px_40px_rgba(23,30,75,0.12)] ring-1 ring-[#171E4B]/8">
-                      {group.links.map((item) => (
-                        <li key={item.label}>
+                      {item.links.map((link) => (
+                        <li key={link.label}>
                           <a
-                            href={item.href}
-                            onClick={(event) => onNavigate(event, item.href)}
+                            href={link.href}
+                            onClick={(event) => onNavigate(event, link.href)}
                             className="block rounded-xl px-3 py-2.5 text-[16px] font-medium text-[#171E4B] hover:bg-[#F3FBF8] hover:text-[#24C68D]"
                           >
-                            {item.label}
+                            {link.label}
                           </a>
                         </li>
                       ))}
@@ -262,23 +266,34 @@ export function SiteHeader() {
           className="border-t border-[#171E4B]/8 bg-white px-5 py-4 lg:hidden"
         >
           <nav className="flex flex-col" aria-label="Mobile">
-            {MENUS.map((group) => (
-              <div key={group.label} className="border-b border-[#171E4B]/6 py-2">
-                <p className="flex min-h-11 items-center text-[17px] font-semibold text-[#171E4B]">
-                  {group.label}
-                </p>
-                {group.links.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    onClick={(event) => onNavigate(event, item.href)}
-                    className="flex min-h-11 items-center pl-4 text-[16px] font-medium text-[#62697C]"
-                  >
+            {NAV.map((item) =>
+              isMenu(item) ? (
+                <div key={item.label} className="border-b border-[#171E4B]/6 py-2">
+                  <p className="flex min-h-11 items-center text-[17px] font-semibold text-[#171E4B]">
                     {item.label}
-                  </a>
-                ))}
-              </div>
-            ))}
+                  </p>
+                  {item.links.map((link) => (
+                    <a
+                      key={link.label}
+                      href={link.href}
+                      onClick={(event) => onNavigate(event, link.href)}
+                      className="flex min-h-11 items-center pl-4 text-[16px] font-medium text-[#62697C]"
+                    >
+                      {link.label}
+                    </a>
+                  ))}
+                </div>
+              ) : (
+                <a
+                  key={item.label}
+                  href={item.href}
+                  onClick={(event) => onNavigate(event, item.href)}
+                  className="flex min-h-11 items-center border-b border-[#171E4B]/6 text-[17px] font-semibold text-[#171E4B]"
+                >
+                  {item.label}
+                </a>
+              ),
+            )}
             <a
               href={siteLinks.login}
               rel="noopener noreferrer"
