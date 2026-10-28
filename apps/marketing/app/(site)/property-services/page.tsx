@@ -130,9 +130,9 @@ export default function PropertyServicesPage() {
               24–48 hours
             </p>
             <p className="mt-3 text-[16px] leading-[1.65] text-[#62697C]">
-              The published aim for urgent repair requests. Call{' '}
-              <a className="font-semibold text-[#24C68D]" href={`tel:${company.emergencyTel}`}>
-                {company.emergencyDisplay}
+              The published aim for urgent repair requests. Email{' '}
+              <a className="font-semibold text-[#24C68D]" href={`mailto:${company.email}`}>
+                {company.email}
               </a>
               .
             </p>

@@ -58,19 +58,12 @@ export function SiteFooter() {
           <div className="mt-8 space-y-5 text-[15px] leading-[1.6]">
             <div>
               <p className="text-[13px] font-semibold tracking-[0.08em] text-[#7DDCB8] uppercase">Get in touch</p>
-              <p className="mt-2 text-white/80">24/7 Urgent Repairs Hotline</p>
-              <a className="hover:text-white" href={`tel:${company.emergencyTel}`}>
-                {company.emergencyDisplay}
-              </a>
-              <a className="block hover:text-white" href={`mailto:${company.email}`}>
+              <a className="mt-2 block hover:text-white" href={`mailto:${company.email}`}>
                 {company.email}
               </a>
             </div>
             <div>
               <p className="text-[13px] font-semibold tracking-[0.08em] text-[#7DDCB8] uppercase">Sales & Onboarding</p>
-              <a className="hover:text-white" href={`tel:${company.phoneTel}`}>
-                {company.phoneDisplay}
-              </a>
               <a className="block hover:text-white" href={`mailto:${company.salesEmail}`}>
                 {company.salesEmail}
               </a>

@@ -31,10 +31,6 @@ export const siteLinks = {
 export const company = {
   email: 'info@crossub.com.au',
   salesEmail: 'sales@crossub.com.au',
-  phoneDisplay: '+61 2 5023 5015',
-  phoneTel: '+61250235015',
-  emergencyDisplay: '1300 399 836',
-  emergencyTel: '1300399836',
   street: '104/66 Berry Street',
   locality: 'North Sydney NSW 2060',
 } as const;

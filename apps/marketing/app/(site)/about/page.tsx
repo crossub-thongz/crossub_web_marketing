@@ -129,10 +129,6 @@ export default function AboutPage() {
             <a className="font-semibold text-[#24C68D]" href={`mailto:${company.email}`}>
               {company.email}
             </a>
-            <span className="mx-2 text-[#171E4B]/30">/</span>
-            <a className="font-semibold text-[#24C68D]" href={`tel:${company.phoneTel}`}>
-              {company.phoneDisplay}
-            </a>
           </p>
           <p className="mt-2 text-[16px] leading-[1.65] text-[#62697C]">
             Inspection enquiries:{' '}
@@ -140,8 +136,8 @@ export default function AboutPage() {
               {company.salesEmail}
             </a>
             . Urgent repairs:{' '}
-            <a className="font-semibold text-[#24C68D]" href={`tel:${company.emergencyTel}`}>
-              {company.emergencyDisplay}
+            <a className="font-semibold text-[#24C68D]" href={`mailto:${company.email}`}>
+              {company.email}
             </a>
             .
           </p>

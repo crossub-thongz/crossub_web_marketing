@@ -77,7 +77,7 @@ const FAQS = [
   },
   {
     q: 'Who approves maintenance and lease decisions?',
-    a: `Your agency remains the decision maker. CROSSUB coordinates quotes, supporting information and tasks, then arranges approved actions. Urgent repairs are called through on ${company.emergencyDisplay}.`,
+    a: `Your agency remains the decision maker. CROSSUB coordinates quotes, supporting information and tasks, then arranges approved actions. Email ${company.email} for urgent repairs.`,
   },
   {
     q: 'Does CROSSUB handle rental bonds or trust funds?',
@@ -396,9 +396,9 @@ export default function FullServicePage() {
             Book a demo
           </a>
           <p className="mt-5 text-[14px] text-[#668178]">
-            Prefer to talk?{' '}
-            <a className="font-semibold text-[#173E3B]" href={`tel:${company.phoneTel}`}>
-              {company.phoneDisplay}
+            Prefer to write?{' '}
+            <a className="font-semibold text-[#173E3B]" href={`mailto:${company.email}`}>
+              {company.email}
             </a>
           </p>
         </div>

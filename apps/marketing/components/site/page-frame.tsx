@@ -138,18 +138,14 @@ export function ContactStrip() {
           <a className="font-semibold text-[#24C68D]" href={`mailto:${company.salesEmail}`}>
             {company.salesEmail}
           </a>
-          <br />
-          <a className="font-semibold text-[#24C68D]" href={`tel:${company.phoneTel}`}>
-            {company.phoneDisplay}
-          </a>
         </>
       ),
     },
     {
       label: 'Urgent repairs',
       body: (
-        <a className="font-semibold text-[#24C68D]" href={`tel:${company.emergencyTel}`}>
-          {company.emergencyDisplay}
+        <a className="font-semibold text-[#24C68D]" href={`mailto:${company.email}`}>
+          {company.email}
         </a>
       ),
     },
@@ -161,7 +157,7 @@ export function ContactStrip() {
       <div className="rounded-[36px] bg-white/80 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-10">
         <h2 className="text-[22px] font-semibold">Talk to CROSSUB</h2>
         <p className="mt-2 max-w-xl text-[16px] leading-[1.65] text-[#62697C]">
-          Head office is in North Sydney. Pick the line that matches what you need.
+          Head office is in North Sydney. Email the address that matches what you need.
         </p>
         <dl className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {items.map((item) => (

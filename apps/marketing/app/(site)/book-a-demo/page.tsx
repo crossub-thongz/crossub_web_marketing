@@ -19,8 +19,8 @@ export default function BookDemoPage() {
           Inspection Only and Full Service. You can also email{' '}
           <a className="font-semibold text-[#24C68D]" href={`mailto:${company.email}`}>
             {company.email}
-          </a>{' '}
-          or call {company.phoneDisplay}.
+          </a>
+          .
         </p>
       </PageHero>
       <section className="mx-auto max-w-[720px] px-5 pb-20 md:px-6">

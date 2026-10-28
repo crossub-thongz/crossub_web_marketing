@@ -9,35 +9,26 @@ export function MeetCrosHero() {
   const surfaceRef = useRef<HTMLDivElement>(null);
 
   return (
-    <section className="relative -mt-[8vh] bg-white pt-4 text-white md:pt-6">
-      <div className="relative z-10 px-6 md:px-10">
-        <div className="relative z-10 mx-auto grid w-full max-w-[1480px] items-start gap-10 lg:grid-cols-[1.05fr_0.95fr]">
-          <div>
-            <h1 className="text-[clamp(32px,4.6vw,72px)] leading-[0.95] font-bold tracking-[-0.045em]">
-              <span className="whitespace-nowrap">
-                Simplify <span className="font-medium italic">Property</span>
-              </span>
-              <span className="mt-2 block">management</span>
-            </h1>
-            <a
-              href={siteLinks.startFree}
-              className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-[#24C68D] px-7 text-[16px] font-semibold text-white shadow-[0_10px_24px_rgba(36,198,141,0.28)] transition-colors hover:bg-[#1AAB78]"
-              {...(isExternalHref(siteLinks.startFree) ? { rel: 'noopener noreferrer' } : {})}
-            >
-              Start for free
-            </a>
-          </div>
-          <div className="min-w-0 lg:w-fit lg:max-w-full lg:justify-self-end lg:pt-4">
-            <p className="text-[22px] leading-[1.35] font-semibold sm:text-[26px]">
-              Free Software. Free AI. Your Way to Manage.
-            </p>
-            <p className="mt-4 max-w-[520px] text-[17px] leading-[1.65] text-white/75">
-              Manage properties, leasing, inspections and maintenance in one place. Start with free
-              software and add professional services only when you need them.
+    <section id="meet-cros-hero" className="relative -mt-[calc(8vh+72px)] overflow-hidden bg-[#07141C] text-white">
+      <div className="relative z-10 px-6 pt-[calc(72px+6rem)] pb-16 md:px-10 md:pt-[calc(72px+7rem)] md:pb-24">
+        <div className="relative z-10 mx-auto max-w-[920px] text-center">
+          <h1 className="text-[clamp(42px,5.4vw,72px)] leading-[0.98] font-bold tracking-[-0.04em] [text-shadow:0_0_2px_#041018,0_2px_16px_rgba(4,16,24,0.95),0_0_36px_rgba(4,16,24,0.8)]">
+            CROS AI
+            <span className="mt-1 block">THE AUTONOMOUS CORE</span>
+          </h1>
+          <div className="mx-auto mt-7 inline-flex max-w-full items-center rounded-full border border-[#67f6e4] bg-[#04141c]/80 py-1.5 pr-6 pl-1.5 shadow-[0_0_0_1px_rgba(103,246,228,0.35),0_0_36px_rgba(94,255,226,0.55)] sm:pr-8">
+            <img
+              src="/brand/cros.png"
+              alt=""
+              className="mr-3 size-12 shrink-0 rounded-full object-cover ring-2 ring-[#7CFFE8] sm:size-14"
+            />
+            <p className="text-left text-[15px] font-medium sm:text-[20px]">
+              Don&apos;t learn the software. <span className="font-bold">Just tell CROS!</span>
             </p>
           </div>
         </div>
-        <div className="relative mx-auto mt-12 w-full max-w-[1100px]">
+
+        <div className="relative mx-auto mt-6 w-full max-w-[1240px] lg:mt-2">
           <div
             id="meet-cros-laser"
             className="meet-cros-laser pointer-events-none absolute inset-x-[calc(50%-50vw)] top-[calc(-100vh)] z-0 h-[calc(100vh+46rem)] overflow-hidden bg-[#07141C]"
@@ -54,25 +45,32 @@ export function MeetCrosHero() {
               intro={false}
             />
           </div>
-          <img
-            src="/brand/cros.png"
-            alt=""
-            className="absolute -top-10 right-6 z-20 hidden w-20 sm:block"
-          />
-          <img
-            src="/home/mascot-sparkle.png"
-            alt=""
-            className="absolute -bottom-8 -left-4 z-20 hidden w-16 sm:block"
-          />
-          <div
-            id="meet-cros-dashboard"
-            ref={surfaceRef}
-            className="relative z-10 overflow-hidden rounded-[28px] shadow-[0_30px_80px_rgba(23,30,75,0.16)]"
-          >
+
+          <div className="relative z-10 pt-4 sm:pt-8">
             <img
-              src="/home/dashboard.jpg?v=2"
-              alt="CROSSUB portfolio dashboard"
-              className="w-full"
+              src="/meet-cros/hero-hologram.jpg"
+              alt="CROS listing overdue rent and the next actions"
+              className="relative z-0 w-full [mask-image:linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent),linear-gradient(to_bottom,transparent,#000_16%,#000_94%,transparent)] [mask-composite:intersect] [-webkit-mask-image:linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent),linear-gradient(to_bottom,transparent,#000_16%,#000_94%,transparent)] [-webkit-mask-composite:source-in]"
+            />
+            <div className="relative z-20 mb-2 max-w-[460px] lg:absolute lg:bottom-[22%] lg:left-0 lg:mb-0">
+              <h2 className="text-[clamp(32px,3.4vw,48px)] leading-[1.05] font-bold tracking-[-0.03em] [text-shadow:0_2px_16px_rgba(4,16,24,0.85)]">
+                CROS executes everything for you.
+              </h2>
+              <p className="mt-4 max-w-[420px] text-[18px] leading-[1.5] text-white/90 sm:text-[20px] [text-shadow:0_2px_12px_rgba(4,16,24,0.85)]">
+                CROS manage your properties, leasing, inspections and maintenance in one place.
+              </p>
+              <a
+                href={siteLinks.startFree}
+                className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-[#C8FFF3] px-7 text-[16px] font-semibold text-[#06231C] transition-colors hover:bg-white"
+                {...(isExternalHref(siteLinks.startFree) ? { rel: 'noopener noreferrer' } : {})}
+              >
+                Start for free
+              </a>
+            </div>
+            <div
+              id="meet-cros-dashboard"
+              ref={surfaceRef}
+              className="absolute inset-x-[12%] bottom-[10%] h-px"
             />
           </div>
         </div>

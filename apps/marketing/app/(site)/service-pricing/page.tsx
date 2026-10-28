@@ -180,11 +180,11 @@ export default function ServicePricingPage() {
                 <p>
                   The maintenance team asks trusted tradies for quotes — typically three — and
                   sends them to the agent. After the landlord approves, CROSSUB books the work.
-                  Urgent repairs are called through on{' '}
-                  <a className="font-semibold text-[#24C68D]" href={`tel:${company.emergencyTel}`}>
-                    {company.emergencyDisplay}
-                  </a>
-                  .
+                  Email{' '}
+                  <a className="font-semibold text-[#24C68D]" href={`mailto:${company.email}`}>
+                    {company.email}
+                  </a>{' '}
+                  for urgent repairs.
                 </p>
               ),
             },
@@ -195,10 +195,6 @@ export default function ServicePricingPage() {
                   Email{' '}
                   <a className="font-semibold text-[#24C68D]" href={`mailto:${company.salesEmail}`}>
                     {company.salesEmail}
-                  </a>{' '}
-                  or call{' '}
-                  <a className="font-semibold text-[#24C68D]" href={`tel:${company.phoneTel}`}>
-                    {company.phoneDisplay}
                   </a>
                   . Include the suburb and whether it is ingoing, routine, outgoing or an open home.
                 </p>

@@ -101,8 +101,7 @@ export default function HelpPage() {
               answer: (
                 <p>
                   Inspectors sign in with the account the office created. For a sign-in problem, a
-                  job that will not open, or a question about a visit, email {company.email}. The
-                  head office phone is {company.phoneDisplay}.
+                  job that will not open, or a question about a visit, email {company.email}.
                 </p>
               ),
             },

@@ -111,7 +111,7 @@ export function BookDemoForm() {
       const detail = err instanceof Error ? err.message : '';
       setError(
         detail ||
-          `We could not send the booking just now. Email ${company.email} or call ${company.phoneDisplay} and we will arrange the call.`,
+          `We could not send the booking just now. Email ${company.email} and we will arrange the call.`,
       );
     } finally {
       setPending(false);
