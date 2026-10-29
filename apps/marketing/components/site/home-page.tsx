@@ -118,7 +118,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="px-6 py-10 text-center md:px-10 md:py-12">
+      <section className="bg-gradient-to-b from-white to-[#DEFBEF] px-6 pt-10 pb-16 text-center md:px-10 md:pt-12 md:pb-20">
         <h2 className="text-[40px] leading-[1.05] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[56px]">
           Start Free Scale Your Way
         </h2>
@@ -273,13 +273,13 @@ export function HomePage() {
                   <span className={`grid size-16 place-items-center rounded-2xl ${item.tile}`}>
                     <Icon className="size-7" aria-hidden />
                   </span>
-                  <h3 className="mt-5 text-[22px] font-semibold tracking-[-0.02em] text-[#171E4B]">
+                  <h3 className="mt-5 flex items-center justify-center text-[22px] leading-[1.3] font-semibold tracking-[-0.02em] text-[#171E4B] lg:min-h-[2.6em]">
                     {item.title}
                   </h3>
                   <p className="mt-3 text-[16px] leading-[1.6] text-[#62697C]">{item.body}</p>
                   <a
                     href={item.href}
-                    className="mt-6 inline-flex items-center gap-1 text-[15px] font-semibold text-[#171E4B] underline decoration-[#171E4B]/40 underline-offset-4 hover:text-[#24C68D]"
+                    className="mt-auto inline-flex items-center gap-1 pt-6 text-[15px] font-semibold text-[#171E4B] underline decoration-[#171E4B]/40 underline-offset-4 hover:text-[#24C68D]"
                   >
                     Explore More
                     <ArrowRight className="size-4" aria-hidden />
