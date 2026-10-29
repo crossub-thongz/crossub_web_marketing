@@ -1,4 +1,4 @@
-import { ArrowRight, Check, ClipboardCheck, Home, PenLine, Settings, Users } from 'lucide-react';
+import { ArrowRight, Check, ClipboardCheck, Home, PenLine, Settings, Users, Wrench } from 'lucide-react';
 
 import { PrimaryLink, SecondaryLink } from '@/components/site/buttons';
 import { AiControl, PeekCarousel } from '@/components/site/home-carousels';
@@ -6,24 +6,24 @@ import { siteLinks } from '@/lib/site-links';
 
 const MANAGE = [
   {
-    title: 'Property Management Software',
-    body: 'Run your own portfolio with AI-powered workflow for properties, leasing, maintenance, inspections and communication.',
-    href: siteLinks.startFree,
-    icon: Home,
-    tile: 'bg-[#E7FBF4] text-[#24C68D]',
-    featured: false,
-  },
-  {
-    title: 'Inspection Service',
-    body: 'Let our inspectors handle the visits while you manage your portfolio.',
+    title: 'Inspection Services',
+    body: 'Need someone on the ground? Access inspection services through CROSSUB, including ingoing, outgoing, routine, and open inspections. Get extra support when your team needs it.',
     href: siteLinks.inspections,
     icon: ClipboardCheck,
     tile: 'bg-[#F3EEFF] text-[#7A6BB5]',
     featured: true,
   },
   {
-    title: 'Full Service',
-    body: 'Let our experienced team support your agency’s day-to-day property management.',
+    title: 'CROSSUB-Approved Maintenance Providers',
+    body: 'Connect with reliable, platform-approved maintenance providers whenever you need support. From everyday repairs to ongoing maintenance, CROSSUB helps your agency keep work moving.',
+    href: siteLinks.propertyServices,
+    icon: Wrench,
+    tile: 'bg-[#E7FBF4] text-[#24C68D]',
+    featured: false,
+  },
+  {
+    title: 'Full-Service Property Management',
+    body: 'No property management team? You can still offer property management to your clients. CROSSUB provides comprehensive management support, handling the day-to-day work so your agency can build its property management business.',
     href: siteLinks.fullService,
     icon: Users,
     tile: 'bg-[#FFF6DE] text-[#C4A15A]',
@@ -130,7 +130,7 @@ export function HomePage() {
               <article className="flex w-[min(640px,78%)] shrink-0 snap-start flex-col rounded-[36px] bg-[#194778] px-6 pt-10 pb-8 text-center text-white sm:px-10">
                 <p className="text-[28px] font-semibold tracking-[0.16em]">FREE</p>
                 <h3 className="mt-1 text-[40px] leading-none font-bold tracking-[-0.03em] sm:text-[48px]">
-                  Inspection
+                  Inspection App
                 </h3>
                 <p className="mx-auto mt-4 max-w-[460px] text-[16px] leading-[1.55] text-white/85">
                   Your team can complete visits in the app and keep the photos and report on the
@@ -147,9 +147,20 @@ export function HomePage() {
                 <h3 className="mt-1 text-[40px] leading-none font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[48px]">
                   AI
                 </h3>
-                <p className="mx-auto mt-4 max-w-[480px] text-[16px] leading-[1.55] text-[#62697C]">
-                  CROS prepares drafts, tasks and insights. Your team stays in the approval loop.
+                <p className="mx-auto mt-5 max-w-[34rem] text-[22px] leading-[1.3] font-semibold tracking-[-0.02em] text-[#171E4B]">
+                  Stop clicking. Start asking.
                 </p>
+                <div className="mx-auto mt-4 max-w-[36rem] space-y-3 text-[16px] leading-[1.55] text-[#62697C]">
+                  <p>Meet CROS AI — your property management AI that gets things done.</p>
+                  <p>
+                    Tell CROS AI what you need. It works inside CROSSUB to find information, prepare
+                    updates, and carry out tasks — with you in control.
+                  </p>
+                  <p>
+                    From inspections to maintenance, CROS AI helps turn your instructions into
+                    action.
+                  </p>
+                </div>
                 <img
                   src="/home/events.jpg?v=2"
                   alt=""
@@ -164,12 +175,12 @@ export function HomePage() {
       <section id="solutions" className="scroll-mt-28 px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto w-full max-w-[1100px] text-center">
           <h2 className="text-[40px] leading-[1.05] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[52px]">
-            One Platform. Three Ways to Manage.
+            More than software. Real support for your agency.
           </h2>
-          <p className="mt-4 text-[16px] font-semibold text-[#24C68D]">
-            Manage your way with optional support.
+          <p className="mx-auto mt-4 max-w-[760px] text-[18px] leading-[1.6] text-[#62697C]">
+            CROSSUB brings together property management software, AI, and professional services —
+            giving your agency the support to take on more.
           </p>
-          <p className="mt-2 text-[18px] text-[#171E4B]">Manage it yourself, or let us handle the work.</p>
           <div className="mt-12 grid items-stretch gap-4 lg:grid-cols-3">
             {MANAGE.map((item) => {
               const Icon = item.icon;
@@ -198,6 +209,9 @@ export function HomePage() {
               );
             })}
           </div>
+          <p className="mx-auto mt-12 max-w-[720px] text-[18px] leading-[1.6] font-medium text-[#171E4B]">
+            With CROSSUB, you have the software, the AI, and the service support to grow.
+          </p>
         </div>
       </section>
 
