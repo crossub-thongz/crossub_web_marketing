@@ -207,6 +207,57 @@ export function HomePage() {
               </article>
             </PeekCarousel>
           </div>
+
+          <div
+            id="crossub-app"
+            className="mx-auto mt-14 grid max-w-[1100px] scroll-mt-28 items-center gap-8 overflow-hidden rounded-[36px] bg-[#194778] px-6 py-10 text-white sm:px-10 lg:grid-cols-[1.1fr_0.9fr] lg:px-14"
+          >
+            <div className="text-center lg:text-left">
+              <p className="text-[15px] font-semibold text-[#7CFFE8]">
+                {siteLinks.appStore || siteLinks.googlePlay
+                  ? 'Available on iPhone and Android'
+                  : 'Coming soon to iPhone and Android'}
+              </p>
+              <h2 className="mt-3 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] sm:text-[44px]">
+                Get the CROSSUB App
+              </h2>
+              <p className="mx-auto mt-4 max-w-[480px] text-[17px] leading-[1.6] text-white/85 lg:mx-0">
+                Take the free inspection app on site. Capture photos and notes, complete the visit,
+                and the report lands straight in your CROSSUB CRM.
+              </p>
+              {siteLinks.appStore || siteLinks.googlePlay ? (
+                <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                  {siteLinks.appStore ? (
+                    <a
+                      href={siteLinks.appStore}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Download the CROSSUB App on the App Store"
+                      className="inline-flex rounded-[10px] ring-1 ring-white/40 transition hover:-translate-y-0.5"
+                    >
+                      <img src="/stores/app-store-badge.svg" alt="" className="h-12 w-auto" />
+                    </a>
+                  ) : null}
+                  {siteLinks.googlePlay ? (
+                    <a
+                      href={siteLinks.googlePlay}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Get the CROSSUB App on Google Play"
+                      className="inline-flex rounded-[10px] ring-1 ring-white/40 transition hover:-translate-y-0.5"
+                    >
+                      <img src="/stores/google-play-badge.png" alt="" className="h-12 w-auto" />
+                    </a>
+                  ) : null}
+                </div>
+              ) : null}
+            </div>
+            <img
+              src="/home/inspection-panel.jpg"
+              alt="CROSSUB App inspection list"
+              className="mx-auto w-full max-w-[380px] rounded-[24px] shadow-[0_24px_60px_rgba(0,0,0,0.3)]"
+            />
+          </div>
         </div>
       </section>
 

@@ -27,6 +27,8 @@ export const siteLinks = {
     'https://crossub-mobile-agent-prod.onrender.com/register',
   ),
   tenantPortal: env('NEXT_PUBLIC_TENANT_PORTAL_URL', 'https://tenant.crossub.com.au/login'),
+  appStore: process.env.NEXT_PUBLIC_APP_STORE_URL?.trim() ?? '',
+  googlePlay: process.env.NEXT_PUBLIC_GOOGLE_PLAY_URL?.trim() ?? '',
 } as const;
 
 export const company = {
