@@ -2,6 +2,7 @@ import {
   ArrowRight,
   Check,
   ClipboardCheck,
+  CreditCard,
   FileText,
   Home,
   MessageCircle,
@@ -44,9 +45,9 @@ const MANAGE = [
 
 const TENANT_PORTAL = [
   {
-    title: 'Apply for a property',
-    body: 'Tenants submit their rental application online and follow its progress.',
-    icon: ClipboardCheck,
+    title: 'Check your rent status',
+    body: 'Tenants see what rent is due and their payment history.',
+    icon: CreditCard,
   },
   {
     title: 'Report repairs',
