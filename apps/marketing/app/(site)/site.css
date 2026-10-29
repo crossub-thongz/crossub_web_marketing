@@ -152,6 +152,27 @@ html:has(.marketing-site) body {
   }
 }
 
+@keyframes caption-in {
+  from {
+    opacity: 0;
+    transform: translateX(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.caption-in {
+  animation: caption-in 0.3s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .caption-in {
+    animation: none;
+  }
+}
+
 @keyframes marketing-float {
   0%,
   100% {

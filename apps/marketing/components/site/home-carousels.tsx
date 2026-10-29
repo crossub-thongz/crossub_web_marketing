@@ -1,5 +1,6 @@
 'use client';
 
+import { Check, Home, PenLine, Settings } from 'lucide-react';
 import { useEffect, useRef, useState, type ReactNode } from 'react';
 
 function Dots({
@@ -107,14 +108,17 @@ const AI_STEPS = [
   {
     title: 'AI reads the request',
     body: 'Understands emails, tenant messages, photos, inspection notes and maintenance details.',
+    image: '/home/events.jpg?v=2',
   },
   {
     title: 'AI prepares the work',
     body: 'Run your own portfolio with AI-powered workflows for properties, leasing, maintenance, inspections and communication.',
+    image: '/home/crm-b.jpg?v=2',
   },
   {
     title: 'Your team decides',
     body: 'Let our experienced team support your agency’s day-to-day property management.',
+    image: '/home/dashboard.jpg?v=2',
   },
 ] as const;
 
@@ -124,11 +128,19 @@ export function AiControl() {
   return (
     <div>
       <div className="grid items-center gap-8 lg:grid-cols-[1.15fr_0.85fr]">
-        <img
-          src="/home/events.jpg?v=2"
-          alt=""
-          className="w-full rounded-[24px] shadow-[0_24px_50px_rgba(23,30,75,0.08)]"
-        />
+        <div className="grid">
+          {AI_STEPS.map((step, stepIndex) => (
+            <img
+              key={step.title}
+              src={step.image}
+              alt=""
+              aria-hidden={stepIndex !== index}
+              className={`col-start-1 row-start-1 w-full rounded-[24px] shadow-[0_24px_50px_-20px_rgba(23,30,75,0.16)] transition-opacity duration-200 ease-out ${
+                stepIndex === index ? 'opacity-100' : 'opacity-0'
+              }`}
+            />
+          ))}
+        </div>
         <div>
           <ul className="space-y-6">
             {AI_STEPS.map((step, item) => (
@@ -159,6 +171,163 @@ export function AiControl() {
             </button>
           ))}
         </div>
+      </div>
+    </div>
+  );
+}
+
+const WHY = [
+  {
+    image: '/home/why-team.jpg',
+    value: 6,
+    suffix: '',
+    label: 'years of full-service Australian property expertise.',
+    wash: 'bg-gradient-to-t from-[#171E4B]/55 via-[#171E4B]/10 to-transparent',
+    cyan: false,
+  },
+  {
+    image: '/home/why-laptop.jpg',
+    value: 90,
+    suffix: '%',
+    label: 'Ease of use and admin',
+    wash: 'bg-[#171E4B]/35',
+    cyan: false,
+  },
+  {
+    image: '/home/why-kitchen.jpg',
+    value: 91,
+    suffix: '%',
+    label: 'Minimize time',
+    wash: 'bg-[#171E4B]/35',
+    cyan: true,
+  },
+] as const;
+
+function CountUp({ value, suffix, active }: { value: number; suffix: string; active: boolean }) {
+  const [shown, setShown] = useState(0);
+
+  useEffect(() => {
+    if (!active) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      setShown(value);
+      return;
+    }
+    const start = performance.now();
+    let frame = 0;
+    const tick = (now: number) => {
+      const progress = Math.min(1, (now - start) / 1100);
+      const eased = 1 - (1 - progress) ** 3;
+      setShown(Math.round(value * eased));
+      if (progress < 1) frame = requestAnimationFrame(tick);
+    };
+    frame = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(frame);
+  }, [active, value]);
+
+  return (
+    <>
+      {shown}
+      {suffix}
+    </>
+  );
+}
+
+export function WhyShowcase() {
+  const root = useRef<HTMLDivElement>(null);
+  const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    const node = root.current;
+    if (!node) return;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting) return;
+        setActive(true);
+        observer.disconnect();
+      },
+      { threshold: 0.35 },
+    );
+    observer.observe(node);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <div ref={root} className="mx-auto mt-12 grid max-w-[1080px] items-stretch gap-5 sm:grid-cols-3">
+      {WHY.map((card) => (
+        <article key={card.image} className="group relative h-[420px] overflow-hidden rounded-[28px]">
+          <img src={card.image} alt="" className="absolute inset-0 size-full object-cover" />
+          <div
+            className={`absolute inset-0 transition-colors duration-300 ${card.wash} ${
+              card.cyan ? 'group-hover:bg-[#3AC892]/72' : ''
+            }`}
+          />
+          <div className="absolute inset-x-0 bottom-0 p-6 text-center text-white">
+            <p className="text-[72px] leading-none font-bold tracking-[-0.04em]">
+              <CountUp value={card.value} suffix={card.suffix} active={active} />
+            </p>
+            <p className="mx-auto mt-2 max-w-[240px] text-[20px] leading-[1.25] font-semibold">{card.label}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  );
+}
+
+const PLATFORM = [
+  {
+    title: 'Properties',
+    body: 'Owners, tenants and the property record, kept in one place.',
+    icon: Home,
+    className: 'top-[18%] left-[6%] bg-[#E7FBF4] text-[#24C68D]',
+  },
+  {
+    title: 'Day-to-day setup',
+    body: 'Workflows and agency settings sit with the rest of the work.',
+    icon: Settings,
+    className: 'top-[8%] right-[8%] bg-[#194778] text-white',
+  },
+  {
+    title: 'Approvals',
+    body: 'Quotes, leases and decisions stay with your team.',
+    icon: Check,
+    className: 'bottom-[18%] left-[4%] bg-[#E7FBF4] text-[#24C68D]',
+  },
+  {
+    title: 'Maintenance',
+    body: 'Requests, quotes, approvals and contractor work in one flow.',
+    icon: PenLine,
+    className: 'right-[6%] bottom-[8%] bg-[#E7FBF4] text-[#24C68D]',
+  },
+] as const;
+
+export function PlatformShowcase() {
+  const [index, setIndex] = useState(3);
+  const topic = PLATFORM[index] ?? PLATFORM[3];
+
+  return (
+    <div className="mt-14 grid items-center gap-10 text-left lg:grid-cols-[1.1fr_0.9fr]">
+      <div className="relative mx-auto w-full max-w-[520px]">
+        <img src="/home/tablet.png?v=2" alt="" className="w-full" />
+        {PLATFORM.map((item, itemIndex) => {
+          const Icon = item.icon;
+          return (
+            <button
+              key={item.title}
+              type="button"
+              aria-label={item.title}
+              aria-pressed={itemIndex === index}
+              onMouseEnter={() => setIndex(itemIndex)}
+              onFocus={() => setIndex(itemIndex)}
+              className={`absolute grid size-16 place-items-center rounded-full shadow-md transition-transform duration-300 ease-out hover:-translate-y-0.5 ${item.className}`}
+            >
+              <Icon className="size-7" aria-hidden />
+            </button>
+          );
+        })}
+      </div>
+      <div key={topic.title} className="caption-in">
+        <h3 className="text-[36px] font-bold tracking-[-0.03em] text-[#171E4B]">{topic.title}</h3>
+        <p className="mt-3 max-w-[360px] text-[20px] leading-[1.45] font-medium text-[#194778]">{topic.body}</p>
       </div>
     </div>
   );
