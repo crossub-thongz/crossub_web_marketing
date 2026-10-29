@@ -176,6 +176,9 @@ export function HomePage() {
                   alt=""
                   className="mx-auto mt-8 w-full max-w-[420px] rounded-[24px]"
                 />
+                <p className="mx-auto mt-6 max-w-[460px] text-[13px] leading-[1.5] text-white/70">
+                  * The CROS inspection app is exclusive to the CROSSUB system.
+                </p>
               </article>
               <article className="w-[min(720px,82%)] shrink-0 snap-start rounded-[36px] bg-white px-6 pt-10 pb-8 text-center shadow-[0_20px_50px_rgba(23,30,75,0.06)] sm:px-10">
                 <p className="text-[28px] font-semibold tracking-[0.16em] text-[#171E4B]">FREE</p>
