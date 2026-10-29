@@ -55,53 +55,22 @@ const WHY = [
 export function HomePage() {
   return (
     <main id="main">
-      <section className="-mt-[8vh] overflow-hidden bg-[radial-gradient(circle_at_50%_18%,_#E7FBF4_0%,_#ffffff_46%)] px-6 pt-8 pb-16 md:px-10 md:pt-10 md:pb-20">
-        <div className="@container mx-auto w-full max-w-[1480px] text-center">
-          <img src="/brand/cros.png" alt="" className="mx-auto h-16 w-auto" />
-          <p className="mt-3 inline-flex items-center gap-2 rounded-full bg-[#24C68D] px-4 py-1.5 text-[14px] font-semibold text-white">
-            <span aria-hidden>✦</span>
-            Powered by CROS AI
-          </p>
-          <h1 className="mt-5 text-[clamp(11px,3.05cqw,58px)] leading-[1.05] font-bold tracking-[-0.045em] whitespace-nowrap text-[#171E4B]">
-            Simplify Your Property Management Software
-          </h1>
-          <p className="mt-2 text-[clamp(32px,5.2cqw,76px)] leading-none text-[#24C68D]">
-            <span className="mr-[0.28em] font-medium italic">with</span>
-            <span className="font-bold tracking-[-0.04em]">CROS AI</span>
-          </p>
-          <p className="mt-5 text-[18px] font-semibold text-[#171E4B] sm:text-[20px]">
-            Free Software. Free AI. Your Way to Manage.
-          </p>
-          <p className="mx-auto mt-3 max-w-[760px] text-[17px] leading-[1.6] text-[#62697C] sm:text-[18px]">
-            Manage properties, streamline everyday tasks and keep your agency in control with free
-            software and expert AI built in support when you need it.
-          </p>
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <PrimaryLink href={siteLinks.startFree}>Start for free</PrimaryLink>
-            <SecondaryLink href={siteLinks.bookDemo}>Book a demo</SecondaryLink>
+      <section className="-mt-[8vh] px-6 pt-4 pb-2 md:px-10 md:pt-6 md:pb-3">
+        <div className="mx-auto flex max-w-[1100px] items-center justify-center gap-3 sm:gap-8">
+          <div className="min-w-0 text-center">
+            <h1 className="text-[32px] leading-[1.05] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[48px]">
+              Start Free Scale Your Way
+            </h1>
+            <p className="mt-2 text-[16px] text-[#62697C] sm:text-[18px]">
+              Your software. Your agency. Your choice of support.
+            </p>
           </div>
-        </div>
-        <div className="relative mx-auto mt-12 w-full max-w-[1180px]">
-          <img
-            src="/home/dashboard.jpg?v=2"
-            alt="CROSSUB portfolio dashboard"
-            className="w-full rounded-[28px] shadow-[0_30px_70px_rgba(23,30,75,0.12)]"
-          />
           <img
             src="/brand/cros.png"
-            alt=""
-            className="pointer-events-none absolute -right-7 -bottom-[3.25rem] hidden w-[8.25rem] drop-shadow-[0_18px_28px_rgba(23,30,75,0.16)] sm:block"
+            alt="CROS"
+            className="h-24 w-auto shrink-0 object-contain sm:h-32"
           />
         </div>
-      </section>
-
-      <section className="px-6 py-16 text-center md:px-10 md:py-20">
-        <h2 className="text-[40px] leading-[1.05] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[56px]">
-          Start Free Scale Your Way
-        </h2>
-        <p className="mt-4 text-[20px] text-[#62697C]">
-          Your software. Your agency. Your choice of support.
-        </p>
       </section>
 
       <section className="overflow-hidden bg-[#DEFBEF] px-6 py-16 md:px-10 md:py-24">
