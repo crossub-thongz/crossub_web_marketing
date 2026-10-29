@@ -1,4 +1,16 @@
-import { ArrowRight, Check, ClipboardCheck, Home, PenLine, Settings, Users, Wrench } from 'lucide-react';
+import {
+  ArrowRight,
+  Check,
+  ClipboardCheck,
+  CreditCard,
+  FileText,
+  Home,
+  MessageCircle,
+  PenLine,
+  Settings,
+  Users,
+  Wrench,
+} from 'lucide-react';
 
 import { PrimaryLink, SecondaryLink } from '@/components/site/buttons';
 import { AiControl, PeekCarousel } from '@/components/site/home-carousels';
@@ -28,6 +40,29 @@ const MANAGE = [
     icon: Users,
     tile: 'bg-[#FFF6DE] text-[#C4A15A]',
     featured: false,
+  },
+] as const;
+
+const TENANT_PORTAL = [
+  {
+    title: 'Pay rent',
+    body: 'Tenants pay rent and see their receipts and payment history.',
+    icon: CreditCard,
+  },
+  {
+    title: 'Report repairs',
+    body: 'Maintenance requests go straight to the property, with photos attached.',
+    icon: Wrench,
+  },
+  {
+    title: 'Lease and inspections',
+    body: 'The lease, documents and inspection reports are in one place.',
+    icon: FileText,
+  },
+  {
+    title: 'Message the agency',
+    body: 'Conversations with the agency stay on the tenancy record.',
+    icon: MessageCircle,
   },
 ] as const;
 
@@ -169,6 +204,47 @@ export function HomePage() {
               </article>
             </PeekCarousel>
           </div>
+        </div>
+      </section>
+
+      <section id="tenant-portal" className="scroll-mt-28 px-6 py-16 md:px-10 md:py-24">
+        <div className="mx-auto w-full max-w-[1100px] text-center">
+          <p className="text-[16px] font-semibold text-[#24C68D]">FREE for your tenants</p>
+          <h2 className="mt-3 text-[40px] leading-[1.05] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[52px]">
+            The Tenant Portal
+          </h2>
+          <p className="mx-auto mt-4 max-w-[720px] text-[18px] leading-[1.6] text-[#62697C]">
+            Your tenants sign in from their phone browser, with nothing to download. It is
+            connected to the same property records your team uses, so the office gets fewer calls
+            and emails, and every request is on record.
+          </p>
+          <div className="mt-12 grid gap-4 text-left sm:grid-cols-2 lg:grid-cols-4">
+            {TENANT_PORTAL.map((item) => {
+              const Icon = item.icon;
+              return (
+                <article
+                  key={item.title}
+                  className="rounded-[24px] bg-white p-6 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-[#171E4B]/5"
+                >
+                  <span className="grid size-12 place-items-center rounded-2xl bg-[#E7FBF4] text-[#24C68D]">
+                    <Icon className="size-5" aria-hidden />
+                  </span>
+                  <h3 className="mt-5 text-[20px] font-semibold tracking-[-0.02em] text-[#171E4B]">
+                    {item.title}
+                  </h3>
+                  <p className="mt-2 text-[16px] leading-[1.55] text-[#62697C]">{item.body}</p>
+                </article>
+              );
+            })}
+          </div>
+          <a
+            href={siteLinks.tenantPortal}
+            rel="noopener noreferrer"
+            className="mt-10 inline-flex items-center gap-1 text-[15px] font-semibold text-[#171E4B] underline decoration-[#171E4B]/40 underline-offset-4 hover:text-[#24C68D]"
+          >
+            Tenant log in
+            <ArrowRight className="size-4" aria-hidden />
+          </a>
         </div>
       </section>
 

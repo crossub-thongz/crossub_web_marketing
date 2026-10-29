@@ -7,6 +7,7 @@ const COLUMNS = [
     links: [
       { label: 'Software', href: siteLinks.software },
       { label: 'AI Features', href: siteLinks.ai },
+      { label: 'Tenant Portal', href: '/#tenant-portal' },
     ],
   },
   {
