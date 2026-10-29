@@ -11,7 +11,7 @@ import { cn } from '@/lib/utils';
 
 const NAV = [
   { label: 'Home', href: siteLinks.home },
-  { label: 'Meet Cros', href: siteLinks.software },
+  { label: 'CROS AI', href: siteLinks.software },
   {
     label: 'Services',
     links: [
@@ -130,7 +130,7 @@ export function SiteHeader() {
 
   const groupActive = (label: string) => {
     if (label === 'Home') return pathname === siteLinks.home;
-    if (label === 'Meet Cros') return pathname === siteLinks.software;
+    if (label === 'CROS AI') return pathname === siteLinks.software;
     if (label === 'Services') {
       return ([siteLinks.inspections, siteLinks.fullService, siteLinks.pricing] as readonly string[]).includes(
         pathname,
