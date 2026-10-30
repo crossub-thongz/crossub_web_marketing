@@ -114,7 +114,6 @@ export function RegionSelector({
               Your connection looks like {connection}. You can still choose either region.
             </p>
           ) : null}
-          <p className="mt-2 px-2 text-[12px] text-[#62697C]">Future regions can be added here.</p>
         </div>
       ) : null}
     </div>

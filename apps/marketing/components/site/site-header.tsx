@@ -171,7 +171,7 @@ export function SiteHeader() {
       >
         Skip to content
       </a>
-      <div className="mx-auto flex h-[72px] w-full max-w-[1480px] items-center justify-between gap-6 px-6 md:px-10">
+      <div className="relative mx-auto flex h-[72px] w-full max-w-[1480px] items-center justify-between gap-6 px-6 md:px-10">
         <a href={withRegion(region, '/#top')} aria-label="CROSSUB home" className="shrink-0 rounded-md">
           <Wordmark priority className={overLaser && !open ? 'brightness-0 invert' : undefined} />
         </a>
@@ -179,7 +179,7 @@ export function SiteHeader() {
         <nav
           ref={navRef}
           className={cn(
-            'hidden items-center gap-8 lg:flex',
+            'absolute top-1/2 left-1/2 hidden -translate-x-1/2 -translate-y-1/2 items-center gap-8 lg:flex',
             overLaser &&
               !open &&
               'gap-6 rounded-full bg-[#07141C]/75 px-6 py-2.5 shadow-[0_10px_28px_rgba(0,0,0,0.4)] ring-1 ring-white/20 backdrop-blur-md',
