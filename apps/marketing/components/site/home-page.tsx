@@ -205,7 +205,7 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Download CROS INSPECT on the App Store"
-                  className="inline-flex rounded-[10px] ring-1 ring-white/40 transition hover:-translate-y-0.5"
+                  className="inline-flex transition hover:-translate-y-0.5"
                 >
                   <img src="/stores/app-store-badge.svg" alt="" className="h-12 w-auto" />
                 </a>
@@ -214,19 +214,11 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Get CROS INSPECT on Google Play"
-                  className="inline-flex overflow-hidden rounded-[10px] ring-1 ring-white/40 transition hover:-translate-y-0.5"
+                  className="inline-flex transition hover:-translate-y-0.5"
                 >
-                  <img src="/stores/google-play-badge.png" alt="" className="h-[72px] w-auto" />
+                  <img src="/stores/google-play-badge.png" alt="" className="h-12 w-auto" />
                 </a>
               </div>
-              <a
-                href={siteLinks.inspectWeb}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-5 inline-flex text-[15px] font-semibold text-[#7CFFE8] underline decoration-[#7CFFE8]/40 underline-offset-4 transition hover:decoration-[#7CFFE8]"
-              >
-                Download from the official website
-              </a>
             </div>
             <img
               src="/home/inspection-panel.jpg"

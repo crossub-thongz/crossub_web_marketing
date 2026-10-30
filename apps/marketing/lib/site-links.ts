@@ -32,10 +32,6 @@ export const siteLinks = {
     'NEXT_PUBLIC_GOOGLE_PLAY_URL',
     'https://play.google.com/apps/internaltest/4699912119089397915',
   ),
-  inspectWeb: env(
-    'NEXT_PUBLIC_INSPECTOR_URL',
-    'https://crossub-mobile-inspector-prod.onrender.com',
-  ),
 } as const;
 
 export const company = {
