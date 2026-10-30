@@ -1,5 +1,9 @@
-import { company, siteLinks } from '@/lib/site-links';
+import { headers } from 'next/headers';
+
 import { Wordmark } from '@/components/site/logo';
+import { RegionSelector } from '@/components/site/region-selector';
+import { offersServices, regionFromHeader, withRegion } from '@/lib/regions';
+import { company, siteLinks } from '@/lib/site-links';
 
 const COLUMNS = [
   {
@@ -29,14 +33,18 @@ const COLUMNS = [
   {
     title: 'Support',
     links: [
-      { label: 'Help Centre', href: siteLinks.help },
       { label: 'FAQs', href: siteLinks.help },
+      { label: 'Privacy Notice', href: siteLinks.privacy },
+      { label: 'Terms of Use', href: '/terms' },
     ],
   },
 ] as const;
 
-export function SiteFooter() {
+export async function SiteFooter() {
   const year = new Date().getFullYear();
+  const region = regionFromHeader(await headers());
+  const columns = COLUMNS.filter((column) => column.title !== 'Services' || offersServices(region));
+  const home = withRegion(region, '/#top');
 
   return (
     <footer className="relative bg-[#194778] text-white">
@@ -53,7 +61,7 @@ export function SiteFooter() {
       </svg>
       <div className="mx-auto grid w-full max-w-[1480px] gap-12 px-6 py-14 md:px-10 md:py-16 lg:grid-cols-[1.1fr_2fr]">
         <div>
-          <a href="/#top" aria-label="CROSSUB home" className="inline-block rounded-md">
+          <a href={home} aria-label="CROSSUB home" className="inline-block rounded-md">
             <Wordmark className="h-11 brightness-0 invert" />
           </a>
           <div className="mt-8 space-y-5 text-[15px] leading-[1.6]">
@@ -72,14 +80,14 @@ export function SiteFooter() {
           </div>
         </div>
         <div className="grid grid-cols-2 gap-8 sm:grid-cols-4">
-          {COLUMNS.map((column) => (
+          {columns.map((column) => (
             <div key={column.title}>
               <h2 className="text-[15px] font-semibold">{column.title}</h2>
               <ul className="mt-4 space-y-2">
                 {column.links.map((link) => (
                   <li key={link.label}>
                     <a
-                      href={link.href}
+                      href={withRegion(region, link.href)}
                       className="inline-flex min-h-11 items-center text-[15px] text-white/75 hover:text-white sm:min-h-0 sm:py-1"
                     >
                       {link.label}
@@ -91,8 +99,9 @@ export function SiteFooter() {
           ))}
         </div>
       </div>
-      <div className="mx-auto w-full max-w-[1480px] px-6 pb-8 md:px-10">
+      <div className="mx-auto flex w-full max-w-[1480px] flex-col gap-3 px-6 pb-8 sm:flex-row sm:items-center sm:justify-between md:px-10">
         <p className="text-[13px] text-white/60">© {year} CROSSUB. All rights reserved.</p>
+        <RegionSelector tone="onDark" placement="up" />
       </div>
     </footer>
   );

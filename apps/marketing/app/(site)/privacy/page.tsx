@@ -1,6 +1,8 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 
 import { PageHero, PageSection } from '@/components/site/page-frame';
+import { REGIONS, regionFromHeader } from '@/lib/regions';
 import { company } from '@/lib/site-links';
 
 export const metadata: Metadata = {
@@ -48,12 +50,17 @@ const SECTIONS = [
   },
 ] as const;
 
-export default function PrivacyPage() {
+export default async function PrivacyPage() {
+  const region = regionFromHeader(await headers());
+  const place = REGIONS[region === 'NZ' ? 'NZ' : 'AU'];
+
   return (
     <main>
-      <PageHero eyebrow="Privacy" title="Privacy policy">
+      <PageHero eyebrow={place.name} title="Privacy Notice">
         <p>
-          This is the CROSSUB privacy policy for the website, the platform, and the inspector app. Questions go to{' '}
+          This is the CROSSUB privacy notice for {place.name}. It covers the website, the free software, and, where
+          that service is offered, the inspector app. This notice is kept separately for each region so it can be
+          changed without affecting the other. Questions go to{' '}
           <a className="font-semibold text-[#24C68D]" href={`mailto:${company.salesEmail}`}>
             {company.salesEmail}
           </a>

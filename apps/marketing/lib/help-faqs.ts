@@ -874,3 +874,204 @@ export const FAQ_GROUPS: FaqGroup[] = [
     ]
   }
 ];
+
+const HIDDEN_WITHOUT_SERVICES = new Set(['3', '15', '28', '29', '30', '31', '32', '33', '34', '35']);
+
+function questionNumber(question: string): string {
+  return question.match(/^\d+/)?.[0] ?? '';
+}
+
+function paragraphs(question: string, texts: string[]) {
+  return {
+    question,
+    blocks: texts.map((text) => ({ kind: 'p' as const, text })),
+  };
+}
+
+function withoutPaidServices(group: FaqGroup): FaqGroup | null {
+  if (group.title === 'Inspection and Maintenance Services') return null;
+
+  const items = group.items.flatMap((item) => {
+    const number = questionNumber(item.question);
+    if (HIDDEN_WITHOUT_SERVICES.has(number)) return [];
+
+    if (number === '1') {
+      return [
+        paragraphs(item.question, [
+          'CROSSUB brings together FREE property management software, CROS AI, a FREE inspection app, and FREE real market data in one platform.',
+          'CROS AI helps your team operate the software and move everyday tasks forward.',
+        ]),
+      ];
+    }
+    if (number === '2') {
+      return [paragraphs(item.question, ['Yes. Your team can use CROSSUB for its everyday work.'])];
+    }
+    if (number === '4') {
+      return [
+        {
+          question: item.question,
+          blocks: item.blocks.flatMap((block): FaqBlock[] => {
+            if (block.kind === 'p' && block.text.startsWith('The free offering does not cover')) {
+              return [
+                {
+                  kind: 'p',
+                  text: 'The free offering does not cover third-party products, services, or charges. If a feature or request involves a chargeable third-party service, that cost is separate.',
+                },
+              ];
+            }
+            if (block.kind === 'p' && block.text.startsWith('Any applicable charges will be disclosed')) return [];
+            return [block];
+          }),
+        },
+      ];
+    }
+    if (number === '5') {
+      return [
+        paragraphs(item.question, [
+          'The current CROSSUB software, inspection app, and CROS AI features are free to use.',
+          'Third-party products or charges, where they apply, are separate and are explained before you commit.',
+        ]),
+      ];
+    }
+    if (number === '6') {
+      return [
+        paragraphs(item.question, [
+          'No. You can use CROSSUB’s current free software offering without a subscription.',
+          'Our inspection app is integrated with the CROSSUB CRM and must be used together with it. It is not available as a standalone app for use with another CRM. Both the inspection app and the CRM are currently free, subject to our applicable terms.',
+          'Third-party charges are separate. Please see our Terms of Service for current conditions.',
+        ]),
+      ];
+    }
+    if (number === '7') {
+      return [
+        paragraphs(item.question, [
+          'No. The current free software offering does not have a subscription fee.',
+          'The CROSSUB CRM and inspection app are currently free to use together.',
+          'Fees may apply if you use a chargeable third-party product or service. Before you commit, we will explain the applicable charges, what is included, and any additional costs or cancellation conditions.',
+          'Our free offering may change in the future. Any changes will be communicated in advance, subject to applicable law and existing contractual commitments. Charges will not be applied retrospectively to use that was free when it occurred.',
+        ]),
+      ];
+    }
+    if (number === '8') {
+      return [
+        {
+          question: item.question,
+          blocks: item.blocks.map((block) =>
+            block.kind === 'p' && block.text.startsWith('No new charge will apply retrospectively')
+              ? {
+                  kind: 'p' as const,
+                  text: 'No new charge will apply retrospectively to use that was free when it occurred. Chargeable third-party products or services remain separate from the free software.',
+                }
+              : block,
+          ),
+        },
+      ];
+    }
+    if (number === '9') {
+      return [
+        {
+          question: item.question,
+          blocks: item.blocks.filter(
+            (block) => !(block.kind === 'p' && block.text.includes('additional management services')),
+          ),
+        },
+      ];
+    }
+    if (number === '10') {
+      return [
+        paragraphs(item.question, [
+          'No. We do not use the client information your agency uploads to bypass your agency or solicit property management business from those clients.',
+          'Your agency’s use of CROSSUB does not transfer your rent roll, assign your management agreements, or appoint CROSSUB as the managing agent.',
+          'Landlord and tenant portals support your agency. They help your clients access relevant information and communicate more efficiently. Registering for portal access does not, by itself, make them CROSSUB’s property management clients.',
+          'You can use CROSSUB’s technology without handing over your client relationships or your rent roll.',
+        ]),
+      ];
+    }
+    if (number === '11') {
+      return [
+        {
+          question: item.question,
+          blocks: item.blocks.filter(
+            (block) =>
+              block.kind !== 'p' ||
+              (!block.text.startsWith('Access to information is not ownership') &&
+                !block.text.startsWith('Full Service requires')),
+          ),
+        },
+      ];
+    }
+    if (number === '12') {
+      return [
+        {
+          question: item.question,
+          blocks: item.blocks.filter(
+            (block) => !(block.kind === 'p' && block.text.startsWith('Service providers do not receive')),
+          ),
+        },
+      ];
+    }
+    if (number === '14') {
+      return [
+        {
+          question: item.question,
+          blocks: item.blocks.map((block) =>
+            block.kind === 'p' && block.text.startsWith('If you authorise information')
+              ? {
+                  kind: 'p' as const,
+                  text: 'If you authorise information to be shared, access is subject to the relevant permissions and arrangements.',
+                }
+              : block,
+          ),
+        },
+      ];
+    }
+    if (number === '23') {
+      return [
+        paragraphs('23. Is the inspection app free?', [
+          'The inspection app and CROSSUB CRM are currently free to use together.',
+          'Your own team can use the app for its inspections.',
+          'The app must be used with the CROSSUB CRM. Current access conditions apply, and any chargeable third-party services are separate.',
+        ]),
+      ];
+    }
+    if (number === '24') {
+      return [
+        {
+          question: item.question,
+          blocks: item.blocks.map((block) =>
+            block.kind === 'p' && block.text.includes('optional professional services')
+              ? {
+                  kind: 'p' as const,
+                  text: 'This means your agency needs to use the CROSSUB CRM to use the app. Both are currently free.',
+                }
+              : block,
+          ),
+        },
+      ];
+    }
+    if (number === '38') {
+      return [
+        paragraphs(item.question, [
+          'Ask us to demonstrate the workflows your agency will actually use.',
+          'Check how CROS AI performs relevant tasks, how permissions and approvals work, and how inspection records can be accessed or exported.',
+          'If a particular privacy, data residency, reporting, or integration requirement is essential to your agency, obtain confirmation before relying on it.',
+        ]),
+      ];
+    }
+    return [item];
+  });
+
+  if (items.length === 0) return null;
+  return {
+    title: group.title === 'Full Service and Moving to CROSSUB' ? 'Moving to CROSSUB' : group.title,
+    items,
+  };
+}
+
+export function faqGroupsFor(offersServices: boolean): FaqGroup[] {
+  if (offersServices) return FAQ_GROUPS;
+  return FAQ_GROUPS.flatMap((group) => {
+    const next = withoutPaidServices(group);
+    return next ? [next] : [];
+  });
+}

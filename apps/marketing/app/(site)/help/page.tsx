@@ -1,7 +1,9 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 
 import { ContactStrip, FaqList, PageHero, PageSection } from '@/components/site/page-frame';
-import { FAQ_GROUPS, type FaqBlock } from '@/lib/help-faqs';
+import { faqGroupsFor, type FaqBlock } from '@/lib/help-faqs';
+import { offersServices, regionFromHeader } from '@/lib/regions';
 import { company } from '@/lib/site-links';
 
 export const metadata: Metadata = {
@@ -36,19 +38,25 @@ function FaqAnswer({ blocks }: { blocks: FaqBlock[] }) {
   );
 }
 
-export default function HelpPage() {
+export default async function HelpPage() {
+  const region = regionFromHeader(await headers());
+  const services = offersServices(region);
+  const groups = faqGroupsFor(services);
+
   return (
     <main>
       <PageHero eyebrow="FAQs" title="Frequently Asked Questions">
         <p>
-          Answers about the software, CROS AI, inspections, maintenance, and Full Service. If your
-          question is not here, email {company.email}.
+          {services
+            ? 'Answers about the software, CROS AI, inspections, maintenance, and Full Service.'
+            : 'Answers about the free software, CROS AI, and the inspection app.'}{' '}
+          If your question is not here, email {company.email}.
         </p>
       </PageHero>
 
       <PageSection>
         <div className="mx-auto max-w-[860px] space-y-12">
-          {FAQ_GROUPS.map((group) => (
+          {groups.map((group) => (
             <div key={group.title}>
               <h2 className="mb-4 text-[28px] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[32px]">
                 {group.title}

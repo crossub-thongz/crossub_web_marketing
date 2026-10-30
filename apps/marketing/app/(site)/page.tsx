@@ -1,5 +1,9 @@
-import { HomePage } from '@/components/site/home-page';
+import { headers } from 'next/headers';
 
-export default function Page() {
-  return <HomePage />;
+import { HomePage } from '@/components/site/home-page';
+import { regionFromHeader } from '@/lib/regions';
+
+export default async function Page() {
+  const region = regionFromHeader(await headers());
+  return <HomePage region={region} />;
 }

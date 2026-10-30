@@ -6,6 +6,14 @@ import { useEffect, useId, useRef, useState } from 'react';
 
 import { PrimaryLink } from '@/components/site/buttons';
 import { Wordmark } from '@/components/site/logo';
+import { RegionSelector } from '@/components/site/region-selector';
+import {
+  offersServices,
+  regionFromPathname,
+  registerHref,
+  stripRegion,
+  withRegion,
+} from '@/lib/regions';
 import { siteLinks } from '@/lib/site-links';
 import { cn } from '@/lib/utils';
 
@@ -31,9 +39,9 @@ const NAV = [
   {
     label: 'Support',
     links: [
-      { href: siteLinks.help, label: 'Help Centre' },
       { href: siteLinks.help, label: 'FAQs' },
-      { href: siteLinks.privacy, label: 'Privacy Policy' },
+      { href: siteLinks.privacy, label: 'Privacy Notice' },
+      { href: '/terms', label: 'Terms of Use' },
     ],
   },
 ] as const;
@@ -43,8 +51,12 @@ function isMenu(item: (typeof NAV)[number]): item is Extract<(typeof NAV)[number
 }
 
 function followLink(event: React.MouseEvent<HTMLAnchorElement>, href: string) {
-  if (!href.startsWith('/#')) return;
-  const target = document.getElementById(href.slice(2));
+  const hashAt = href.indexOf('#');
+  if (hashAt === -1) return;
+  const id = href.slice(hashAt + 1);
+  const path = href.slice(0, hashAt) || '/';
+  if (window.location.pathname.replace(/\/$/, '') !== path.replace(/\/$/, '')) return;
+  const target = document.getElementById(id);
   if (!target) return;
   event.preventDefault();
   const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -128,16 +140,19 @@ export function SiteHeader() {
     followLink(event, href);
   };
 
+  const region = regionFromPathname(pathname);
+  const path = stripRegion(pathname);
+  const nav = NAV.filter((item) => item.label !== 'Services' || offersServices(region));
+  const startFree = registerHref(region);
+
   const groupActive = (label: string) => {
-    if (label === 'Home') return pathname === siteLinks.home;
-    if (label === 'CROS AI') return pathname === siteLinks.software;
+    if (label === 'Home') return path === '/';
+    if (label === 'CROS AI') return path === siteLinks.software;
     if (label === 'Services') {
-      return ([siteLinks.inspections, siteLinks.fullService, siteLinks.pricing] as readonly string[]).includes(
-        pathname,
-      );
+      return ([siteLinks.inspections, siteLinks.fullService, siteLinks.pricing] as readonly string[]).includes(path);
     }
-    if (label === 'Company') return pathname === siteLinks.about;
-    return pathname === siteLinks.help || pathname === siteLinks.privacy;
+    if (label === 'Company') return path === siteLinks.about;
+    return path === siteLinks.help || path === siteLinks.privacy || path === '/terms';
   };
 
   return (
@@ -157,7 +172,7 @@ export function SiteHeader() {
         Skip to content
       </a>
       <div className="mx-auto flex h-[72px] w-full max-w-[1480px] items-center justify-between gap-6 px-6 md:px-10">
-        <a href="/#top" aria-label="CROSSUB home" className="shrink-0 rounded-md">
+        <a href={withRegion(region, '/#top')} aria-label="CROSSUB home" className="shrink-0 rounded-md">
           <Wordmark priority className={overLaser && !open ? 'brightness-0 invert' : undefined} />
         </a>
 
@@ -171,7 +186,7 @@ export function SiteHeader() {
           )}
           aria-label="Primary"
         >
-          {NAV.map((item) => {
+          {nav.map((item) => {
             const active = groupActive(item.label);
             const itemClass = cn(
               'inline-flex items-center gap-1 text-[17px] font-medium whitespace-nowrap',
@@ -180,7 +195,12 @@ export function SiteHeader() {
             );
             if (!isMenu(item)) {
               return (
-                <a key={item.label} href={item.href} className={itemClass} aria-current={active ? 'page' : undefined}>
+                <a
+                  key={item.label}
+                  href={withRegion(region, item.href)}
+                  className={itemClass}
+                  aria-current={active ? 'page' : undefined}
+                >
                   {item.label}
                 </a>
               );
@@ -211,8 +231,8 @@ export function SiteHeader() {
                       {item.links.map((link) => (
                         <li key={link.label}>
                           <a
-                            href={link.href}
-                            onClick={(event) => onNavigate(event, link.href)}
+                            href={withRegion(region, link.href)}
+                            onClick={(event) => onNavigate(event, withRegion(region, link.href))}
                             className="block rounded-xl px-3 py-2.5 text-[16px] font-medium text-[#171E4B] hover:bg-[#F3FBF8] hover:text-[#24C68D]"
                           >
                             {link.label}
@@ -228,6 +248,7 @@ export function SiteHeader() {
         </nav>
 
         <div className="hidden items-center gap-3 lg:flex">
+          <RegionSelector tone={overLaser && !open ? 'laser' : 'default'} />
           <a
             href={siteLinks.login}
             rel="noopener noreferrer"
@@ -240,7 +261,7 @@ export function SiteHeader() {
           >
             Log in
           </a>
-          <PrimaryLink href={siteLinks.startFree}>Start for free</PrimaryLink>
+          <PrimaryLink href={startFree}>Start for free</PrimaryLink>
         </div>
 
         <button
@@ -266,7 +287,10 @@ export function SiteHeader() {
           className="border-t border-[#171E4B]/8 bg-white px-5 py-4 lg:hidden"
         >
           <nav className="flex flex-col" aria-label="Mobile">
-            {NAV.map((item) =>
+            <div className="border-b border-[#171E4B]/6 py-2">
+              <RegionSelector />
+            </div>
+            {nav.map((item) =>
               isMenu(item) ? (
                 <div key={item.label} className="border-b border-[#171E4B]/6 py-2">
                   <p className="flex min-h-11 items-center text-[17px] font-semibold text-[#171E4B]">
@@ -275,8 +299,8 @@ export function SiteHeader() {
                   {item.links.map((link) => (
                     <a
                       key={link.label}
-                      href={link.href}
-                      onClick={(event) => onNavigate(event, link.href)}
+                      href={withRegion(region, link.href)}
+                      onClick={(event) => onNavigate(event, withRegion(region, link.href))}
                       className="flex min-h-11 items-center pl-4 text-[16px] font-medium text-[#62697C]"
                     >
                       {link.label}
@@ -286,8 +310,8 @@ export function SiteHeader() {
               ) : (
                 <a
                   key={item.label}
-                  href={item.href}
-                  onClick={(event) => onNavigate(event, item.href)}
+                  href={withRegion(region, item.href)}
+                  onClick={(event) => onNavigate(event, withRegion(region, item.href))}
                   className="flex min-h-11 items-center border-b border-[#171E4B]/6 text-[17px] font-semibold text-[#171E4B]"
                 >
                   {item.label}
@@ -302,7 +326,7 @@ export function SiteHeader() {
             >
               Log in
             </a>
-            <PrimaryLink href={siteLinks.startFree} className="mt-3 w-full">
+            <PrimaryLink href={startFree} className="mt-3 w-full">
               Start for free
             </PrimaryLink>
           </nav>

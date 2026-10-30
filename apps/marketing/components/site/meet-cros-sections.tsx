@@ -1,5 +1,6 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import { useEffect, useState, type ReactNode } from 'react';
 import {
   ArrowRight,
@@ -14,6 +15,7 @@ import {
 } from 'lucide-react';
 
 import { PrimaryLink, SecondaryLink } from '@/components/site/buttons';
+import { regionFromPathname, registerHref, withRegion } from '@/lib/regions';
 import { siteLinks } from '@/lib/site-links';
 import { cn } from '@/lib/utils';
 
@@ -235,6 +237,7 @@ function Callout({
 }
 
 export function MeetCrosSections() {
+  const region = regionFromPathname(usePathname() || '/AU');
   return (
     <>
       <section id="ai" className="bg-white px-6 py-20 text-[#172033] md:px-10 md:py-28">
@@ -388,8 +391,8 @@ export function MeetCrosSections() {
           Less admin. CROS managed.
         </h2>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
-          <PrimaryLink href={siteLinks.startFree}>Start for free</PrimaryLink>
-          <SecondaryLink href={siteLinks.bookDemo}>Book a demo</SecondaryLink>
+          <PrimaryLink href={registerHref(region)}>Start for free</PrimaryLink>
+          <SecondaryLink href={withRegion(region, siteLinks.bookDemo)}>Book a demo</SecondaryLink>
         </div>
       </section>
     </>

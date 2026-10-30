@@ -1,11 +1,14 @@
 'use client';
 
+import { usePathname } from 'next/navigation';
 import { useRef } from 'react';
 
 import { LaserFlow } from '@/components/site/laser-flow';
-import { isExternalHref, siteLinks } from '@/lib/site-links';
+import { regionFromPathname, registerHref } from '@/lib/regions';
+import { isExternalHref } from '@/lib/site-links';
 
 export function MeetCrosHero() {
+  const startFree = registerHref(regionFromPathname(usePathname() || '/AU'));
   const surfaceRef = useRef<HTMLDivElement>(null);
 
   return (
@@ -60,9 +63,9 @@ export function MeetCrosHero() {
                 CROS manage your properties, leasing, inspections and maintenance in one place.
               </p>
               <a
-                href={siteLinks.startFree}
+                href={startFree}
                 className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-[#C8FFF3] px-7 text-[16px] font-semibold text-[#06231C] transition-colors hover:bg-white"
-                {...(isExternalHref(siteLinks.startFree) ? { rel: 'noopener noreferrer' } : {})}
+                {...(isExternalHref(startFree) ? { rel: 'noopener noreferrer' } : {})}
               >
                 Start for free
               </a>

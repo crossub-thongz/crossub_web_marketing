@@ -2,6 +2,7 @@ import { ArrowRight, ClipboardCheck, CreditCard, FileText, MessageCircle, Users,
 
 import { PrimaryLink, SecondaryLink } from '@/components/site/buttons';
 import { AiControl, PeekCarousel, PlatformShowcase, WhyShowcase } from '@/components/site/home-carousels';
+import { offersServices, registerHref, withRegion, type RegionCode } from '@/lib/regions';
 import { siteLinks } from '@/lib/site-links';
 
 const MANAGE = [
@@ -51,7 +52,11 @@ const TENANT_PORTAL = [
   },
 ] as const;
 
-export function HomePage() {
+export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
+  const servicesOffered = offersServices(region);
+  const startFree = registerHref(region);
+  const bookDemo = withRegion(region, siteLinks.bookDemo);
+  const software = withRegion(region, siteLinks.software);
   return (
     <main id="main">
       <section className="-mt-[8vh] overflow-hidden bg-[radial-gradient(circle_at_50%_18%,_#E7FBF4_0%,_#ffffff_46%)] px-6 pt-8 pb-16 md:px-10 md:pt-10 md:pb-20">
@@ -76,8 +81,8 @@ export function HomePage() {
             software and expert AI built in support when you need it.
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-            <PrimaryLink href={siteLinks.startFree}>Start for free</PrimaryLink>
-            <SecondaryLink href={siteLinks.bookDemo}>Book a demo</SecondaryLink>
+            <PrimaryLink href={startFree}>Start for free</PrimaryLink>
+            <SecondaryLink href={bookDemo}>Book a demo</SecondaryLink>
           </div>
         </div>
       </section>
@@ -141,7 +146,8 @@ export function HomePage() {
                 </h3>
                 <p className="mx-auto mt-4 max-w-[42ch] text-[14px] leading-[1.45] sm:text-[15px]">
                   Your team can complete visits in the app and keep the photos and report on the
-                  property. Booking a CROSSUB inspector is a separate paid visit.
+                  property.
+                  {servicesOffered ? ' Booking a CROSSUB inspector is a separate paid visit.' : ''}
                 </p>
               </div>
               <img
@@ -166,6 +172,7 @@ export function HomePage() {
                 <p>
                   From inspections to maintenance, CROS AI helps turn your instructions into action.
                 </p>
+                <p>Free real-time market data is included, which is needed for conducting rent reviews.</p>
               </div>
               <div className="relative mt-auto">
                 <img src="/home/ways/ai-ask.png" alt="" className="w-full" />
@@ -271,7 +278,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section id="solutions" className="scroll-mt-28 px-6 py-16 md:px-10 md:py-24">
+      {servicesOffered ? <section id="solutions" className="scroll-mt-28 px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto w-full max-w-[1100px] text-center">
           <h2 className="text-[40px] leading-[1.05] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[52px]">
             More than software. Real support for your agency.
@@ -296,7 +303,7 @@ export function HomePage() {
                   </h3>
                   <p className="mt-3 text-[16px] leading-[1.6] text-[#62697C]">{item.body}</p>
                   <a
-                    href={item.href}
+                    href={withRegion(region, item.href)}
                     className="mt-auto inline-flex items-center gap-1 pt-6 text-[15px] font-semibold text-[#171E4B] underline decoration-[#171E4B]/40 underline-offset-4 hover:text-[#24C68D]"
                   >
                     Explore More
@@ -310,7 +317,7 @@ export function HomePage() {
             With CROSSUB, you have the software, the AI, and the service support to grow.
           </p>
         </div>
-      </section>
+      </section> : null}
 
       <section id="ai" className="scroll-mt-28 bg-[#F4F6F8] px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto w-full max-w-[1480px]">
@@ -356,20 +363,56 @@ export function HomePage() {
             Everything your property management needs.
             <span className="block">In one place.</span>
           </h2>
-          <p className="mt-4 text-[16px] font-semibold text-[#24C68D]">
-            One connected platform & Software and on-site support
-          </p>
-          <p className="mx-auto mt-3 max-w-[720px] text-[18px] leading-[1.6] text-[#62697C]">
-            CROSSUB keeps the day-to-day work connected, so your team can move faster without
-            juggling multiple tools.
-          </p>
-          <PlatformShowcase />
-          <a
-            href={siteLinks.software}
-            className="mt-12 inline-flex h-11 items-center rounded-full border border-[#171E4B]/25 px-6 text-[15px] font-semibold text-[#171E4B] hover:border-[#24C68D] hover:text-[#24C68D]"
-          >
-            Explore more
-          </a>
+          {servicesOffered ? (
+            <>
+              <p className="mt-4 text-[16px] font-semibold text-[#24C68D]">
+                Connected software. Experienced people. Trusted maintenance support.
+              </p>
+              <div className="mx-auto mt-4 max-w-[760px] space-y-4 text-[18px] leading-[1.6] text-[#62697C]">
+                <p>
+                  CROSSUB brings together technology and more than six years of hands-on Full-Service
+                  Property Management experience.
+                </p>
+                <p>
+                  Along the way, we’ve built an extensive network of reliable, CROSSUB-approved
+                  maintenance providers. When your agency needs extra support or the right trade for a
+                  job, you can tap into our established network instead of starting your search from
+                  scratch.
+                </p>
+                <p>
+                  Get work moving sooner, connect with dependable providers, and find cost-effective
+                  maintenance solutions — all through CROSSUB.
+                </p>
+              </div>
+              <PlatformShowcase
+                caption={{
+                  title: 'Our experience. Your extended team.',
+                  body: 'Access a maintenance network built through years of managing real properties and solving everyday problems.',
+                }}
+              />
+              <a
+                href={withRegion(region, '/#solutions')}
+                className="mt-12 inline-flex h-11 items-center rounded-full border border-[#171E4B]/25 px-6 text-[15px] font-semibold text-[#171E4B] hover:border-[#24C68D] hover:text-[#24C68D]"
+              >
+                Explore our services
+              </a>
+            </>
+          ) : (
+            <>
+              <p className="mt-4 text-[16px] font-semibold text-[#24C68D]">One connected platform</p>
+              <p className="mx-auto mt-3 max-w-[720px] text-[18px] leading-[1.6] text-[#62697C]">
+                CROSSUB keeps the day-to-day work connected, so your team can move faster without
+                juggling multiple tools.
+              </p>
+              <PlatformShowcase />
+              <a
+                href={software}
+                className="mt-12 inline-flex h-11 items-center rounded-full border border-[#171E4B]/25 px-6 text-[15px] font-semibold text-[#171E4B] hover:border-[#24C68D] hover:text-[#24C68D]"
+              >
+                Explore more
+              </a>
+            </>
+          )}
         </div>
       </section>
 
@@ -383,8 +426,8 @@ export function HomePage() {
           Free software, with expert support when you need it.
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-          <PrimaryLink href={siteLinks.startFree}>Start for free</PrimaryLink>
-          <SecondaryLink href={siteLinks.bookDemo}>Book a demo</SecondaryLink>
+          <PrimaryLink href={startFree}>Start for free</PrimaryLink>
+          <SecondaryLink href={bookDemo}>Book a demo</SecondaryLink>
         </div>
       </section>
     </main>

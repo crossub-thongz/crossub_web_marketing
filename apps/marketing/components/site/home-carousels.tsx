@@ -300,9 +300,13 @@ const PLATFORM = [
   },
 ] as const;
 
-export function PlatformShowcase() {
+export function PlatformShowcase({
+  caption,
+}: {
+  caption?: { title: string; body: string };
+}) {
   const [index, setIndex] = useState(3);
-  const topic = PLATFORM[index] ?? PLATFORM[3];
+  const topic = caption ?? PLATFORM[index] ?? PLATFORM[3];
 
   return (
     <div className="mt-14 grid items-center gap-10 text-left lg:grid-cols-[1.1fr_0.9fr]">
@@ -311,17 +315,26 @@ export function PlatformShowcase() {
         {PLATFORM.map((item, itemIndex) => {
           const Icon = item.icon;
           return (
-            <button
-              key={item.title}
-              type="button"
-              aria-label={item.title}
-              aria-pressed={itemIndex === index}
-              onMouseEnter={() => setIndex(itemIndex)}
-              onFocus={() => setIndex(itemIndex)}
-              className={`absolute grid size-16 place-items-center rounded-full shadow-md transition-transform duration-300 ease-out hover:-translate-y-0.5 ${item.className}`}
-            >
-              <Icon className="size-7" aria-hidden />
-            </button>
+            caption ? (
+              <span
+                key={item.title}
+                className={`absolute grid size-16 place-items-center rounded-full shadow-md ${item.className}`}
+              >
+                <Icon className="size-7" aria-hidden />
+              </span>
+            ) : (
+              <button
+                key={item.title}
+                type="button"
+                aria-label={item.title}
+                aria-pressed={itemIndex === index}
+                onMouseEnter={() => setIndex(itemIndex)}
+                onFocus={() => setIndex(itemIndex)}
+                className={`absolute grid size-16 place-items-center rounded-full shadow-md transition-transform duration-300 ease-out hover:-translate-y-0.5 ${item.className}`}
+              >
+                <Icon className="size-7" aria-hidden />
+              </button>
+            )
           );
         })}
       </div>
