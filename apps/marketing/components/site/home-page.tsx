@@ -190,9 +190,7 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
           >
             <div className="text-center lg:text-left">
               <p className="text-[15px] font-semibold text-[#7CFFE8]">
-                {siteLinks.appStore || siteLinks.googlePlay
-                  ? 'Available on iPhone and Android'
-                  : 'Coming soon to iPhone and Android'}
+                Available on iPhone and Android
               </p>
               <h2 className="mt-3 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] sm:text-[44px]">
                 Get the CROSSUB App
@@ -201,36 +199,38 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
                 Take the free inspection app on site. Capture photos and notes, complete the visit,
                 and the report lands straight in your CROSSUB CRM.
               </p>
-              {siteLinks.appStore || siteLinks.googlePlay ? (
-                <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-                  {siteLinks.appStore ? (
-                    <a
-                      href={siteLinks.appStore}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Download the CROSSUB App on the App Store"
-                      className="inline-flex rounded-[10px] ring-1 ring-white/40 transition hover:-translate-y-0.5"
-                    >
-                      <img src="/stores/app-store-badge.svg" alt="" className="h-12 w-auto" />
-                    </a>
-                  ) : null}
-                  {siteLinks.googlePlay ? (
-                    <a
-                      href={siteLinks.googlePlay}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      aria-label="Get the CROSSUB App on Google Play"
-                      className="inline-flex rounded-[10px] ring-1 ring-white/40 transition hover:-translate-y-0.5"
-                    >
-                      <img src="/stores/google-play-badge.png" alt="" className="h-12 w-auto" />
-                    </a>
-                  ) : null}
-                </div>
-              ) : null}
+              <div className="mt-8 flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                <a
+                  href={siteLinks.appStore}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Download CROS INSPECT on the App Store"
+                  className="inline-flex rounded-[10px] ring-1 ring-white/40 transition hover:-translate-y-0.5"
+                >
+                  <img src="/stores/app-store-badge.svg" alt="" className="h-12 w-auto" />
+                </a>
+                <a
+                  href={siteLinks.googlePlay}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label="Get CROS INSPECT on Google Play"
+                  className="inline-flex overflow-hidden rounded-[10px] ring-1 ring-white/40 transition hover:-translate-y-0.5"
+                >
+                  <img src="/stores/google-play-badge.png" alt="" className="h-[72px] w-auto" />
+                </a>
+              </div>
+              <a
+                href={siteLinks.inspectWeb}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="mt-5 inline-flex text-[15px] font-semibold text-[#7CFFE8] underline decoration-[#7CFFE8]/40 underline-offset-4 transition hover:decoration-[#7CFFE8]"
+              >
+                Download from the official website
+              </a>
             </div>
             <img
               src="/home/inspection-panel.jpg"
-              alt="CROSSUB App inspection list"
+              alt="CROS INSPECT inspection list"
               className="mx-auto w-full max-w-[380px] rounded-[24px] shadow-[0_24px_60px_rgba(0,0,0,0.3)]"
             />
           </div>

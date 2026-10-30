@@ -27,8 +27,15 @@ export const siteLinks = {
     'https://crossub-mobile-agent-prod.onrender.com/register',
   ),
   tenantPortal: env('NEXT_PUBLIC_TENANT_PORTAL_URL', 'https://tenant.crossub.com.au/login'),
-  appStore: process.env.NEXT_PUBLIC_APP_STORE_URL?.trim() ?? '',
-  googlePlay: process.env.NEXT_PUBLIC_GOOGLE_PLAY_URL?.trim() ?? '',
+  appStore: env('NEXT_PUBLIC_APP_STORE_URL', 'https://testflight.apple.com/join/mT8qJ9aR'),
+  googlePlay: env(
+    'NEXT_PUBLIC_GOOGLE_PLAY_URL',
+    'https://play.google.com/apps/internaltest/4699912119089397915',
+  ),
+  inspectWeb: env(
+    'NEXT_PUBLIC_INSPECTOR_URL',
+    'https://crossub-mobile-inspector-prod.onrender.com',
+  ),
 } as const;
 
 export const company = {
