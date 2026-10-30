@@ -51,9 +51,6 @@ const TENANT_PORTAL = [
   },
 ] as const;
 
-const liftCard =
-  'shadow-[0_28px_70px_-36px_rgba(23,30,75,0.18)] transition-[background-color,transform,box-shadow] duration-300 ease-out hover:-translate-y-1.5 hover:bg-[#E4EAF2] hover:shadow-[0_36px_64px_-28px_rgba(23,30,75,0.16)]';
-
 export function HomePage() {
   return (
     <main id="main">
@@ -85,7 +82,7 @@ export function HomePage() {
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-white to-[#DEFBEF] px-6 pt-10 pb-16 text-center md:px-10 md:pt-12 md:pb-20">
+      <section className="bg-gradient-to-b from-white to-[#DEFCF0] px-6 pt-10 pb-16 text-center md:px-10 md:pt-12 md:pb-20">
         <h2 className="text-[40px] leading-[1.05] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[56px]">
           Start Free Scale Your Way
         </h2>
@@ -94,8 +91,18 @@ export function HomePage() {
         </p>
       </section>
 
-      <section className="overflow-hidden bg-[#DEFBEF] px-6 py-16 md:px-10 md:py-24">
-        <div className="mx-auto w-full max-w-[1480px]">
+      <section className="relative overflow-hidden bg-[#DEFCF0] px-6 py-16 md:px-10 md:py-24">
+        <img
+          src="/home/ways/mark.png"
+          alt=""
+          className="pointer-events-none absolute -bottom-16 -left-[18%] w-[min(720px,55%)] max-w-none select-none"
+        />
+        <img
+          src="/home/ways/mark.png"
+          alt=""
+          className="pointer-events-none absolute -top-24 -right-[22%] w-[min(640px,48%)] max-w-none -scale-x-100 select-none"
+        />
+        <div className="relative mx-auto w-full max-w-[1480px]">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-[40px] leading-[1.05] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[56px]">
               3 ways CROS helps.
@@ -107,71 +114,66 @@ export function HomePage() {
           </div>
           <div className="mt-12">
             <PeekCarousel count={3} activeDot="bg-[#24C68D]" auto>
-              <article className={`flex w-[min(820px,86%)] shrink-0 snap-start flex-col overflow-hidden rounded-[36px] bg-white px-6 pt-10 pb-0 text-center sm:px-10 ${liftCard}`}>
-                <p className="text-[28px] font-semibold tracking-[0.16em] text-[#171E4B]">FREE</p>
-                <h3 className="mt-1 text-[40px] leading-none font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[48px]">
-                  CRM System
-                </h3>
-                <p className="mx-auto mt-4 max-w-[520px] text-[16px] leading-[1.55] text-[#62697C]">
-                  Owners, tenants, leasing, maintenance and the property record in one FREE system.
-                  Trust money stays with a person.
+            <article className="flex w-[min(780px,84%)] shrink-0 snap-start flex-col overflow-hidden rounded-[28px] bg-white px-5 pt-8 text-center sm:px-7">
+              <p className="text-[clamp(32px,3vw,48px)] leading-none font-medium tracking-[-0.03em] text-[#194878]">
+                FREE
+              </p>
+              <h3 className="mt-1 text-[clamp(34px,3.3vw,52px)] leading-none font-bold tracking-[-0.03em] text-[#194878]">
+                CRM System
+              </h3>
+              <p className="mx-auto mt-4 max-w-[36ch] text-[14px] leading-[1.45] text-[#62697C] sm:text-[15px]">
+                Owners, tenants, leasing, maintenance and the property record in one FREE system.
+                Trust money stays with a person.
+              </p>
+              <img
+                src="/home/ways/crm-panels.png"
+                alt=""
+                className="-mx-5 mt-auto w-[calc(100%+2.5rem)] max-w-none self-center sm:-mx-7 sm:w-[calc(100%+3.5rem)]"
+              />
+            </article>
+            <article className="flex w-[min(780px,84%)] shrink-0 snap-start flex-col">
+              <div className="flex flex-1 flex-col rounded-[28px] bg-[#194878] px-5 pt-8 pb-28 text-center text-white sm:px-7">
+                <p className="text-[clamp(32px,3vw,48px)] leading-none font-medium tracking-[-0.03em]">
+                  FREE
                 </p>
-                <div className="relative mx-auto mt-8 h-[250px] w-full max-w-[640px] overflow-hidden">
-                  <img
-                    src="/home/crm-a.jpg?v=2"
-                    alt=""
-                    className="absolute top-8 left-0 w-[58%] rounded-2xl shadow-[0_18px_40px_-16px_rgba(23,30,75,0.18)]"
-                  />
-                  <img
-                    src="/home/crm-b.jpg?v=2"
-                    alt=""
-                    className="absolute top-0 right-0 w-[56%] rounded-2xl shadow-[0_20px_44px_-16px_rgba(23,30,75,0.2)]"
-                  />
-                </div>
-              </article>
-              <article className="flex w-[min(640px,78%)] shrink-0 snap-start flex-col rounded-[36px] bg-[#194778] px-6 pt-10 pb-8 text-center text-white shadow-[0_28px_70px_-36px_rgba(23,30,75,0.28)] transition-transform duration-300 ease-out hover:-translate-y-1.5 sm:px-10">
-                <p className="text-[28px] font-semibold tracking-[0.16em]">FREE</p>
-                <h3 className="mt-1 text-[40px] leading-none font-bold tracking-[-0.03em] sm:text-[48px]">
+                <h3 className="mt-1 text-[clamp(34px,3.3vw,52px)] leading-none font-bold tracking-[-0.03em]">
                   Inspection App
                 </h3>
-                <p className="mx-auto mt-4 max-w-[460px] text-[16px] leading-[1.55] text-white/85">
+                <p className="mx-auto mt-4 max-w-[42ch] text-[14px] leading-[1.45] sm:text-[15px]">
                   Your team can complete visits in the app and keep the photos and report on the
                   property. Booking a CROSSUB inspector is a separate paid visit.
                 </p>
-                <img
-                  src="/home/inspection-panel.jpg"
-                  alt=""
-                  className="mx-auto mt-8 w-full max-w-[420px] rounded-[24px]"
-                />
-                <p className="mx-auto mt-6 max-w-[460px] text-[13px] leading-[1.5] text-white/70">
-                  * The CROS inspection app is exclusive to the CROSSUB system.
+              </div>
+              <img
+                src="/home/ways/inspection-arranged.png"
+                alt=""
+                className="relative z-10 mx-auto -mt-20 w-[min(340px,72%)]"
+              />
+            </article>
+            <article className="flex w-[min(780px,84%)] shrink-0 snap-start flex-col overflow-hidden rounded-[28px] bg-[#071012] px-5 pt-8 pb-6 text-center text-white sm:px-6">
+              <p className="text-[clamp(32px,3vw,48px)] leading-none font-semibold tracking-[-0.03em] text-[#24C68D]">
+                FREE
+              </p>
+              <h3 className="mt-1 text-[clamp(34px,3.3vw,52px)] leading-none font-bold tracking-[-0.03em] text-[#24C68D]">
+                AI Assistant
+              </h3>
+              <div className="mx-auto mt-4 max-w-[46ch] space-y-2 text-[13px] leading-[1.45] sm:text-[14px]">
+                <p>Meet CROS AI — your property management AI that gets things done.</p>
+                <p>
+                  Tell CROS AI what you need. It works inside CROSSUB to find information, prepare
+                  updates, and carry out tasks — with you in control.
                 </p>
-              </article>
-              <article className={`w-[min(720px,82%)] shrink-0 snap-start rounded-[36px] bg-white px-6 pt-10 pb-8 text-center sm:px-10 ${liftCard}`}>
-                <p className="text-[28px] font-semibold tracking-[0.16em] text-[#171E4B]">FREE</p>
-                <h3 className="mt-1 text-[40px] leading-none font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[48px]">
-                  AI
-                </h3>
-                <p className="mx-auto mt-5 max-w-[34rem] text-[22px] leading-[1.3] font-semibold tracking-[-0.02em] text-[#171E4B]">
+                <p>
+                  From inspections to maintenance, CROS AI helps turn your instructions into action.
+                </p>
+              </div>
+              <div className="relative mt-auto">
+                <img src="/home/ways/ai-ask.png" alt="" className="w-full" />
+                <p className="absolute top-[76%] left-[2%] whitespace-nowrap text-[clamp(13px,1.45vw,18px)] leading-none font-bold">
                   Stop clicking. Start asking.
                 </p>
-                <div className="mx-auto mt-4 max-w-[36rem] space-y-3 text-[16px] leading-[1.55] text-[#62697C]">
-                  <p>Meet CROS AI — your property management AI that gets things done.</p>
-                  <p>
-                    Tell CROS AI what you need. It works inside CROSSUB to find information, prepare
-                    updates, and carry out tasks — with you in control.
-                  </p>
-                  <p>
-                    From inspections to maintenance, CROS AI helps turn your instructions into
-                    action.
-                  </p>
-                </div>
-                <img
-                  src="/home/events.jpg?v=2"
-                  alt=""
-                  className="mx-auto mt-8 w-full rounded-2xl shadow-[0_18px_40px_-18px_rgba(23,30,75,0.18)]"
-                />
-              </article>
+              </div>
+            </article>
             </PeekCarousel>
           </div>
 
