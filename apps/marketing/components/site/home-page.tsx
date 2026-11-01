@@ -117,9 +117,9 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
               CROS prepares drafts, tasks and insights. Your team stays in the approval loop.
             </p>
           </div>
-          <div className="mt-12">
+          <div className="mx-auto mt-12 max-w-[820px]">
             <PeekCarousel count={3} activeDot="bg-[#24C68D]" auto>
-            <article className="flex w-[min(780px,84%)] shrink-0 snap-start flex-col overflow-hidden rounded-[28px] bg-white px-5 pt-8 text-center sm:px-7">
+            <article className="flex w-full shrink-0 snap-start flex-col overflow-hidden rounded-[28px] bg-white px-5 pt-8 text-center sm:px-7">
               <p className="text-[clamp(32px,3vw,48px)] leading-none font-medium tracking-[-0.03em] text-[#194878]">
                 FREE
               </p>
@@ -136,7 +136,7 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
                 className="-mx-5 mt-auto w-[calc(100%+2.5rem)] max-w-none self-center sm:-mx-7 sm:w-[calc(100%+3.5rem)]"
               />
             </article>
-            <article className="flex w-[min(780px,84%)] shrink-0 snap-start flex-col">
+            <article className="flex w-full shrink-0 snap-start flex-col">
               <div className="flex flex-1 flex-col rounded-[28px] bg-[#194878] px-5 pt-8 pb-28 text-center text-white sm:px-7">
                 <p className="text-[clamp(32px,3vw,48px)] leading-none font-medium tracking-[-0.03em]">
                   FREE
@@ -156,7 +156,7 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
                 className="relative z-10 mx-auto -mt-20 w-[min(340px,72%)]"
               />
             </article>
-            <article className="flex w-[min(780px,84%)] shrink-0 snap-start flex-col overflow-hidden rounded-[28px] bg-[#071012] px-5 pt-8 pb-6 text-center text-white sm:px-6">
+            <article className="flex w-full shrink-0 snap-start flex-col overflow-hidden rounded-[28px] bg-[#071012] px-5 pt-8 pb-6 text-center text-white sm:px-6">
               <p className="text-[clamp(32px,3vw,48px)] leading-none font-semibold tracking-[-0.03em] text-[#24C68D]">
                 FREE
               </p>

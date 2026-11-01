@@ -14,7 +14,7 @@ import {
   stripRegion,
   withRegion,
 } from '@/lib/regions';
-import { siteLinks } from '@/lib/site-links';
+import { loginHrefs, siteLinks } from '@/lib/site-links';
 import { cn } from '@/lib/utils';
 
 const NAV = [
@@ -68,6 +68,8 @@ export function SiteHeader() {
   const pathname = usePathname();
   const [open, setOpen] = useState(false);
   const [menu, setMenu] = useState<string | null>(null);
+  const [loginOpen, setLoginOpen] = useState(false);
+  const loginRef = useRef<HTMLDivElement>(null);
   const [scrolled, setScrolled] = useState(false);
   const [overLaser, setOverLaser] = useState(pathname === siteLinks.software);
   const buttonRef = useRef<HTMLButtonElement>(null);
@@ -104,6 +106,22 @@ export function SiteHeader() {
       window.removeEventListener('resize', update);
     };
   }, [pathname]);
+
+  useEffect(() => {
+    if (!loginOpen) return;
+    const onKey = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setLoginOpen(false);
+    };
+    const onPointer = (event: MouseEvent) => {
+      if (!loginRef.current?.contains(event.target as Node)) setLoginOpen(false);
+    };
+    document.addEventListener('keydown', onKey);
+    document.addEventListener('mousedown', onPointer);
+    return () => {
+      document.removeEventListener('keydown', onKey);
+      document.removeEventListener('mousedown', onPointer);
+    };
+  }, [loginOpen]);
 
   useEffect(() => {
     if (!menu) return;
@@ -144,6 +162,11 @@ export function SiteHeader() {
   const path = stripRegion(pathname);
   const nav = NAV.filter((item) => item.label !== 'Services' || offersServices(region));
   const startFree = registerHref(region);
+  const logins = loginHrefs(region);
+  const loginLinks = [
+    { label: 'Managing Agent', href: logins.agent },
+    { label: 'Tenant', href: logins.tenant },
+  ] as const;
 
   const groupActive = (label: string) => {
     if (label === 'Home') return path === '/';
@@ -217,7 +240,10 @@ export function SiteHeader() {
                   type="button"
                   className={cn(itemClass, expanded && 'text-[#24C68D]')}
                   aria-expanded={expanded}
-                  onClick={() => setMenu(expanded ? null : item.label)}
+                  onClick={() => {
+                    setLoginOpen(false);
+                    setMenu(expanded ? null : item.label);
+                  }}
                 >
                   {item.label}
                   <ChevronDown
@@ -249,19 +275,52 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <RegionSelector tone={overLaser && !open ? 'laser' : 'default'} />
-          <a
-            href={siteLinks.login}
-            rel="noopener noreferrer"
-            className={cn(
-              'inline-flex h-11 items-center px-4 text-[15px] font-semibold',
-              overLaser && !open
-                ? 'rounded-full bg-[#07141C]/75 text-white shadow-[0_10px_28px_rgba(0,0,0,0.4)] ring-1 ring-white/20 backdrop-blur-md'
-                : 'text-[#171E4B]',
-            )}
-          >
-            Log in
-          </a>
           <PrimaryLink href={startFree}>Start for free</PrimaryLink>
+          <div
+            ref={loginRef}
+            className="relative"
+            onMouseEnter={() => {
+              setMenu(null);
+              setLoginOpen(true);
+            }}
+            onMouseLeave={() => setLoginOpen(false)}
+          >
+            <button
+              type="button"
+              className={cn(
+                'inline-flex h-11 items-center gap-1 px-4 text-[15px] font-semibold',
+                overLaser && !open
+                  ? 'rounded-full bg-[#07141C]/75 text-white shadow-[0_10px_28px_rgba(0,0,0,0.4)] ring-1 ring-white/20 backdrop-blur-md'
+                  : 'text-[#171E4B]',
+              )}
+              aria-expanded={loginOpen}
+              onClick={() => {
+                setMenu(null);
+                setLoginOpen((value) => !value);
+              }}
+            >
+              Log in
+              <ChevronDown className={cn('size-4 transition-transform', loginOpen && 'rotate-180')} aria-hidden />
+            </button>
+            {loginOpen ? (
+              <div className="absolute top-full right-0 z-50 w-56 pt-3">
+                <ul className="rounded-2xl bg-white p-2 shadow-[0_16px_40px_rgba(23,30,75,0.12)] ring-1 ring-[#171E4B]/8">
+                  {loginLinks.map((link) => (
+                    <li key={link.label}>
+                      <a
+                        href={link.href}
+                        rel="noopener noreferrer"
+                        className="block rounded-xl px-3 py-2.5 text-[16px] font-medium text-[#171E4B] hover:bg-[#F3FBF8] hover:text-[#24C68D]"
+                        onClick={() => setLoginOpen(false)}
+                      >
+                        {link.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ) : null}
+          </div>
         </div>
 
         <button
@@ -318,17 +377,23 @@ export function SiteHeader() {
                 </a>
               ),
             )}
-            <a
-              href={siteLinks.login}
-              rel="noopener noreferrer"
-              className="flex min-h-11 items-center text-[16px] font-semibold text-[#171E4B]"
-              onClick={() => setOpen(false)}
-            >
-              Log in
-            </a>
-            <PrimaryLink href={startFree} className="mt-3 w-full">
+            <PrimaryLink href={startFree} className="mt-3 w-full" >
               Start for free
             </PrimaryLink>
+            <div className="mt-2 border-t border-[#171E4B]/6 pt-2">
+              <p className="flex min-h-11 items-center text-[17px] font-semibold text-[#171E4B]">Log in</p>
+              {loginLinks.map((link) => (
+                <a
+                  key={link.label}
+                  href={link.href}
+                  rel="noopener noreferrer"
+                  className="flex min-h-11 items-center pl-4 text-[16px] font-medium text-[#62697C]"
+                  onClick={() => setOpen(false)}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
           </nav>
         </div>
       ) : null}
