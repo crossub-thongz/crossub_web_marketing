@@ -35,7 +35,7 @@ export const siteLinks = {
   appStore: env('NEXT_PUBLIC_APP_STORE_URL', 'https://testflight.apple.com/join/mT8qJ9aR'),
   googlePlay: env(
     'NEXT_PUBLIC_GOOGLE_PLAY_URL',
-    'https://play.google.com/apps/internaltest/4699912119089397915',
+    'https://play.google.com/store/apps/details?id=com.crossub.inspector',
   ),
 } as const;
 
