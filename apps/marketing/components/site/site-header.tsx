@@ -40,7 +40,7 @@ const NAV = [
     label: 'Support',
     links: [
       { href: siteLinks.help, label: 'FAQs' },
-      { href: siteLinks.privacy, label: 'Privacy Notice' },
+      { href: siteLinks.privacy, label: 'Privacy Policy' },
       { href: '/terms', label: 'Terms of Use' },
     ],
   },
@@ -377,7 +377,7 @@ export function SiteHeader() {
                 </a>
               ),
             )}
-            <PrimaryLink href={startFree} className="mt-3 w-full" >
+            <PrimaryLink href={startFree} className="mt-3 w-full">
               Start for free
             </PrimaryLink>
             <div className="mt-2 border-t border-[#171E4B]/6 pt-2">

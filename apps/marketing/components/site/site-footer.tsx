@@ -34,7 +34,7 @@ const COLUMNS = [
     title: 'Support',
     links: [
       { label: 'FAQs', href: siteLinks.help },
-      { label: 'Privacy Notice', href: siteLinks.privacy },
+      { label: 'Privacy Policy', href: siteLinks.privacy },
       { label: 'Terms of Use', href: '/terms' },
     ],
   },
