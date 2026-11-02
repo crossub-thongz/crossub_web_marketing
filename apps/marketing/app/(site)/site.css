@@ -173,6 +173,63 @@ html:has(.marketing-site) body {
   }
 }
 
+.cros-neon {
+  position: relative;
+  overflow: hidden;
+  border-radius: 28px;
+  background: #060912;
+}
+
+.cros-neon-ring {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  border-radius: inherit;
+  pointer-events: none;
+  filter: blur(10px);
+}
+
+.cros-neon-ring::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 180%;
+  height: 180%;
+  background: conic-gradient(
+    from 0deg,
+    transparent 0deg 40deg,
+    #7cffe8 90deg,
+    #25c68d 140deg,
+    transparent 190deg 230deg,
+    #d8fff3 290deg,
+    #25c68d 330deg,
+    transparent 360deg
+  );
+  transform: translate(-50%, -50%);
+}
+
+.cros-neon-card {
+  position: relative;
+  z-index: 1;
+  margin: 3px;
+  border-radius: 25px;
+  background: #060912;
+  box-shadow: inset 0 0 36px rgba(37, 198, 141, 0.28);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .cros-neon-ring::before {
+    animation: cros-neon-spin 4.5s linear infinite;
+  }
+}
+
+@keyframes cros-neon-spin {
+  to {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+
 @keyframes marketing-float {
   0%,
   100% {
