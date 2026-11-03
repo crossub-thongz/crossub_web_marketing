@@ -33,7 +33,7 @@ export default function PropertyServicesPage() {
 
       <PageSection eyebrow="Two ways in" title="Book the visits, or hand over the daily work.">
         <div className="grid gap-4 md:grid-cols-2">
-          <article className="flex flex-col rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
+          <article className="site-card flex flex-col rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
             <p className="text-[15px] font-semibold text-[#24C68D]">Rental inspection</p>
             <h3 className="mt-3 text-[24px] font-semibold tracking-[-0.02em]">Inspection Only</h3>
             <p className="mt-3 text-[16px] leading-[1.7] text-[#62697C]">
@@ -45,7 +45,7 @@ export default function PropertyServicesPage() {
               See inspections
             </a>
           </article>
-          <article className="flex flex-col rounded-[28px] bg-[#E7FBF4] p-7 ring-1 ring-[#008F65]/10 sm:p-8">
+          <article className="site-card flex flex-col rounded-[28px] bg-[#E7FBF4] p-7 ring-1 ring-[#008F65]/10 sm:p-8">
             <p className="text-[15px] font-semibold text-[#24C68D]">
               Property management support
             </p>
@@ -101,7 +101,7 @@ export default function PropertyServicesPage() {
 
       <PageSection eyebrow="Inspection standard" title="A branded report, back on the file.">
         <div className="grid gap-4 lg:grid-cols-2">
-          <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
+          <article className="site-card rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
             <h3 className="text-[20px] font-semibold">What the report covers</h3>
             <ul className="mt-4 space-y-3 text-[16px] leading-[1.6] text-[#62697C]">
               <li>Agency logo, layout and any extra checks the agency asks for.</li>
@@ -110,7 +110,7 @@ export default function PropertyServicesPage() {
               <li>The file stays in CROSSUB, and the report can be shared or exported as a PDF.</li>
             </ul>
           </article>
-          <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
+          <article className="site-card rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
             <h3 className="text-[20px] font-semibold">Who attends</h3>
             <ul className="mt-4 space-y-3 text-[16px] leading-[1.6] text-[#62697C]">
               <li>Inspectors are trained, know the relevant legislation, and hold a property management certificate.</li>
@@ -124,7 +124,7 @@ export default function PropertyServicesPage() {
 
       <PageSection eyebrow="Response" title="Urgent jobs and ordinary jobs have different clocks.">
         <div className="grid gap-4 md:grid-cols-2">
-          <article className="rounded-[28px] bg-[#FFF8E8] p-7 ring-1 ring-[#E6C56A]/30">
+          <article className="site-card rounded-[28px] bg-[#FFF8E8] p-7 ring-1 ring-[#E6C56A]/30">
             <p className="text-[15px] font-semibold text-[#8A6414]">Urgent</p>
             <p className="mt-3 text-[40px] leading-none font-semibold tracking-[-0.03em] text-[#171E4B]">
               24–48 hours
@@ -137,7 +137,7 @@ export default function PropertyServicesPage() {
               .
             </p>
           </article>
-          <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white">
+          <article className="site-card rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white">
             <p className="text-[15px] font-semibold text-[#24C68D]">Non-urgent</p>
             <p className="mt-3 text-[40px] leading-none font-semibold tracking-[-0.03em] text-[#171E4B]">
               7 business days

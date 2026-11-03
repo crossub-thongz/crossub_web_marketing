@@ -147,7 +147,7 @@ export default function FullServicePage() {
             {BENEFITS.map((item) => (
               <article
                 key={item.title}
-                className="rounded-[24px] border border-[#E1EBE5] bg-white p-7"
+                className="site-card rounded-[24px] border border-[#E1EBE5] bg-white p-7"
               >
                 {item.title === 'People + CROS' ? (
                   <img src="/brand/cros.png" alt="" className="size-11 object-contain" />
@@ -180,7 +180,7 @@ export default function FullServicePage() {
             {SERVICES.map((item) => (
               <article
                 key={item.title}
-                className="flex gap-5 rounded-[24px] border border-[#E0EAE3] bg-white p-7"
+                className="site-card flex gap-5 rounded-[24px] border border-[#E0EAE3] bg-white p-7"
               >
                 <IconTile>
                   <item.icon className="size-5" strokeWidth={2} aria-hidden />
@@ -222,7 +222,7 @@ export default function FullServicePage() {
             </p>
           </div>
           <div className="mt-12 grid gap-4 lg:grid-cols-2">
-            <article className="rounded-[24px] border border-[#DCEAE1] bg-white p-7 sm:p-8">
+            <article className="site-card rounded-[24px] border border-[#DCEAE1] bg-white p-7 sm:p-8">
               <h3 className="text-[22px] font-semibold text-[#173E3B]">Your agency</h3>
               <ul className="mt-4 divide-y divide-[#E4EDE8]">
                 {[
@@ -238,7 +238,7 @@ export default function FullServicePage() {
                 ))}
               </ul>
             </article>
-            <article className="rounded-[24px] bg-[#E4F5EB] p-7 sm:p-8">
+            <article className="site-card rounded-[24px] bg-[#E4F5EB] p-7 sm:p-8">
               <h3 className="text-[22px] font-semibold text-[#173E3B]">CROSSUB team</h3>
               <ul className="mt-4 divide-y divide-[#C9E4D6]">
                 {[
@@ -293,7 +293,7 @@ export default function FullServicePage() {
               <li>Inspection Only is a separate paid visit, not this percentage</li>
             </ul>
           </div>
-          <article className="rounded-[28px] bg-white p-7 text-[#173E3B] shadow-[0_20px_60px_rgba(22,79,68,0.08)] sm:p-9">
+          <article className="site-card rounded-[28px] bg-white p-7 text-[#173E3B] shadow-[0_20px_60px_rgba(22,79,68,0.08)] sm:p-9">
             <p className="text-[72px] leading-none font-bold tracking-[-0.06em] text-[#24C68D]">30%</p>
             <p className="mt-2 text-[16px] text-[#71857D]">of your existing property management fee</p>
             <div className="my-6 border-t border-[#E5EDE6]" />
@@ -339,7 +339,7 @@ export default function FullServicePage() {
           </div>
           <div className="mt-12 grid gap-4 lg:grid-cols-3">
             {ONBOARDING.map((step) => (
-              <article key={step.n} className="rounded-[24px] border border-[#DEEBE3] bg-white p-7">
+              <article key={step.n} className="site-card rounded-[24px] border border-[#DEEBE3] bg-white p-7">
                 <span className="grid size-11 place-items-center rounded-2xl bg-[#E1F4E8] text-[14px] font-bold text-[#24C68D]">
                   {step.n}
                 </span>

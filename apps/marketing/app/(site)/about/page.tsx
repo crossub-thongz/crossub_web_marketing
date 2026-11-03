@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import { headers } from 'next/headers';
-import { Ear, Eye, Handshake, Target, TrendingUp } from 'lucide-react';
 
 import { AboutEcosystem } from '@/components/site/about-ecosystem';
 import { PrimaryLink } from '@/components/site/buttons';
@@ -17,7 +16,8 @@ const PRINCIPLES = [
   {
     title: 'GLOBAL VISION',
     kicker: 'Australian roots. Global ambition',
-    icon: Eye,
+    icon: '/about/icon-vision.png',
+    art: '/about/principle-globe.png',
     body: [
       'We are a proudly Australian company. Australia is where our story began, where agencies first put their trust in us, and where we learned the lessons that continue to shape CROSSUB.',
       'Now, we are building from Australia for the world.',
@@ -26,7 +26,8 @@ const PRINCIPLES = [
   {
     title: 'BRAND OUTRO',
     kicker: 'We are CROSSUB',
-    icon: Handshake,
+    icon: '/about/icon-outro.png',
+    art: '/about/principle-arch.png',
     body: [
       'As we grow, we carry that experience with us: listen carefully, earn trust, and build around the people doing the work.',
       'We started by helping agencies deliver.',
@@ -36,7 +37,8 @@ const PRINCIPLES = [
   {
     title: 'PURPOSE',
     kicker: 'Our Goal',
-    icon: Target,
+    icon: '/about/icon-purpose.png',
+    art: '/about/principle-arch-bars.png',
     body: [
       'Give agencies the support to achieve more.',
       'Whether an agency needs better tools, extra hands, or a team to support its property management business.',
@@ -55,35 +57,34 @@ const EVOLUTION = [
   {
     n: '01',
     title: 'Showing up',
-    icon: Handshake,
+    icon: '/about/icon-handshake.png',
     body: 'We started with Full-Service Property Management, helping agencies deliver for their clients when they needed more support.',
   },
   {
     n: '02',
     title: 'Listening Closely',
-    icon: Ear,
+    icon: '/about/icon-listen.png',
     body: 'As agencies placed their trust in us, we listened to their questions, frustrations, and the realities of their working day.',
   },
   {
     n: '03',
     title: 'Challenging Assumptions',
-    icon: TrendingUp,
+    icon: '/about/icon-chart.png',
     body: 'We kept refining our services, challenging our assumptions, and improving how we worked to understand what agencies truly needed.',
   },
   {
     n: '04',
     title: 'The Breakthrough',
-    icon: Target,
+    icon: '/about/icon-breakthrough.png',
     body: 'And one thing became clear: supporting an agency meant improving both the work on the ground and the technology behind it.',
   },
 ] as const;
 
 function EvolutionCard({ step }: { step: (typeof EVOLUTION)[number] }) {
-  const Icon = step.icon;
   return (
     <div className="flex items-center gap-4">
-      <Icon className="size-8 shrink-0 text-[#194878]" aria-hidden />
-      <div className="rounded-[28px] bg-[#25C68D] px-6 py-4 text-white shadow-[0_12px_28px_rgba(37,198,141,0.28)]">
+      <img src={step.icon} alt="" className="size-9 shrink-0 object-contain" />
+      <div className="site-card rounded-[28px] bg-[#25C68D] px-6 py-4 text-white shadow-[0_12px_28px_rgba(37,198,141,0.28)]">
         <p className="text-[18px] font-bold">
           {step.n} {step.title}
         </p>
@@ -101,24 +102,24 @@ export default async function AboutPage() {
   const software = withRegion(region, siteLinks.software);
 
   const cards = [
-    { title: 'Free Inspection App', href: withRegion(region, '/#crossub-app'), icon: 'inspect' as const },
-    { title: 'CROS AI', href: software, icon: 'ai' as const },
+    { title: 'Free Inspection App', href: withRegion(region, '/#crossub-app'), icon: '/about/icon-inspect.png' },
+    { title: 'CROS AI', href: software, icon: '/about/icon-cros.png' },
     {
       title: 'Free Real Market Data Access, alongside Inspection Services',
       href: withRegion(region, '/software#ai'),
-      icon: 'data' as const,
+      icon: '/about/icon-data.png',
     },
     ...(servicesOffered
       ? [
           {
             title: 'Approved Maintenance Providers',
             href: withRegion(region, siteLinks.propertyServices),
-            icon: 'maint' as const,
+            icon: '/about/icon-wrench.png',
           },
           {
             title: 'Full-Service Property Management',
             href: withRegion(region, siteLinks.fullService),
-            icon: 'full' as const,
+            icon: '/about/icon-home.png',
           },
         ]
       : []),
@@ -128,7 +129,7 @@ export default async function AboutPage() {
     <main className="-my-[8vh] bg-white text-[#194878]">
       <section className="relative min-h-[640px] overflow-hidden">
         <img
-          src="/about/hero.jpg"
+          src="/about/hero.png"
           alt=""
           className="absolute inset-0 h-full w-full object-cover object-right"
         />
@@ -151,7 +152,7 @@ export default async function AboutPage() {
 
       <section className="bg-[#F5F6F8] px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto grid w-full max-w-[1180px] items-center gap-8 rounded-[40px] bg-white p-6 shadow-[0_16px_50px_rgba(23,30,75,0.04)] sm:p-10 lg:grid-cols-[1fr_0.92fr] lg:gap-12 lg:p-14">
-          <div>
+          <div className="text-center">
             <h2 className="text-[42px] leading-none font-bold tracking-[-0.03em] sm:text-[56px]">OUR STORY</h2>
             <p className="mt-3 text-[16px] font-semibold text-[#25C68D]">The Origin</p>
             <div className="mt-8 space-y-5 text-[17px] leading-[1.65] text-[#6B6B6B]">
@@ -169,31 +170,35 @@ export default async function AboutPage() {
             <p className="mt-8 text-[22px] font-semibold text-[#25C68D]">CROSSUB was our answer.</p>
           </div>
           <img
-            src="/about/team.jpg"
+            src="/about/team.png"
             alt="The CROSSUB team"
             className="h-full max-h-[640px] w-full rounded-[28px] object-cover object-top"
           />
         </div>
 
         <div className="mx-auto mt-8 grid w-full max-w-[1180px] gap-5 md:grid-cols-3">
-          {PRINCIPLES.map((item) => {
-            const Icon = item.icon;
-            return (
+          {PRINCIPLES.map((item) => (
               <article
                 key={item.title}
-                className="rounded-[28px] bg-white px-6 py-8 text-center shadow-[0_10px_30px_rgba(23,30,75,0.04)]"
+                className="site-card relative rounded-[28px] bg-white px-7 py-8 text-center shadow-[0_10px_30px_rgba(23,30,75,0.04)]"
               >
-                <Icon className="mx-auto size-8 text-[#25C68D]" aria-hidden />
-                <h3 className="mt-4 text-[22px] font-bold tracking-[-0.03em]">{item.title}</h3>
-                <p className="mt-1 text-[13px] font-semibold text-[#25C68D]">{item.kicker}</p>
-                <div className="mt-4 space-y-3 text-[14px] leading-[1.65] text-[#6B6B6B]">
-                  {item.body.map((paragraph) => (
-                    <p key={paragraph}>{paragraph}</p>
-                  ))}
+                <img
+                  src={item.art}
+                  alt=""
+                  className="pointer-events-none absolute inset-x-0 bottom-0 w-full select-none"
+                />
+                <div className="relative">
+                  <img src={item.icon} alt="" className="mx-auto size-9 object-contain" />
+                  <h3 className="mt-4 text-[22px] font-bold tracking-[-0.03em]">{item.title}</h3>
+                  <p className="mt-1 text-[13px] font-semibold text-[#25C68D]">{item.kicker}</p>
+                  <div className="mt-4 space-y-3 text-[14px] leading-[1.65] text-[#6B6B6B]">
+                    {item.body.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
                 </div>
               </article>
-            );
-          })}
+            ))}
         </div>
       </section>
 
@@ -287,7 +292,7 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#060912] px-6 py-16 text-white md:px-10 md:py-24">
+      <section className="bg-[#040816] px-6 py-16 text-white md:px-10 md:py-24">
         <div className="mx-auto w-full max-w-[1180px]">
           <div className="text-center">
             <h2 className="text-[42px] font-bold tracking-[-0.03em] text-white sm:text-[48px]">Meet CROS AI</h2>
@@ -318,7 +323,7 @@ export default async function AboutPage() {
                     </p>
                   </div>
                 </div>
-                <img src="/brand/cros.png" alt="" className="absolute -right-1 -bottom-7 z-10 w-20" />
+                <img src="/about/icon-cros.png" alt="" className="absolute -right-1 -bottom-6 z-10 w-16" />
               </div>
             </div>
             <div className="relative">

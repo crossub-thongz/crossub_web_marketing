@@ -37,7 +37,7 @@ export function MeetCrosFree({ showPageLink = false }: { showPageLink?: boolean 
         {CROS_FREE.map((item) => (
           <article
             key={item.title}
-            className="flex h-full flex-col rounded-[24px] bg-white p-6 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-[#171E4B]/5 sm:p-7"
+            className="site-card flex h-full flex-col rounded-[24px] bg-white p-6 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-[#171E4B]/5 sm:p-7"
           >
             <span className="grid size-12 place-items-center rounded-2xl bg-[#E7FBF4] text-[#24C68D]">
               <item.icon className="size-5" strokeWidth={2.25} aria-hidden />

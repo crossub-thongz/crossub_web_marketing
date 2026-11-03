@@ -76,7 +76,7 @@ export function FeatureGrid({
       {items.map((item) => (
         <article
           key={item.title}
-          className="rounded-[24px] bg-white/85 p-6 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white"
+          className="site-card rounded-[24px] bg-white/85 p-6 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white"
         >
           <span className={`mb-5 grid size-12 place-items-center rounded-2xl ${tones[item.tone]}`}>
             {item.icon ? <img src={item.icon} alt="" className="size-6" /> : null}

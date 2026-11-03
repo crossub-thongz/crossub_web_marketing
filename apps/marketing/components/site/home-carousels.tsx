@@ -178,28 +178,39 @@ export function AiControl() {
 
 const WHY = [
   {
-    image: '/home/why-team.jpg',
+    image: '/home/why-expertise.png',
     value: 6,
     suffix: '',
     label: 'years of full-service Australian property expertise.',
     wash: 'bg-gradient-to-t from-[#171E4B]/55 via-[#171E4B]/10 to-transparent',
-    cyan: false,
   },
   {
-    image: '/home/why-laptop.jpg',
+    image: '/home/why-admin.png',
     value: 90,
     suffix: '%',
     label: 'Ease of use and admin',
-    wash: 'bg-[#171E4B]/35',
-    cyan: false,
+    wash: 'bg-[#171E4B]/28',
   },
   {
-    image: '/home/why-kitchen.jpg',
+    image: '/home/why-time.png',
     value: 91,
     suffix: '%',
     label: 'Minimize time',
-    wash: 'bg-[#171E4B]/35',
-    cyan: true,
+    wash: 'bg-[#171E4B]/20',
+  },
+  {
+    image: '/home/why-privacy.png',
+    value: 100,
+    suffix: '%',
+    label: 'Data Control & Privacy',
+    wash: 'bg-[#171E4B]/25',
+  },
+  {
+    image: '/home/why-local.png',
+    value: 0,
+    suffix: '',
+    label: 'Zero Offshore Outsourcing',
+    wash: 'bg-[#171E4B]/30',
   },
 ] as const;
 
@@ -252,20 +263,18 @@ export function WhyShowcase() {
   }, []);
 
   return (
-    <div ref={root} className="mx-auto mt-12 grid max-w-[1080px] items-stretch gap-5 sm:grid-cols-3">
+    <div ref={root} className="mx-auto mt-12 grid max-w-[1480px] items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
       {WHY.map((card) => (
-        <article key={card.image} className="group relative h-[420px] overflow-hidden rounded-[28px]">
+        <article key={card.image} className="site-card site-card-photo relative aspect-[465/509] rounded-[28px] bg-white">
           <img src={card.image} alt="" className="absolute inset-0 size-full object-cover" />
-          <div
-            className={`absolute inset-0 transition-colors duration-300 ${card.wash} ${
-              card.cyan ? 'group-hover:bg-[#3AC892]/72' : ''
-            }`}
-          />
-          <div className="absolute inset-x-0 bottom-0 p-6 text-center text-white">
-            <p className="text-[72px] leading-none font-bold tracking-[-0.04em]">
+          <div className={`absolute inset-0 ${card.wash}`} />
+          <div className="site-card-front absolute inset-x-0 bottom-0 p-4 text-center text-white sm:p-5">
+            <p className="text-[44px] leading-none font-bold tracking-[-0.04em] sm:text-[52px] xl:text-[48px]">
               <CountUp value={card.value} suffix={card.suffix} active={active} />
             </p>
-            <p className="mx-auto mt-2 max-w-[240px] text-[20px] leading-[1.25] font-semibold">{card.label}</p>
+            <p className="mx-auto mt-2 max-w-[16ch] text-[15px] leading-[1.25] font-semibold sm:text-[16px]">
+              {card.label}
+            </p>
           </div>
         </article>
       ))}
@@ -276,37 +285,33 @@ export function WhyShowcase() {
 const PLATFORM = [
   {
     title: 'Properties',
-    body: 'Owners, tenants and the property record, kept in one place.',
+    body: 'Owners, tenants, agents and activity in one clear property record.',
     icon: Home,
-    className: 'top-[18%] left-[6%] bg-[#E7FBF4] text-[#24C68D]',
-  },
-  {
-    title: 'Day-to-day setup',
-    body: 'Workflows and agency settings sit with the rest of the work.',
-    icon: Settings,
-    className: 'top-[8%] right-[8%] bg-[#194778] text-white',
-  },
-  {
-    title: 'Approvals',
-    body: 'Quotes, leases and decisions stay with your team.',
-    icon: Check,
-    className: 'bottom-[18%] left-[4%] bg-[#E7FBF4] text-[#24C68D]',
+    className: 'top-[18%] left-[6%]',
   },
   {
     title: 'Maintenance',
     body: 'Requests, quotes, approvals and contractor work in one flow.',
+    icon: Settings,
+    className: 'top-[8%] right-[8%]',
+  },
+  {
+    title: 'Inspections',
+    body: 'Routine, entry, final and open inspections with connected reports.',
+    icon: Check,
+    className: 'bottom-[18%] left-[4%]',
+  },
+  {
+    title: 'Leasing',
+    body: 'Applications, onboarding, lease progress and vacating workflows.',
     icon: PenLine,
-    className: 'right-[6%] bottom-[8%] bg-[#E7FBF4] text-[#24C68D]',
+    className: 'right-[6%] bottom-[8%]',
   },
 ] as const;
 
-export function PlatformShowcase({
-  caption,
-}: {
-  caption?: { title: string; body: string };
-}) {
-  const [index, setIndex] = useState(3);
-  const topic = caption ?? PLATFORM[index] ?? PLATFORM[3];
+export function PlatformShowcase() {
+  const [index, setIndex] = useState(1);
+  const topic = PLATFORM[index] ?? PLATFORM[1];
 
   return (
     <div className="mt-14 grid items-center gap-10 text-left lg:grid-cols-[1.1fr_0.9fr]">
@@ -314,27 +319,21 @@ export function PlatformShowcase({
         <img src="/home/tablet.png?v=2" alt="" className="w-full" />
         {PLATFORM.map((item, itemIndex) => {
           const Icon = item.icon;
+          const active = itemIndex === index;
           return (
-            caption ? (
-              <span
-                key={item.title}
-                className={`absolute grid size-16 place-items-center rounded-full shadow-md ${item.className}`}
-              >
-                <Icon className="size-7" aria-hidden />
-              </span>
-            ) : (
-              <button
-                key={item.title}
-                type="button"
-                aria-label={item.title}
-                aria-pressed={itemIndex === index}
-                onMouseEnter={() => setIndex(itemIndex)}
-                onFocus={() => setIndex(itemIndex)}
-                className={`absolute grid size-16 place-items-center rounded-full shadow-md transition-transform duration-300 ease-out hover:-translate-y-0.5 ${item.className}`}
-              >
-                <Icon className="size-7" aria-hidden />
-              </button>
-            )
+            <button
+              key={item.title}
+              type="button"
+              aria-label={item.title}
+              aria-pressed={active}
+              onMouseEnter={() => setIndex(itemIndex)}
+              onFocus={() => setIndex(itemIndex)}
+              className={`absolute grid size-16 place-items-center rounded-full shadow-md transition-colors duration-300 ease-out ${item.className} ${
+                active ? 'bg-[#194778] text-white' : 'bg-[#E7FBF4] text-[#24C68D]'
+              }`}
+            >
+              <Icon className="size-7" aria-hidden />
+            </button>
           );
         })}
       </div>

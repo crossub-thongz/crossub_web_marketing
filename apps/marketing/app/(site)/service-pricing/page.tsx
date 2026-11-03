@@ -33,7 +33,7 @@ export default function ServicePricingPage() {
 
       <PageSection eyebrow="Pricing model" title="Two paid services.">
         <div className="grid gap-4 lg:grid-cols-2">
-          <article className="rounded-[28px] bg-[#E7FBF4] p-7 ring-1 ring-[#008F65]/15 sm:p-8">
+          <article className="site-card rounded-[28px] bg-[#E7FBF4] p-7 ring-1 ring-[#008F65]/15 sm:p-8">
             <p className="text-[15px] font-semibold text-[#24C68D]">Full Service</p>
             <p className="mt-4 text-[72px] leading-none font-semibold tracking-[-0.04em] text-[#24C68D]">
               30%
@@ -51,7 +51,7 @@ export default function ServicePricingPage() {
               What Full Service includes
             </a>
           </article>
-          <article className="rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
+          <article className="site-card rounded-[28px] bg-white/85 p-7 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white sm:p-8">
             <p className="text-[15px] font-semibold text-[#5C4B8A]">Inspection Only</p>
             <p className="mt-4 text-[40px] leading-[1.05] font-semibold tracking-[-0.03em] text-[#171E4B]">
               Priced per visit
@@ -140,7 +140,7 @@ export default function ServicePricingPage() {
           ].map(([step, title, body]) => (
             <li
               key={step}
-              className="rounded-[24px] bg-white/85 p-6 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white"
+              className="site-card rounded-[24px] bg-white/85 p-6 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-white"
             >
               <span className="grid size-10 place-items-center rounded-full bg-[#E0F7EE] text-[14px] font-bold text-[#24C68D]">
                 {step}

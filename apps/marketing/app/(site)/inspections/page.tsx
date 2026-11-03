@@ -150,19 +150,19 @@ export default function InspectionsPage() {
         <div className="relative mx-auto w-full max-w-[520px]">
           <div className="absolute top-[8%] right-[6%] size-[280px] rounded-full bg-[#D7EEC8]" aria-hidden />
           <div className="relative mx-auto w-[78%] rotate-[-6deg] rounded-[36px] bg-white p-3 shadow-[0_30px_70px_rgba(23,30,75,0.12)] ring-1 ring-[#171E4B]/8">
-            <div className="relative overflow-hidden rounded-[28px] bg-[#E7F3DE]">
+            <div className="site-card site-card-photo relative rounded-[28px] bg-[#E7F3DE]">
               <img
                 src="/site/png/photo-notes-room.png"
                 alt=""
                 className="h-[420px] w-full object-cover"
               />
-              <span className="absolute top-4 right-4 inline-flex items-center gap-2 rounded-2xl bg-white px-3 py-2 text-[13px] font-semibold shadow-[0_10px_24px_rgba(23,30,75,0.12)]">
+              <span className="site-card-front absolute top-4 right-4 inline-flex items-center gap-2 rounded-2xl bg-white px-3 py-2 text-[13px] font-semibold text-[#171E4B] shadow-[0_10px_24px_rgba(23,30,75,0.12)]">
                 <MapPin className="size-3.5 text-[#E15B4A]" aria-hidden />
                 On-site, sorted.
               </span>
             </div>
           </div>
-          <div className="absolute right-0 bottom-8 left-6 rounded-[24px] bg-white p-4 shadow-[0_20px_50px_rgba(23,30,75,0.14)] ring-1 ring-[#171E4B]/8 sm:left-10">
+          <div className="site-card absolute right-0 bottom-8 left-6 rounded-[24px] bg-white p-4 shadow-[0_20px_50px_rgba(23,30,75,0.14)] ring-1 ring-[#171E4B]/8 sm:left-10">
             <div className="flex items-center gap-3">
               <span className="grid size-11 place-items-center rounded-2xl bg-[#E3F5DC] text-[#24C68D]">
                 <Check className="size-5" strokeWidth={2.5} aria-hidden />
@@ -201,7 +201,7 @@ export default function InspectionsPage() {
           {VISITS.map((visit) => (
             <article
               key={visit.title}
-              className="flex flex-col rounded-[28px] bg-white p-6 shadow-[0_16px_40px_rgba(23,30,75,0.05)] ring-1 ring-[#171E4B]/6"
+              className="site-card flex flex-col rounded-[28px] bg-white p-6 shadow-[0_16px_40px_rgba(23,30,75,0.05)] ring-1 ring-[#171E4B]/6"
             >
               <p className="text-[14px] font-semibold text-[#8AA888]">
                 {visit.n} / {visit.kicker}
@@ -220,7 +220,7 @@ export default function InspectionsPage() {
         <div className="mx-auto grid w-full max-w-[1480px] items-center gap-12 px-6 md:px-8 lg:grid-cols-2 lg:gap-16">
           <div className="relative mx-auto w-full max-w-[440px]">
             <div className="absolute inset-x-6 top-8 bottom-0 rounded-[32px] bg-[#D5EBC4]" aria-hidden />
-            <div className="relative rounded-[28px] bg-white p-5 shadow-[0_24px_60px_rgba(23,30,75,0.1)] ring-1 ring-[#171E4B]/6">
+            <div className="site-card relative rounded-[28px] bg-white p-5 shadow-[0_24px_60px_rgba(23,30,75,0.1)] ring-1 ring-[#171E4B]/6">
               <div className="flex items-center justify-between gap-3">
                 <p className="flex items-center gap-2 text-[14px] font-semibold">
                   <span className="grid size-9 place-items-center rounded-xl bg-[#E3F5DC] text-[#24C68D]">
@@ -314,7 +314,7 @@ export default function InspectionsPage() {
             {STEPS.map((step) => (
               <article
                 key={step.n}
-                className="rounded-[28px] bg-[#F7FBF6] p-6 ring-1 ring-[#1B3A30]/8"
+                className="site-card rounded-[28px] bg-[#F7FBF6] p-6 ring-1 ring-[#1B3A30]/8"
               >
                 <div className="flex items-center justify-between text-[#8AA888]">
                   <span className="text-[14px] font-bold">{step.n}</span>

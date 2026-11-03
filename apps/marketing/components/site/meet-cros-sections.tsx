@@ -283,7 +283,7 @@ export function MeetCrosSections() {
                 {STEPS.map((step) => (
                   <article
                     key={step.title}
-                    className="rounded-[18px] bg-[#101c18] px-5 py-3.5 text-center text-white outline outline-[2.5px] outline-dotted outline-[#3DDC97] outline-offset-3"
+                    className="site-card rounded-[18px] bg-[#101c18] px-5 py-3.5 text-center text-white outline outline-[2.5px] outline-dotted outline-[#3DDC97] outline-offset-3"
                   >
                     <h3 className="text-[15px] font-semibold">{step.title}</h3>
                     <p className="mt-0.5 text-[12px] leading-snug text-white/75">{step.body}</p>

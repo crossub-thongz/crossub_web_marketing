@@ -30,13 +30,13 @@ function TintIcon({ src, color, className }: { src: string; color: string; class
 export function SupportCluster() {
   return (
     <div className="relative mx-auto w-full max-w-[540px] pr-6 sm:pr-16 lg:max-w-none">
-      <div className="rounded-[28px] bg-white p-4 shadow-[0_18px_50px_rgba(23,30,75,0.08)] ring-1 ring-[#171E4B]/5 sm:p-5">
+      <div className="site-card site-card-photo rounded-[28px] bg-white p-4 shadow-[0_18px_50px_rgba(23,30,75,0.08)] ring-1 ring-[#171E4B]/5 sm:p-5">
         <img
           src="/site/png/platform-ai-ribbons.png"
           alt=""
           className="w-full rounded-[20px]"
         />
-        <ul className="mt-2 px-1">
+        <ul className="site-card-copy mt-2 px-1">
           {AREAS.map((area) => (
             <li key={area.label} className="flex items-center gap-3 py-2.5">
               <span className="grid size-12 shrink-0 place-items-center rounded-full bg-[#F4F6FB]">
@@ -88,14 +88,14 @@ const MOBILE_BADGES = [
 function PhotosNotesCard({ className = '' }: { className?: string }) {
   return (
     <article
-      className={`overflow-hidden rounded-[24px] bg-white p-2.5 shadow-[0_16px_40px_rgba(23,30,75,0.12)] ring-1 ring-white ${className}`}
+      className={`site-card site-card-photo rounded-[24px] bg-white p-2.5 shadow-[0_16px_40px_rgba(23,30,75,0.12)] ring-1 ring-white ${className}`}
     >
       <img
         src="/site/png/photo-notes-room.png"
         alt=""
         className="w-full rounded-[16px]"
       />
-      <div className="flex items-center gap-3 px-2 py-3">
+      <div className="site-card-copy flex items-center gap-3 px-2 py-3">
         <span className="grid size-11 shrink-0 place-items-center rounded-[14px] bg-[#F2E8FF]">
           <svg viewBox="0 0 24 24" className="size-5" fill="none" aria-hidden>
             <rect x="3.5" y="4" width="17" height="16" rx="2" stroke="#A365F4" strokeWidth="1.7" />

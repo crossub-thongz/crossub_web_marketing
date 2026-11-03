@@ -1,7 +1,7 @@
 import { ArrowRight, ClipboardCheck, CreditCard, FileText, MessageCircle, Users, Wrench } from 'lucide-react';
 
 import { PrimaryLink, SecondaryLink } from '@/components/site/buttons';
-import { AiControl, PeekCarousel, PlatformShowcase, WhyShowcase } from '@/components/site/home-carousels';
+import { AiControl, PlatformShowcase, WhyShowcase } from '@/components/site/home-carousels';
 import { offersServices, registerHref, withRegion, type RegionCode } from '@/lib/regions';
 import { siteLinks } from '@/lib/site-links';
 
@@ -87,16 +87,8 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
         </div>
       </section>
 
-      <section className="bg-gradient-to-b from-white to-[#DEFCF0] px-6 pt-10 pb-16 text-center md:px-10 md:pt-12 md:pb-20">
-        <h2 className="text-[40px] leading-[1.05] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[56px]">
-          Start Free Scale Your Way
-        </h2>
-        <p className="mt-3 text-[20px] text-[#62697C]">
-          Your software. Your agency. Your choice of support.
-        </p>
-      </section>
-
       <section className="relative overflow-hidden bg-[#DEFCF0] px-6 py-16 md:px-10 md:py-24">
+        <div className="pointer-events-none absolute inset-x-0 top-0 h-28 bg-gradient-to-b from-white to-transparent" />
         <img
           src="/home/ways/mark.png"
           alt=""
@@ -110,6 +102,12 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
         <div className="relative mx-auto w-full max-w-[1480px]">
           <div className="mx-auto max-w-3xl text-center">
             <h2 className="text-[40px] leading-[1.05] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[56px]">
+              Start Free Scale Your Way
+            </h2>
+            <p className="mt-3 text-[20px] text-[#62697C]">
+              Your software. Your agency. Your choice of support.
+            </p>
+            <h2 className="mt-10 text-[40px] leading-[1.05] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[56px]">
               3 ways CROS helps.
             </h2>
             <p className="mt-3 text-[16px] font-semibold text-[#24C68D]">Free software</p>
@@ -117,27 +115,28 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
               CROS prepares drafts, tasks and insights. Your team stays in the approval loop.
             </p>
           </div>
-          <div className="mx-auto mt-12 max-w-[820px]">
-            <PeekCarousel count={3} activeDot="bg-[#24C68D]" auto>
-            <article className="flex w-full shrink-0 snap-start flex-col overflow-hidden rounded-[28px] bg-white px-5 pt-8 text-center sm:px-7">
-              <p className="text-[clamp(32px,3vw,48px)] leading-none font-medium tracking-[-0.03em] text-[#194878]">
-                FREE
-              </p>
-              <h3 className="mt-1 text-[clamp(34px,3.3vw,52px)] leading-none font-bold tracking-[-0.03em] text-[#194878]">
-                CRM System
-              </h3>
-              <p className="mx-auto mt-4 max-w-[36ch] text-[14px] leading-[1.45] text-[#62697C] sm:text-[15px]">
-                Owners, tenants, leasing, maintenance and the property record in one FREE system.
-                Trust money stays with a person.
-              </p>
+          <div className="mt-12 grid items-start gap-5 lg:grid-cols-3">
+            <article className="site-card site-card-photo flex flex-col rounded-[28px] bg-white px-5 pt-8 text-center sm:px-7">
+              <div className="site-card-copy">
+                <p className="text-[clamp(32px,3vw,48px)] leading-none font-medium tracking-[-0.03em] text-[#194878]">
+                  FREE
+                </p>
+                <h3 className="mt-1 text-[clamp(34px,3.3vw,52px)] leading-none font-bold tracking-[-0.03em] text-[#194878]">
+                  CRM System
+                </h3>
+                <p className="mx-auto mt-4 max-w-[36ch] text-[14px] leading-[1.45] text-[#62697C] sm:text-[15px]">
+                  Owners, tenants, leasing, maintenance and the property record in one FREE system.
+                  Trust money stays with a person.
+                </p>
+              </div>
               <img
                 src="/home/ways/crm-panels.png"
                 alt=""
                 className="-mx-5 mt-auto w-[calc(100%+2.5rem)] max-w-none self-center sm:-mx-7 sm:w-[calc(100%+3.5rem)]"
               />
             </article>
-            <article className="flex w-full shrink-0 snap-start flex-col">
-              <div className="flex flex-1 flex-col rounded-[28px] bg-[#194878] px-5 pt-8 pb-28 text-center text-white sm:px-7">
+            <article className="group flex flex-col">
+              <div className="site-card flex flex-1 flex-col rounded-[28px] bg-[#194878] px-5 pt-8 pb-28 text-center text-white sm:px-7">
                 <p className="text-[clamp(32px,3vw,48px)] leading-none font-medium tracking-[-0.03em]">
                   FREE
                 </p>
@@ -150,13 +149,16 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
                   {servicesOffered ? ' Booking a CROSSUB inspector is a separate paid visit.' : ''}
                 </p>
               </div>
-              <img
-                src="/home/ways/inspection-arranged.png"
-                alt=""
-                className="relative z-10 mx-auto -mt-20 w-[min(340px,72%)]"
-              />
+              <div className="relative z-10 mx-auto -mt-20 w-[min(340px,72%)] overflow-hidden">
+                <img
+                  src="/home/ways/inspection-arranged.png"
+                  alt=""
+                  className="w-full transition-transform duration-500 ease-out group-hover:scale-105 motion-reduce:transition-none motion-reduce:group-hover:scale-100"
+                />
+              </div>
             </article>
-            <article className="flex w-full shrink-0 snap-start flex-col overflow-hidden rounded-[28px] bg-[#071012] px-5 pt-8 pb-6 text-center text-white sm:px-6">
+            <article className="site-card site-card-photo flex flex-col rounded-[28px] bg-[#071012] px-5 pt-8 pb-6 text-center text-white sm:px-6">
+              <div className="site-card-copy">
               <p className="text-[clamp(32px,3vw,48px)] leading-none font-semibold tracking-[-0.03em] text-[#24C68D]">
                 FREE
               </p>
@@ -174,26 +176,26 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
                 </p>
                 <p>Free real-time market data is included, which is needed for conducting rent reviews.</p>
               </div>
+              </div>
               <div className="relative mt-auto">
                 <img src="/home/ways/ai-ask.png" alt="" className="w-full" />
-                <p className="absolute top-[76%] left-[2%] whitespace-nowrap text-[clamp(13px,1.45vw,18px)] leading-none font-bold">
+                <p className="site-card-front absolute top-[76%] left-[2%] whitespace-nowrap text-[clamp(13px,1.45vw,18px)] leading-none font-bold">
                   Stop clicking. Start asking.
                 </p>
               </div>
             </article>
-            </PeekCarousel>
           </div>
 
           <div
             id="crossub-app"
-            className="mx-auto mt-14 grid max-w-[1100px] scroll-mt-28 items-center gap-8 overflow-hidden rounded-[36px] bg-[#194778] px-6 py-10 text-white sm:px-10 lg:grid-cols-[1.1fr_0.9fr] lg:px-14"
+            className="site-card site-card-photo mx-auto mt-14 grid max-w-[1100px] scroll-mt-28 items-center gap-8 rounded-[36px] bg-[#194778] px-6 py-10 text-white sm:px-10 lg:grid-cols-[1.1fr_0.9fr] lg:px-14"
           >
-            <div className="text-center lg:text-left">
+            <div className="site-card-copy text-center lg:text-left">
               <p className="text-[15px] font-semibold text-[#7CFFE8]">
                 Available on iPhone and Android
               </p>
               <h2 className="mt-3 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] sm:text-[44px]">
-                Get the CROSSUB App
+                Get the CROS Inspect APP
               </h2>
               <p className="mx-auto mt-4 max-w-[480px] text-[17px] leading-[1.6] text-white/85 lg:mx-0">
                 Take the free inspection app on site. Capture photos and notes, complete the visit,
@@ -246,7 +248,7 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
               return (
                 <article
                   key={item.title}
-                  className="rounded-[24px] bg-white p-6 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-[#171E4B]/5"
+                  className="site-card rounded-[24px] bg-white p-6 shadow-[0_16px_40px_rgba(23,30,75,0.06)] ring-1 ring-[#171E4B]/5"
                 >
                   <span className="grid size-12 place-items-center rounded-2xl bg-[#E7FBF4] text-[#24C68D]">
                     <Icon className="size-5" aria-hidden />
@@ -285,7 +287,7 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
               return (
                 <article
                   key={item.title}
-                  className="flex flex-col items-center rounded-[32px] border border-[#171E4B]/10 bg-white px-6 py-8 shadow-[0_12px_32px_-22px_rgba(23,30,75,0.28)] transition-[transform,box-shadow] duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_28px_48px_-18px_rgba(23,30,75,0.28)]"
+                  className="site-card flex flex-col items-center rounded-[32px] border border-[#171E4B]/10 bg-white px-6 py-8 shadow-[0_12px_32px_-22px_rgba(23,30,75,0.28)] hover:-translate-y-1 hover:shadow-[0_28px_48px_-18px_rgba(23,30,75,0.28)]"
                 >
                   <span className={`grid size-16 place-items-center rounded-2xl ${item.tile}`}>
                     <Icon className="size-7" aria-hidden />
@@ -376,12 +378,7 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
                   maintenance solutions — all through CROSSUB.
                 </p>
               </div>
-              <PlatformShowcase
-                caption={{
-                  title: 'Our experience. Your extended team.',
-                  body: 'Access a maintenance network built through years of managing real properties and solving everyday problems.',
-                }}
-              />
+              <PlatformShowcase />
               <a
                 href={withRegion(region, '/#solutions')}
                 className="mt-12 inline-flex h-11 items-center rounded-full border border-[#171E4B]/25 px-6 text-[15px] font-semibold text-[#171E4B] hover:border-[#24C68D] hover:text-[#24C68D]"
