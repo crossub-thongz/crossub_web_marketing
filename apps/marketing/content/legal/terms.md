@@ -1,10 +1,9 @@
 # Crossub Terms of Use
 
-**Draft for legal and operational review — not yet approved for publication**  
-**Effective date:** [Insert publication date]  
-**Operator:** [Insert full registered legal entity name and ABN/ACN] (trading as **Crossub**) ("Crossub", "we", "us", "our")
+**Effective date:** 1 November 2026  
+**Operator:** CROSSUB Property Management Pty Ltd (ABN 85 646 628 024) (trading as **Crossub**) ("Crossub", "we", "us", "our")
 
-These Terms of Use ("Terms") govern access to Crossub's website, web portals, mobile applications, Cros AI and other software functions (together, the **Platform**). They also describe how optional paid services interact with the Platform. By creating an account or accessing the Platform, you agree to these Terms. If you act for an agency or another organisation, you warrant that you are authorised to agree on its behalf.
+These Terms of Use ("Terms") are issued by **CROSSUB Property Management Pty Ltd (ABN 85 646 628 024)**, trading as **Crossub** ("Crossub", "we", "us", "our"). They govern access to Crossub's website, web portals, mobile applications, Cros AI and other software functions (together, the **Platform**). They also describe how optional paid services interact with the Platform. By creating an account or accessing the Platform, you agree to these Terms. If you act for an agency or another organisation, you warrant that you are authorised to agree on its behalf.
 
 ## 1. Our services and geographic availability
 
@@ -52,7 +51,7 @@ Customers retain any rights they have in data and content they lawfully submit. 
 
 Each customer must ensure it can lawfully grant these permissions and disclose personal information through the Platform. Our **Privacy Policy** explains our collection, use, Australian AWS hosting, AI processing, authorised Malaysia-based access for paid services and relevant overseas processing arrangements.
 
-Subject to applicable retention, security and legal obligations, we will provide available data export functionality and process reasonable account closure and data requests in accordance with our published processes. **[Confirm exact export format and any account exit/retention commitments before publication.]**
+Subject to applicable retention, security and legal obligations, we will provide available data export functionality and process reasonable account closure and data requests in accordance with our Privacy Policy. Where a customer closes their account, access to the Platform may be disabled. Information that is no longer required will be deleted or de-identified, except where continued retention is required or permitted by law, including accounting, financial, transaction and audit records. Customers may ask about available export options by contacting **info@crossub.com.au**.
 
 ## 7. Trust accounting and compliance functions
 
@@ -94,11 +93,8 @@ We may update these Terms from time to time. We will display the current version
 
 ## 15. Contact
 
-**Crossub**  
+**CROSSUB Property Management Pty Ltd**  
+ABN 85 646 628 024  
 Suite 104, 66 Berry Street, North Sydney NSW, Australia  
 Email: **info@crossub.com.au**  
 Website: **https://www.crossub.com.au**
-
----
-
-**Pre-publication verification:** legal entity and ABN/ACN; customer eligibility and service scope; free-tier limits; exact service price and cancellation terms; payment processor; trust accounting and licensing responsibilities; data export and deletion; AI workflow permissions; jurisdiction-specific legal review for Australia and New Zealand. Inspection Only and Full Service should have additional accepted service-specific schedules or agreements.

@@ -82,7 +82,7 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
           </p>
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <PrimaryLink href={startFree}>Start for free</PrimaryLink>
-            <SecondaryLink href={bookDemo}>Book a demo</SecondaryLink>
+            <SecondaryLink href={bookDemo}>Watch a demo</SecondaryLink>
           </div>
         </div>
       </section>
@@ -420,7 +420,7 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
         </p>
         <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
           <PrimaryLink href={startFree}>Start for free</PrimaryLink>
-          <SecondaryLink href={bookDemo}>Book a demo</SecondaryLink>
+          <SecondaryLink href={bookDemo}>Watch a demo</SecondaryLink>
         </div>
       </section>
     </main>

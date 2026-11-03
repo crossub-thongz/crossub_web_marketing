@@ -178,39 +178,32 @@ export function AiControl() {
 
 const WHY = [
   {
-    image: '/home/why-expertise.png',
+    rest: '/home/why-card-1.png',
+    hover: '/home/why-card-1-hover.png',
     value: 6,
     suffix: '',
     label: 'years of full-service Australian property expertise.',
-    wash: 'bg-gradient-to-t from-[#171E4B]/55 via-[#171E4B]/10 to-transparent',
   },
   {
-    image: '/home/why-admin.png',
+    rest: '/home/why-card-2.png',
+    hover: '/home/why-card-2-hover.png',
     value: 90,
     suffix: '%',
     label: 'Ease of use and admin',
-    wash: 'bg-[#171E4B]/28',
   },
   {
-    image: '/home/why-time.png',
+    rest: '/home/why-card-3.png',
+    hover: '/home/why-card-3-hover.png',
     value: 91,
     suffix: '%',
     label: 'Minimize time',
-    wash: 'bg-[#171E4B]/20',
   },
   {
-    image: '/home/why-privacy.png',
+    rest: '/home/why-card-4.png',
+    hover: '/home/why-card-4-hover.png',
     value: 100,
     suffix: '%',
     label: 'Data Control & Privacy',
-    wash: 'bg-[#171E4B]/25',
-  },
-  {
-    image: '/home/why-local.png',
-    value: 0,
-    suffix: '',
-    label: 'Zero Offshore Outsourcing',
-    wash: 'bg-[#171E4B]/30',
   },
 ] as const;
 
@@ -263,16 +256,27 @@ export function WhyShowcase() {
   }, []);
 
   return (
-    <div ref={root} className="mx-auto mt-12 grid max-w-[1480px] items-stretch gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5">
+    <div ref={root} className="mx-auto mt-12 grid max-w-[1480px] items-stretch gap-4 sm:grid-cols-2 xl:grid-cols-4">
       {WHY.map((card) => (
-        <article key={card.image} className="site-card site-card-photo relative aspect-[465/509] rounded-[28px] bg-white">
-          <img src={card.image} alt="" className="absolute inset-0 size-full object-cover" />
-          <div className={`absolute inset-0 ${card.wash}`} />
-          <div className="site-card-front absolute inset-x-0 bottom-0 p-4 text-center text-white sm:p-5">
-            <p className="text-[44px] leading-none font-bold tracking-[-0.04em] sm:text-[52px] xl:text-[48px]">
+        <article
+          key={card.rest}
+          className="group relative flex aspect-[481/361] items-center justify-center overflow-hidden rounded-[28px] bg-[#194878] text-center text-white shadow-[0_0_0_rgba(13,255,128,0)] transition-[background-color,box-shadow] duration-300 ease-out hover:bg-[#25C68D] hover:shadow-[0_0_28px_#0DFF80] motion-reduce:transition-none"
+        >
+          <img
+            src={card.rest}
+            alt=""
+            className="pointer-events-none absolute top-1/2 left-1/2 h-[122%] w-[122%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover transition-opacity duration-300 ease-out group-hover:opacity-0 motion-reduce:transition-none"
+          />
+          <img
+            src={card.hover}
+            alt=""
+            className="pointer-events-none absolute top-1/2 left-1/2 h-[122%] w-[122%] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover opacity-0 transition-opacity duration-300 ease-out group-hover:opacity-100 motion-reduce:transition-none"
+          />
+          <div className="relative px-4 py-6">
+            <p className="text-[40px] leading-none font-bold tracking-[-0.04em] sm:text-[48px]">
               <CountUp value={card.value} suffix={card.suffix} active={active} />
             </p>
-            <p className="mx-auto mt-2 max-w-[16ch] text-[15px] leading-[1.25] font-semibold sm:text-[16px]">
+            <p className="mx-auto mt-2 max-w-[18ch] text-[14px] leading-[1.25] font-semibold sm:text-[16px]">
               {card.label}
             </p>
           </div>

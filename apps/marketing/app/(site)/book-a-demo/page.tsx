@@ -1,30 +1,27 @@
 import type { Metadata } from 'next';
 
-import { BookDemoForm } from '@/components/site/book-demo-form';
-import { PageHero } from '@/components/site/page-frame';
-import { company } from '@/lib/site-links';
+import { DemoVideo } from '@/components/site/demo-video';
 
 export const metadata: Metadata = {
-  title: 'Book a demo | CROSSUB',
-  description:
-    'Book a call with CROSSUB to see the free property management software and the paid Inspection Only and Full Service options.',
+  title: 'Watch a demo | CROSSUB',
+  description: 'Watch a five-minute demo of the CROSSUB property management software.',
 };
 
 export default function BookDemoPage() {
   return (
     <main>
-      <PageHero eyebrow="Book a demo" title="See the software, then decide on support.">
-        <p>
-          Tell us when suits for a call. We will walk through the free software and, if you want,
-          Inspection Only and Full Service. You can also email{' '}
-          <a className="font-semibold text-[#24C68D]" href={`mailto:${company.email}`}>
-            {company.email}
-          </a>
-          .
-        </p>
-      </PageHero>
-      <section className="mx-auto max-w-[720px] px-5 pb-20 md:px-6">
-        <BookDemoForm />
+      <section className="mx-auto w-full max-w-[1100px] px-6 pt-10 pb-20 md:px-10 md:pt-16">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="text-[15px] font-semibold text-[#24C68D]">Watch a demo</p>
+          <h1 className="mt-4 text-[40px] leading-[1.08] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[52px]">
+            See CROSSUB in five minutes.
+          </h1>
+          <p className="mx-auto mt-4 max-w-[640px] text-[17px] leading-[1.65] text-[#62697C]">
+            A short walkthrough of the free property management software, Cros AI, and how an agency
+            stays in control.
+          </p>
+        </div>
+        <DemoVideo />
       </section>
     </main>
   );

@@ -1,10 +1,9 @@
 # Crossub Privacy Policy
 
-**Draft for legal and operational review — not yet approved for publication**  
-**Effective date:** [Insert publication date]  
-**Operator:** [Insert full registered legal entity name and ABN/ACN] (trading as **Crossub**) ("Crossub", "we", "us", "our")
+**Effective date:** 1 November 2026  
+**Operator:** CROSSUB Property Management Pty Ltd (ABN 85 646 628 024) (trading as **Crossub**) ("Crossub", "we", "us", "our")
 
-Crossub provides property management software, including the Cros AI assistant, and optional property management support services. This Privacy Policy explains how we collect, use, store, disclose and protect personal information through our website, portals, applications and services (together, the **Platform**). It applies to property professionals, property owners, tenants, applicants, contractors, inspectors, visitors and other people whose information is handled through Crossub.
+**CROSSUB Property Management Pty Ltd (ABN 85 646 628 024)**, trading as **Crossub** ("Crossub", "we", "us", "our"), provides property management software, including the Cros AI assistant, and optional property management support services. This Privacy Policy explains how we collect, use, store, disclose and protect personal information through our website, portals, applications and services (together, the **Platform**). It applies to property professionals, property owners, tenants, applicants, contractors, inspectors, visitors and other people whose information is handled through Crossub.
 
 We aim to comply with applicable privacy laws, including the Privacy Act 1988 (Cth) and the Australian Privacy Principles and, where applicable, the New Zealand Privacy Act 2020. Where an agency uses Crossub to manage information about other people, that agency remains responsible for its own privacy obligations and instructions to Crossub, subject to any applicable agreement and law.
 
@@ -46,21 +45,27 @@ Selecting paid services does not provide unlimited access to unrelated customer 
 
 ## 4. Australian hosting and overseas processing
 
-Our primary application hosting and database infrastructure use **Amazon Web Services (AWS) in an Australian region**. This describes our primary hosting location and is **not a promise that every data transfer, backup, subprocess or access event occurs exclusively within Australia**.
+Our primary platform infrastructure is hosted using **Amazon Web Services (AWS) in Australia**.
 
-Crossub uses third-party technology providers, including AI services from **OpenAI (ChatGPT-related technology)** and **Anthropic (Claude-related technology)**. Information necessary for an AI request may be sent to or processed through those providers and their authorised infrastructure, which may be outside Australia or New Zealand. Other vendors used for email delivery, support, analytics or payments may also involve overseas processing, depending on their configuration.
+We may engage third-party technology providers and contractors, including providers of artificial intelligence, cloud infrastructure, communications, payment processing and other services, to support the operation and improvement of our Platform.
 
-For **Inspection Only and Full Service**, authorised personnel located in **Malaysia** may remotely access relevant records to deliver the purchased service. This overseas operational access is **not part of routine Self-Manage delivery**.
+Personal information may be disclosed to overseas service providers and authorised contractors where necessary to deliver our Services.
 
-Before applicable overseas disclosures, we take reasonable steps required by law to assess relevant providers and put appropriate contractual, technical and organisational safeguards in place. Countries involved may include Malaysia and the countries where our contracted AI and other subprocessors operate. **[Confirm actual vendor locations and any countries required to be named before publication.]**
+For customers using our optional **Inspection Only** or **Full Service** offerings, authorised operational personnel located in **Malaysia** may access information reasonably required to perform the agreed services.
+
+Our Malaysia-based operational team does **not** routinely access customer records solely because a customer uses our free software.
+
+Overseas recipients may be located in the **United States** and **Malaysia**. These are the locations used for technology processing and optional operational support. This is not a statement that every backup, subprocess or access event is limited to those countries. We take reasonable steps to protect personal information disclosed overseas in accordance with applicable privacy laws.
 
 ## 5. Cros AI and automated assistance
 
-Cros AI may process prompts, selected property records, communications and other relevant Platform information to generate outputs or perform actions authorised through the Platform. AI-generated information may be inaccurate, incomplete or unsuitable for a particular legal or operational situation. Customers should apply appropriate professional review, especially for tenancy law, safety, financial, trust accounting, notices and decisions affecting individuals.
+Crossub provides artificial intelligence features through Cros AI, which may process relevant property records, communications and user instructions to deliver automated assistance, generate recommendations and support property management workflows.
 
-We do not state that third-party providers train their models using Crossub data. Their treatment of submitted information depends on our actual product, API agreements, settings and applicable terms. **[Confirm Crossub uses commercial/API arrangements and the relevant data-training and retention configuration.]**
+We may engage third-party AI technology providers to deliver these functions, subject to applicable contractual arrangements and privacy safeguards.
 
-Crossub may use de-identified or aggregated usage information to improve functionality and AI performance where lawful. **We will not use identifiable customer, tenant or applicant content to train or fine-tune Crossub's own AI models unless the use has a lawful basis and is covered by an appropriately specific notice and, where required, valid consent or customer authorisation.** If such a feature is introduced, we will explain the purpose, categories of data and available choices before implementing it.
+We may analyse service usage and develop or improve our technology, including AI features, in accordance with applicable privacy laws. Any use of identifiable customer information for AI model training will be subject to appropriate legal authorisation and applicable notice or consent requirements.
+
+AI-generated outputs may require professional review and should not be relied upon as a substitute for independent legal, financial or professional advice.
 
 ## 6. When we share information
 
@@ -78,17 +83,31 @@ We do not sell personal information as a data-broker business. Disclosure to an 
 
 We use reasonable technical and organisational safeguards appropriate to the information and risks, including access restrictions, authentication and logging where implemented. No internet-based service can guarantee absolute security. Users must protect their credentials, configure appropriate user permissions and promptly report suspected unauthorised access.
 
-We retain information for as long as reasonably needed to provide the service, meet legal and professional record-keeping requirements, resolve disputes and maintain relevant audit trails. Retention may continue after account closure where required by law or justified by legitimate record-keeping needs. **[Confirm and publish a retention schedule and operational deletion/export process.]**
+We retain personal information for as long as reasonably necessary to provide our Services, fulfil legitimate business purposes, comply with applicable legal and regulatory obligations, and maintain relevant accounting and audit records.
+
+Where a customer closes their account, access to the Platform may be disabled. Personal information that is no longer required will be securely deleted or de-identified in accordance with our applicable retention procedures, except where continued retention is required or permitted by law.
+
+Certain accounting, financial, transaction and audit records may be retained after account closure to satisfy applicable legal and regulatory requirements.
+
+Customers may request information about available data export options or submit a request for access to, correction of, or deletion of personal information by contacting **info@crossub.com.au**.
 
 Where a data breach triggers applicable notification laws, we will assess and make required notifications to regulators and affected individuals.
 
 ## 8. Access, correction and privacy requests
 
-You may contact us to request access to or correction of personal information, or to raise a question or complaint. We may need to confirm your identity and, for records controlled by an agency, may direct or coordinate a request with that agency. Legal exceptions may apply. We will assess complaints and respond within a reasonable time. If you are dissatisfied, you may be entitled to contact the **Office of the Australian Information Commissioner (OAIC)** or, for relevant New Zealand matters, the **Office of the Privacy Commissioner**.
+You may contact us to request access to or correction of personal information, or to raise a question or complaint. Please send privacy complaints to **info@crossub.com.au** with enough detail for us to understand the issue. We may need to confirm your identity and, for records controlled by an agency, may direct or coordinate a request with that agency. Legal exceptions may apply. We will acknowledge the complaint, assess it, and respond within a reasonable time. If you are dissatisfied, you may be entitled to contact the **Office of the Australian Information Commissioner (OAIC)** or, for relevant New Zealand matters, the **Office of the Privacy Commissioner**.
 
 ## 9. Cookies and communications
 
-We may use strictly necessary cookies and similar technologies for sign-in, security and preferences, and additional analytics technologies where implemented and lawful. **[Confirm actual cookies, analytics and consent-management behaviour.]** Users may receive account, security and service communications that are necessary to operate the Platform. Optional marketing communications will be handled in accordance with applicable laws and preferences.
+Our website and applications may use cookies and similar technologies to support essential functionality, including account authentication, security, regional preferences and user settings.
+
+Our marketing website uses cookies to remember visitors' selected region and related preferences.
+
+Additional technologies may be used within our authenticated portals and mobile applications where necessary to provide the Services, maintain security and monitor technical performance.
+
+Where we introduce optional analytics or tracking technologies, we will provide relevant information and obtain consent where required by applicable law.
+
+Users may manage certain cookies through their browser settings. Disabling essential cookies may affect the functionality of our Services. Users may receive account, security and service communications that are necessary to operate the Platform. Optional marketing communications will be handled in accordance with applicable laws and preferences.
 
 ## 10. New Zealand users
 
@@ -100,11 +119,8 @@ We may update this Policy as our services or practices change. The current versi
 
 ## 12. Contact us
 
-**Crossub — Privacy Enquiries**  
+**CROSSUB Property Management Pty Ltd**  
+ABN 85 646 628 024  
 Suite 104, 66 Berry Street, North Sydney NSW, Australia  
 Email: **info@crossub.com.au**  
 Website: **https://www.crossub.com.au**
-
----
-
-**Pre-publication verification:** legal operating entity/ABN; actual AWS region, backup and access arrangements; vendor/API contracts and AI retention/training settings; Malaysian personnel access controls; payment and analytics providers; data retention and deletion process; privacy complaint handling; local legal review for Australia and New Zealand.

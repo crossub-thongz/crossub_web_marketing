@@ -352,7 +352,7 @@ export default async function AboutPage() {
             href={bookDemo}
             className="inline-flex h-12 items-center justify-center rounded-full border border-[#194878] bg-white px-7 text-[15px] font-semibold text-[#194878]"
           >
-            Book a demo
+            Watch a demo
           </a>
         </div>
         <svg viewBox="0 0 1440 120" className="mt-12 block w-full text-[#194778]" aria-hidden>

@@ -90,7 +90,7 @@ export function LegalPage({ region, document }: { region: RegionCode; document: 
             <span className="truncate">{document.title}</span>
           </div>
           <span className="shrink-0 text-right text-[10px] font-medium tracking-normal sm:text-[12px]">
-            Draft · Updated 1 November 2026
+            {document.status}
           </span>
         </div>
 

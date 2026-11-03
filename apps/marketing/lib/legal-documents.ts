@@ -15,13 +15,14 @@ export type LegalDocument = {
   kicker: string;
   intro: string;
   callout: string;
+  status: string;
   html: string;
   toc: LegalSection[];
 };
 
 const DOCUMENTS: Record<
   LegalDocumentId,
-  { file: string; title: string; category: string; kicker: string; intro: string; callout: string }
+  { file: string; title: string; category: string; kicker: string; intro: string; callout: string; status: string }
 > = {
   privacy: {
     file: 'privacy.md',
@@ -32,6 +33,7 @@ const DOCUMENTS: Record<
       'Your information matters. Learn how CROSSUB protects your data across our software and services.',
     callout:
       'Our primary platform is hosted on AWS in Australia. Our AI features and optional services may involve additional authorised processing, as explained below.',
+    status: 'Last updated: 1 November 2026',
   },
   terms: {
     file: 'terms.md',
@@ -42,6 +44,7 @@ const DOCUMENTS: Record<
       'Simple, clear rules for using our free property management software, Cros AI, and optional services.',
     callout:
       'CROSSUB software is free to use. Inspection Only and Full Service are optional, separately authorised services with their own applicable fees and terms.',
+    status: 'Last updated: 1 November 2026',
   },
 };
 

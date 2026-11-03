@@ -18,7 +18,7 @@ export default function PropertyServicesPage() {
         actions={
           <DualActions
             primaryHref={siteLinks.bookDemo}
-            primaryLabel="Book a demo"
+            primaryLabel="Watch a demo"
             secondaryHref={siteLinks.pricing}
             secondaryLabel="Service Pricing"
           />
@@ -172,7 +172,7 @@ export default function PropertyServicesPage() {
                   <a className="font-semibold text-[#24C68D]" href={`mailto:${company.salesEmail}`}>
                     {company.salesEmail}
                   </a>{' '}
-                  with the property and the inspection type, or book a demo and we will set the
+                  with the property and the inspection type, or watch a demo and we will set the
                   first visit up with you.
                 </p>
               ),

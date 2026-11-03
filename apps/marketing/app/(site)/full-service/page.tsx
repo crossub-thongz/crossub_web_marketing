@@ -121,7 +121,7 @@ export default function FullServicePage() {
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
             <DualActions
               primaryHref={siteLinks.bookDemo}
-              primaryLabel="Book a demo"
+              primaryLabel="Watch a demo"
               secondaryHref={siteLinks.inspections}
               secondaryLabel="Inspection Only"
             />
@@ -393,7 +393,7 @@ export default function FullServicePage() {
             href={siteLinks.bookDemo}
             className="mt-8 inline-flex h-12 items-center justify-center rounded-full bg-[#24C68D] px-6 text-[15px] font-semibold text-white hover:bg-[#1AAB78]"
           >
-            Book a demo
+            Watch a demo
           </a>
           <p className="mt-5 text-[14px] text-[#668178]">
             Prefer to write?{' '}

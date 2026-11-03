@@ -392,7 +392,7 @@ export function MeetCrosSections() {
         </h2>
         <div className="mt-8 flex flex-wrap items-center justify-center gap-3">
           <PrimaryLink href={registerHref(region)}>Start for free</PrimaryLink>
-          <SecondaryLink href={withRegion(region, siteLinks.bookDemo)}>Book a demo</SecondaryLink>
+          <SecondaryLink href={withRegion(region, siteLinks.bookDemo)}>Watch a demo</SecondaryLink>
         </div>
       </section>
     </>
