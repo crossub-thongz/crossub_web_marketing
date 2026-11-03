@@ -191,7 +191,12 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
             className="site-card site-card-photo mx-auto mt-14 grid max-w-[1100px] scroll-mt-28 items-center gap-8 rounded-[36px] bg-[#194778] px-6 py-10 text-white sm:px-10 lg:grid-cols-[1.1fr_0.9fr] lg:px-14"
           >
             <div className="site-card-copy text-center lg:text-left">
-              <p className="text-[15px] font-semibold text-[#7CFFE8]">
+              <img
+                src="/home/cros-inspect-logo.jpg"
+                alt="CROS Inspect"
+                className="mx-auto size-16 rounded-[18px] lg:mx-0"
+              />
+              <p className="mt-4 text-[15px] font-semibold text-[#7CFFE8]">
                 Available on iPhone and Android
               </p>
               <h2 className="mt-3 text-[36px] leading-[1.08] font-bold tracking-[-0.03em] sm:text-[44px]">
