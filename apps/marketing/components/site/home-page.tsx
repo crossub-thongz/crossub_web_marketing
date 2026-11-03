@@ -104,15 +104,14 @@ export function HomePage({ region = 'AU' }: { region?: RegionCode }) {
             <h2 className="text-[40px] leading-[1.05] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[56px]">
               Start Free Scale Your Way
             </h2>
-            <p className="mt-3 text-[20px] text-[#62697C]">
-              Your software. Your agency. Your choice of support.
-            </p>
-            <h2 className="mt-10 text-[40px] leading-[1.05] font-bold tracking-[-0.03em] text-[#171E4B] sm:text-[56px]">
+            <h2 className="mt-3 px-4 py-1 text-[40px] leading-[1.15] font-bold tracking-[-0.03em] text-[#171E4B] sm:px-5 sm:text-[56px]">
               3 ways CROS helps.
             </h2>
-            <p className="mt-3 text-[16px] font-semibold text-[#24C68D]">Free software</p>
-            <p className="mt-2 text-[18px] leading-[1.6] text-[#171E4B]">
+            <p className="mt-4 text-[17px] leading-[1.5] text-[#5E6678] sm:text-[20px]">
               CROS prepares drafts, tasks and insights. Your team stays in the approval loop.
+            </p>
+            <p className="mt-3 text-[16px] text-[#5E6678] sm:text-[18px]">
+              Your software. Your agency. Your choice of support.
             </p>
           </div>
           <div className="mt-12 grid items-start gap-5 lg:grid-cols-3">

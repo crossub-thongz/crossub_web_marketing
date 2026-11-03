@@ -278,7 +278,7 @@ export default async function AboutPage() {
         </div>
       </section>
 
-      <section className="bg-[#F5F6F8] px-6 py-16 md:px-10 md:py-24">
+      <section id="ecosystem" className="bg-[#F5F6F8] px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto w-full max-w-[1180px]">
           <div className="mx-auto max-w-[760px] text-center">
             <h2 className="text-[42px] font-bold tracking-[-0.03em] sm:text-[48px]">Ecosystem</h2>
