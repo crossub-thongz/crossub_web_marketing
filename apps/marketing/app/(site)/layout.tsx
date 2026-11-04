@@ -3,6 +3,7 @@ import type { ReactNode } from 'react';
 import { Manrope } from 'next/font/google';
 
 import { AmbientBackground } from '@/components/site/ambient-background';
+import { DemoWidget } from '@/components/site/demo-widget';
 import { SiteFooter } from '@/components/site/site-footer';
 import { SiteHeader } from '@/components/site/site-header';
 
@@ -49,6 +50,7 @@ export default function SiteLayout({ children }: { children: ReactNode }) {
         <SiteHeader />
         <div className="py-[8vh]">{children}</div>
         <SiteFooter />
+        <DemoWidget />
       </div>
     </div>
   );
