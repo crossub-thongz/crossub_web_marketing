@@ -274,7 +274,7 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <RegionSelector tone={overLaser && !open ? 'laser' : 'default'} />
-          <PrimaryLink href={watchDemo}>Watch a demo</PrimaryLink>
+          <PrimaryLink href={watchDemo}>Start for free</PrimaryLink>
           <div
             ref={loginRef}
             className="relative"
