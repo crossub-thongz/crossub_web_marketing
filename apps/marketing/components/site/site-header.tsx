@@ -10,7 +10,6 @@ import { RegionSelector } from '@/components/site/region-selector';
 import {
   offersServices,
   regionFromPathname,
-  registerHref,
   stripRegion,
   withRegion,
 } from '@/lib/regions';
@@ -161,7 +160,7 @@ export function SiteHeader() {
   const region = regionFromPathname(pathname);
   const path = stripRegion(pathname);
   const nav = NAV.filter((item) => item.label !== 'Services' || offersServices(region));
-  const startFree = registerHref(region);
+  const watchDemo = withRegion(region, siteLinks.bookDemo);
   const logins = loginHrefs(region);
   const loginLinks = [
     { label: 'Managing Agent', href: logins.agent },
@@ -275,7 +274,7 @@ export function SiteHeader() {
 
         <div className="hidden items-center gap-3 lg:flex">
           <RegionSelector tone={overLaser && !open ? 'laser' : 'default'} />
-          <PrimaryLink href={startFree}>Start for free</PrimaryLink>
+          <PrimaryLink href={watchDemo}>Watch a demo</PrimaryLink>
           <div
             ref={loginRef}
             className="relative"
@@ -377,8 +376,8 @@ export function SiteHeader() {
                 </a>
               ),
             )}
-            <PrimaryLink href={startFree} className="mt-3 w-full">
-              Start for free
+            <PrimaryLink href={watchDemo} className="mt-3 w-full">
+              Watch a demo
             </PrimaryLink>
             <div className="mt-2 border-t border-[#171E4B]/6 pt-2">
               <p className="flex min-h-11 items-center text-[17px] font-semibold text-[#171E4B]">Log in</p>

@@ -1,4 +1,5 @@
 import type { Metadata } from 'next';
+import { headers } from 'next/headers';
 import {
   ArrowDown,
   ArrowRight,
@@ -12,6 +13,7 @@ import {
 import type { ReactNode } from 'react';
 
 import { ContactStrip } from '@/components/site/page-frame';
+import { regionFromHeader, registerHref } from '@/lib/regions';
 import { company, isExternalHref, siteLinks } from '@/lib/site-links';
 
 export const metadata: Metadata = {
@@ -88,7 +90,10 @@ function ForestLink({
   );
 }
 
-export default function InspectionsPage() {
+export default async function InspectionsPage() {
+  const region = regionFromHeader(await headers());
+  const register = registerHref(region);
+
   return (
     <main>
       <section className="mx-auto grid w-full max-w-[1480px] items-center gap-12 px-6 pt-6 pb-16 md:px-8 md:pt-10 lg:grid-cols-2 lg:gap-16 lg:pb-24">
@@ -112,7 +117,7 @@ export default function InspectionsPage() {
             agency can also run the same tools without booking a CROSSUB inspector.
           </p>
           <div className="mt-8 flex flex-col gap-3 sm:max-w-[280px]">
-            <ForestLink href={siteLinks.bookDemo}>
+            <ForestLink href={register}>
               Book an Inspection
               <ArrowRight className="size-4" aria-hidden />
             </ForestLink>
