@@ -4,6 +4,7 @@ import { Manrope } from 'next/font/google';
 
 import { AmbientBackground } from '@/components/site/ambient-background';
 import { DemoWidget } from '@/components/site/demo-widget';
+import { OpenAiAdsPixel } from '@/components/site/openai-ads-pixel';
 import { SiteFooter } from '@/components/site/site-footer';
 import { SiteHeader } from '@/components/site/site-header';
 
@@ -45,6 +46,7 @@ export const viewport: Viewport = {
 export default function SiteLayout({ children }: { children: ReactNode }) {
   return (
     <div className={`${manrope.className} marketing-site relative min-h-screen text-[#171E4B]`}>
+      <OpenAiAdsPixel />
       <AmbientBackground />
       <div className="relative z-10">
         <SiteHeader />
