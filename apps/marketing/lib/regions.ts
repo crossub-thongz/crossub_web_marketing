@@ -109,6 +109,7 @@ export function registerHref(region: RegionCode): string {
   try {
     const url = new URL(siteLinks.startFree);
     url.searchParams.set('country', region);
+    url.searchParams.set('from', 'site');
     return url.toString();
   } catch {
     return siteLinks.startFree;
