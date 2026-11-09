@@ -6,6 +6,14 @@ const VISITOR_KEY = 'cros_vid';
 const SENT_PREFIX = 'cros_visit_sent:';
 const UUID_V4 = /^[0-9a-f]{8}-[0-9a-f]{4}-4[0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i;
 
+function visitRegion(): 'AU' | 'NZ' | undefined {
+  const fromPath = window.location.pathname.match(/^\/(AU|NZ)(?=\/|$)/i)?.[1]?.toUpperCase();
+  if (fromPath === 'AU' || fromPath === 'NZ') return fromPath;
+  const saved = document.cookie.match(/(?:^|; )crossub_region=([^;]*)/)?.[1]?.toUpperCase();
+  if (saved === 'AU' || saved === 'NZ') return saved;
+  return undefined;
+}
+
 function visitorKey(): string {
   const existing = window.localStorage.getItem(VISITOR_KEY);
   if (existing && UUID_V4.test(existing)) return existing;
@@ -30,7 +38,11 @@ export function SiteVisit() {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       keepalive: true,
-      body: JSON.stringify({ visitorKey: visitorKey(), host: window.location.hostname }),
+      body: JSON.stringify({
+        visitorKey: visitorKey(),
+        host: window.location.hostname,
+        region: visitRegion(),
+      }),
     })
       .then((response) => {
         if (response.ok) window.localStorage.setItem(sentKey, '1');
